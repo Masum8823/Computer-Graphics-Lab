@@ -1,6 +1,6 @@
 # FreeGLUT Setup in Code::Blocks 20.03
 
-## Downloads
+## 📥 Downloads
 
 | Software | Link |
 |----------|------|
@@ -78,6 +78,8 @@ C:\Program Files\Codeblocks\Share\Codeblocks\templates
 - File-এ **Right Click** → **Edit with Notepad++**
 - `Search` → `Find & Replace`
 
+### 🔎 Find & Replace:
+
 | Option | Value |
 |----------|----------|
 | Find what | `glut32` |
@@ -99,6 +101,8 @@ C:\Program Files\Codeblocks\Share\Codeblocks\templates\wizard\glut
 - Open `wizard.script`
 - File-এ **Right Click** → **Edit with Notepad++**
 - `Search` → `Find & Replace`
+
+### 🔎 Find & Replace:
 
 | Option | Value |
 |----------|----------|
@@ -123,7 +127,7 @@ Code::Blocks
 - Destination ইচ্ছামতো দেওয়া যাবে
 - Click **Next**
 
-### Destination Set
+### 📂 Destination Set
 
 Select:
 
@@ -155,7 +159,7 @@ C:\Program Files\Codeblocks\Mingw
 
 > [!TIP]
 >
-> সব ঠিক থাকলে **All Clear ✓**
+> সব ঠিক থাকলে **FreeGLUT setup completed successfully! ✓**
 
 ---
 
