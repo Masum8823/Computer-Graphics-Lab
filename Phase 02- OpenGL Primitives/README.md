@@ -372,6 +372,150 @@ The program draws:
 <details>
     <summary><b>OpenGL Lines</b></summary>
 
+# GL_LINES (Drawing a Line)
+
+## Overview
+
+A **Line** is one of the basic OpenGL primitives. It is drawn by specifying **two vertices (starting point and ending point)**.
+
+OpenGL uses the `GL_LINES` primitive to draw individual straight lines.
+
+---
+
+## Code
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.0);
+glVertex2f(0.5, 0.0);
+
+glEnd();
+```
+
+---
+
+# Code Explanation
+
+### `glBegin(GL_LINES);`
+
+Starts drawing using the **Line Primitive**.
+
+OpenGL reads every **two vertices** as one complete line.
+
+---
+
+### `glVertex2f(-0.5, 0.0);`
+
+Specifies the **starting point** of the line.
+
+```cpp
+glVertex2f(x, y);
+```
+
+* **x = -0.5**
+* **y = 0.0**
+
+This point is located on the **left side** of the window.
+
+---
+
+### `glVertex2f(0.5, 0.0);`
+
+Specifies the **ending point** of the line.
+
+* **x = 0.5**
+* **y = 0.0**
+
+This point is located on the **right side** of the window.
+
+---
+
+### `glEnd();`
+
+Ends the drawing operation.
+
+---
+
+# How GL_LINES Works
+
+`GL_LINES` always takes **two vertices** to create one line.
+
+```text
+Vertex 1 ───────── Vertex 2
+```
+
+If more vertices are provided:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(A);
+glVertex2f(B);
+
+glVertex2f(C);
+glVertex2f(D);
+
+glEnd();
+```
+
+OpenGL draws:
+
+```text
+A ───── B
+
+C ───── D
+```
+
+Each pair of vertices forms a **separate line**.
+
+---
+
+# Coordinate Visualization
+
+```text
+          (+Y)
+            ↑
+            │
+            │
+(-0.5,0) ●────────────● (0.5,0)
+            │
+            │
+            ↓
+          (-Y)
+```
+
+The line is drawn **horizontally through the center** of the window.
+
+---
+
+## Output
+
+The program draws:
+
+* One straight line
+* Starts at **(-0.5, 0.0)**
+* Ends at **(0.5, 0.0)**
+* Passes through the **center of the window**
+
+---
+
+## Important Functions
+
+| Function            | Purpose                             |
+| ------------------- | ----------------------------------- |
+| `glBegin(GL_LINES)` | Starts drawing lines                |
+| `glVertex2f()`      | Specifies the start/end coordinates |
+| `glEnd()`           | Ends the drawing operation          |
+
+---
+
+## Exam Tips
+
+* `GL_LINES` draws **one line for every two vertices**.
+* The **first vertex** is the starting point, and the **second vertex** is the ending point.
+* If four vertices are given, OpenGL draws **two separate lines**.
+* Every `glBegin()` must have a matching `glEnd()`.
 
 ---
 </details>
