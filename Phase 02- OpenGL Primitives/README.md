@@ -721,6 +721,126 @@ The program draws:
 <details>
     <summary><b>Drawing Rectangle</b></summary>
 
+# Drawing a Rectangle (Using GL_QUADS)
+
+## Overview
+
+A **Rectangle** can be drawn in OpenGL using the `GL_QUADS` primitive. A quad is a four-sided polygon created by specifying **four vertices**.
+
+> **Note:** `GL_QUADS` is a legacy OpenGL primitive. It is commonly used in beginner-level OpenGL and lab exercises.
+
+---
+
+## Code
+
+```cpp
+glBegin(GL_QUADS);
+
+glVertex2f(-0.5,  0.5);
+glVertex2f( 0.5,  0.5);
+glVertex2f( 0.5, -0.5);
+glVertex2f(-0.5, -0.5);
+
+glEnd();
+```
+
+---
+
+# Code Explanation
+
+### `glBegin(GL_QUADS);`
+
+Starts drawing using the **Quad Primitive**.
+
+OpenGL uses **four vertices** to create one quadrilateral (rectangle/square).
+
+---
+
+### `glVertex2f(-0.5, 0.5);`
+
+Specifies the **top-left** corner.
+
+---
+
+### `glVertex2f(0.5, 0.5);`
+
+Specifies the **top-right** corner.
+
+---
+
+### `glVertex2f(0.5, -0.5);`
+
+Specifies the **bottom-right** corner.
+
+---
+
+### `glVertex2f(-0.5, -0.5);`
+
+Specifies the **bottom-left** corner.
+
+---
+
+### `glEnd();`
+
+Ends the drawing operation.
+
+---
+
+# How GL_QUADS Works
+
+`GL_QUADS` requires **four vertices** to draw one quadrilateral.
+
+```text
+A ●────────────● B
+  │            │
+  │            │
+  │            │
+D ●────────────● C
+```
+
+Vertices should be specified **in order** (clockwise or counter-clockwise) to form the correct shape.
+
+---
+
+# Coordinate Visualization
+
+```text
+(-0.5,0.5) ●────────────● (0.5,0.5)
+            │            │
+            │ Rectangle  │
+            │            │
+(-0.5,-0.5)●────────────● (0.5,-0.5)
+```
+
+---
+
+## Output
+
+The program draws:
+
+* One rectangle
+* Four vertices
+* Centered in the OpenGL window
+
+---
+
+## Important Functions
+
+| Function            | Purpose                                |
+| ------------------- | -------------------------------------- |
+| `glBegin(GL_QUADS)` | Starts drawing a quadrilateral         |
+| `glVertex2f()`      | Specifies each corner of the rectangle |
+| `glEnd()`           | Ends the drawing operation             |
+
+---
+
+## Exam Tips
+
+* `GL_QUADS` requires **4 vertices**.
+* Each `glVertex2f()` specifies one corner of the rectangle.
+* Vertices should be given in **clockwise or counter-clockwise order**.
+* `GL_QUADS` is a **legacy OpenGL primitive** and is commonly used in basic graphics lab exercises.
+* Every `glBegin()` must have a matching `glEnd()`.
 
 ---
 </details>
