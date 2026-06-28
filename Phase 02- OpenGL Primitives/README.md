@@ -523,6 +523,197 @@ The program draws:
 <details>
     <summary><b>OpenGL Triangles</b></summary>
 
+# GL_TRIANGLES (Drawing a Triangle)
+
+## Overview
+
+A **Triangle** is one of the most commonly used OpenGL primitives. It is created by specifying **three vertices**, where each vertex represents one corner of the triangle.
+
+OpenGL uses the `GL_TRIANGLES` primitive to draw individual triangles.
+
+---
+
+## Code
+
+```cpp
+glBegin(GL_TRIANGLES);
+
+glColor3f(1,0,0);
+glVertex2f(0.0,0.5);
+
+glColor3f(0,1,0);
+glVertex2f(-0.5,-0.5);
+
+glColor3f(0,0,1);
+glVertex2f(0.5,-0.5);
+
+glEnd();
+```
+
+---
+
+# Code Explanation
+
+### `glBegin(GL_TRIANGLES);`
+
+Starts drawing using the **Triangle Primitive**.
+
+OpenGL takes **three vertices** to create one triangle.
+
+---
+
+### `glColor3f(1,0,0);`
+
+Sets the drawing color to **Red**.
+
+```cpp
+glColor3f(R, G, B);
+```
+
+Where:
+
+* **R** = Red
+* **G** = Green
+* **B** = Blue
+
+Each value ranges from **0.0 to 1.0**.
+
+---
+
+### `glVertex2f(0.0,0.5);`
+
+Specifies the **top vertex** of the triangle.
+
+Current color: **Red**
+
+---
+
+### `glColor3f(0,1,0);`
+
+Changes the drawing color to **Green**.
+
+---
+
+### `glVertex2f(-0.5,-0.5);`
+
+Specifies the **bottom-left vertex**.
+
+Current color: **Green**
+
+---
+
+### `glColor3f(0,0,1);`
+
+Changes the drawing color to **Blue**.
+
+---
+
+### `glVertex2f(0.5,-0.5);`
+
+Specifies the **bottom-right vertex**.
+
+Current color: **Blue**
+
+---
+
+### `glEnd();`
+
+Ends the drawing operation.
+
+---
+
+# How GL_TRIANGLES Works
+
+`GL_TRIANGLES` always uses **three vertices** to draw one triangle.
+
+```text
+        A
+       / \
+      /   \
+     /     \
+    B-------C
+```
+
+* Vertex A → Top
+* Vertex B → Bottom-left
+* Vertex C → Bottom-right
+
+If six vertices are provided, OpenGL draws **two separate triangles**.
+
+---
+
+# Color Interpolation
+
+Each vertex has its own color.
+
+```text
+Top Vertex          → Red
+Bottom Left Vertex  → Green
+Bottom Right Vertex → Blue
+```
+
+OpenGL automatically **blends (interpolates)** these colors across the triangle, creating a smooth color transition.
+
+---
+
+# Coordinate Visualization
+
+```text
+          (0.0,0.5)
+               ▲
+              / \
+             /   \
+            /     \
+           /       \
+(-0.5,-0.5)──────(0.5,-0.5)
+```
+
+---
+
+## Output
+
+The program draws:
+
+* One triangle
+* Three vertices
+* Three different colors (Red, Green, Blue)
+* Smooth color blending across the triangle
+
+---
+
+## Important Functions
+
+| Function                | Purpose                                  |
+| ----------------------- | ---------------------------------------- |
+| `glBegin(GL_TRIANGLES)` | Starts drawing triangles                 |
+| `glColor3f()`           | Sets the current drawing color           |
+| `glVertex2f()`          | Specifies the coordinates of each vertex |
+| `glEnd()`               | Ends the drawing operation               |
+
+---
+
+## Common Color Values
+
+| Color   | RGB Values |
+| ------- | ---------- |
+| Red     | `(1,0,0)`  |
+| Green   | `(0,1,0)`  |
+| Blue    | `(0,0,1)`  |
+| White   | `(1,1,1)`  |
+| Black   | `(0,0,0)`  |
+| Yellow  | `(1,1,0)`  |
+| Cyan    | `(0,1,1)`  |
+| Magenta | `(1,0,1)`  |
+
+---
+
+## Exam Tips
+
+* `GL_TRIANGLES` requires **3 vertices** to draw one triangle.
+* Each `glVertex2f()` specifies one corner of the triangle.
+* `glColor3f()` sets the color of the next vertex.
+* OpenGL automatically blends the vertex colors across the triangle.
+* Every `glBegin()` must have a matching `glEnd()`.
 
 ---
 </details>
