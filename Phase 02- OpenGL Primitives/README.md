@@ -229,6 +229,142 @@ Without this function, the window will close immediately.
 <details>
     <summary><b>OpenGL Points</b></summary>
 
+# GL_POINTS (Drawing a Point)
+
+## Overview
+
+A **Point** is the simplest OpenGL primitive. It is used to draw a single dot at a specified position.
+
+In OpenGL, points are drawn using the `GL_POINTS` primitive.
+
+---
+
+## Code
+
+```cpp
+glPointSize(10);
+
+glBegin(GL_POINTS);
+    glVertex2f(0.0, 0.0);
+glEnd();
+```
+
+---
+
+# Code Explanation
+
+### `glPointSize(10);`
+
+Sets the size of the point.
+
+```cpp
+glPointSize(size);
+```
+
+* Unit: Pixels
+* Here, the point size is **10 pixels**.
+
+---
+
+### `glBegin(GL_POINTS);`
+
+Starts drawing using the **Point Primitive**.
+
+Everything between `glBegin()` and `glEnd()` is treated as point data.
+
+---
+
+### `glVertex2f(0.0, 0.0);`
+
+Specifies the position of the point.
+
+```cpp
+glVertex2f(x, y);
+```
+
+* `x` → Horizontal position
+* `y` → Vertical position
+* `2f` means **2-dimensional floating-point coordinates**.
+
+In this example:
+
+```cpp
+glVertex2f(0.0, 0.0);
+```
+
+The point is drawn at the **center of the window**.
+
+---
+
+### `glEnd();`
+
+Ends the drawing operation.
+
+---
+
+# Coordinate System
+
+OpenGL uses a normalized coordinate system.
+
+```text
+        (+Y)
+          ↑
+          │
+(-1,0) ───┼─── (+1,0)
+          │
+          │
+          ↓
+        (-Y)
+```
+
+* Center → `(0.0, 0.0)`
+* Left → `(-1.0, 0.0)`
+* Right → `(1.0, 0.0)`
+* Top → `(0.0, 1.0)`
+* Bottom → `(0.0, -1.0)`
+
+---
+
+## Example Coordinates
+
+| Coordinate     | Position    |
+| -------------- | ----------- |
+| `(0.0, 0.0)`   | Center      |
+| `(0.5, 0.5)`   | Upper-right |
+| `(-0.5, 0.5)`  | Upper-left  |
+| `(0.5, -0.5)`  | Lower-right |
+| `(-0.5, -0.5)` | Lower-left  |
+
+---
+
+## Output
+
+The program draws:
+
+* One point
+* Size = **10 pixels**
+* Position = **Center of the window**
+
+---
+
+## Important Functions
+
+| Function             | Purpose                         |
+| -------------------- | ------------------------------- |
+| `glPointSize()`      | Sets the point size             |
+| `glBegin(GL_POINTS)` | Starts drawing points           |
+| `glVertex2f()`       | Specifies the point coordinates |
+| `glEnd()`            | Ends the drawing operation      |
+
+---
+
+## Exam Tips
+
+* `GL_POINTS` is the OpenGL primitive used to draw one or more points.
+* `glPointSize()` controls the size of the point in pixels.
+* `glVertex2f(x, y)` specifies the position of each point.
+* Every `glBegin()` must have a matching `glEnd()`.
+* The coordinate `(0.0, 0.0)` represents the **center** of the OpenGL window.
 
 ---
 </details>
