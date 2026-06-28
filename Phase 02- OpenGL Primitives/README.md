@@ -848,6 +848,183 @@ The program draws:
 <details>
     <summary><b>Drawing Circle</b></summary>
 
+# Drawing a Circle (Using GL_POLYGON)
+
+## Overview
+
+A **Circle** is not a built-in OpenGL primitive. Instead, it is created by calculating many points on the circumference and connecting them together.
+
+A common beginner approach is to use the `GL_POLYGON` primitive, where multiple vertices are placed around the center to form a smooth circle.
+
+---
+
+## Code
+
+```cpp
+#include <math.h>
+
+float radius = 0.5;
+
+glBegin(GL_POLYGON);
+
+for(int i = 0; i < 360; i++)
+{
+    float angle = i * 3.1416 / 180;
+
+    float x = radius * cos(angle);
+    float y = radius * sin(angle);
+
+    glVertex2f(x, y);
+}
+
+glEnd();
+```
+
+---
+
+# Code Explanation
+
+### `#include <math.h>`
+
+Includes the mathematical library.
+
+It is required to use:
+
+* `cos()`
+* `sin()`
+
+---
+
+### `float radius = 0.5;`
+
+Sets the radius of the circle.
+
+A larger value creates a larger circle.
+
+---
+
+### `glBegin(GL_POLYGON);`
+
+Starts drawing a filled polygon.
+
+By using many closely placed vertices, the polygon appears as a circle.
+
+---
+
+### `for(int i = 0; i < 360; i++)`
+
+Loops from **0° to 359°**.
+
+Each iteration calculates one point on the circumference.
+
+Total vertices:
+
+```text
+360 vertices
+```
+
+---
+
+### `float angle = i * 3.1416 / 180;`
+
+Converts the angle from **degrees** to **radians**.
+
+The `cos()` and `sin()` functions require the angle in radians.
+
+---
+
+### `float x = radius * cos(angle);`
+
+Calculates the **x-coordinate** of the point.
+
+---
+
+### `float y = radius * sin(angle);`
+
+Calculates the **y-coordinate** of the point.
+
+---
+
+### `glVertex2f(x, y);`
+
+Adds the calculated point as a vertex.
+
+OpenGL connects all the vertices together to create a circle.
+
+---
+
+### `glEnd();`
+
+Ends the drawing operation.
+
+---
+
+# How It Works
+
+The loop calculates points around the circle.
+
+```text
+          ●
+      ●       ●
+
+   ●             ●
+
+   ●             ●
+
+      ●       ●
+          ●
+```
+
+Each point is connected to the next one, forming a smooth circular shape.
+
+---
+
+# Circle Formula
+
+The coordinates of each point are calculated using:
+
+```text
+x = r × cos(θ)
+
+y = r × sin(θ)
+```
+
+Where:
+
+* **r** = Radius
+* **θ** = Angle (in radians)
+
+---
+
+## Output
+
+The program draws:
+
+* One filled circle
+* Radius = **0.5**
+* Center at **(0, 0)**
+
+---
+
+## Important Functions
+
+| Function              | Purpose                       |
+| --------------------- | ----------------------------- |
+| `glBegin(GL_POLYGON)` | Starts drawing the circle     |
+| `cos()`               | Calculates the x-coordinate   |
+| `sin()`               | Calculates the y-coordinate   |
+| `glVertex2f()`        | Adds each point to the circle |
+| `glEnd()`             | Ends the drawing operation    |
+
+---
+
+## Exam Tips
+
+* OpenGL has **no built-in circle primitive**.
+* A circle is created by calculating many points using `sin()` and `cos()`.
+* `GL_POLYGON` connects all the vertices to form a filled circle.
+* More vertices produce a smoother circle.
+* The center of this circle is at **(0, 0)** because no offset is added.
 
 ---
 </details>
