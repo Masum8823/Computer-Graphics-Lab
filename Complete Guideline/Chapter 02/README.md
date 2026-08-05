@@ -438,3 +438,73 @@ void display()
 ```
 
 ---
+
+# 14. Viva Questions
+
+### Q1. `glClearColor()` কী কাজ করে?
+
+**Answer:** Color buffer clear করার জন্য যে color ব্যবহার হবে সেটি নির্ধারণ করে।
+
+---
+
+### Q2. `glClearColor()`-এর syntax কী?
+
+**Answer:**
+
+```cpp
+glClearColor(R, G, B, A);
+```
+
+---
+
+### Q3. RGB কী?
+
+**Answer:** RGB হলো Red, Green এবং Blue।
+
+---
+
+### Q4. `glClearColor(1,0,0,1)` কোন Color?
+
+**Answer:** Red।
+
+---
+
+### Q5. `glClearColor(0,1,0,1)` কোন Color?
+
+**Answer:** Green।
+
+---
+
+### Q6. `glClearColor(0,0,1,1)` কোন Color?
+
+**Answer:** Blue।
+
+---
+
+### Q7. `glClearColor(1,1,1,1)` কোন Color?
+
+**Answer:** White।
+
+---
+
+### Q8. `glClearColor(0,0,0,1)` কোন Color?
+
+**Answer:** Black।
+
+---
+
+### Q9. `glClearColor()` আর `glColor3f()`-এর পার্থক্য কী?
+
+**Answer:**
+
+`glClearColor()` → Background/Clear Color
+
+`glColor3f()` → Drawing Object-এর Color
+
+---
+
+### Q10. Alpha কী?
+
+**Answer:** Alpha হলো color-এর opacity/transparency সম্পর্কিত value। Basic code-এ সাধারণত `1.0` ব্যবহার করা হয়।
+
+---
