@@ -411,3 +411,71 @@ Screen/Color Buffer clear করে
 ```
 
 ---
+
+# 13. Viva Questions
+
+### Q1. `#include <GL/glut.h>` কেন ব্যবহার করা হয়?
+
+**Answer:** OpenGL/FreeGLUT-এর প্রয়োজনীয় functions এবং definitions ব্যবহার করার জন্য।
+
+---
+
+### Q2. `glutInit()` কী কাজ করে?
+
+**Answer:** FreeGLUT initialize করে।
+
+---
+
+### Q3. `glutInitWindowSize(800,600)` কী করে?
+
+**Answer:** Window-এর width 800 pixels এবং height 600 pixels সেট করে।
+
+---
+
+### Q4. `glutCreateWindow()` কী কাজ করে?
+
+**Answer:** একটি OpenGL window তৈরি করে এবং title সেট করে।
+
+---
+
+### Q5. `glClearColor()` কী কাজ করে?
+
+**Answer:** Color buffer clear করার জন্য ব্যবহৃত color নির্ধারণ করে।
+
+---
+
+### Q6. এই code-এ background নীল কেন?
+
+**Answer:**
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+এখানে Blue-এর value `1.0`, আর Red ও Green-এর value `0.0`, তাই background blue।
+
+---
+
+### Q7. `glClear(GL_COLOR_BUFFER_BIT)` কেন ব্যবহার করা হয়েছে?
+
+**Answer:** Color buffer clear করার জন্য।
+
+---
+
+### Q8. `glFlush()` কেন ব্যবহার করা হয়েছে?
+
+**Answer:** OpenGL-এর pending drawing commands execute/finish করে output দেখানোর জন্য।
+
+---
+
+### Q9. `glutDisplayFunc(display)` কী করে?
+
+**Answer:** `display()` function-কে display callback হিসেবে register করে।
+
+---
+
+### Q10. `glutMainLoop()` কী কাজ করে?
+
+**Answer:** GLUT event loop চালু রাখে এবং window ও বিভিন্ন event handle করে।
+
+---
