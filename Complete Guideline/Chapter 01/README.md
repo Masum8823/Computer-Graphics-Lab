@@ -332,3 +332,33 @@ Program successfully শেষ হয়েছে বোঝায়।
 তবে মনে রাখবে, `glutMainLoop()` সাধারণত program-কে চলমান রাখে, তাই এই line সাধারণত immediately execute হয় না।
 
 ---
+
+# 10. Program Execution Flow
+
+পুরো program-টা এইভাবে কাজ করে:
+
+```text
+main()
+  ↓
+glutInit()
+  ↓
+Window Size Set
+  ↓
+Window Create
+  ↓
+Background Color Set
+  ↓
+display() Register
+  ↓
+glutMainLoop()
+  ↓
+display()
+  ↓
+glClear()
+  ↓
+glFlush()
+  ↓
+Output Show
+```
+
+---
