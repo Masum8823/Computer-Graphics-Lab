@@ -365,3 +365,46 @@ glClearColor(1.0, 0.0, 0.0, 1.0);
 ```
 
 ---
+
+# 12. Important Difference: `glClearColor()` vs `glColor3f()`
+
+এই দুটোকে গুলিয়ে ফেলবে না।
+
+### `glClearColor()`
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+👉 Window-এর **Background/Clear Color** সেট করে।
+
+### `glColor3f()`
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+👉 Drawing করা **Object-এর Color** সেট করে।
+
+যেমন:
+
+```cpp
+glClearColor(0.0, 0.0, 0.0, 1.0);  // Background Black
+
+glColor3f(1.0, 0.0, 0.0);           // Object Red
+```
+
+Output:
+
+```text
++---------------------------+
+|                           |
+|           RED             |
+|          OBJECT           |
+|                           |
+|     BLACK BACKGROUND      |
+|                           |
++---------------------------+
+```
+
+---
