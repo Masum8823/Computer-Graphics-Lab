@@ -479,3 +479,35 @@ glClearColor(0.0, 0.0, 1.0, 1.0);
 **Answer:** GLUT event loop চালু রাখে এবং window ও বিভিন্ন event handle করে।
 
 ---
+
+# 14. Exam-এর জন্য Short Version
+
+যদি exam-এ খুব দ্রুত মনে করতে হয়:
+
+```text
+glutInit()
+    ↓
+GLUT Start
+
+glutInitWindowSize()
+    ↓
+Window Size
+
+glutCreateWindow()
+    ↓
+Window Create
+
+glClearColor()
+    ↓
+Background Color Set
+
+glutDisplayFunc()
+    ↓
+Display Function Register
+
+glutMainLoop()
+    ↓
+Window চালু রাখে
+```
+
+---
