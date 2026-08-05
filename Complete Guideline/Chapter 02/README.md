@@ -16,3 +16,36 @@
 * Background Color পরিবর্তন করার সহজ নিয়ম
 
 ---
+
+# 2. Basic Code
+
+```cpp
+#include <GL/glut.h>
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+
+    glutInitWindowSize(800, 600);
+
+    glutCreateWindow("Background Color");
+
+    glClearColor(0.0, 0.0, 1.0, 1.0);
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+এই code run করলে Window-এর Background **Blue** হবে।
+
+---
