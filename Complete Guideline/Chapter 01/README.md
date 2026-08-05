@@ -377,3 +377,37 @@ Output Show
 | `glutMainLoop()`       | Window ও event loop চালু রাখে      |
 
 ---
+
+# 12. Important Difference
+
+### `glClearColor()` বনাম `glClear()`
+
+এই দুইটা খুব ভালোভাবে মনে রাখবে।
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+এটি **color সেট করে**।
+
+আর:
+
+```cpp
+glClear(GL_COLOR_BUFFER_BIT);
+```
+
+এটি **buffer clear করে এবং সেট করা clear color ব্যবহার করে**।
+
+### সহজভাবে:
+
+```text
+glClearColor()
+      ↓
+কোন Color হবে সেটা সেট করে
+
+glClear()
+      ↓
+Screen/Color Buffer clear করে
+```
+
+---
