@@ -533,3 +533,23 @@ glColor3f()
       ↓
 Object-এর Color
 ```
+
+
+### সবচেয়ে গুরুত্বপূর্ণ Color Codes
+
+```cpp
+Red     → glClearColor(1,0,0,1);
+Green   → glClearColor(0,1,0,1);
+Blue    → glClearColor(0,0,1,1);
+Yellow  → glClearColor(1,1,0,1);
+Cyan    → glClearColor(0,1,1,1);
+Magenta → glClearColor(1,0,1,1);
+White   → glClearColor(1,1,1,1);
+Black   → glClearColor(0,0,0,1);
+```
+
+---
+
+## One-Line Memory Trick
+
+> **`glClearColor()` = Background-এর Color, `glColor3f()` = Object-এর Color।**
