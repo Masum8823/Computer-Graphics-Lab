@@ -511,3 +511,41 @@ Window চালু রাখে
 ```
 
 ---
+
+# 15. একদম সহজে মনে রাখার Trick
+
+```text
+INIT
+ ↓
+SIZE
+ ↓
+CREATE
+ ↓
+COLOR
+ ↓
+DISPLAY
+ ↓
+LOOP
+```
+
+অর্থাৎ:
+
+> **আগে GLUT চালু → Window-এর Size → Window তৈরি → Color → Display Function → Main Loop**
+
+---
+
+## Final Output
+
+এই program run করলে একটি:
+
+```text
+800 × 600
+```
+
+size-এর window তৈরি হবে এবং তার background হবে:
+
+```text
+BLUE
+```
+
+এই program-এ এখনো কোনো Point, Line, Triangle বা অন্য Shape আঁকা হয়নি।
