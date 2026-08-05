@@ -408,3 +408,33 @@ Output:
 ```
 
 ---
+
+# 13. Common Mistake
+
+অনেকে শুধু:
+
+```cpp
+glClearColor(1.0, 0.0, 0.0, 1.0);
+```
+
+লিখে ভাবে Background Red হয়ে যাবে।
+
+কিন্তু `display()`-এ:
+
+```cpp
+glClear(GL_COLOR_BUFFER_BIT);
+```
+
+থাকতে হবে।
+
+সঠিকভাবে:
+
+```cpp
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glFlush();
+}
+```
+
+---
