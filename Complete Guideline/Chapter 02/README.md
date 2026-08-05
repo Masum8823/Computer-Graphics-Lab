@@ -49,3 +49,156 @@ int main(int argc, char** argv)
 এই code run করলে Window-এর Background **Blue** হবে।
 
 ---
+
+# 3. `glClearColor()` কী?
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+`glClearColor()` দিয়ে OpenGL-এর **clear/background color** নির্ধারণ করা হয়।
+
+এর syntax:
+
+```cpp
+glClearColor(R, G, B, A);
+```
+
+এখানে:
+
+```text
+R → Red
+G → Green
+B → Blue
+A → Alpha
+```
+
+---
+
+# 4. RGB কী?
+
+RGB হলো:
+
+```text
+R = Red
+G = Green
+B = Blue
+```
+
+প্রতিটি value সাধারণত:
+
+```text
+0.0 → Minimum
+1.0 → Maximum
+```
+
+অর্থাৎ:
+
+```text
+0.0 = Color নেই
+1.0 = Color পুরোপুরি আছে
+```
+
+---
+
+# 5. Basic Colors
+
+### Red
+
+```cpp
+glClearColor(1.0, 0.0, 0.0, 1.0);
+```
+
+```text
+Red   = 1
+Green = 0
+Blue  = 0
+```
+
+Output → **Red Background**
+
+---
+
+### Green
+
+```cpp
+glClearColor(0.0, 1.0, 0.0, 1.0);
+```
+
+Output → **Green Background**
+
+---
+
+### Blue
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+Output → **Blue Background**
+
+---
+
+### White
+
+```cpp
+glClearColor(1.0, 1.0, 1.0, 1.0);
+```
+
+তিনটি Color-ই maximum।
+
+Output → **White Background**
+
+---
+
+### Black
+
+```cpp
+glClearColor(0.0, 0.0, 0.0, 1.0);
+```
+
+তিনটি Color-ই zero।
+
+Output → **Black Background**
+
+---
+
+# 6. Color Mixing
+
+RGB-এর মূল idea হলো তিনটি color mix করে নতুন color তৈরি করা।
+
+### Yellow
+
+```cpp
+glClearColor(1.0, 1.0, 0.0, 1.0);
+```
+
+```text
+Red   = 1
+Green = 1
+Blue  = 0
+```
+
+Output → **Yellow**
+
+---
+
+### Cyan
+
+```cpp
+glClearColor(0.0, 1.0, 1.0, 1.0);
+```
+
+Output → **Cyan**
+
+---
+
+### Magenta
+
+```cpp
+glClearColor(1.0, 0.0, 1.0, 1.0);
+```
+
+Output → **Magenta**
+
+---
