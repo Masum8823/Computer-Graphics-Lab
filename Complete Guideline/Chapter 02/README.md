@@ -508,3 +508,28 @@ glClearColor(R, G, B, A);
 **Answer:** Alpha হলো color-এর opacity/transparency সম্পর্কিত value। Basic code-এ সাধারণত `1.0` ব্যবহার করা হয়।
 
 ---
+
+# 15. Quick Revision
+
+```text
+glClearColor()
+      ↓
+Background/Clear Color
+
+RGB
+      ↓
+Red + Green + Blue
+
+Value
+      ↓
+0.0 → কম/নেই
+1.0 → Maximum
+
+Alpha
+      ↓
+Opacity/Transparency
+
+glColor3f()
+      ↓
+Object-এর Color
+```
