@@ -217,3 +217,151 @@ Output → **Magenta**
 | White   |   1 |     1 |    1 |
 
 ---
+
+# 8. মাঝামাঝি Value দিলে কী হবে?
+
+শুধু `0` বা `1` ব্যবহার করতেই হবে এমন না।
+
+যেমন:
+
+```cpp
+glClearColor(0.5, 0.0, 0.0, 1.0);
+```
+
+এখানে:
+
+```text
+Red = 0.5
+Green = 0
+Blue = 0
+```
+
+তাই Red-এর intensity কম হবে।
+
+আবার:
+
+```cpp
+glClearColor(0.2, 0.5, 1.0, 1.0);
+```
+
+এখানে তিনটি color-এর intensity আলাদা।
+
+অর্থাৎ `0.0` থেকে `1.0` এর মধ্যে value পরিবর্তন করে বিভিন্ন shade তৈরি করা যায়।
+
+---
+
+# 9. Alpha কী?
+
+`glClearColor()`-এর fourth value হলো Alpha।
+
+```cpp
+glClearColor(R, G, B, A);
+```
+
+এখানে:
+
+```text
+A = Alpha
+```
+
+সাধারণভাবে:
+
+```text
+1.0 → Fully Opaque
+0.0 → Fully Transparent
+```
+
+Basic lab code-এ আমরা সাধারণত:
+
+```cpp
+A = 1.0
+```
+
+ব্যবহার করবো।
+
+তাই:
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+এখানে:
+
+```text
+R = 0
+G = 0
+B = 1
+A = 1
+```
+
+---
+
+# 10. `glClearColor()` একা কি Background দেখাবে?
+
+না।
+
+এই দুইটা line-এর কাজ আলাদা:
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+এটি Color **set** করে।
+
+আর:
+
+```cpp
+glClear(GL_COLOR_BUFFER_BIT);
+```
+
+এটি Color Buffer **clear** করে এবং সেট করা clear color ব্যবহার করে।
+
+তাই সাধারণত:
+
+```cpp
+glClearColor(...);
+
+glClear(GL_COLOR_BUFFER_BIT);
+```
+
+দুটো একসাথে থাকে।
+
+### সহজভাবে:
+
+```text
+glClearColor()
+      ↓
+কোন Color ব্যবহার হবে?
+      ↓
+glClear()
+      ↓
+সেই Color দিয়ে Color Buffer clear
+```
+
+---
+
+# 11. Color Change করার নিয়ম
+
+ধরো বর্তমানে:
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+এটা Blue।
+
+Background Green করতে শুধু:
+
+```cpp
+glClearColor(0.0, 1.0, 0.0, 1.0);
+```
+
+করলেই হবে।
+
+Background Red করতে:
+
+```cpp
+glClearColor(1.0, 0.0, 0.0, 1.0);
+```
+
+---
