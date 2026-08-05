@@ -362,3 +362,18 @@ Output Show
 ```
 
 ---
+
+# 11. কোন Function কী কাজ করে?
+
+| Function               | কাজ                                |
+| ---------------------- | ---------------------------------- |
+| `glutInit()`           | FreeGLUT initialize করে            |
+| `glutInitWindowSize()` | Window-এর size সেট করে             |
+| `glutCreateWindow()`   | Window তৈরি করে                    |
+| `glClearColor()`       | Clear/Background color সেট করে     |
+| `glutDisplayFunc()`    | Display function register করে      |
+| `glClear()`            | Buffer clear করে                   |
+| `glFlush()`            | Drawing command execute/finish করে |
+| `glutMainLoop()`       | Window ও event loop চালু রাখে      |
+
+---
