@@ -202,3 +202,18 @@ glClearColor(1.0, 0.0, 1.0, 1.0);
 Output → **Magenta**
 
 ---
+
+# 7. Color Table
+
+| Color   | Red | Green | Blue |
+| ------- | --: | ----: | ---: |
+| Black   |   0 |     0 |    0 |
+| Red     |   1 |     0 |    0 |
+| Green   |   0 |     1 |    0 |
+| Blue    |   0 |     0 |    1 |
+| Yellow  |   1 |     1 |    0 |
+| Cyan    |   0 |     1 |    1 |
+| Magenta |   1 |     0 |    1 |
+| White   |   1 |     1 |    1 |
+
+---
