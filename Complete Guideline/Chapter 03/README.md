@@ -105,3 +105,39 @@ y = 0
 ```
 
 ---
+
+# 5. X-Axis
+
+X-axis হলো **Horizontal Line**।
+
+```text
+        -X              0              +X
+         ←--------------|--------------→
+                        |
+```
+
+### X-এর value:
+
+```text
+Negative X → Left
+
+Positive X → Right
+```
+
+উদাহরণ:
+
+```cpp
+glVertex2f(-0.5, 0.0);
+```
+
+Point হবে Center-এর **বাম দিকে**।
+
+আর:
+
+```cpp
+glVertex2f(0.5, 0.0);
+```
+
+Point হবে Center-এর **ডান দিকে**।
+
+---
