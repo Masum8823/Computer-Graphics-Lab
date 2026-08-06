@@ -391,3 +391,40 @@ y = -
 → **নিচে ডান**
 
 ---
+
+# 11. Line-এর Coordinate বুঝি
+
+আমাদের আগের Line code:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.0);
+glVertex2f(0.5, 0.0);
+
+glEnd();
+```
+
+প্রথম Point:
+
+```text
+(-0.5, 0)
+```
+
+→ Center-এর বামে।
+
+দ্বিতীয় Point:
+
+```text
+(0.5, 0)
+```
+
+→ Center-এর ডানে।
+
+তাই দুই Point-এর মধ্যে একটি **Horizontal Line** তৈরি হবে।
+
+```text
+(-0.5,0) ●────────────● (0.5,0)
+```
+
+---
