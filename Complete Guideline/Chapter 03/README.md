@@ -141,3 +141,45 @@ glVertex2f(0.5, 0.0);
 Point হবে Center-এর **ডান দিকে**।
 
 ---
+
+# 6. Y-Axis
+
+Y-axis হলো **Vertical Line**।
+
+```text
+                       +Y
+                        ↑
+                        |
+                        |
+                        0
+                        |
+                        |
+                        ↓
+                       -Y
+```
+
+### Y-এর value:
+
+```text
+Positive Y → Up
+
+Negative Y → Down
+```
+
+উদাহরণ:
+
+```cpp
+glVertex2f(0.0, 0.5);
+```
+
+Point হবে Center-এর **উপরে**।
+
+আর:
+
+```cpp
+glVertex2f(0.0, -0.5);
+```
+
+Point হবে Center-এর **নিচে**।
+
+---
