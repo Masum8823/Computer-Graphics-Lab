@@ -44,3 +44,32 @@ y → Vertical Position
 > `y` বলে Point কতটা **উপরে বা নিচে** যাবে।
 
 ---
+
+# 3. OpenGL Coordinate System
+
+Basic OpenGL coordinate system সাধারণভাবে এমন:
+
+```text
+                       +Y
+                        ↑
+                        |
+                        |
+                        |
+              (-)       |       (+)
+                        |
+          -X  ←---------+---------→  +X
+                       (0,0)
+                        |
+                        |
+                        |
+                        ↓
+                       -Y
+```
+
+এখানে Screen-এর Center:
+
+```text
+(0,0)
+```
+
+---
