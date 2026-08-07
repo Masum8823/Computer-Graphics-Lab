@@ -428,3 +428,44 @@ glEnd();
 ```
 
 ---
+
+# 12. Triangle-এর Coordinate বুঝি
+
+আগের Triangle:
+
+```cpp
+glBegin(GL_TRIANGLES);
+
+glVertex2f(0.0, 0.5);
+glVertex2f(-0.5, -0.5);
+glVertex2f(0.5, -0.5);
+
+glEnd();
+```
+
+Coordinate:
+
+```text
+             (0,0.5)
+                ●
+               / \
+              /   \
+             /     \
+            /       \
+           ●---------●
+     (-0.5,-0.5)  (0.5,-0.5)
+```
+
+এখানে:
+
+```text
+Top       → (0, 0.5)
+
+Bottom Left  → (-0.5, -0.5)
+
+Bottom Right → (0.5, -0.5)
+```
+
+এই তিনটি Point যুক্ত করলেই Triangle।
+
+---
