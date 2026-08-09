@@ -469,3 +469,40 @@ Bottom Right → (0.5, -0.5)
 এই তিনটি Point যুক্ত করলেই Triangle।
 
 ---
+
+# 13. Rectangle-এর Coordinate বুঝি
+
+```cpp
+glBegin(GL_QUADS);
+
+glVertex2f(-0.5, 0.5);
+glVertex2f(0.5, 0.5);
+glVertex2f(0.5, -0.5);
+glVertex2f(-0.5, -0.5);
+
+glEnd();
+```
+
+Coordinate:
+
+```text
+(-0.5,0.5) ●────────────● (0.5,0.5)
+            │            │
+            │            │
+            │            │
+(-0.5,-0.5)●────────────● (0.5,-0.5)
+```
+
+তাই:
+
+```text
+Top Left     → (-0.5, 0.5)
+
+Top Right    → (0.5, 0.5)
+
+Bottom Right → (0.5, -0.5)
+
+Bottom Left  → (-0.5, -0.5)
+```
+
+---
