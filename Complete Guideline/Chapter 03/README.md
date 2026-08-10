@@ -576,3 +576,23 @@ Point অনেক দূরে **উপরে ডানদিকে** যাব
 Basic OpenGL setup-এ সাধারণত `-1.0` থেকে `+1.0` range-এর মধ্যে coordinate ব্যবহার করা হয়।
 
 ---
+
+# 16. `glVertex2f()`-এর `2f` কী?
+
+```cpp
+glVertex2f(x, y);
+```
+
+এখানে:
+
+```text
+2 → 2D Coordinate
+
+f → float
+```
+
+তাই `glVertex2f()` মানে:
+
+> Float type-এর 2D coordinate দেওয়ার function।
+
+---
