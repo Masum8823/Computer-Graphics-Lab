@@ -596,3 +596,50 @@ f → float
 > Float type-এর 2D coordinate দেওয়ার function।
 
 ---
+
+# 17. Common Mistake
+
+### Mistake 1: X এবং Y উল্টে ফেলা
+
+```cpp
+glVertex2f(-0.5, 0.5);
+```
+
+এখানে:
+
+```text
+X = -0.5 → Left
+Y = +0.5 → Up
+```
+
+তাই **Top Left**।
+
+---
+
+### Mistake 2: Y-axis-এর direction ভুল মনে করা
+
+OpenGL-এর basic 2D coordinate-এ:
+
+```text
++y → Up
+
+-y → Down
+```
+
+তাই:
+
+```cpp
+glVertex2f(0.0, 0.5);
+```
+
+→ Up
+
+এবং:
+
+```cpp
+glVertex2f(0.0, -0.5);
+```
+
+→ Down
+
+---
