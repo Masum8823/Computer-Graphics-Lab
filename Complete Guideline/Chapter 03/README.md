@@ -706,3 +706,40 @@ glVertex2f(0.0, -0.5);
 **Answer:** Center-এর **নিচে ডানদিকে**।
 
 ---
+
+
+# 19. Quick Revision
+
+```text
+             +Y
+              ↑
+              |
+      (-,+)   |   (+,+)
+              |
+-X ←----------0----------→ +X
+            (0,0)
+              |
+      (-,-)   |   (+,-)
+              |
+              ↓
+             -Y
+```
+
+### Shortcut
+
+```text
+X → Left / Right
+
+Y → Up / Down
+```
+
+আর sign দেখে position বের করবে:
+
+```text
+(+,+) → Top Right
+(-,+) → Top Left
+(-,-) → Bottom Left
+(+,-) → Bottom Right
+```
+
+---
