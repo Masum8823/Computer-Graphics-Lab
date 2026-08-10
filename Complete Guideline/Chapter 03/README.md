@@ -506,3 +506,41 @@ Bottom Left  → (-0.5, -0.5)
 ```
 
 ---
+# 14. Circle-এর Coordinate
+
+Circle আঁকার সময় আমরা যে Formula ব্যবহার করেছি:
+
+```text
+x = CenterX + Radius × cos(angle)
+
+y = CenterY + Radius × sin(angle)
+```
+
+এখানে:
+
+```text
+CenterX → Circle-এর বাম/ডান position
+
+CenterY → Circle-এর উপর/নিচ position
+
+Radius → Circle-এর Size
+```
+
+যেমন:
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+float y =  0.0 + 0.25 * sin(angle);
+```
+
+তাহলে:
+
+```text
+Center = (-0.1, 0.0)
+
+Radius = 0.25
+```
+
+অর্থাৎ Circle-এর Center `(0,0)` থেকে একটু বামে।
+
+---
