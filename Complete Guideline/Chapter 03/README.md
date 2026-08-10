@@ -643,3 +643,66 @@ glVertex2f(0.0, -0.5);
 → Down
 
 ---
+
+
+# 18. Viva Questions
+
+### Q1. OpenGL-এ `(0,0)` কী?
+
+**Answer:** এটি হলো Origin, যা basic 2D coordinate system-এর Center হিসেবে ধরা হয়।
+
+---
+
+### Q2. Positive X কোন দিকে?
+
+**Answer:** Right দিকে।
+
+---
+
+### Q3. Negative X কোন দিকে?
+
+**Answer:** Left দিকে।
+
+---
+
+### Q4. Positive Y কোন দিকে?
+
+**Answer:** Up দিকে।
+
+---
+
+### Q5. Negative Y কোন দিকে?
+
+**Answer:** Down দিকে।
+
+---
+
+### Q6. `glVertex2f()` কী কাজ করে?
+
+**Answer:** 2D float coordinate নির্ধারণ করে।
+
+---
+
+### Q7. `glVertex2f(0.5,0.5)` কোথায় Point তৈরি করবে?
+
+**Answer:** Center-এর **উপরে ডানদিকে**।
+
+---
+
+### Q8. `glVertex2f(-0.5,-0.5)` কোথায় Point তৈরি করবে?
+
+**Answer:** Center-এর **নিচে বামদিকে**।
+
+---
+
+### Q9. `glVertex2f(-0.5,0.5)` কোথায় Point তৈরি করবে?
+
+**Answer:** Center-এর **উপরে বামদিকে**।
+
+---
+
+### Q10. `glVertex2f(0.5,-0.5)` কোথায় Point তৈরি করবে?
+
+**Answer:** Center-এর **নিচে ডানদিকে**।
+
+---
