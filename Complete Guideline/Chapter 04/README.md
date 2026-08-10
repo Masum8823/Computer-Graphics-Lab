@@ -34,3 +34,34 @@ glutMainLoop()
 > **Library include করার জন্য ব্যবহার করি।**
 
 ---
+
+# 2. `glutInit()`
+
+```cpp
+glutInit(&argc, argv);
+```
+
+### কাজ
+
+FreeGLUT initialize করে।
+
+অর্থাৎ program-এর জন্য GLUT environment প্রস্তুত করে।
+
+### সহজভাবে
+
+> **FreeGLUT চালু করে।**
+
+### সাধারণত কোথায় থাকবে?
+
+`main()`-এর শুরুতে।
+
+```cpp
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+
+    // Other code
+}
+```
+
+---
