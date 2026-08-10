@@ -743,3 +743,7 @@ Y → Up / Down
 ```
 
 ---
+
+# 20. One-Line Memory Trick
+
+> **`glVertex2f(x,y)` → প্রথমে X দেখে Left/Right, তারপর Y দেখে Up/Down।**
