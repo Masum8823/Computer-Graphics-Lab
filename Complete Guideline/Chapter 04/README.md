@@ -187,3 +187,45 @@ Yellow  → (1,1,0,1)
 ```
 
 ---
+
+# 6. `glClear()`
+
+```cpp
+glClear(GL_COLOR_BUFFER_BIT);
+```
+
+### কাজ
+
+Color Buffer clear করে।
+
+আমরা সাধারণত `glClearColor()` দিয়ে যে color set করি, `glClear()` সেই color দিয়ে buffer clear করে।
+
+### Example
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+
+glClear(GL_COLOR_BUFFER_BIT);
+```
+
+এখানে:
+
+```text
+glClearColor()
+      ↓
+Blue Color Set
+
+glClear()
+      ↓
+Color Buffer Clear
+      ↓
+Blue Background
+```
+
+### সহজভাবে
+
+> `glClearColor()` = কোন color হবে সেটা ঠিক করে।
+
+> `glClear()` = সেই color দিয়ে screen clear করে।
+
+---
