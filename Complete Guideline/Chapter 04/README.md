@@ -329,3 +329,81 @@ GLUT-এর main event loop শুরু করে।
 এটা না থাকলে program তৈরি করা window-কে স্বাভাবিকভাবে event loop-এ চালিয়ে রাখবে না।
 
 ---
+
+# 10. `glBegin()`
+
+```cpp
+glBegin(GL_LINES);
+```
+
+### কাজ
+
+Drawing শুরু করে এবং OpenGL-কে বলে **কোন type-এর primitive আঁকবো**।
+
+### Syntax
+
+```cpp
+glBegin(MODE);
+```
+
+### Common Modes
+
+```text
+GL_POINTS
+GL_LINES
+GL_TRIANGLES
+GL_QUADS
+GL_POLYGON
+```
+
+---
+
+## `GL_POINTS`
+
+```cpp
+glBegin(GL_POINTS);
+```
+
+Point আঁকার জন্য।
+
+---
+
+## `GL_LINES`
+
+```cpp
+glBegin(GL_LINES);
+```
+
+Line আঁকার জন্য।
+
+---
+
+## `GL_TRIANGLES`
+
+```cpp
+glBegin(GL_TRIANGLES);
+```
+
+Triangle আঁকার জন্য।
+
+---
+
+## `GL_QUADS`
+
+```cpp
+glBegin(GL_QUADS);
+```
+
+চারটি Vertex দিয়ে quadrilateral আঁকার জন্য।
+
+---
+
+## `GL_POLYGON`
+
+```cpp
+glBegin(GL_POLYGON);
+```
+
+অনেকগুলো Vertex ব্যবহার করে closed polygon আঁকার জন্য।
+
+---
