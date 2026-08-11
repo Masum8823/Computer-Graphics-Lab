@@ -65,3 +65,35 @@ int main(int argc, char** argv)
 ```
 
 ---
+# 3. `glutInitWindowSize()`
+
+```cpp
+glutInitWindowSize(800, 600);
+```
+
+### কাজ
+
+Window-এর Width এবং Height নির্ধারণ করে।
+
+```text
+800 → Width
+600 → Height
+```
+
+### Syntax
+
+```cpp
+glutInitWindowSize(width, height);
+```
+
+### Example
+
+```cpp
+glutInitWindowSize(800, 600);
+```
+
+অর্থাৎ:
+
+> Window-এর Width = 800 pixels এবং Height = 600 pixels।
+
+---
