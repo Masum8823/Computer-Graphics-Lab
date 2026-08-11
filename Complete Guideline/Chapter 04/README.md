@@ -459,3 +459,44 @@ Coordinate
 ```
 
 ---
+
+# 12. `glEnd()`
+
+```cpp
+glEnd();
+```
+
+### কাজ
+
+`glBegin()` দিয়ে শুরু করা drawing শেষ করে।
+
+### Example
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.0);
+glVertex2f(0.5, 0.0);
+
+glEnd();
+```
+
+Flow:
+
+```text
+glBegin()
+   ↓
+Vertex
+   ↓
+Vertex
+   ↓
+glEnd()
+```
+
+### সহজভাবে
+
+> `glBegin()` = Drawing Start
+
+> `glEnd()` = Drawing Stop
+
+---
