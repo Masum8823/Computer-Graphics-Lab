@@ -258,3 +258,47 @@ void display()
 ```
 
 ---
+
+# 8. `glutDisplayFunc()`
+
+```cpp
+glutDisplayFunc(display);
+```
+
+### কাজ
+
+`display()` function-কে **Display Callback Function** হিসেবে register করে।
+
+মানে:
+
+> Window-এ কিছু draw/display করার প্রয়োজন হলে `display()` function call করো।
+
+### Example
+
+```cpp
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    // ...
+
+    glutDisplayFunc(display);
+
+    // ...
+}
+```
+
+### খুব সহজভাবে
+
+```text
+glutDisplayFunc(display)
+          ↓
+"Display-এর কাজ হলে
+ display() function ব্যবহার করো"
+```
+
+---
