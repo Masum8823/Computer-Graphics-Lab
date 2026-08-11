@@ -133,3 +133,57 @@ Computer Graphics
 > **Window তৈরি করে এবং title দেয়।**
 
 ---
+
+# 5. `glClearColor()`
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+### কাজ
+
+Window-এর **Background/Clear Color** নির্ধারণ করে।
+
+### Syntax
+
+```cpp
+glClearColor(R, G, B, A);
+```
+
+এখানে:
+
+```text
+R → Red
+G → Green
+B → Blue
+A → Alpha
+```
+
+### Example
+
+```cpp
+glClearColor(0.0, 0.0, 1.0, 1.0);
+```
+
+এখানে:
+
+```text
+R = 0
+G = 0
+B = 1
+```
+
+তাই Background হবে **Blue**।
+
+### Common Colors
+
+```text
+Red     → (1,0,0,1)
+Green   → (0,1,0,1)
+Blue    → (0,0,1,1)
+White   → (1,1,1,1)
+Black   → (0,0,0,1)
+Yellow  → (1,1,0,1)
+```
+
+---
