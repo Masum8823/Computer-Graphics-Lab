@@ -407,3 +407,55 @@ glBegin(GL_POLYGON);
 অনেকগুলো Vertex ব্যবহার করে closed polygon আঁকার জন্য।
 
 ---
+
+# 11. `glVertex2f()`
+
+```cpp
+glVertex2f(0.5, 0.5);
+```
+
+### কাজ
+
+2D coordinate নির্ধারণ করে।
+
+### Syntax
+
+```cpp
+glVertex2f(x, y);
+```
+
+এখানে:
+
+```text
+x → Left / Right
+
+y → Up / Down
+```
+
+### Example
+
+```cpp
+glVertex2f(0.5, 0.5);
+```
+
+Point হবে:
+
+> **Top Right**
+
+কারণ:
+
+```text
+x = +0.5 → Right
+
+y = +0.5 → Up
+```
+
+### মনে রাখবে
+
+```text
+glVertex2f()
+      ↓
+Coordinate
+```
+
+---
