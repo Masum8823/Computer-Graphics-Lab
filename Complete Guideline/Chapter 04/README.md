@@ -302,3 +302,30 @@ glutDisplayFunc(display)
 ```
 
 ---
+
+# 9. `glutMainLoop()`
+
+```cpp
+glutMainLoop();
+```
+
+### কাজ
+
+GLUT-এর main event loop শুরু করে।
+
+এটি Window-কে চালু রাখে এবং বিভিন্ন event handle করার জন্য অপেক্ষা করে।
+
+যেমন:
+
+* Window refresh
+* Keyboard
+* Mouse
+* Window events
+
+### সহজভাবে
+
+> **Window চালু রাখে।**
+
+এটা না থাকলে program তৈরি করা window-কে স্বাভাবিকভাবে event loop-এ চালিয়ে রাখবে না।
+
+---
