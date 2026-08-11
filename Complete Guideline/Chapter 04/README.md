@@ -500,3 +500,32 @@ glEnd()
 > `glEnd()` = Drawing Stop
 
 ---
+
+# 13. `glPointSize()`
+
+```cpp
+glPointSize(10);
+```
+
+### কাজ
+
+Point-এর size নির্ধারণ করে।
+
+### Example
+
+```cpp
+glPointSize(10);
+
+glBegin(GL_POINTS);
+glVertex2f(0.0, 0.0);
+glEnd();
+```
+
+এখানে Point-এর size হবে `10`।
+
+### সহজভাবে
+
+> **Point কত বড় হবে সেটা ঠিক করে।**
+
+---
+
