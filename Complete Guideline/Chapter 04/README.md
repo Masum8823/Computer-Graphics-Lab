@@ -97,3 +97,39 @@ glutInitWindowSize(800, 600);
 > Window-এর Width = 800 pixels এবং Height = 600 pixels।
 
 ---
+
+# 4. `glutCreateWindow()`
+
+```cpp
+glutCreateWindow("OpenGL Lab");
+```
+
+### কাজ
+
+একটি OpenGL Window তৈরি করে।
+
+এখানে:
+
+```text
+"OpenGL Lab"
+```
+
+হলো Window-এর Title।
+
+### Example
+
+```cpp
+glutCreateWindow("Computer Graphics");
+```
+
+তাহলে Window-এর উপরে title হবে:
+
+```text
+Computer Graphics
+```
+
+### সহজভাবে
+
+> **Window তৈরি করে এবং title দেয়।**
+
+---
