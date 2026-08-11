@@ -229,3 +229,32 @@ Blue Background
 > `glClear()` = সেই color দিয়ে screen clear করে।
 
 ---
+
+# 7. `glFlush()`
+
+```cpp
+glFlush();
+```
+
+### কাজ
+
+OpenGL-এর pending drawing commands execute/finish করে output দেখাতে সাহায্য করে।
+
+### সহজভাবে
+
+> **Drawing-এর command screen-এ পাঠিয়ে দাও।**
+
+Basic program-এ সাধারণত:
+
+```cpp
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Drawing
+
+    glFlush();
+}
+```
+
+---
