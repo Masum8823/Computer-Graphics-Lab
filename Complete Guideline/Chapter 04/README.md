@@ -881,3 +881,37 @@ glFlush()
 ```
 
 ---
+
+# 24. Final Revision
+
+```text
+WINDOW
+↓
+glutInit()
+↓
+glutInitWindowSize()
+↓
+glutCreateWindow()
+↓
+glClearColor()
+↓
+glutDisplayFunc()
+↓
+glutMainLoop()
+
+DISPLAY
+↓
+glClear()
+↓
+glBegin()
+↓
+glVertex2f()
+↓
+glEnd()
+↓
+glFlush()
+```
+
+### এক লাইনে:
+
+> **`glut` → Window চালানোর setup, `gl` → Shape/Color/Drawing করার কাজ।**
