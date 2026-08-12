@@ -822,3 +822,30 @@ glColor3f() → Object
 **Answer:** GLUT event loop চালু করে এবং Window চালু রাখে।
 
 ---
+
+# 22. সবচেয়ে Important 10 Functions
+
+Exam-এর আগে অন্তত এগুলো অবশ্যই মনে রাখবে:
+
+```text
+1. glutInit()
+2. glutInitWindowSize()
+3. glutCreateWindow()
+4. glClearColor()
+5. glutDisplayFunc()
+6. glutMainLoop()
+7. glClear()
+8. glBegin()
+9. glVertex2f()
+10. glEnd()
+```
+
+তারপর:
+
+```text
+glColor3f()
+glPointSize()
+glFlush()
+```
+
+---
