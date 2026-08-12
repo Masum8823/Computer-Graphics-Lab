@@ -562,3 +562,36 @@ glColor3f(0.0, 1.0, 0.0);
 Output → **Green**
 
 ---
+# 15. `glColor3f()` vs `glClearColor()`
+
+এটা খুব important।
+
+### Background Color
+
+```cpp
+glClearColor(0.0, 0.0, 0.0, 1.0);
+```
+
+→ Background **Black**
+
+### Object Color
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+→ Object **Red**
+
+### সহজভাবে
+
+```text
+glClearColor()
+      ↓
+Background Color
+
+glColor3f()
+      ↓
+Object Color
+```
+
+---
