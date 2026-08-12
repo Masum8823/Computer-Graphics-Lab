@@ -622,3 +622,51 @@ glFlush()
 ```
 
 ---
+
+# 17. `display()` Function
+
+```cpp
+void display()
+{
+    // Drawing code
+}
+```
+
+এটা OpenGL-এর built-in function না।
+
+এটা আমরা নিজেরা তৈরি করি।
+
+এর ভিতরে সাধারণত:
+
+```cpp
+glClear();
+
+glBegin();
+
+// Drawing
+
+glEnd();
+
+glFlush();
+```
+
+থাকে।
+
+### Example
+
+```cpp
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glBegin(GL_POINTS);
+
+    glVertex2f(0.0, 0.0);
+
+    glEnd();
+
+    glFlush();
+}
+```
+
+---
