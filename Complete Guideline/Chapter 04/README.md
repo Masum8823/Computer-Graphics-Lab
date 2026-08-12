@@ -706,3 +706,31 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 19. পুরো Program-এর Flow
+
+```text
+#include <GL/glut.h>
+        ↓
+glutInit()
+        ↓
+Window Size
+        ↓
+Window Create
+        ↓
+Background Color
+        ↓
+Display Function Register
+        ↓
+Main Loop
+        ↓
+display()
+        ↓
+glClear()
+        ↓
+Drawing
+        ↓
+glFlush()
+```
+
+---
