@@ -595,3 +595,30 @@ Object Color
 ```
 
 ---
+
+# 16. `glFlush()` কোথায় ব্যবহার করবো?
+
+সাধারণ Basic drawing program:
+
+```cpp
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Drawing code
+
+    glFlush();
+}
+```
+
+অর্থাৎ সাধারণ flow:
+
+```text
+glClear()
+   ↓
+Drawing
+   ↓
+glFlush()
+```
+
+---
