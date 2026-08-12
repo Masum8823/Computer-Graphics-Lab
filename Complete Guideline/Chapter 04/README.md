@@ -754,3 +754,71 @@ glFlush()
 | `glColor3f()`          | Object color                    |
 
 ---
+
+# 21. Viva Questions
+
+### Q1. `glBegin()` কী কাজ করে?
+
+**Answer:** OpenGL primitive drawing শুরু করে এবং drawing mode নির্ধারণ করে।
+
+---
+
+### Q2. `glEnd()` কী কাজ করে?
+
+**Answer:** `glBegin()` দিয়ে শুরু করা drawing শেষ করে।
+
+---
+
+### Q3. `glVertex2f()` কী?
+
+**Answer:** 2D float coordinate দেওয়ার function।
+
+---
+
+### Q4. `glPointSize()` কী কাজ করে?
+
+**Answer:** Point-এর size নির্ধারণ করে।
+
+---
+
+### Q5. `glColor3f()` কী কাজ করে?
+
+**Answer:** Drawing object-এর color নির্ধারণ করে।
+
+---
+
+### Q6. `glClearColor()` এবং `glColor3f()`-এর পার্থক্য কী?
+
+**Answer:**
+
+```text
+glClearColor() → Background
+
+glColor3f() → Object
+```
+
+---
+
+### Q7. `glBegin(GL_LINES)` কী বোঝায়?
+
+**Answer:** Line drawing শুরু হবে।
+
+---
+
+### Q8. `glBegin(GL_TRIANGLES)` কী বোঝায়?
+
+**Answer:** Triangle drawing শুরু হবে।
+
+---
+
+### Q9. `glutDisplayFunc(display)` কী?
+
+**Answer:** `display()` function-কে display callback হিসেবে register করে।
+
+---
+
+### Q10. `glutMainLoop()` কী?
+
+**Answer:** GLUT event loop চালু করে এবং Window চালু রাখে।
+
+---
