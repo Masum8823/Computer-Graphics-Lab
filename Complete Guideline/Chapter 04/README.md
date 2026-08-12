@@ -849,3 +849,35 @@ glFlush()
 ```
 
 ---
+# 23. Super Easy Memory Trick
+
+```text
+glut → Window/System related
+
+gl → Drawing related
+```
+
+### `glut` দিয়ে:
+
+```text
+glutInit()
+glutInitWindowSize()
+glutCreateWindow()
+glutDisplayFunc()
+glutMainLoop()
+```
+
+### `gl` দিয়ে:
+
+```text
+glClear()
+glClearColor()
+glBegin()
+glEnd()
+glVertex2f()
+glColor3f()
+glPointSize()
+glFlush()
+```
+
+---
