@@ -670,3 +670,39 @@ void display()
 ```
 
 ---
+
+# 18. Basic Program Structure
+
+এখন পর্যন্ত শেখা function দিয়ে একটি Basic OpenGL program সাধারণত এমন:
+
+```cpp
+#include <GL/glut.h>
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Drawing code
+
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+
+    glutInitWindowSize(800, 600);
+
+    glutCreateWindow("OpenGL Lab");
+
+    glClearColor(0.0, 0.0, 1.0, 1.0);
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
