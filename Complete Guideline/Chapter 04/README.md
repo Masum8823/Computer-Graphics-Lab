@@ -734,3 +734,23 @@ glFlush()
 ```
 
 ---
+
+# 20. Function Cheat Sheet
+
+| Function               | কাজ                             |
+| ---------------------- | ------------------------------- |
+| `glutInit()`           | FreeGLUT initialize             |
+| `glutInitWindowSize()` | Window size                     |
+| `glutCreateWindow()`   | Window create + title           |
+| `glClearColor()`       | Background/Clear color          |
+| `glutDisplayFunc()`    | Display function register       |
+| `glutMainLoop()`       | Event loop চালু রাখে            |
+| `glClear()`            | Buffer clear                    |
+| `glFlush()`            | Drawing commands execute/finish |
+| `glBegin()`            | Drawing শুরু                    |
+| `glEnd()`              | Drawing শেষ                     |
+| `glVertex2f()`         | 2D coordinate                   |
+| `glPointSize()`        | Point size                      |
+| `glColor3f()`          | Object color                    |
+
+---
