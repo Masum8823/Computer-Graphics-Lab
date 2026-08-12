@@ -529,3 +529,36 @@ glEnd();
 
 ---
 
+# 14. `glColor3f()`
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+### কাজ
+
+Drawing করা object-এর color সেট করে।
+
+### Syntax
+
+```cpp
+glColor3f(R, G, B);
+```
+
+### Example
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+Output → **Red**
+
+আর:
+
+```cpp
+glColor3f(0.0, 1.0, 0.0);
+```
+
+Output → **Green**
+
+---
