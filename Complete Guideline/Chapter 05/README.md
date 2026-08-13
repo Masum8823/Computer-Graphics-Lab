@@ -282,3 +282,29 @@ y = - → Down
 ```
 
 ---
+
+# 10. একসাথে Multiple Point
+
+একই `glBegin(GL_POINTS)` এর মধ্যে একাধিক Point দেওয়া যায়।
+
+```cpp
+glBegin(GL_POINTS);
+
+glVertex2f(0.0, 0.0);
+glVertex2f(0.5, 0.5);
+glVertex2f(-0.5, 0.5);
+glVertex2f(-0.5, -0.5);
+glVertex2f(0.5, -0.5);
+
+glEnd();
+```
+
+এখানে মোট:
+
+```text
+5টি Point
+```
+
+আঁকা হবে।
+
+---
