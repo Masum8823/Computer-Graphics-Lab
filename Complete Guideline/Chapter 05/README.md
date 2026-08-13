@@ -334,3 +334,37 @@ B = 0
 তাই Point হবে **Red**।
 
 ---
+
+# 12. Point + Size + Color
+
+একটা complete example:
+
+```cpp
+glPointSize(15);
+
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_POINTS);
+
+glVertex2f(0.0, 0.0);
+
+glEnd();
+```
+
+এখানে:
+
+```text
+glPointSize()
+    ↓
+Point-এর Size
+
+glColor3f()
+    ↓
+Point-এর Color
+
+glVertex2f()
+    ↓
+Point-এর Position
+```
+
+---
