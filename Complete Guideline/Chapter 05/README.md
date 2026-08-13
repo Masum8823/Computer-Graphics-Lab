@@ -431,3 +431,32 @@ glVertex2f(-0.5, 0.5);
 > **Top Left**
 
 ---
+
+# 15. Important Difference
+
+### `glPointSize()`
+
+Point-এর **Size**
+
+### `glColor3f()`
+
+Point-এর **Color**
+
+### `glVertex2f()`
+
+Point-এর **Position**
+
+### `GL_POINTS`
+
+Point drawing-এর **Mode**
+
+এগুলো খুব সহজে মনে রাখো:
+
+```text
+GL_POINTS       → কী আঁকবো?
+glPointSize()   → কত বড়?
+glColor3f()     → কোন Color?
+glVertex2f()    → কোথায়?
+```
+
+---
