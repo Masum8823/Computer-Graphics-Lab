@@ -368,3 +368,66 @@ Point-এর Position
 ```
 
 ---
+
+# 13. Point-এর Basic Flow
+
+```text
+glPointSize()
+      ↓
+Size ঠিক করে
+
+glColor3f()
+      ↓
+Color ঠিক করে
+
+glBegin(GL_POINTS)
+      ↓
+Point Drawing শুরু
+
+glVertex2f(x,y)
+      ↓
+Point-এর Position
+
+glEnd()
+      ↓
+Drawing শেষ
+
+glFlush()
+      ↓
+Output Show
+```
+
+---
+
+# 14. `glVertex2f()` আবার মনে রাখি
+
+```cpp
+glVertex2f(x, y);
+```
+
+এখানে:
+
+```text
+First value  → X → Left / Right
+
+Second value → Y → Up / Down
+```
+
+Example:
+
+```cpp
+glVertex2f(-0.5, 0.5);
+```
+
+মানে:
+
+```text
+-0.5 → Left
++0.5 → Up
+```
+
+অর্থাৎ:
+
+> **Top Left**
+
+---
