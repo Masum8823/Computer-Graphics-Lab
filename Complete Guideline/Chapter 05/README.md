@@ -308,3 +308,29 @@ glEnd();
 আঁকা হবে।
 
 ---
+
+# 11. Point-এর Color
+
+Point-এর color পরিবর্তন করতে `glColor3f()` ব্যবহার করা যায়।
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_POINTS);
+
+glVertex2f(0.0, 0.0);
+
+glEnd();
+```
+
+এখানে:
+
+```text
+R = 1
+G = 0
+B = 0
+```
+
+তাই Point হবে **Red**।
+
+---
