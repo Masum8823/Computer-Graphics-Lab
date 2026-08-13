@@ -56,3 +56,206 @@ int main(int argc, char** argv)
 ```
 
 ---
+# 3. Line-by-Line Explanation
+
+## `glPointSize(10);`
+
+```cpp
+glPointSize(10);
+```
+
+Point-এর **size** নির্ধারণ করে।
+
+এখানে:
+
+```text
+Point Size = 10
+```
+
+অর্থাৎ Point সাধারণের চেয়ে বড় দেখা যাবে।
+
+### Size পরিবর্তন করা যায়
+
+```cpp
+glPointSize(5);
+```
+
+→ ছোট Point
+
+```cpp
+glPointSize(10);
+```
+
+→ বড় Point
+
+```cpp
+glPointSize(20);
+```
+
+→ আরও বড় Point
+
+### মনে রাখো
+
+> `glPointSize()` → Point কত বড় হবে।
+
+---
+
+# 4. `glBegin(GL_POINTS);`
+
+```cpp
+glBegin(GL_POINTS);
+```
+
+OpenGL-কে বলা হচ্ছে:
+
+> এখন আমরা **Point আঁকবো**।
+
+`GL_POINTS` হলো একটি OpenGL primitive.
+
+### সহজভাবে
+
+```text
+GL_POINTS
+    ↓
+Point Drawing Mode
+```
+
+---
+
+# 5. `glVertex2f(0.0, 0.0);`
+
+```cpp
+glVertex2f(0.0, 0.0);
+```
+
+এখানে Point-এর coordinate দেওয়া হয়েছে।
+
+```text
+x = 0.0
+y = 0.0
+```
+
+`(0,0)` হলো screen-এর **Center**।
+
+তাই Point টি Window-এর মাঝখানে দেখা যাবে।
+
+```text
+             +Y
+              ↑
+              |
+              |
+              ●  (0,0)
+              |
+              |
+              ↓
+             -Y
+```
+
+---
+
+# 6. `glEnd();`
+
+```cpp
+glEnd();
+```
+
+Point drawing শেষ করে।
+
+```text
+glBegin()
+    ↓
+Point
+    ↓
+glEnd()
+```
+
+---
+
+# 7. `glFlush();`
+
+```cpp
+glFlush();
+```
+
+OpenGL-এর drawing command execute/finish করে output দেখাতে সাহায্য করে।
+
+সহজভাবে:
+
+> Drawing-এর কাজ screen-এ পাঠিয়ে দাও।
+
+---
+
+# 8. Coordinate Change করলে কী হবে?
+
+আমাদের code:
+
+```cpp
+glVertex2f(0.0, 0.0);
+```
+
+এতে Point Center-এ।
+
+কিন্তু:
+
+```cpp
+glVertex2f(0.5, 0.5);
+```
+
+দিলে Point হবে:
+
+> **Top Right**
+
+কারণ:
+
+```text
+x = +0.5 → Right
+
+y = +0.5 → Up
+```
+
+---
+
+### Top Left
+
+```cpp
+glVertex2f(-0.5, 0.5);
+```
+
+```text
+x = - → Left
+y = + → Up
+```
+
+→ **Top Left**
+
+---
+
+### Bottom Left
+
+```cpp
+glVertex2f(-0.5, -0.5);
+```
+
+```text
+x = - → Left
+y = - → Down
+```
+
+→ **Bottom Left**
+
+---
+
+### Bottom Right
+
+```cpp
+glVertex2f(0.5, -0.5);
+```
+
+```text
+x = + → Right
+y = - → Down
+```
+
+→ **Bottom Right**
+
+---
