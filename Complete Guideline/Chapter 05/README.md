@@ -460,3 +460,102 @@ glVertex2f()    → কোথায়?
 ```
 
 ---
+
+
+# 16. Viva Questions
+
+### Q1. Point আঁকার জন্য কোন primitive ব্যবহার করা হয়?
+
+**Answer:** `GL_POINTS`
+
+---
+
+### Q2. Point-এর size কীভাবে পরিবর্তন করা হয়?
+
+**Answer:** `glPointSize()` ব্যবহার করে।
+
+---
+
+### Q3. `glVertex2f()` কী কাজ করে?
+
+**Answer:** Point-এর 2D coordinate নির্ধারণ করে।
+
+---
+
+### Q4. `glVertex2f(0,0)` কোথায় Point তৈরি করে?
+
+**Answer:** Center/Origin-এ।
+
+---
+
+### Q5. `glVertex2f(0.5,0.5)` কোথায় Point তৈরি করবে?
+
+**Answer:** Top Right।
+
+---
+
+### Q6. `glVertex2f(-0.5,0.5)` কোথায় Point তৈরি করবে?
+
+**Answer:** Top Left।
+
+---
+
+### Q7. Point-এর color কীভাবে পরিবর্তন করবো?
+
+**Answer:** `glColor3f()` ব্যবহার করে।
+
+---
+
+### Q8. `GL_POINTS` কী?
+
+**Answer:** OpenGL-এর একটি primitive mode, যা Point আঁকার জন্য ব্যবহৃত হয়।
+
+---
+
+# 17. Common Mistakes
+
+### Mistake 1
+
+```cpp
+glBegin(GL_POINT);
+```
+
+ভুল।
+
+সঠিক:
+
+```cpp
+glBegin(GL_POINTS);
+```
+
+---
+
+### Mistake 2
+
+`glVertex2f()`-এর coordinate ভুল দেওয়া।
+
+মনে রাখবে:
+
+```cpp
+glVertex2f(x, y);
+```
+
+---
+
+### Mistake 3
+
+`glPointSize()`-কে `glBegin()`-এর ভিতরে দেওয়া।
+
+Basic code-এ এভাবে রাখবে:
+
+```cpp
+glPointSize(10);
+
+glBegin(GL_POINTS);
+
+glVertex2f(0.0, 0.0);
+
+glEnd();
+```
+
+---
