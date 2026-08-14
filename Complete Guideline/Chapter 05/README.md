@@ -559,3 +559,33 @@ glEnd();
 ```
 
 ---
+
+# 18. Quick Revision
+
+```text
+GL_POINTS
+    ↓
+Point আঁকে
+
+glPointSize()
+    ↓
+Point-এর Size
+
+glColor3f()
+    ↓
+Point-এর Color
+
+glVertex2f(x,y)
+    ↓
+Point-এর Position
+
+glEnd()
+    ↓
+Drawing শেষ
+
+glFlush()
+    ↓
+Output
+```
+
+---
