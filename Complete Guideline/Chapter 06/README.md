@@ -323,3 +323,30 @@ glEnd();
 এখানে Line হবে **Red**।
 
 ---
+
+# 12. Line-এর Basic Structure
+
+সবচেয়ে important structure:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(x1, y1);
+glVertex2f(x2, y2);
+
+glEnd();
+```
+
+এখানে:
+
+```text
+(x1,y1)
+   ↓
+Starting Point
+
+(x2,y2)
+   ↓
+Ending Point
+```
+
+---
