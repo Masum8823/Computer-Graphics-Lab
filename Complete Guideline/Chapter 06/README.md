@@ -210,3 +210,47 @@ X = 0.0
 > **X same → Vertical Line**
 
 ---
+
+# 9. Diagonal Line
+
+যদি:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, -0.5);
+glVertex2f(0.5, 0.5);
+
+glEnd();
+```
+
+Coordinate:
+
+```text
+Starting Point → (-0.5,-0.5)
+
+Ending Point   → (0.5,0.5)
+```
+
+তাই Line হবে diagonal।
+
+```text
+(0.5,0.5) ●
+            \
+             \
+              \
+               \
+(-0.5,-0.5) ●
+```
+
+এখানে:
+
+```text
+X → Negative থেকে Positive
+
+Y → Negative থেকে Positive
+```
+
+তাই Line **bottom-left থেকে top-right** গেছে।
+
+---
