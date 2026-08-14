@@ -589,3 +589,7 @@ Output
 ```
 
 ---
+
+# 19. One-Line Memory Trick
+
+> **`GL_POINTS` = Point, `glPointSize()` = Size, `glColor3f()` = Color, `glVertex2f()` = Position।**
