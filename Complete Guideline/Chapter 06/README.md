@@ -174,3 +174,39 @@ Y = 0.0
 > **Y same → Horizontal Line**
 
 ---
+
+# 8. Vertical Line
+
+যদি:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(0.0, -0.5);
+glVertex2f(0.0, 0.5);
+
+glEnd();
+```
+
+এখানে দুই Point-এর `X` একই:
+
+```text
+X = 0.0
+X = 0.0
+```
+
+তাই Line হবে **Vertical**।
+
+```text
+          ● (0,0.5)
+          |
+          |
+          |
+          ● (0,-0.5)
+```
+
+### Rule
+
+> **X same → Vertical Line**
+
+---
