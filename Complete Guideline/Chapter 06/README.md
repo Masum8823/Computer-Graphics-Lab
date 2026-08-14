@@ -254,3 +254,35 @@ Y → Negative থেকে Positive
 তাই Line **bottom-left থেকে top-right** গেছে।
 
 ---
+
+# 10. উল্টো Diagonal
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.5);
+glVertex2f(0.5, -0.5);
+
+glEnd();
+```
+
+এখানে:
+
+```text
+(-0.5,0.5) → Top Left
+
+(0.5,-0.5) → Bottom Right
+```
+
+তাই:
+
+```text
+(-0.5,0.5) ●
+             \
+              \
+               \
+                \
+                 ● (0.5,-0.5)
+```
+
+---
