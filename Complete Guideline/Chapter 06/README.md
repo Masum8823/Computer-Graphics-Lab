@@ -142,3 +142,35 @@ glVertex2f(x2, y2);
 ```
 
 ---
+# 7. Horizontal Line
+
+আমাদের code:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.0);
+glVertex2f(0.5, 0.0);
+
+glEnd();
+```
+
+দুই Point-এর `Y` একই:
+
+```text
+Y = 0.0
+Y = 0.0
+```
+
+তাই Line হবে **Horizontal**।
+
+```text
+        ●────────────────●
+     (-0.5,0)         (0.5,0)
+```
+
+### Rule
+
+> **Y same → Horizontal Line**
+
+---
