@@ -16,3 +16,18 @@
 * একাধিক Line আঁকার basic rule
 
 ---
+
+# 2. Basic Code
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.0);
+glVertex2f(0.5, 0.0);
+
+glEnd();
+```
+
+এটাই আমাদের মূল Line drawing code।
+
+---
