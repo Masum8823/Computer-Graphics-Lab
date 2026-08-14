@@ -408,3 +408,33 @@ Number of Lines = Number of Vertices ÷ 2
 ```
 
 ---
+
+# 15. Example: দুইটি Line
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.8, 0.0);
+glVertex2f(-0.2, 0.0);
+
+glVertex2f(0.2, 0.0);
+glVertex2f(0.8, 0.0);
+
+glEnd();
+```
+
+OpenGL এটাকে এভাবে pair করবে:
+
+```text
+Vertex 1 + Vertex 2 → Line 1
+
+Vertex 3 + Vertex 4 → Line 2
+```
+
+অর্থাৎ:
+
+```text
+●────────●       ●────────●
+```
+
+---
