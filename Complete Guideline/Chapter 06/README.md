@@ -350,3 +350,61 @@ Ending Point
 ```
 
 ---
+
+# 13. Multiple Lines
+
+`GL_LINES` ব্যবহার করে একসাথে একাধিক Line আঁকা যায়।
+
+কিন্তু এখানে একটি গুরুত্বপূর্ণ rule আছে:
+
+> **প্রতি ২টি Vertex = ১টি Line**
+
+Example:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.8, 0.0);
+glVertex2f(-0.2, 0.0);
+
+glVertex2f(0.2, 0.0);
+glVertex2f(0.8, 0.0);
+
+glEnd();
+```
+
+এখানে মোট:
+
+```text
+4 Vertices
+```
+
+তাই:
+
+```text
+4 ÷ 2 = 2 Lines
+```
+
+---
+
+# 14. Multiple Line-এর Rule
+
+মনে রাখবে:
+
+```text
+2 Vertex → 1 Line
+
+4 Vertex → 2 Lines
+
+6 Vertex → 3 Lines
+
+8 Vertex → 4 Lines
+```
+
+Formula:
+
+```text
+Number of Lines = Number of Vertices ÷ 2
+```
+
+---
