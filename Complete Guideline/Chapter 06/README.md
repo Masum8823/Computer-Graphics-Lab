@@ -286,3 +286,40 @@ glEnd();
 ```
 
 ---
+
+
+# 11. Line-এর Color
+
+Line-এর color দিতে:
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+তারপর Line:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.0);
+glVertex2f(0.5, 0.0);
+
+glEnd();
+```
+
+Complete:
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.0);
+glVertex2f(0.5, 0.0);
+
+glEnd();
+```
+
+এখানে Line হবে **Red**।
+
+---
