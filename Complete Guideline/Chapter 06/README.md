@@ -438,3 +438,35 @@ Vertex 3 + Vertex 4 → Line 2
 ```
 
 ---
+
+# 16. `GL_LINES`-এ Vertex Pairing
+
+এটা খুব important।
+
+ধরো:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(-0.8, 0.0);  // Vertex 1
+glVertex2f(-0.2, 0.0);  // Vertex 2
+
+glVertex2f(0.2, 0.0);   // Vertex 3
+glVertex2f(0.8, 0.0);   // Vertex 4
+
+glEnd();
+```
+
+OpenGL করবে:
+
+```text
+Vertex 1 + Vertex 2
+        ↓
+      Line 1
+
+Vertex 3 + Vertex 4
+        ↓
+      Line 2
+```
+
+---
