@@ -616,3 +616,42 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+
+# 21. Code Flow
+
+```text
+glClear()
+   ↓
+Background Clear
+
+glColor3f()
+   ↓
+Line Color
+
+glLineWidth()
+   ↓
+Line Width
+
+glBegin(GL_LINES)
+   ↓
+Line Mode
+
+glVertex2f()
+   ↓
+Starting Point
+
+glVertex2f()
+   ↓
+Ending Point
+
+glEnd()
+   ↓
+Drawing End
+
+glFlush()
+   ↓
+Output
+```
+
+---
