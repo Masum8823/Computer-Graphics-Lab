@@ -655,3 +655,72 @@ Output
 ```
 
 ---
+
+# 22. Viva Questions
+
+### Q1. Line আঁকার জন্য কোন primitive ব্যবহার করা হয়?
+
+**Answer:** `GL_LINES`
+
+---
+
+### Q2. একটি Line আঁকার জন্য কয়টি Vertex লাগে?
+
+**Answer:** 2টি Vertex।
+
+---
+
+### Q3. `glVertex2f()` কী কাজ করে?
+
+**Answer:** 2D coordinate নির্ধারণ করে।
+
+---
+
+### Q4. `GL_LINES`-এ 4টি Vertex দিলে কয়টি Line হবে?
+
+**Answer:** 2টি Line।
+
+কারণ:
+
+```text
+4 ÷ 2 = 2
+```
+
+---
+
+### Q5. দুই Point-এর Y coordinate same হলে Line কেমন হবে?
+
+**Answer:** Horizontal Line।
+
+---
+
+### Q6. দুই Point-এর X coordinate same হলে Line কেমন হবে?
+
+**Answer:** Vertical Line।
+
+---
+
+### Q7. Line-এর color কীভাবে পরিবর্তন করবো?
+
+**Answer:** `glColor3f()` ব্যবহার করে।
+
+---
+
+### Q8. Line-এর width কীভাবে পরিবর্তন করবো?
+
+**Answer:** `glLineWidth()` ব্যবহার করে।
+
+---
+
+### Q9. `(-0.5,-0.5)` থেকে `(0.5,0.5)` Line কোন দিকে যাবে?
+
+**Answer:** Bottom Left থেকে Top Right।
+
+---
+
+### Q10. `(-0.5,0.5)` থেকে `(0.5,-0.5)` Line কোন দিকে যাবে?
+
+**Answer:** Top Left থেকে Bottom Right।
+
+---
+
