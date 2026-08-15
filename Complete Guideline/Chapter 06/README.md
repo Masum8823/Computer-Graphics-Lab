@@ -470,3 +470,36 @@ Vertex 3 + Vertex 4
 ```
 
 ---
+
+# 17. Line-এর Width
+
+Basic line-এর width পরিবর্তন করতে:
+
+```cpp
+glLineWidth(5);
+```
+
+Example:
+
+```cpp
+glLineWidth(5);
+
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.0);
+glVertex2f(0.5, 0.0);
+
+glEnd();
+```
+
+এখানে Line একটু মোটা হবে।
+
+### মনে রাখো
+
+```text
+glPointSize() → Point-এর Size
+
+glLineWidth() → Line-এর Width
+```
+
+---
