@@ -526,3 +526,50 @@ Line
 ```
 
 ---
+
+# 19. Coordinate দেখে Line চিনবো কীভাবে?
+
+### Horizontal
+
+```cpp
+(-0.5, 0)
+(0.5, 0)
+```
+
+Y same।
+
+```text
+→ Horizontal
+```
+
+---
+
+### Vertical
+
+```cpp
+(0, -0.5)
+(0, 0.5)
+```
+
+X same।
+
+```text
+→ Vertical
+```
+
+---
+
+### Diagonal
+
+```cpp
+(-0.5,-0.5)
+(0.5,0.5)
+```
+
+X এবং Y দুটোই পরিবর্তন হয়েছে।
+
+```text
+→ Diagonal
+```
+
+---
