@@ -503,3 +503,26 @@ glLineWidth() → Line-এর Width
 ```
 
 ---
+
+# 18. Point vs Line
+
+| Point           | Line                    |
+| --------------- | ----------------------- |
+| `GL_POINTS`     | `GL_LINES`              |
+| 1 Vertex        | 2 Vertices              |
+| `glPointSize()` | `glLineWidth()`         |
+| একটি অবস্থান    | দুই Point-এর connection |
+
+সহজভাবে:
+
+```text
+Point
+  ↓
+একটা Vertex
+
+Line
+  ↓
+দুইটা Vertex
+```
+
+---
