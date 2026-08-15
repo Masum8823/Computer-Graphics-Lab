@@ -724,3 +724,40 @@ Output
 
 ---
 
+# 23. Quick Revision
+
+```text
+GL_LINES
+   ↓
+Line আঁকে
+
+2 Vertex
+   ↓
+1 Line
+
+glVertex2f()
+   ↓
+Starting + Ending Point
+
+Y same
+   ↓
+Horizontal
+
+X same
+   ↓
+Vertical
+
+X & Y change
+   ↓
+Diagonal
+
+glColor3f()
+   ↓
+Line Color
+
+glLineWidth()
+   ↓
+Line Width
+```
+
+---
