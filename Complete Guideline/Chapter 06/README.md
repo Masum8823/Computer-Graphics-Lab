@@ -761,3 +761,7 @@ Line Width
 ```
 
 ---
+
+# 24. One-Line Memory Trick
+
+> **`GL_LINES`-এ প্রতি ২টা Vertex মিলে ১টা Line তৈরি হয়।**
