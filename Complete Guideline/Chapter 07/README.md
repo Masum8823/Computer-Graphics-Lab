@@ -15,3 +15,23 @@
 * Triangle-এর position পরিবর্তন করা
 
 ---
+
+# 2. Basic Triangle Code
+
+```cpp
+glBegin(GL_TRIANGLES);
+
+glVertex2f(0.0, 0.5);
+glVertex2f(-0.5, -0.5);
+glVertex2f(0.5, -0.5);
+
+glEnd();
+```
+
+এখানে মোট **৩টি Vertex** আছে।
+
+```text
+3 Vertex → 1 Triangle
+```
+
+---
