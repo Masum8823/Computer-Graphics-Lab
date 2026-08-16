@@ -333,3 +333,22 @@ Position দাও
 ```
 
 ---
+
+
+# 15. Triangle-এর Position পরিবর্তন
+
+Triangle-এর coordinate পরিবর্তন করলে পুরো Triangle-এর shape/position পরিবর্তন হবে।
+
+### Example
+
+```cpp
+glVertex2f(0.0, 0.8);
+glVertex2f(-0.8, -0.2);
+glVertex2f(0.8, -0.2);
+```
+
+এতে Triangle আগের চেয়ে বড় হবে।
+
+কারণ Pointগুলো Center থেকে আরও দূরে গেছে।
+
+---
