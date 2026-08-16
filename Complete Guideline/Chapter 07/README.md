@@ -264,3 +264,37 @@ Blue
 তাই Bottom Right Vertex-এর Color **Blue**।
 
 ---
+
+
+# 13. Full Colored Triangle
+
+```cpp
+glBegin(GL_TRIANGLES);
+
+glColor3f(1,0,0);
+glVertex2f(0.0,0.5);
+
+glColor3f(0,1,0);
+glVertex2f(-0.5,-0.5);
+
+glColor3f(0,0,1);
+glVertex2f(0.5,-0.5);
+
+glEnd();
+```
+
+Conceptually:
+
+```text
+                 RED
+                  ●
+                 / \
+                /   \
+               /     \
+              /       \
+       GREEN ●---------● BLUE
+```
+
+Triangle-এর ভিতরের অংশে OpenGL color values **interpolate** করে, তাই মাঝখানে বিভিন্ন mixed color দেখা যায়।
+
+---
