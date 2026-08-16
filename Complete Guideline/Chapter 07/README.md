@@ -207,3 +207,22 @@ glEnd();
 ```
 
 ---
+
+# 10. প্রথম Vertex-এর Color
+
+```cpp
+glColor3f(1,0,0);
+glVertex2f(0.0,0.5);
+```
+
+এখানে:
+
+```text
+glColor3f(1,0,0)
+        ↓
+Red
+```
+
+তাই Top Vertex-এর Color **Red**।
+
+---
