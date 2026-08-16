@@ -374,3 +374,36 @@ Triangle ছোট
 ```
 
 ---
+
+# 17. Triangle-এর Direction বুঝি
+
+আমাদের standard Triangle:
+
+```cpp
+glVertex2f(0.0, 0.5);
+glVertex2f(-0.5, -0.5);
+glVertex2f(0.5, -0.5);
+```
+
+Diagram:
+
+```text
+                 ●
+                / \
+               /   \
+              /     \
+             /       \
+            ●---------●
+```
+
+এখানে:
+
+```text
+Top        → (0, 0.5)
+
+Bottom Left  → (-0.5, -0.5)
+
+Bottom Right → (0.5, -0.5)
+```
+
+---
