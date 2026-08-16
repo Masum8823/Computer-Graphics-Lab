@@ -123,3 +123,32 @@ y = -0.5 → Down
 ```
 
 ---
+
+# 7. তিনটি Point কীভাবে Triangle হলো?
+
+আমাদের তিনটি Point:
+
+```text
+             (0,0.5)
+                ●
+               / \
+              /   \
+             /     \
+            /       \
+           ●---------●
+      (-0.5,-0.5)  (0.5,-0.5)
+```
+
+OpenGL তিনটি Vertex-কে **connect** করে।
+
+তাই:
+
+```text
+Vertex 1 → Vertex 2
+Vertex 2 → Vertex 3
+Vertex 3 → Vertex 1
+```
+
+এবং একটি closed Triangle তৈরি হয়।
+
+---
