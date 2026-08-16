@@ -152,3 +152,25 @@ Vertex 3 → Vertex 1
 এবং একটি closed Triangle তৈরি হয়।
 
 ---
+
+# 8. Triangle-এর সবচেয়ে Important Rule
+
+```text
+3 Vertex → 1 Triangle
+```
+
+অর্থাৎ:
+
+```cpp
+glBegin(GL_TRIANGLES);
+
+glVertex2f(x1, y1);
+glVertex2f(x2, y2);
+glVertex2f(x3, y3);
+
+glEnd();
+```
+
+এই তিনটি coordinate মিলে একটি Triangle তৈরি করবে।
+
+---
