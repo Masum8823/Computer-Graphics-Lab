@@ -298,3 +298,38 @@ Conceptually:
 Triangle-এর ভিতরের অংশে OpenGL color values **interpolate** করে, তাই মাঝখানে বিভিন্ন mixed color দেখা যায়।
 
 ---
+
+# 14. `glColor3f()` কেন Vertex-এর আগে?
+
+ধরো:
+
+```cpp
+glColor3f(1,0,0);
+glVertex2f(0.0,0.5);
+```
+
+এখানে প্রথমে বলা হচ্ছে:
+
+> এই Vertex-এর Color Red।
+
+তারপর:
+
+```cpp
+glVertex2f(0.0,0.5);
+```
+
+দিয়ে Vertex-এর position দেওয়া হচ্ছে।
+
+তাই সাধারণভাবে মনে রাখো:
+
+```text
+glColor3f()
+     ↓
+Color ঠিক করো
+
+glVertex2f()
+     ↓
+Position দাও
+```
+
+---
