@@ -35,3 +35,23 @@ glEnd();
 ```
 
 ---
+
+# 3. `glBegin(GL_TRIANGLES)`
+
+```cpp
+glBegin(GL_TRIANGLES);
+```
+
+OpenGL-কে বলা হচ্ছে:
+
+> এখন আমরা **Triangle আঁকবো**।
+
+এখানে:
+
+```text
+GL_TRIANGLES
+      ↓
+Triangle Drawing Mode
+```
+
+---
