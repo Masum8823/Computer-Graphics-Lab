@@ -352,3 +352,25 @@ glVertex2f(0.8, -0.2);
 কারণ Pointগুলো Center থেকে আরও দূরে গেছে।
 
 ---
+
+# 16. ছোট Triangle
+
+```cpp
+glVertex2f(0.0, 0.2);
+glVertex2f(-0.2, -0.2);
+glVertex2f(0.2, -0.2);
+```
+
+এতে Triangle ছোট হবে।
+
+কারণ:
+
+```text
+Coordinate values ছোট
+      ↓
+Pointগুলো কাছাকাছি
+      ↓
+Triangle ছোট
+```
+
+---
