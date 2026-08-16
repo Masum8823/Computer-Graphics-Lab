@@ -245,3 +245,22 @@ Green
 তাই Bottom Left Vertex-এর Color **Green**।
 
 ---
+
+# 12. তৃতীয় Vertex-এর Color
+
+```cpp
+glColor3f(0,0,1);
+glVertex2f(0.5,-0.5);
+```
+
+এখানে:
+
+```text
+glColor3f(0,0,1)
+        ↓
+Blue
+```
+
+তাই Bottom Right Vertex-এর Color **Blue**।
+
+---
