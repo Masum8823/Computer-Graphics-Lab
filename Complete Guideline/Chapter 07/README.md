@@ -174,3 +174,36 @@ glEnd();
 এই তিনটি coordinate মিলে একটি Triangle তৈরি করবে।
 
 ---
+
+# 9. Triangle-এর Color
+
+এখন আমাদের আগের code:
+
+```cpp
+glBegin(GL_TRIANGLES);
+
+glVertex2f(0.0, 0.5);
+glVertex2f(-0.5, -0.5);
+glVertex2f(0.5, -0.5);
+
+glEnd();
+```
+
+এর সাথে Color যোগ করি।
+
+```cpp
+glBegin(GL_TRIANGLES);
+
+glColor3f(1,0,0);
+glVertex2f(0.0,0.5);
+
+glColor3f(0,1,0);
+glVertex2f(-0.5,-0.5);
+
+glColor3f(0,0,1);
+glVertex2f(0.5,-0.5);
+
+glEnd();
+```
+
+---
