@@ -55,3 +55,26 @@ Triangle Drawing Mode
 ```
 
 ---
+
+# 4. প্রথম Vertex
+
+```cpp
+glVertex2f(0.0, 0.5);
+```
+
+Coordinate:
+
+```text
+x = 0.0
+y = 0.5
+```
+
+তাই Point হবে:
+
+> **উপরে / Top**
+
+```text
+              ● (0,0.5)
+```
+
+---
