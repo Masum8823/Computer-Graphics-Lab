@@ -407,3 +407,39 @@ Bottom Right → (0.5, -0.5)
 ```
 
 ---
+
+# 18. Triangle-এর Vertex Order
+
+এই code:
+
+```cpp
+glVertex2f(0.0,0.5);
+glVertex2f(-0.5,-0.5);
+glVertex2f(0.5,-0.5);
+```
+
+Vertexগুলো একটি নির্দিষ্ট order-এ দেওয়া হয়েছে।
+
+```text
+Vertex 1
+   ↓
+Vertex 2
+   ↓
+Vertex 3
+   ↓
+আবার Vertex 1
+```
+
+অর্থাৎ:
+
+```text
+1 → 2 → 3 → 1
+```
+
+এইভাবে Triangle-এর boundary তৈরি হয়।
+
+Basic lab-এর জন্য সবচেয়ে important হলো:
+
+> **৩টি coordinate দিলে OpenGL সেই ৩টি Vertex connect করে Triangle তৈরি করে।**
+
+---
