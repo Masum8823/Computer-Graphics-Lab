@@ -443,3 +443,49 @@ Basic lab-এর জন্য সবচেয়ে important হলো:
 > **৩টি coordinate দিলে OpenGL সেই ৩টি Vertex connect করে Triangle তৈরি করে।**
 
 ---
+
+# 19. Multiple Triangle
+
+`GL_TRIANGLES`-এ একসাথে একাধিক Triangle আঁকা যায়।
+
+Rule:
+
+```text
+3 Vertex → 1 Triangle
+6 Vertex → 2 Triangle
+9 Vertex → 3 Triangle
+```
+
+অর্থাৎ:
+
+```text
+Number of Triangle = Number of Vertices ÷ 3
+```
+
+Example:
+
+```cpp
+glBegin(GL_TRIANGLES);
+
+glVertex2f(-0.8, 0.0);
+glVertex2f(-0.5, 0.5);
+glVertex2f(-0.2, 0.0);
+
+glVertex2f(0.2, 0.0);
+glVertex2f(0.5, 0.5);
+glVertex2f(0.8, 0.0);
+
+glEnd();
+```
+
+এখানে:
+
+```text
+6 Vertex
+   ↓
+6 ÷ 3
+   ↓
+2 Triangle
+```
+
+---
