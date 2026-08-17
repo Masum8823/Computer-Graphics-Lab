@@ -666,3 +666,67 @@ Output
 **Answer:** Blue।
 
 ---
+
+# 24. Common Mistakes
+
+### Mistake 1: ৩টি Vertex না দেওয়া
+
+```cpp
+glBegin(GL_TRIANGLES);
+
+glVertex2f(0,0.5);
+glVertex2f(-0.5,-0.5);
+
+glEnd();
+```
+
+এখানে মাত্র 2টি Vertex।
+
+```text
+2 Vertex ≠ 1 Triangle
+```
+
+Triangle-এর জন্য 3টি Vertex দরকার।
+
+---
+
+### Mistake 2: `GL_TRIANGLE` লেখা
+
+ভুল:
+
+```cpp
+glBegin(GL_TRIANGLE);
+```
+
+সঠিক:
+
+```cpp
+glBegin(GL_TRIANGLES);
+```
+
+---
+
+### Mistake 3: Color ভুল জায়গায় দেওয়া
+
+ভালো practice:
+
+```cpp
+glColor3f(1,0,0);
+glVertex2f(0,0.5);
+
+glColor3f(0,1,0);
+glVertex2f(-0.5,-0.5);
+
+glColor3f(0,0,1);
+glVertex2f(0.5,-0.5);
+```
+
+অর্থাৎ:
+
+```text
+Color
+  ↓
+Vertex
+```
+
+---
