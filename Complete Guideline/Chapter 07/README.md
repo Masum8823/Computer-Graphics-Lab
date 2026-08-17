@@ -489,3 +489,23 @@ glEnd();
 ```
 
 ---
+# 20. Triangle vs Line
+
+| Line                | Triangle                |
+| ------------------- | ----------------------- |
+| `GL_LINES`          | `GL_TRIANGLES`          |
+| 2 Vertex            | 3 Vertex                |
+| 2 Point connect     | 3 Point connect         |
+| `2 Vertex = 1 Line` | `3 Vertex = 1 Triangle` |
+
+সহজভাবে:
+
+```text
+GL_LINES
+2 Vertex → 1 Line
+
+GL_TRIANGLES
+3 Vertex → 1 Triangle
+```
+
+---
