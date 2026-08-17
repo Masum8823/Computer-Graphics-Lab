@@ -16,3 +16,23 @@
 * Rectangle-এর color কীভাবে দিতে হয়
 
 ---
+# 2. Basic Rectangle Code
+
+```cpp
+glBegin(GL_QUADS);
+
+glVertex2f(-0.5, 0.5);
+glVertex2f(0.5, 0.5);
+glVertex2f(0.5, -0.5);
+glVertex2f(-0.5, -0.5);
+
+glEnd();
+```
+
+এখানে মোট **৪টি Vertex** আছে।
+
+```text
+4 Vertex → 1 Rectangle
+```
+
+---
