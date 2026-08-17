@@ -554,3 +554,49 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 22. Code Flow
+
+```text
+glClear()
+   ↓
+Screen Clear
+
+glBegin(GL_TRIANGLES)
+   ↓
+Triangle Mode
+
+glColor3f()
+   ↓
+Color Set
+
+glVertex2f()
+   ↓
+Vertex 1
+
+glColor3f()
+   ↓
+Color Set
+
+glVertex2f()
+   ↓
+Vertex 2
+
+glColor3f()
+   ↓
+Color Set
+
+glVertex2f()
+   ↓
+Vertex 3
+
+glEnd()
+   ↓
+Triangle Complete
+
+glFlush()
+   ↓
+Output
+```
+
+---
