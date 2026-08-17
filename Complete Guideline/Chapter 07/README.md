@@ -768,3 +768,7 @@ Output
 ```
 
 ---
+
+# 26. One-Line Memory Trick
+
+> **`GL_TRIANGLES`-এ প্রতি ৩টা Vertex মিলে ১টা Triangle তৈরি হয়।**
