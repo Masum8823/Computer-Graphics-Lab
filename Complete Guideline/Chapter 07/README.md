@@ -600,3 +600,69 @@ Output
 ```
 
 ---
+
+# 23. Viva Questions
+
+### Q1. Triangle আঁকার জন্য কোন primitive ব্যবহার করা হয়?
+
+**Answer:** `GL_TRIANGLES`
+
+---
+
+### Q2. একটি Triangle-এর জন্য কয়টি Vertex লাগে?
+
+**Answer:** 3টি Vertex।
+
+---
+
+### Q3. `GL_TRIANGLES`-এ 6টি Vertex দিলে কয়টি Triangle হবে?
+
+**Answer:** 2টি Triangle।
+
+```text
+6 ÷ 3 = 2
+```
+
+---
+
+### Q4. Triangle-এর Top Vertex যদি `(0,0.5)` হয়, সেটা কোথায়?
+
+**Answer:** Center-এর উপরে।
+
+---
+
+### Q5. `(-0.5,-0.5)` কোথায়?
+
+**Answer:** Bottom Left।
+
+---
+
+### Q6. `(0.5,-0.5)` কোথায়?
+
+**Answer:** Bottom Right।
+
+---
+
+### Q7. Triangle-এর প্রতিটি Vertex-এর আলাদা Color দেওয়া যায়?
+
+**Answer:** হ্যাঁ। `glVertex2f()`-এর আগে `glColor3f()` ব্যবহার করে দেওয়া যায়।
+
+---
+
+### Q8. `glColor3f(1,0,0)` কোন Color?
+
+**Answer:** Red।
+
+---
+
+### Q9. `glColor3f(0,1,0)` কোন Color?
+
+**Answer:** Green।
+
+---
+
+### Q10. `glColor3f(0,0,1)` কোন Color?
+
+**Answer:** Blue।
+
+---
