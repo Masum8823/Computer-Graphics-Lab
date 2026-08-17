@@ -730,3 +730,41 @@ Vertex
 ```
 
 ---
+
+# 25. Quick Revision
+
+```text
+GL_TRIANGLES
+      ↓
+Triangle Drawing
+
+3 Vertex
+      ↓
+1 Triangle
+
+glVertex2f()
+      ↓
+Triangle-এর 3টি Position
+
+glColor3f()
+      ↓
+Vertex/Object Color
+
+glEnd()
+      ↓
+Drawing শেষ
+
+glFlush()
+      ↓
+Output
+```
+
+### Vertex Calculation
+
+```text
+3 Vertex  → 1 Triangle
+6 Vertex  → 2 Triangle
+9 Vertex  → 3 Triangle
+```
+
+---
