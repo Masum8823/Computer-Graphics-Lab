@@ -262,3 +262,40 @@ glEnd();
 এখানে Rectangle হবে **Red**।
 
 ---
+
+# 12. Complete Colored Rectangle
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_QUADS);
+
+glVertex2f(-0.5, 0.5);
+glVertex2f(0.5, 0.5);
+glVertex2f(0.5, -0.5);
+glVertex2f(-0.5, -0.5);
+
+glEnd();
+```
+
+Flow:
+
+```text
+glColor3f()
+     ↓
+Rectangle-এর Color
+
+glBegin(GL_QUADS)
+     ↓
+Quad Mode
+
+4 × glVertex2f()
+     ↓
+4 Corner
+
+glEnd()
+     ↓
+Drawing শেষ
+```
+
+---
