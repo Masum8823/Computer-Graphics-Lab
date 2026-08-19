@@ -237,3 +237,28 @@ Rectangle-এর চারপাশ follow করতে হবে।
 তাই basic lab-এর জন্য সবসময় চারপাশ ঘুরে coordinate দাও।
 
 ---
+
+# 11. Rectangle-এর Color
+
+Rectangle-এর color দিতে:
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+তারপর:
+
+```cpp
+glBegin(GL_QUADS);
+
+glVertex2f(-0.5, 0.5);
+glVertex2f(0.5, 0.5);
+glVertex2f(0.5, -0.5);
+glVertex2f(-0.5, -0.5);
+
+glEnd();
+```
+
+এখানে Rectangle হবে **Red**।
+
+---
