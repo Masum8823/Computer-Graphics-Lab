@@ -299,3 +299,37 @@ Drawing শেষ
 ```
 
 ---
+
+# 13. Rectangle-এর Size কীভাবে Change করবো?
+
+বর্তমানে:
+
+```cpp
+glVertex2f(-0.5, 0.5);
+glVertex2f(0.5, 0.5);
+glVertex2f(0.5, -0.5);
+glVertex2f(-0.5, -0.5);
+```
+
+এটা relatively বড় Rectangle।
+
+ছোট করতে পারি:
+
+```cpp
+glVertex2f(-0.2, 0.2);
+glVertex2f(0.2, 0.2);
+glVertex2f(0.2, -0.2);
+glVertex2f(-0.2, -0.2);
+```
+
+কারণ coordinate values ছোট হয়েছে।
+
+```text
+Coordinate values ছোট
+        ↓
+Corners কাছাকাছি
+        ↓
+Rectangle ছোট
+```
+
+---
