@@ -188,3 +188,30 @@ OpenGL এগুলোকে order অনুযায়ী connect করে:
 তাই Rectangle তৈরি হয়।
 
 ---
+
+# 9. Vertex Order খুব Important
+
+আমাদের code:
+
+```cpp
+glVertex2f(-0.5, 0.5);   // 1
+glVertex2f(0.5, 0.5);    // 2
+glVertex2f(0.5, -0.5);   // 3
+glVertex2f(-0.5, -0.5);  // 4
+```
+
+এটা basically:
+
+```text
+1 → 2 → 3 → 4 → 1
+```
+
+অর্থাৎ এক পাশ থেকে শুরু করে চারপাশ ঘুরে আসছি।
+
+### সহজভাবে মনে রাখো
+
+> **Top Left → Top Right → Bottom Right → Bottom Left**
+
+এটা Rectangle-এর জন্য খুব easy sequence।
+
+---
