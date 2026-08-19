@@ -60,3 +60,26 @@ GL_QUADS
 আমাদের Rectangle হলো একটি Quad।
 
 ---
+
+# 4. প্রথম Vertex
+
+```cpp
+glVertex2f(-0.5, 0.5);
+```
+
+Coordinate:
+
+```text
+x = -0.5 → Left
+y =  0.5 → Up
+```
+
+তাই এটি:
+
+> **Top Left**
+
+```text
+● (-0.5,0.5)
+```
+
+---
