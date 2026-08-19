@@ -161,3 +161,30 @@ y = -0.5 → Down
 ```
 
 ---
+
+# 8. চারটি Vertex কীভাবে Rectangle হলো?
+
+আমাদের চারটি Vertex:
+
+```text
+1 → (-0.5,  0.5)  Top Left
+
+2 → ( 0.5,  0.5)  Top Right
+
+3 → ( 0.5, -0.5)  Bottom Right
+
+4 → (-0.5, -0.5)  Bottom Left
+```
+
+OpenGL এগুলোকে order অনুযায়ী connect করে:
+
+```text
+1 → 2
+2 → 3
+3 → 4
+4 → 1
+```
+
+তাই Rectangle তৈরি হয়।
+
+---
