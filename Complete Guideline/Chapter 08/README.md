@@ -36,3 +36,27 @@ glEnd();
 ```
 
 ---
+
+# 3. `glBegin(GL_QUADS)`
+
+```cpp
+glBegin(GL_QUADS);
+```
+
+OpenGL-কে বলা হচ্ছে:
+
+> এখন আমরা **Quadrilateral/Quad** আঁকবো।
+
+`GL_QUADS`-এ সাধারণভাবে **৪টি Vertex** মিলে একটি four-sided shape তৈরি করে।
+
+```text
+GL_QUADS
+   ↓
+4 Vertex
+   ↓
+1 Quad
+```
+
+আমাদের Rectangle হলো একটি Quad।
+
+---
