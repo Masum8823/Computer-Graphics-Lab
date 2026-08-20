@@ -386,3 +386,27 @@ Y → ±0.8
 > Height বেশি, Width কম।
 
 ---
+
+# 16. Rectangle-এর Position Change
+
+ধরো Rectangle-টা Center-এ না থেকে Right Side-এ চাই।
+
+```cpp
+glVertex2f(0.2, 0.5);
+glVertex2f(0.8, 0.5);
+glVertex2f(0.8, -0.5);
+glVertex2f(0.2, -0.5);
+```
+
+সব X positive হওয়ায় Rectangle ডানদিকে চলে যাবে।
+
+```text
+              Rectangle
+                  ↓
+              ┌────────┐
+              │        │
+              │        │
+              └────────┘
+```
+
+---
