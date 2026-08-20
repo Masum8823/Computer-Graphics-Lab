@@ -626,3 +626,82 @@ Output
 ```
 
 ---
+
+
+# 23. Viva Questions
+
+### Q1. Rectangle আঁকার জন্য কোন primitive ব্যবহার করা হয়েছে?
+
+**Answer:** `GL_QUADS`
+
+---
+
+### Q2. একটি Rectangle-এর জন্য কয়টি Vertex লাগে?
+
+**Answer:** 4টি Vertex।
+
+---
+
+### Q3. `GL_QUADS`-এ 8টি Vertex দিলে কয়টি Quad হবে?
+
+**Answer:** 2টি Quad।
+
+```text
+8 ÷ 4 = 2
+```
+
+---
+
+### Q4. Rectangle-এর Top Left coordinate কোনটি?
+
+**Answer:** `(-0.5, 0.5)`
+
+---
+
+### Q5. Top Right coordinate কোনটি?
+
+**Answer:** `(0.5, 0.5)`
+
+---
+
+### Q6. Bottom Right coordinate কোনটি?
+
+**Answer:** `(0.5, -0.5)`
+
+---
+
+### Q7. Bottom Left coordinate কোনটি?
+
+**Answer:** `(-0.5, -0.5)`
+
+---
+
+### Q8. Rectangle-এর width কীভাবে বাড়াবো?
+
+**Answer:** X coordinate-এর difference বাড়াতে হবে।
+
+সহজভাবে:
+
+```text
+Left আরও Left
+Right আরও Right
+```
+
+---
+
+### Q9. Rectangle-এর height কীভাবে বাড়াবো?
+
+**Answer:** Y coordinate-এর difference বাড়াতে হবে।
+
+```text
+Top আরও Up
+Bottom আরও Down
+```
+
+---
+
+### Q10. Rectangle-এর color কীভাবে পরিবর্তন করবো?
+
+**Answer:** `glColor3f()` ব্যবহার করে।
+
+---
