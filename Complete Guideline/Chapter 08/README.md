@@ -584,3 +584,45 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 22. Code Flow
+
+```text
+glClear()
+   ↓
+Screen Clear
+
+glColor3f()
+   ↓
+Rectangle Color
+
+glBegin(GL_QUADS)
+   ↓
+Quad Mode
+
+Vertex 1
+   ↓
+Top Left
+
+Vertex 2
+   ↓
+Top Right
+
+Vertex 3
+   ↓
+Bottom Right
+
+Vertex 4
+   ↓
+Bottom Left
+
+glEnd()
+   ↓
+Drawing শেষ
+
+glFlush()
+   ↓
+Output
+```
+
+---
