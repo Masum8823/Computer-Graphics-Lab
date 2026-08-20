@@ -491,3 +491,53 @@ glEnd();
 ```
 
 ---
+
+# 20. Multiple Rectangle
+
+`GL_QUADS` ব্যবহার করে একাধিক Quad আঁকা যায়।
+
+Rule:
+
+```text
+4 Vertex → 1 Quad
+8 Vertex → 2 Quad
+12 Vertex → 3 Quad
+```
+
+Formula:
+
+```text
+Number of Quads = Number of Vertices ÷ 4
+```
+
+Example:
+
+```cpp
+glBegin(GL_QUADS);
+
+// Rectangle 1
+glVertex2f(-0.8, 0.5);
+glVertex2f(-0.2, 0.5);
+glVertex2f(-0.2, -0.5);
+glVertex2f(-0.8, -0.5);
+
+// Rectangle 2
+glVertex2f(0.2, 0.5);
+glVertex2f(0.8, 0.5);
+glVertex2f(0.8, -0.5);
+glVertex2f(0.2, -0.5);
+
+glEnd();
+```
+
+এখানে:
+
+```text
+8 Vertex
+   ↓
+8 ÷ 4
+   ↓
+2 Rectangle
+```
+
+---
