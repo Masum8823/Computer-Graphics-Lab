@@ -771,3 +771,31 @@ Bottom Left
 ```
 
 ---
+
+# 25. Quick Revision
+
+```text
+GL_QUADS
+    ↓
+Quad/Rectangle
+
+4 Vertex
+    ↓
+1 Rectangle
+
+Vertex 1
+    ↓
+Top Left
+
+Vertex 2
+    ↓
+Top Right
+
+Vertex 3
+    ↓
+Bottom Right
+
+Vertex 4
+    ↓
+Bottom Left
+```
