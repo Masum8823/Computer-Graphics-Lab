@@ -364,3 +364,25 @@ Y → ±0.4
 ```
 
 ---
+
+# 15. Rectangle-এর Height বাড়ানো
+
+```cpp
+glVertex2f(-0.4, 0.8);
+glVertex2f(0.4, 0.8);
+glVertex2f(0.4, -0.8);
+glVertex2f(-0.4, -0.8);
+```
+
+এখানে:
+
+```text
+X → ±0.4
+Y → ±0.8
+```
+
+তাই:
+
+> Height বেশি, Width কম।
+
+---
