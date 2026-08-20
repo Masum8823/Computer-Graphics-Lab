@@ -410,3 +410,31 @@ glVertex2f(0.2, -0.5);
 ```
 
 ---
+
+# 17. Coordinate দিয়ে Rectangle চিনে রাখো
+
+এই চারটা coordinate খুব important:
+
+```text
+(-0.5,  0.5) → Top Left
+( 0.5,  0.5) → Top Right
+( 0.5, -0.5) → Bottom Right
+(-0.5, -0.5) → Bottom Left
+```
+
+Diagram:
+
+```text
+             +Y
+              ↑
+
+     TL ●────────────● TR
+        |             |
+        |             |
+        |             |
+     BL ●────────────● BR
+
+              → +X
+```
+
+---
