@@ -468,3 +468,26 @@ glEnd();
 ```
 
 ---
+
+# 19. Rectangle vs Triangle vs Line
+
+| Shape     | OpenGL Mode    | Vertex |
+| --------- | -------------- | -----: |
+| Point     | `GL_POINTS`    |      1 |
+| Line      | `GL_LINES`     |      2 |
+| Triangle  | `GL_TRIANGLES` |      3 |
+| Rectangle | `GL_QUADS`     |      4 |
+
+সবচেয়ে সহজে:
+
+```text
+1 Vertex → Point
+
+2 Vertex → Line
+
+3 Vertex → Triangle
+
+4 Vertex → Quad/Rectangle
+```
+
+---
