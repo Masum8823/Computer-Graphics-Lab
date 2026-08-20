@@ -799,3 +799,19 @@ Vertex 4
     ↓
 Bottom Left
 ```
+
+### সবচেয়ে Important:
+
+```text
+TL → TR → BR → BL
+```
+
+মানে:
+
+> **Top Left → Top Right → Bottom Right → Bottom Left**
+
+---
+
+# 26. One-Line Memory Trick
+
+> **`GL_QUADS`-এ ৪টা Vertex দিয়ে চারপাশ ঘুরে `TL → TR → BR → BL` দিলে সহজেই Rectangle আঁকা যায়।**
