@@ -705,3 +705,69 @@ Bottom আরও Down
 **Answer:** `glColor3f()` ব্যবহার করে।
 
 ---
+
+# 24. Common Mistakes
+
+### Mistake 1: `GL_QUAD` লেখা
+
+ভুল:
+
+```cpp
+glBegin(GL_QUAD);
+```
+
+সঠিক:
+
+```cpp
+glBegin(GL_QUADS);
+```
+
+---
+
+### Mistake 2: ৪টির কম Vertex
+
+```cpp
+glBegin(GL_QUADS);
+
+glVertex2f(-0.5,0.5);
+glVertex2f(0.5,0.5);
+glVertex2f(0.5,-0.5);
+
+glEnd();
+```
+
+এখানে মাত্র 3টি Vertex।
+
+```text
+3 Vertex → Triangle-এর জন্য ঠিক
+3 Vertex → Quad-এর জন্য ঠিক না
+```
+
+Rectangle/Quad-এর জন্য 4টি Vertex লাগবে।
+
+---
+
+### Mistake 3: Vertex order এলোমেলো করা
+
+Basic Rectangle-এর জন্য এই order follow করো:
+
+```text
+Top Left
+    ↓
+Top Right
+    ↓
+Bottom Right
+    ↓
+Bottom Left
+```
+
+অর্থাৎ:
+
+```text
+(-0.5, 0.5)
+( 0.5, 0.5)
+( 0.5,-0.5)
+(-0.5,-0.5)
+```
+
+---
