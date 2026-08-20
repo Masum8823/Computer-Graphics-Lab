@@ -438,3 +438,33 @@ Diagram:
 ```
 
 ---
+
+# 18. Rectangle-এর Basic Structure
+
+Exam-এ Rectangle আঁকতে এই structure মনে রাখলেই হবে:
+
+```cpp
+glBegin(GL_QUADS);
+
+glVertex2f(Left, Top);
+glVertex2f(Right, Top);
+glVertex2f(Right, Bottom);
+glVertex2f(Left, Bottom);
+
+glEnd();
+```
+
+আমাদের example:
+
+```cpp
+glBegin(GL_QUADS);
+
+glVertex2f(-0.5, 0.5);
+glVertex2f(0.5, 0.5);
+glVertex2f(0.5, -0.5);
+glVertex2f(-0.5, -0.5);
+
+glEnd();
+```
+
+---
