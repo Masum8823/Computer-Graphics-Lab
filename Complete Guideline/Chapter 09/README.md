@@ -45,3 +45,31 @@ Polygon Drawing Mode
 ```
 
 ---
+
+# 3. Basic Polygon Code
+
+একটা simple Pentagon আঁকি:
+
+```cpp
+glBegin(GL_POLYGON);
+
+glVertex2f(0.0, 0.7);
+glVertex2f(0.6, 0.3);
+glVertex2f(0.4, -0.5);
+glVertex2f(-0.4, -0.5);
+glVertex2f(-0.6, 0.3);
+
+glEnd();
+```
+
+এখানে:
+
+```text
+5 Vertex
+   ↓
+5-sided Polygon
+   ↓
+Pentagon
+```
+
+---
