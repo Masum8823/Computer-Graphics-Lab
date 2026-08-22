@@ -203,3 +203,32 @@ glEnd();
 > **Red**
 
 ---
+
+# 9. Polygon-এর Vertex-এর আলাদা Color
+
+আগের Triangle-এর মতো Polygon-এর প্রতিটি Vertex-এ আলাদা color-ও দেওয়া যায়।
+
+```cpp
+glBegin(GL_POLYGON);
+
+glColor3f(1,0,0);
+glVertex2f(0.0,0.7);
+
+glColor3f(0,1,0);
+glVertex2f(0.6,0.3);
+
+glColor3f(0,0,1);
+glVertex2f(0.4,-0.5);
+
+glColor3f(1,1,0);
+glVertex2f(-0.4,-0.5);
+
+glColor3f(1,0,1);
+glVertex2f(-0.6,0.3);
+
+glEnd();
+```
+
+তাহলে বিভিন্ন Vertex-এর color আলাদা হবে এবং ভিতরের অংশে color blend হতে পারে।
+
+---
