@@ -73,3 +73,23 @@ Pentagon
 ```
 
 ---
+
+# 4. `glBegin(GL_POLYGON)`
+
+```cpp
+glBegin(GL_POLYGON);
+```
+
+এখানে OpenGL-কে বলা হচ্ছে:
+
+> এখন আমরা Polygon আঁকবো।
+
+এরপর যতগুলো:
+
+```cpp
+glVertex2f()
+```
+
+দেবো, সেগুলো Polygon-এর corner/vertex হিসেবে কাজ করবে।
+
+---
