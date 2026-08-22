@@ -154,3 +154,27 @@ connect করা হয়।
 > **Pentagon**
 
 ---
+
+# 7. Vertex Count অনুযায়ী Polygon
+
+এটা খুব সহজে মনে রাখবে:
+
+```text
+3 Vertex → Triangle
+
+4 Vertex → Quadrilateral
+
+5 Vertex → Pentagon
+
+6 Vertex → Hexagon
+
+7 Vertex → Heptagon
+
+8 Vertex → Octagon
+```
+
+অর্থাৎ:
+
+> Vertex যতগুলো, Polygon-এর side-ও সাধারণত ততগুলো।
+
+---
