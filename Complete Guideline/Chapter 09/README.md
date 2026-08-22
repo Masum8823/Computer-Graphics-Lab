@@ -178,3 +178,28 @@ connect করা হয়।
 > Vertex যতগুলো, Polygon-এর side-ও সাধারণত ততগুলো।
 
 ---
+
+
+# 8. `GL_POLYGON` + Color
+
+Polygon-এর color দিতে:
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_POLYGON);
+
+glVertex2f(0.0, 0.7);
+glVertex2f(0.6, 0.3);
+glVertex2f(0.4, -0.5);
+glVertex2f(-0.4, -0.5);
+glVertex2f(-0.6, 0.3);
+
+glEnd();
+```
+
+এখানে পুরো Polygon হবে:
+
+> **Red**
+
+---
