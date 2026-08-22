@@ -27,3 +27,21 @@ Hexagon     → 6 sides
 ```
 
 ---
+
+# 2. Polygon আঁকার জন্য কী ব্যবহার করবো?
+
+OpenGL-এ:
+
+```cpp
+glBegin(GL_POLYGON);
+```
+
+ব্যবহার করা হয়।
+
+```text
+GL_POLYGON
+     ↓
+Polygon Drawing Mode
+```
+
+---
