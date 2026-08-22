@@ -93,3 +93,38 @@ glVertex2f()
 দেবো, সেগুলো Polygon-এর corner/vertex হিসেবে কাজ করবে।
 
 ---
+
+
+# 5. Polygon-এর Vertex কীভাবে কাজ করে?
+
+ধরো:
+
+```cpp
+glVertex2f(0.0, 0.7);
+glVertex2f(0.6, 0.3);
+glVertex2f(0.4, -0.5);
+glVertex2f(-0.4, -0.5);
+glVertex2f(-0.6, 0.3);
+```
+
+এগুলোকে:
+
+```text
+Vertex 1
+   ↓
+Vertex 2
+   ↓
+Vertex 3
+   ↓
+Vertex 4
+   ↓
+Vertex 5
+   ↓
+আবার Vertex 1
+```
+
+connect করা হয়।
+
+তাই closed shape তৈরি হয়।
+
+---
