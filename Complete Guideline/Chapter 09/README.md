@@ -314,3 +314,35 @@ Top Left
 এতে shape সুন্দরভাবে তৈরি হবে।
 
 ---
+
+# 12. তোমার Circle Code-এর সাথে Connection
+
+তুমি আগে যে Circle code করেছিলে:
+
+```cpp
+glBegin(GL_POLYGON);
+
+for(int i = 0; i < 360; i++)
+{
+    float angle = i * 3.1416 / 180.0;
+
+    float x = -0.1 + 0.25 * cos(angle);
+    float y =  0.0 + 0.25 * sin(angle);
+
+    glVertex2f(x, y);
+}
+
+glEnd();
+```
+
+এটাও আসলে:
+
+```text
+GL_POLYGON
+```
+
+ব্যবহার করছে।
+
+তাই এটা **Polygon দিয়েই circle-এর মতো shape বানাচ্ছে।**
+
+---
