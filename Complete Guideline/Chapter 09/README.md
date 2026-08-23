@@ -448,3 +448,34 @@ angle
 তাই circle-এর চারপাশে point generate করা যায়।
 
 ---
+
+# 16. Circle-এর Radius-এর সাথে Polygon-এর Relation
+
+ধরো:
+
+```cpp
+radius = 0.25;
+```
+
+এখানে `0.25` হলো center থেকে edge পর্যন্ত distance।
+
+```text
+Center ●────────● Edge
+       ← 0.25 →
+```
+
+আর:
+
+```cpp
+i < 360
+```
+
+দিয়ে আমরা 360 degree ঘুরছি।
+
+```text
+0° → 360°
+```
+
+এভাবে circle-এর চারপাশের অনেকগুলো point পাই।
+
+---
