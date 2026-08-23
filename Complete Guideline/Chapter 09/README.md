@@ -232,3 +232,51 @@ glEnd();
 তাহলে বিভিন্ন Vertex-এর color আলাদা হবে এবং ভিতরের অংশে color blend হতে পারে।
 
 ---
+
+# 10. Polygon-এর Coordinate কীভাবে ঠিক করবো?
+
+Polygon-এর প্রতিটি Vertex-এর coordinate manually দিতে পারি।
+
+যেমন Pentagon-এর জন্য:
+
+```text
+Top
+ ↓
+(0, 0.7)
+
+Top Right
+ ↓
+(0.6, 0.3)
+
+Bottom Right
+ ↓
+(0.4, -0.5)
+
+Bottom Left
+ ↓
+(-0.4, -0.5)
+
+Top Left
+ ↓
+(-0.6, 0.3)
+```
+
+তারপর:
+
+```text
+Top
+ ↓
+Top Right
+ ↓
+Bottom Right
+ ↓
+Bottom Left
+ ↓
+Top Left
+ ↓
+Top
+```
+
+এভাবে closed shape হবে।
+
+---
