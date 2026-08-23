@@ -506,3 +506,31 @@ Circle-এর মতো
 ```
 
 ---
+
+# 18. Polygon-এর Size Change
+
+Pentagon:
+
+```cpp
+glVertex2f(0.0, 0.7);
+glVertex2f(0.6, 0.3);
+glVertex2f(0.4, -0.5);
+glVertex2f(-0.4, -0.5);
+glVertex2f(-0.6, 0.3);
+```
+
+এগুলোকে বড় করলে:
+
+```cpp
+glVertex2f(0.0, 0.9);
+glVertex2f(0.8, 0.4);
+glVertex2f(0.6, -0.7);
+glVertex2f(-0.6, -0.7);
+glVertex2f(-0.8, 0.4);
+```
+
+Polygon বড় হবে।
+
+কারণ Vertexগুলো center থেকে দূরে গেছে।
+
+---
