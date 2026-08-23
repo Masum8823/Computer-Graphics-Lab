@@ -415,3 +415,36 @@ Circle-এর মতো smooth
 > **অনেকগুলো ছোট straight line-এর combination আমাদের চোখে প্রায় circle-এর মতো দেখায়।**
 
 ---
+
+# 15. Circle Code-এর `cos()` ও `sin()` কেন?
+
+Circle-এর point বের করার জন্য:
+
+```cpp
+float x = centerX + radius * cos(angle);
+float y = centerY + radius * sin(angle);
+```
+
+এখানে:
+
+```text
+centerX
+   ↓
+Circle কোথায় থাকবে
+
+centerY
+   ↓
+Circle কোথায় থাকবে
+
+radius
+   ↓
+Circle কত বড়
+
+angle
+   ↓
+কোন position-এর point বের করছি
+```
+
+তাই circle-এর চারপাশে point generate করা যায়।
+
+---
