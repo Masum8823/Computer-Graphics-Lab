@@ -346,3 +346,72 @@ GL_POLYGON
 তাই এটা **Polygon দিয়েই circle-এর মতো shape বানাচ্ছে।**
 
 ---
+
+ 13. Circle Code-এ এতগুলো Vertex কেন?
+
+আমরা করেছিলাম:
+
+```cpp
+for(int i = 0; i < 360; i++)
+```
+
+অর্থাৎ:
+
+```text
+i = 0
+1
+2
+3
+...
+359
+```
+
+মোট:
+
+```text
+360 Vertex
+```
+
+তাই OpenGL অনেকগুলো ছোট straight line connect করে একটি **circle-এর মতো smooth shape** তৈরি করে।
+
+Concept:
+
+```text
+কম Vertex
+    ↓
+কম smooth
+
+বেশি Vertex
+    ↓
+বেশি smooth
+```
+
+---
+
+# 14. Circle আসলে Polygon-এর মতো কেন?
+
+খুব সহজভাবে:
+
+```text
+5 Vertex
+ ↓
+Pentagon
+
+10 Vertex
+ ↓
+More rounded shape
+
+100 Vertex
+ ↓
+অনেক বেশি rounded
+
+360 Vertex
+ ↓
+Circle-এর মতো smooth
+```
+
+অর্থাৎ:
+
+> **অনেকগুলো ছোট straight line-এর combination আমাদের চোখে প্রায় circle-এর মতো দেখায়।**
+
+---
