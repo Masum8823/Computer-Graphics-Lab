@@ -280,3 +280,37 @@ Top
 এভাবে closed shape হবে।
 
 ---
+
+# 11. সবচেয়ে Important Rule: Vertex Order
+
+Polygon-এর ক্ষেত্রে **Vertex order খুব important**।
+
+ধরো আমরা এইভাবে দিচ্ছি:
+
+```text
+1 → 2 → 3 → 4 → 5
+```
+
+তাহলে OpenGL সেই order follow করবে।
+
+ভালো practice:
+
+> **একদিক থেকে শুরু করে চারপাশ ঘুরে Vertex দাও।**
+
+যেমন:
+
+```text
+Top
+ ↓
+Top Right
+ ↓
+Bottom Right
+ ↓
+Bottom Left
+ ↓
+Top Left
+```
+
+এতে shape সুন্দরভাবে তৈরি হবে।
+
+---
