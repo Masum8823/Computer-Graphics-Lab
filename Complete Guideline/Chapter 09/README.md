@@ -347,7 +347,7 @@ GL_POLYGON
 
 ---
 
- 13. Circle Code-এ এতগুলো Vertex কেন?
+# 13. Circle Code-এ এতগুলো Vertex কেন?
 
 আমরা করেছিলাম:
 
