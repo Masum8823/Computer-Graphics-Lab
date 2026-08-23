@@ -534,3 +534,21 @@ Polygon বড় হবে।
 কারণ Vertexগুলো center থেকে দূরে গেছে।
 
 ---
+
+# 19. Polygon-এর Position Change
+
+সব coordinate-এর X value positive করলে shape ডানদিকে যাবে।
+
+Example:
+
+```cpp
+glVertex2f(0.4, 0.7);
+glVertex2f(1.0, 0.3);
+glVertex2f(0.8, -0.5);
+glVertex2f(0.0, -0.5);
+glVertex2f(-0.2, 0.3);
+```
+
+তবে coordinate যেন window-এর visible range-এর বাইরে বেশি চলে না যায়।
+
+---
