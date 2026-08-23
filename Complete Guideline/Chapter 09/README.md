@@ -479,3 +479,30 @@ i < 360
 এভাবে circle-এর চারপাশের অনেকগুলো point পাই।
 
 ---
+
+# 17. Polygon vs Circle
+
+| Polygon                     | Circle-like Shape                             |
+| --------------------------- | --------------------------------------------- |
+| কম Vertex হতে পারে          | অনেক Vertex                                   |
+| Straight sides দেখা যায়     | অনেক smooth                                   |
+| `GL_POLYGON`                | `GL_POLYGON`                                  |
+| Manual coordinate দেওয়া যায় | `sin()` + `cos()` দিয়ে point generate করা যায় |
+
+Example:
+
+```text
+5 Vertex
+   ↓
+Pentagon
+
+20 Vertex
+   ↓
+অনেকটা rounded
+
+360 Vertex
+   ↓
+Circle-এর মতো
+```
+
+---
