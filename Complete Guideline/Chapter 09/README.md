@@ -642,3 +642,39 @@ Output
 ```
 
 ---
+
+# 22. Previous Shapes-এর সাথে Compare
+
+| Shape     | Mode           |        Vertex |
+| --------- | -------------- | ------------: |
+| Point     | `GL_POINTS`    |             1 |
+| Line      | `GL_LINES`     |             2 |
+| Triangle  | `GL_TRIANGLES` |             3 |
+| Rectangle | `GL_QUADS`     |             4 |
+| Polygon   | `GL_POLYGON`   | 3 বা তার বেশি |
+
+সহজভাবে:
+
+```text
+GL_POINTS
+   ↓
+1 Vertex
+
+GL_LINES
+   ↓
+2 Vertex
+
+GL_TRIANGLES
+   ↓
+3 Vertex
+
+GL_QUADS
+   ↓
+4 Vertex
+
+GL_POLYGON
+   ↓
+Multiple Vertex
+```
+
+---
