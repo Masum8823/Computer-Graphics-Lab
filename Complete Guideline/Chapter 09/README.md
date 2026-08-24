@@ -853,3 +853,7 @@ GL_POLYGON
 ```
 
 ---
+
+# 26. One-Line Memory Trick
+
+> **`GL_POLYGON`-এ একাধিক Vertex একটার পর একটা connect করে একটি closed shape তৈরি করা হয়; আর অনেক Vertex ব্যবহার করলে Circle-এর মতো smooth shape-ও বানানো যায়।**
