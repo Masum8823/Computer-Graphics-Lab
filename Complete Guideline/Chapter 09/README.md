@@ -753,3 +753,53 @@ Multiple Vertex
 ```
 
 ---
+
+# 24. Common Mistakes
+
+### Mistake 1: `GL_POLYGON` ভুল লেখা
+
+সঠিক:
+
+```cpp
+glBegin(GL_POLYGON);
+```
+
+---
+
+### Mistake 2: Vertex order এলোমেলো করা
+
+ভালো:
+
+```text
+Top
+ ↓
+Top Right
+ ↓
+Bottom Right
+ ↓
+Bottom Left
+ ↓
+Top Left
+```
+
+---
+
+### Mistake 3: Circle-এ radius ভুল বোঝা
+
+```cpp
+0.25 * cos(angle)
+```
+
+এখানে `0.25`:
+
+> Circle-এর **radius**
+
+এটা অবশ্যই `360` না।
+
+```text
+0.25 → Radius
+
+360 → Angle range
+```
+
+---
