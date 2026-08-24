@@ -596,3 +596,49 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 21. Code Flow
+
+```text
+glClear()
+   ↓
+Screen Clear
+
+glColor3f()
+   ↓
+Polygon Color
+
+glBegin(GL_POLYGON)
+   ↓
+Polygon Mode
+
+glVertex2f()
+   ↓
+Vertex 1
+
+glVertex2f()
+   ↓
+Vertex 2
+
+glVertex2f()
+   ↓
+Vertex 3
+
+glVertex2f()
+   ↓
+Vertex 4
+
+glVertex2f()
+   ↓
+Vertex 5
+
+glEnd()
+   ↓
+Drawing শেষ
+
+glFlush()
+   ↓
+Output
+```
+
+---
