@@ -678,3 +678,78 @@ Multiple Vertex
 ```
 
 ---
+
+# 23. Viva Questions
+
+### Q1. Polygon আঁকার জন্য কোন primitive ব্যবহার করা হয়?
+
+**Answer:** `GL_POLYGON`
+
+---
+
+### Q2. Polygon কী?
+
+**Answer:** একাধিক straight line দিয়ে তৈরি একটি closed shape।
+
+---
+
+### Q3. Pentagon-এর জন্য কয়টি Vertex লাগে?
+
+**Answer:** 5টি।
+
+---
+
+### Q4. Hexagon-এর জন্য কয়টি Vertex লাগে?
+
+**Answer:** 6টি।
+
+---
+
+### Q5. Polygon-এর Vertex order important কেন?
+
+**Answer:** Vertexগুলো নির্দিষ্ট order-এ connect হয়ে closed shape তৈরি করে।
+
+---
+
+### Q6. Circle-এর মতো shape কীভাবে `GL_POLYGON` দিয়ে তৈরি করা যায়?
+
+**Answer:** অনেকগুলো Vertex generate করে তাদের `GL_POLYGON` দিয়ে connect করলে circle-এর মতো smooth shape তৈরি করা যায়।
+
+---
+
+### Q7. Circle code-এ `for(int i=0; i<360; i++)` কেন ব্যবহার করা হয়েছে?
+
+**Answer:** 0 থেকে 359 degree পর্যন্ত ঘুরে অনেকগুলো point generate করার জন্য।
+
+---
+
+### Q8. Circle code-এ `cos()` কী কাজে লাগে?
+
+**Answer:** Circle-এর প্রতিটি point-এর X coordinate বের করতে সাহায্য করে।
+
+---
+
+### Q9. `sin()` কী কাজে লাগে?
+
+**Answer:** Circle-এর প্রতিটি point-এর Y coordinate বের করতে সাহায্য করে।
+
+---
+
+### Q10. Circle-এর size কোন value দিয়ে control করা যায়?
+
+**Answer:** `radius` value দিয়ে।
+
+যেমন:
+
+```cpp
+0.25 * cos(angle)
+0.25 * sin(angle)
+```
+
+এখানে:
+
+```text
+0.25 = Radius
+```
+
+---
