@@ -803,3 +803,53 @@ Top Left
 ```
 
 ---
+
+# 25. Quick Revision
+
+```text
+GL_POLYGON
+      ↓
+Polygon আঁকে
+
+Multiple Vertex
+      ↓
+Multiple Sides
+
+5 Vertex
+      ↓
+Pentagon
+
+6 Vertex
+      ↓
+Hexagon
+
+অনেক Vertex
+      ↓
+Smooth/Circle-like Shape
+```
+
+Circle-এর ক্ষেত্রে:
+
+```text
+for loop
+   ↓
+অনেক Point
+
+sin()
+   ↓
+Y coordinate
+
+cos()
+   ↓
+X coordinate
+
+radius
+   ↓
+Size
+
+GL_POLYGON
+   ↓
+সব Point connect
+```
+
+---
