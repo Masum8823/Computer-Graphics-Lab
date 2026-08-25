@@ -92,3 +92,29 @@ B = 0 → No Blue
 ```
 
 ---
+
+# 5. Green Color
+
+```cpp id="7qk8dr"
+glColor3f(0.0, 1.0, 0.0);
+```
+
+এখানে:
+
+```text id="0q3tqj"
+R = 0
+G = 1
+B = 0
+```
+
+তাই:
+
+> **Green**
+
+মনে রাখো:
+
+```text id="1v8npu"
+(0,1,0) → Green
+```
+
+---
