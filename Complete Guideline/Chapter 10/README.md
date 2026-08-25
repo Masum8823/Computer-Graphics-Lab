@@ -45,3 +45,24 @@ glColor3f(R, G, B)
 ```
 
 ---
+
+# 3. RGB কী?
+
+RGB মানে:
+
+```text id="4x5n9k"
+R = Red
+G = Green
+B = Blue
+```
+
+এই তিনটি basic color মিশিয়ে বিভিন্ন color তৈরি করা যায়।
+
+প্রতিটি value সাধারণত:
+
+```text id="t8r8lq"
+0.0 → Minimum
+1.0 → Maximum
+```
+
+---
