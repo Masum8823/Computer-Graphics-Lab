@@ -248,3 +248,31 @@ Green + Blue → Cyan
 ```
 
 ---
+
+# 11. Magenta Color
+
+```cpp id="2ap4qn"
+glColor3f(1.0, 0.0, 1.0);
+```
+
+মানে:
+
+```text id="c2z5kn"
+R = 1
+G = 0
+B = 1
+```
+
+Red + Blue:
+
+```text id="p1ly9h"
+Red + Blue → Magenta
+```
+
+তাই:
+
+```text id="6ck2nt"
+(1,0,1) → Magenta
+```
+
+---
