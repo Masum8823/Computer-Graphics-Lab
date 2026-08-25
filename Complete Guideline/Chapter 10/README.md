@@ -17,3 +17,31 @@
 * Color কখন দিতে হবে
 
 ---
+
+# 2. `glColor3f()` কী?
+
+OpenGL-এ Color দেওয়ার জন্য:
+
+```cpp
+glColor3f(R, G, B);
+```
+
+ব্যবহার করা হয়।
+
+এখানে:
+
+```text id="j0n9ac"
+R → Red
+G → Green
+B → Blue
+```
+
+অর্থাৎ:
+
+```text id="3s5czi"
+glColor3f(R, G, B)
+             ↓
+         RGB Color
+```
+
+---
