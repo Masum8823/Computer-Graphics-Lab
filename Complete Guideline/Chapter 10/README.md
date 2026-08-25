@@ -66,3 +66,29 @@ B = Blue
 ```
 
 ---
+
+# 4. Red Color
+
+```cpp id="3s8n1x"
+glColor3f(1.0, 0.0, 0.0);
+```
+
+এখানে:
+
+```text id="9b3zlo"
+R = 1 → Full Red
+G = 0 → No Green
+B = 0 → No Blue
+```
+
+তাই:
+
+> **Red**
+
+সহজভাবে:
+
+```text id="rflm70"
+(1,0,0) → Red
+```
+
+---
