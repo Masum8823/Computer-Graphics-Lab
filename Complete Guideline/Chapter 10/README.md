@@ -190,3 +190,33 @@ B = 1
 ```
 
 ---
+
+# 9. Yellow Color
+
+Yellow বানাতে:
+
+```cpp id="7j7p4k"
+glColor3f(1.0, 1.0, 0.0);
+```
+
+মানে:
+
+```text id="w9x9w8"
+R = 1
+G = 1
+B = 0
+```
+
+Red + Green:
+
+```text id="0wqjvq"
+Red + Green → Yellow
+```
+
+তাই:
+
+```text id="xw9p0q"
+(1,1,0) → Yellow
+```
+
+---
