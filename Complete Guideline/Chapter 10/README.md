@@ -142,3 +142,27 @@ B = 1
 ```
 
 ---
+
+# 7. Black Color
+
+```cpp id="n9k2jf"
+glColor3f(0.0, 0.0, 0.0);
+```
+
+সবগুলো value 0:
+
+```text id="q4t2uj"
+R = 0
+G = 0
+B = 0
+```
+
+তাই:
+
+> **Black**
+
+```text id="8p3u1h"
+(0,0,0) → Black
+```
+
+---
