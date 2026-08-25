@@ -166,3 +166,27 @@ B = 0
 ```
 
 ---
+
+# 8. White Color
+
+```cpp id="9a7e3q"
+glColor3f(1.0, 1.0, 1.0);
+```
+
+সবগুলো value maximum:
+
+```text id="3u6d1g"
+R = 1
+G = 1
+B = 1
+```
+
+তাই:
+
+> **White**
+
+```text id="u4nq0z"
+(1,1,1) → White
+```
+
+---
