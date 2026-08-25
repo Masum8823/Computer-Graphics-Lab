@@ -220,3 +220,31 @@ Red + Green → Yellow
 ```
 
 ---
+
+# 10. Cyan Color
+
+```cpp id="3e4g8p"
+glColor3f(0.0, 1.0, 1.0);
+```
+
+মানে:
+
+```text id="y8b0kg"
+R = 0
+G = 1
+B = 1
+```
+
+Green + Blue:
+
+```text id="q1p5sd"
+Green + Blue → Cyan
+```
+
+তাই:
+
+```text id="c0p6v2"
+(0,1,1) → Cyan
+```
+
+---
