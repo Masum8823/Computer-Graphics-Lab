@@ -352,3 +352,36 @@ glColor3f(0.0, 0.0, 0.5);
 → Darker Blue
 
 ---
+# 15. Color + Point
+
+আগে আমরা Point এভাবে এঁকেছিলাম:
+
+```cpp id="zldh6c"
+glPointSize(10);
+
+glBegin(GL_POINTS);
+
+glVertex2f(0.0, 0.0);
+
+glEnd();
+```
+
+এখন Color যোগ করি:
+
+```cpp id="y2y0f0"
+glPointSize(10);
+
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_POINTS);
+
+glVertex2f(0.0, 0.0);
+
+glEnd();
+```
+
+এখানে Point হবে:
+
+> **Red**
+
+---
