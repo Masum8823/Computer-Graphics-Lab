@@ -505,3 +505,36 @@ Shape Draw
 > **Shape আঁকার আগে Color set করে দিলে পুরো shape সেই color হবে।**
 
 ---
+
+# 21. এক Shape-এ Multiple Color
+
+এটাই Triangle-এর ক্ষেত্রে আমরা করেছিলাম।
+
+```cpp id="l0v4ps"
+glBegin(GL_TRIANGLES);
+
+glColor3f(1,0,0);
+glVertex2f(0.0,0.5);
+
+glColor3f(0,1,0);
+glVertex2f(-0.5,-0.5);
+
+glColor3f(0,0,1);
+glVertex2f(0.5,-0.5);
+
+glEnd();
+```
+
+এখানে:
+
+```text id="h4a4ha"
+Vertex 1 → Red
+Vertex 2 → Green
+Vertex 3 → Blue
+```
+
+OpenGL মাঝের অংশে color interpolate করতে পারে।
+
+তাই Triangle-এর ভিতরে বিভিন্ন mixed color দেখা যাবে।
+
+---
