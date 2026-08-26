@@ -467,3 +467,41 @@ glEnd();
 > **Magenta**
 
 ---
+
+# 20. সবচেয়ে Important: `glColor3f()` কোথায় লিখবো?
+
+Basic code-এ সহজভাবে:
+
+```cpp id="1v4kz1"
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_TRIANGLES);
+
+glVertex2f(0.0,0.5);
+glVertex2f(-0.5,-0.5);
+glVertex2f(0.5,-0.5);
+
+glEnd();
+```
+
+এখানে:
+
+```text id="y0l8ko"
+glColor3f()
+    ↓
+Color Set
+
+glBegin()
+    ↓
+Shape Start
+
+glVertex2f()
+    ↓
+Shape Draw
+```
+
+অর্থাৎ:
+
+> **Shape আঁকার আগে Color set করে দিলে পুরো shape সেই color হবে।**
+
+---
