@@ -385,3 +385,22 @@ glEnd();
 > **Red**
 
 ---
+
+# 16. Color + Line
+
+```cpp id="5e1r9f"
+glColor3f(0.0, 1.0, 0.0);
+
+glBegin(GL_LINES);
+
+glVertex2f(-0.5, 0.0);
+glVertex2f(0.5, 0.0);
+
+glEnd();
+```
+
+এখানে Line হবে:
+
+> **Green**
+
+---
