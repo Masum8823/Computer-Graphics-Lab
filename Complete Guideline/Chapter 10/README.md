@@ -293,3 +293,30 @@ Red + Blue → Magenta
 এই table-টা lab-এর জন্য **মুখস্থ করে ফেললে ভালো**।
 
 ---
+
+# 13. `glColor3f()`-এ Value Range
+
+সাধারণভাবে:
+
+```text id="9x4bqk"
+0.0 → Minimum
+1.0 → Maximum
+```
+
+তাই:
+
+```cpp id="n0a4tc"
+glColor3f(1.0, 0.0, 0.0);
+```
+
+মানে Full Red।
+
+আবার:
+
+```cpp id="d2k6cd"
+glColor3f(0.5, 0.0, 0.0);
+```
+
+মানে Red-এর intensity কম।
+
+---
