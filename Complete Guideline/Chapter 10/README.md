@@ -424,3 +424,24 @@ glEnd();
 > **Blue**
 
 ---
+
+# 18. Color + Rectangle
+
+```cpp id="08g9qf"
+glColor3f(1.0, 1.0, 0.0);
+
+glBegin(GL_QUADS);
+
+glVertex2f(-0.5, 0.5);
+glVertex2f(0.5, 0.5);
+glVertex2f(0.5, -0.5);
+glVertex2f(-0.5, -0.5);
+
+glEnd();
+```
+
+এখানে Rectangle হবে:
+
+> **Yellow**
+
+---
