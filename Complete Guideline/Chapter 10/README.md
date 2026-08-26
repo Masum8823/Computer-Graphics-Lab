@@ -320,3 +320,35 @@ glColor3f(0.5, 0.0, 0.0);
 মানে Red-এর intensity কম।
 
 ---
+
+# 14. `0.5` কেন ব্যবহার করবো?
+
+ধরো:
+
+```cpp id="3c7xvs"
+glColor3f(0.5, 0.0, 0.0);
+```
+
+এখানে:
+
+```text id="l2s0h8"
+Red = 0.5
+```
+
+অর্থাৎ Red-এর intensity `1.0` থেকে কম।
+
+একইভাবে:
+
+```cpp id="q1d1bs"
+glColor3f(0.0, 0.5, 0.0);
+```
+
+→ Darker Green
+
+```cpp id="q6g6o0"
+glColor3f(0.0, 0.0, 0.5);
+```
+
+→ Darker Blue
+
+---
