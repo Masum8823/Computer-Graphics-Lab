@@ -445,3 +445,25 @@ glEnd();
 > **Yellow**
 
 ---
+
+# 19. Color + Polygon
+
+```cpp id="e0e9su"
+glColor3f(1.0, 0.0, 1.0);
+
+glBegin(GL_POLYGON);
+
+glVertex2f(0.0, 0.7);
+glVertex2f(0.6, 0.3);
+glVertex2f(0.4, -0.5);
+glVertex2f(-0.4, -0.5);
+glVertex2f(-0.6, 0.3);
+
+glEnd();
+```
+
+এখানে Polygon হবে:
+
+> **Magenta**
+
+---
