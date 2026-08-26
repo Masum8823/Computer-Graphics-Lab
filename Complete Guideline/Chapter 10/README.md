@@ -538,3 +538,38 @@ OpenGL মাঝের অংশে color interpolate করতে পারে�
 তাই Triangle-এর ভিতরে বিভিন্ন mixed color দেখা যাবে।
 
 ---
+
+# 22. `glColor3f()` + `glVertex2f()` Relationship
+
+এই দুইটা খুব ভালোভাবে মনে রাখো:
+
+```cpp id="1y0mqp"
+glColor3f(1,0,0);
+glVertex2f(0.0,0.5);
+```
+
+প্রথম Line:
+
+```text id="76l4cv"
+Color → Red
+```
+
+দ্বিতীয় Line:
+
+```text id="bq3xv7"
+Position → (0.0,0.5)
+```
+
+অর্থাৎ:
+
+```text id="0v1v9k"
+glColor3f()
+      ↓
+WHAT COLOR?
+
+glVertex2f()
+      ↓
+WHERE?
+```
+
+---
