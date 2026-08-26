@@ -404,3 +404,23 @@ glEnd();
 > **Green**
 
 ---
+
+# 17. Color + Triangle
+
+```cpp id="9a1r8w"
+glColor3f(0.0, 0.0, 1.0);
+
+glBegin(GL_TRIANGLES);
+
+glVertex2f(0.0, 0.5);
+glVertex2f(-0.5, -0.5);
+glVertex2f(0.5, -0.5);
+
+glEnd();
+```
+
+এখানে পুরো Triangle হবে:
+
+> **Blue**
+
+---
