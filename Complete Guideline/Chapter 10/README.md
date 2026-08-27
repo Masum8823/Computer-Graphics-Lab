@@ -573,3 +573,41 @@ WHERE?
 ```
 
 ---
+
+# 23. RGB মনে রাখার সহজ Trick
+
+`glColor3f(R,G,B)`-এ order সবসময়:
+
+```text id="oz8q5x"
+R → G → B
+```
+
+অর্থাৎ:
+
+```text id="y9e6n8"
+1st → Red
+2nd → Green
+3rd → Blue
+```
+
+Example:
+
+```cpp id="ypa6qt"
+glColor3f(1, 0, 0);
+```
+
+প্রথম value `1` → Red।
+
+```cpp id="ahh1sp"
+glColor3f(0, 1, 0);
+```
+
+দ্বিতীয় value `1` → Green।
+
+```cpp id="k21gse"
+glColor3f(0, 0, 1);
+```
+
+তৃতীয় value `1` → Blue।
+
+---
