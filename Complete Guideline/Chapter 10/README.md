@@ -904,3 +904,7 @@ B → Blue
 ```
 
 ---
+
+# 31. One-Line Memory Trick
+
+> **`glColor3f(R,G,B)` → প্রথমটা Red, দ্বিতীয়টা Green, তৃতীয়টা Blue; আর `glClearColor()` → Background Color।**
