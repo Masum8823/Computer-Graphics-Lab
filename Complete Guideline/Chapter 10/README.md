@@ -867,3 +867,40 @@ Basic range:
 ```
 
 ---
+
+# 30. Quick Revision
+
+```text id="f3gj9b"
+glColor3f(R,G,B)
+       ↓
+      RGB
+
+R → Red
+G → Green
+B → Blue
+
+0 → Off
+1 → Full
+```
+
+সবচেয়ে important colors:
+
+```text id="kvw1l5"
+(1,0,0) → Red
+
+(0,1,0) → Green
+
+(0,0,1) → Blue
+
+(0,0,0) → Black
+
+(1,1,1) → White
+
+(1,1,0) → Yellow
+
+(0,1,1) → Cyan
+
+(1,0,1) → Magenta
+```
+
+---
