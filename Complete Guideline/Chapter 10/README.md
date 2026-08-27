@@ -758,3 +758,71 @@ Magenta
 ```
 
 ---
+
+# 28. Viva Questions
+
+### Q1. OpenGL-এ Object-এর Color দেওয়ার জন্য কোন function ব্যবহার করা হয়?
+
+**Answer:** `glColor3f()`।
+
+---
+
+### Q2. RGB-এর full form কী?
+
+**Answer:** Red, Green, Blue।
+
+---
+
+### Q3. `glColor3f(1,0,0)` কোন Color?
+
+**Answer:** Red।
+
+---
+
+### Q4. `glColor3f(0,1,0)` কোন Color?
+
+**Answer:** Green।
+
+---
+
+### Q5. `glColor3f(0,0,1)` কোন Color?
+
+**Answer:** Blue।
+
+---
+
+### Q6. `glColor3f(1,1,1)` কোন Color?
+
+**Answer:** White।
+
+---
+
+### Q7. `glColor3f(0,0,0)` কোন Color?
+
+**Answer:** Black।
+
+---
+
+### Q8. `glColor3f(1,1,0)` কোন Color?
+
+**Answer:** Yellow।
+
+---
+
+### Q9. Background color-এর জন্য কোন function ব্যবহার করা হয়?
+
+**Answer:** `glClearColor()`।
+
+---
+
+### Q10. `glClearColor()` এবং `glColor3f()`-এর difference কী?
+
+**Answer:**
+
+```text id="b8dfzq"
+glClearColor() → Background
+
+glColor3f() → Shape/Object
+```
+
+---
