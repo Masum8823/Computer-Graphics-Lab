@@ -49,3 +49,31 @@ glEnd();
 এখন একদম line by line বুঝি।
 
 ---
+
+# 3. `glBegin(GL_POLYGON)`
+
+```cpp
+glBegin(GL_POLYGON);
+```
+
+এখানে OpenGL-কে বলছি:
+
+> আমরা এখন একটি Polygon আঁকবো।
+
+কিন্তু এখানে একটা প্রশ্ন আসবে:
+
+**Circle-এর জন্য Polygon কেন?**
+
+কারণ আমরা অনেকগুলো Vertex তৈরি করবো।
+
+```text
+অনেক Vertex
+     ↓
+অনেক ছোট ছোট Line
+     ↓
+প্রায় গোল Shape
+```
+
+Vertex যত বেশি হবে, shape তত smooth দেখাবে।
+
+---
