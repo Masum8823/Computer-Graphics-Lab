@@ -611,3 +611,45 @@ glColor3f(0, 0, 1);
 তৃতীয় value `1` → Blue।
 
 ---
+
+# 24. Background Color vs Shape Color
+
+এখানে একটা important difference আছে।
+
+### Background Color
+
+```cpp id="9l6w6r"
+glClearColor(0.0, 0.0, 0.0, 1.0);
+```
+
+এটা:
+
+> Window-এর **background color** সেট করে।
+
+---
+
+### Shape Color
+
+```cpp id="s7d9fq"
+glColor3f(1.0, 0.0, 0.0);
+```
+
+এটা:
+
+> Shape-এর **color** সেট করে।
+
+তাই:
+
+```text id="ck8cxj"
+glClearColor()
+      ↓
+Background
+
+glColor3f()
+      ↓
+Object/Shape
+```
+
+এটা exam-এর জন্য important difference।
+
+---
