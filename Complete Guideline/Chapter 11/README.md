@@ -304,3 +304,165 @@ x = -0.1 + 0.25 * cos(angle);
 ```
 
 ---
+
+# 10. `-0.1` কেন?
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+```
+
+এখানে:
+
+```text
+-0.1
+```
+
+হলো Circle-এর **Center X**।
+
+অর্থাৎ Circle-এর center:
+
+```text
+X = -0.1
+```
+
+তাই Circle center থেকে একটু **left side**-এ থাকবে।
+
+---
+
+# 11. `0.25` কেন?
+
+```cpp
+0.25 * cos(angle)
+```
+
+এখানে:
+
+```text
+0.25 = Radius
+```
+
+অর্থাৎ Circle-এর center থেকে edge পর্যন্ত distance:
+
+```text
+0.25
+```
+
+Diagram:
+
+```text
+Center ●────────● Edge
+       ← 0.25 →
+```
+
+তাই:
+
+> `0.25` হলো Circle-এর size control করার value।
+
+---
+
+# 12. Radius Change করা যায়?
+
+অবশ্যই।
+
+বর্তমানে:
+
+```cpp
+0.25
+```
+
+আছে।
+
+চাইলে:
+
+```cpp
+0.4
+```
+
+দিতে পারো।
+
+```cpp
+float x = -0.1 + 0.4 * cos(angle);
+float y =  0.0 + 0.4 * sin(angle);
+```
+
+তাহলে Circle বড় হবে।
+
+আর:
+
+```cpp
+0.1
+```
+
+দিলে ছোট হবে।
+
+```text
+Radius বড়
+   ↓
+Circle বড়
+
+Radius ছোট
+   ↓
+Circle ছোট
+```
+
+---
+
+# 13. `y` Coordinate
+
+এখন:
+
+```cpp
+float y = 0.0 + 0.25 * sin(angle);
+```
+
+এখানে Circle-এর প্রতিটি point-এর **Y coordinate** বের করছি।
+
+Basic formula:
+
+```text
+y = centerY + radius × sin(angle)
+```
+
+আমাদের code:
+
+```text
+centerY = 0.0
+radius  = 0.25
+```
+
+তাই:
+
+```cpp
+y = 0.0 + 0.25 * sin(angle);
+```
+
+---
+
+# 14. `0.0` কেন?
+
+```cpp
+float y = 0.0 + 0.25 * sin(angle);
+```
+
+এখানে:
+
+```text
+0.0
+```
+
+হলো Circle-এর **Center Y**।
+
+অর্থাৎ:
+
+```text
+Center X = -0.1
+Center Y = 0.0
+```
+
+তাই Circle-এর center:
+
+```text
+(-0.1, 0.0)
+```
+
+---
