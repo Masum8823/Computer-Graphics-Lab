@@ -181,3 +181,29 @@ cos()
 সাধারণভাবে angle **radian** হিসেবে নেয়।
 
 ---
+
+# 7. Degree থেকে Radian
+
+Formula:
+
+```text
+Radian = Degree × π / 180
+```
+
+আমাদের code:
+
+```cpp
+float angle = i * 3.1416 / 180.0;
+```
+
+এখানে:
+
+```text
+i → Degree
+
+3.1416 → π-এর কাছাকাছি value
+
+180 → Degree to Radian conversion
+```
+
+---
