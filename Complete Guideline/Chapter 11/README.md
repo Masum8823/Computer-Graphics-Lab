@@ -27,3 +27,25 @@ Circle-এর মতো Shape
 ```
 
 ---
+
+# 2. আমাদের Basic Circle Code
+
+```cpp
+glBegin(GL_POLYGON);
+
+for(int i = 0; i < 360; i++)
+{
+    float angle = i * 3.1416 / 180.0;
+
+    float x = -0.1 + 0.25 * cos(angle);
+    float y =  0.0 + 0.25 * sin(angle);
+
+    glVertex2f(x, y);
+}
+
+glEnd();
+```
+
+এখন একদম line by line বুঝি।
+
+---
