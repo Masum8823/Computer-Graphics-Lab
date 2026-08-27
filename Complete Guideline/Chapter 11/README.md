@@ -273,3 +273,34 @@ angle ≈ 6.28
 ```
 
 ---
+
+# 9. `x` Coordinate
+
+এখন আসি:
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+```
+
+এখানে Circle-এর প্রতিটি point-এর **X coordinate** বের করছি।
+
+Basic formula:
+
+```text
+x = centerX + radius × cos(angle)
+```
+
+আমাদের code-এ:
+
+```text
+centerX = -0.1
+radius  = 0.25
+```
+
+তাই:
+
+```cpp
+x = -0.1 + 0.25 * cos(angle);
+```
+
+---
