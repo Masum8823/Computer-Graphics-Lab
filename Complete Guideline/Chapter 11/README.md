@@ -160,3 +160,24 @@ for(int i = 0; i < 360; i++)
 > **360 degree ঘুরে Circle complete করছি।**
 
 ---
+
+# 6. `float angle`
+
+```cpp
+float angle = i * 3.1416 / 180.0;
+```
+
+এই line-টা প্রথমে একটু কঠিন মনে হতে পারে।
+
+এখানে আমরা `i`-কে **degree থেকে radian-এ convert** করছি।
+
+কারণ C/C++ এর:
+
+```cpp
+sin()
+cos()
+```
+
+সাধারণভাবে angle **radian** হিসেবে নেয়।
+
+---
