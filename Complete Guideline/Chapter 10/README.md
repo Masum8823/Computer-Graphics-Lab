@@ -826,3 +826,44 @@ glColor3f() → Shape/Object
 ```
 
 ---
+
+# 29. Common Mistakes
+
+### Mistake 1: RGB order ভুল করা
+
+মনে রাখবে:
+
+```text id="8ad7xw"
+glColor3f(R,G,B)
+             ↓
+          Red Green Blue
+```
+
+---
+
+### Mistake 2: Background আর Shape Color এক মনে করা
+
+```cpp id="b0xxo3"
+glClearColor();
+```
+
+→ Background
+
+```cpp id="6c3g9h"
+glColor3f();
+```
+
+→ Shape
+
+---
+
+### Mistake 3: `glColor3f()`-এর value ভুল দেওয়া
+
+Basic range:
+
+```text id="9t6p6c"
+0.0 → Off
+1.0 → Full
+```
+
+---
