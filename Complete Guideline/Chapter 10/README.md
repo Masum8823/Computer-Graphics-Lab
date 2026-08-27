@@ -653,3 +653,26 @@ Object/Shape
 এটা exam-এর জন্য important difference।
 
 ---
+
+# 25. `glClearColor()` vs `glColor3f()`
+
+| Function         | কাজ                |
+| ---------------- | ------------------ |
+| `glClearColor()` | Background Color   |
+| `glColor3f()`    | Shape/Object Color |
+
+Example:
+
+```cpp id="8ejx5f"
+glClearColor(0,0,1,1);
+```
+
+→ Blue Background
+
+```cpp id="8s6m9s"
+glColor3f(1,0,0);
+```
+
+→ Red Shape
+
+---
