@@ -490,3 +490,27 @@ x = centerX + radius * cos(angle);
 ```
 
 ---
+
+# 16. `sin()` কী করছে?
+
+```cpp
+sin(angle)
+```
+
+Circle-এর point-এর **Y direction** determine করতে সাহায্য করছে।
+
+মনে রাখো:
+
+```text
+sin()
+ ↓
+Y
+```
+
+তাই:
+
+```cpp
+y = centerY + radius * sin(angle);
+```
+
+---
