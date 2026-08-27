@@ -676,3 +676,55 @@ glColor3f(1,0,0);
 → Red Shape
 
 ---
+
+# 26. Complete Example
+
+একটা Red Triangle Blue Background-এর উপর:
+
+```cpp id="s2vq5m"
+#include <GL/glut.h>
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glColor3f(1.0, 0.0, 0.0);
+
+    glBegin(GL_TRIANGLES);
+
+    glVertex2f(0.0, 0.5);
+    glVertex2f(-0.5, -0.5);
+    glVertex2f(0.5, -0.5);
+
+    glEnd();
+
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+
+    glutInitWindowSize(800, 600);
+
+    glutCreateWindow("Colors");
+
+    glClearColor(0.0, 0.0, 1.0, 1.0);
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+এখানে:
+
+```text id="5a1l0k"
+Background → Blue
+
+Triangle → Red
+```
+
+---
