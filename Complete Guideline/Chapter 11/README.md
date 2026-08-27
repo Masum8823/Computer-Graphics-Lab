@@ -514,3 +514,24 @@ y = centerY + radius * sin(angle);
 ```
 
 ---
+
+# 17. সবচেয়ে Important Formula
+
+Circle-এর point বের করার formula:
+
+```text
+x = centerX + radius × cos(angle)
+
+y = centerY + radius × sin(angle)
+```
+
+Code:
+
+```cpp
+float x = centerX + radius * cos(angle);
+float y = centerY + radius * sin(angle);
+```
+
+এই formula-টাই **মুখস্থ করে ফেলো**।
+
+---
