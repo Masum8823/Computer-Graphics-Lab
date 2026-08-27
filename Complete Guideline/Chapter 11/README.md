@@ -466,3 +466,27 @@ Center Y = 0.0
 ```
 
 ---
+
+# 15. `cos()` কী করছে?
+
+```cpp
+cos(angle)
+```
+
+Circle-এর point-এর **X direction** determine করতে সাহায্য করছে।
+
+মনে রাখো:
+
+```text
+cos()
+ ↓
+X
+```
+
+তাই:
+
+```cpp
+x = centerX + radius * cos(angle);
+```
+
+---
