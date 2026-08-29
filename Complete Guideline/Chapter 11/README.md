@@ -563,3 +563,51 @@ y → কোথায় vertically?
 ```
 
 ---
+
+# 19. Loop-এর ভিতরে কেন `glVertex2f()`?
+
+কারণ আমরা শুধু একটি point চাই না।
+
+আমরা চাই:
+
+```text
+0°
+1°
+2°
+3°
+...
+359°
+```
+
+প্রতিটি angle-এর জন্য একটি করে point।
+
+তাই:
+
+```cpp
+for(...)
+{
+    calculate x;
+    calculate y;
+    glVertex2f(x,y);
+}
+```
+
+মানে:
+
+```text
+Angle
+ ↓
+X,Y Calculate
+ ↓
+Vertex
+ ↓
+Next Angle
+ ↓
+X,Y Calculate
+ ↓
+Vertex
+ ↓
+...
+```
+
+---
