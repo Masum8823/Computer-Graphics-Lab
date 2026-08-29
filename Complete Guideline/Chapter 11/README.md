@@ -535,3 +535,31 @@ float y = centerY + radius * sin(angle);
 এই formula-টাই **মুখস্থ করে ফেলো**।
 
 ---
+
+# 18. `glVertex2f(x,y)`
+
+এখন:
+
+```cpp
+glVertex2f(x, y);
+```
+
+এর কাজ হলো:
+
+> আমরা যে X এবং Y coordinate calculate করেছি, সেই position-এ একটি Vertex বসানো।
+
+অর্থাৎ:
+
+```text
+x → কোথায় horizontally?
+
+y → কোথায় vertically?
+```
+
+এই দুইটা মিলে:
+
+```text
+(x,y) → একটি Point/Vertex
+```
+
+---
