@@ -816,3 +816,20 @@ Center = (0.3, 0.0)
 Circle ডানদিকে যাবে।
 
 ---
+
+# 27. শুধু Y Change করলে
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+float y = 0.3 + 0.25 * sin(angle);
+```
+
+তাহলে:
+
+```text
+Center = (-0.1, 0.3)
+```
+
+Circle উপরের দিকে যাবে।
+
+---
