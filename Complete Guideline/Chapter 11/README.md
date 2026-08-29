@@ -611,3 +611,41 @@ Vertex
 ```
 
 ---
+
+# 20. পুরো Process
+
+```text
+i = 0
+ ↓
+angle calculate
+ ↓
+x calculate
+ ↓
+y calculate
+ ↓
+vertex তৈরি
+
+i = 1
+ ↓
+angle calculate
+ ↓
+x calculate
+ ↓
+y calculate
+ ↓
+vertex তৈরি
+
+...
+
+i = 359
+ ↓
+শেষ Vertex
+```
+
+তারপর:
+
+```cpp
+glEnd();
+```
+
+---
