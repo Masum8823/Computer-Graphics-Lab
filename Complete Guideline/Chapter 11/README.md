@@ -833,3 +833,39 @@ Center = (-0.1, 0.3)
 Circle উপরের দিকে যাবে।
 
 ---
+
+# 28. Circle-এর Size vs Position
+
+এটা খুব important:
+
+```text
+centerX
+centerY
+```
+
+→ Circle-এর **Position**
+
+আর:
+
+```text
+radius
+```
+
+→ Circle-এর **Size**
+
+অর্থাৎ:
+
+```text
+x = centerX + radius*cos(angle)
+y = centerY + radius*sin(angle)
+```
+
+এখানে:
+
+```text
+Center → কোথায়?
+
+Radius → কত বড়?
+```
+
+---
