@@ -649,3 +649,31 @@ glEnd();
 ```
 
 ---
+
+# 21. `glEnd()`
+
+```cpp
+glEnd();
+```
+
+এর মানে:
+
+> আমাদের Polygon drawing শেষ।
+
+তাই:
+
+```text
+glBegin()
+   ↓
+Drawing Start
+
+for loop
+   ↓
+অনেক Vertex
+
+glEnd()
+   ↓
+Drawing End
+```
+
+---
