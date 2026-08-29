@@ -677,3 +677,27 @@ Drawing End
 ```
 
 ---
+
+# 22. Circle-এর Center
+
+আমাদের code:
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+float y =  0.0 + 0.25 * sin(angle);
+```
+
+এখানে:
+
+```text
+centerX = -0.1
+centerY =  0.0
+```
+
+তাই:
+
+```text
+Center = (-0.1, 0.0)
+```
+
+---
