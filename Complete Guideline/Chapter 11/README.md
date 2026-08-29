@@ -766,3 +766,36 @@ float y =  0.0 + 0.5 * sin(angle);
 > **`0.25` শুধু example হিসেবে নেওয়া হয়েছে।**
 
 ---
+
+# 25. Circle-এর Center Change
+
+বর্তমানে:
+
+```cpp
+centerX = -0.1
+centerY = 0.0
+```
+
+যদি:
+
+```cpp
+x = 0.3 + 0.25 * cos(angle);
+y = 0.2 + 0.25 * sin(angle);
+```
+
+দাও:
+
+```text
+Center = (0.3, 0.2)
+```
+
+তাহলে Circle:
+
+```text
+Right → 0.3
+Up    → 0.2
+```
+
+দিকে চলে যাবে।
+
+---
