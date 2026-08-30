@@ -895,3 +895,41 @@ Circle-এর Radius
 ```
 
 ---
+
+# 30. Circle-এর Smoothness
+
+আমরা লিখেছি:
+
+```cpp
+for(int i = 0; i < 360; i++)
+```
+
+তাই অনেকগুলো Vertex হচ্ছে।
+
+```text
+More Vertex
+     ↓
+More smooth
+```
+
+যদি:
+
+```cpp
+for(int i = 0; i < 30; i++)
+```
+
+দিই, তাহলে মাত্র 30টি point হবে এবং shape বেশি polygon-এর মতো দেখাতে পারে।
+
+আর:
+
+```cpp
+for(int i = 0; i < 360; i++)
+```
+
+দিলে অনেক বেশি point পাওয়া যায়।
+
+তাই:
+
+> Circle বেশি smooth দেখায়।
+
+---
