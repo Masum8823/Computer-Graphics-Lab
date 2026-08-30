@@ -1089,3 +1089,89 @@ y = centerY + radius × sin(angle)
 এটা সবচেয়ে important।
 
 ---
+
+# 36. Viva Questions
+
+### Q1. OpenGL-এ Circle আঁকার জন্য কোন primitive ব্যবহার করা হয়েছে?
+
+**Answer:** `GL_POLYGON` ব্যবহার করে অনেকগুলো Vertex দিয়ে Circle-এর মতো shape তৈরি করা হয়েছে।
+
+---
+
+### Q2. `for(int i=0; i<360; i++)` কেন?
+
+**Answer:** 0 থেকে 359 degree পর্যন্ত Circle-এর চারপাশে ঘুরে অনেকগুলো Vertex তৈরি করার জন্য।
+
+---
+
+### Q3. `360` কী বোঝায়?
+
+**Answer:** একটি পূর্ণ Circle-এর `360°` angle।
+
+---
+
+### Q4. `3.1416` কী?
+
+**Answer:** এটি `π (Pi)`-এর কাছাকাছি value।
+
+---
+
+### Q5. `180.0` কেন?
+
+**Answer:** Degree থেকে Radian-এ convert করার জন্য।
+
+---
+
+### Q6. `cos(angle)` কী বের করতে সাহায্য করে?
+
+**Answer:** X coordinate।
+
+---
+
+### Q7. `sin(angle)` কী বের করতে সাহায্য করে?
+
+**Answer:** Y coordinate।
+
+---
+
+### Q8. `0.25` কী?
+
+**Answer:** Circle-এর Radius।
+
+---
+
+### Q9. `-0.1` কী?
+
+**Answer:** Circle-এর Center X coordinate।
+
+---
+
+### Q10. `0.0` কী?
+
+**Answer:** Circle-এর Center Y coordinate।
+
+---
+
+### Q11. Radius বাড়ালে কী হবে?
+
+**Answer:** Circle বড় হবে।
+
+---
+
+### Q12. Center X change করলে কী হবে?
+
+**Answer:** Circle left/right দিকে move করবে।
+
+---
+
+### Q13. Center Y change করলে কী হবে?
+
+**Answer:** Circle up/down দিকে move করবে।
+
+---
+
+### Q14. Vertex বেশি দিলে কী হবে?
+
+**Answer:** Circle-এর মতো shape আরও smooth দেখাবে।
+
+---
