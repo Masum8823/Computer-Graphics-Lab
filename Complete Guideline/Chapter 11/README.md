@@ -1075,3 +1075,17 @@ Circle
 ```
 
 ---
+
+# 35. Important Formula
+
+Circle-এর point:
+
+```text
+x = centerX + radius × cos(angle)
+
+y = centerY + radius × sin(angle)
+```
+
+এটা সবচেয়ে important।
+
+---
