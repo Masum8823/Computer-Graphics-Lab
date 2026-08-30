@@ -933,3 +933,70 @@ for(int i = 0; i < 360; i++)
 > Circle বেশি smooth দেখায়।
 
 ---
+
+# 31. `i += 2` দিলে কী হবে?
+
+এটাও করা যায়:
+
+```cpp
+for(int i = 0; i < 360; i += 2)
+```
+
+তাহলে:
+
+```text
+0
+2
+4
+6
+...
+358
+```
+
+অর্থাৎ কম Vertex হবে।
+
+তাই:
+
+```text
+i++
+ ↓
+বেশি Vertex
+
+i += 2
+ ↓
+কম Vertex
+```
+
+---
+
+# 32. Circle-এর Color
+
+Circle-এর আগে:
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+দিলে Circle Red হবে।
+
+Complete:
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_POLYGON);
+
+for(int i = 0; i < 360; i++)
+{
+    float angle = i * 3.1416 / 180.0;
+
+    float x = -0.1 + 0.25 * cos(angle);
+    float y =  0.0 + 0.25 * sin(angle);
+
+    glVertex2f(x, y);
+}
+
+glEnd();
+```
+
+---
