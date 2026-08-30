@@ -1035,3 +1035,43 @@ glEnd();
 ```
 
 ---
+
+# 34. আরও সহজ করে Code-এর Meaning
+
+এই পুরো code-টাকে শুধু এইভাবে মনে রাখো:
+
+```text
+GL_POLYGON
+    ↓
+Circle বানাবো
+
+for 0 → 360
+    ↓
+পুরো Circle ঘুরবো
+
+cos()
+    ↓
+X বের করবো
+
+sin()
+    ↓
+Y বের করবো
+
+radius
+    ↓
+Circle-এর size
+
+centerX, centerY
+    ↓
+Circle-এর position
+
+glVertex2f(x,y)
+    ↓
+Point বসাবো
+
+সব Point connect
+    ↓
+Circle
+```
+
+---
