@@ -1276,3 +1276,7 @@ Circle
 ```
 
 ---
+
+# 39. One-Line Memory Trick
+
+> **Circle আঁকতে `GL_POLYGON` দিয়ে অনেকগুলো Vertex তৈরি করি; `cos()` দিয়ে X, `sin()` দিয়ে Y বের করি, আর `radius` দিয়ে Circle-এর size control করি।**
