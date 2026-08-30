@@ -1000,3 +1000,38 @@ glEnd();
 ```
 
 ---
+
+
+# 33. Full Circle Code with Comments
+
+Exam-এর আগে এই version-টা practice করো:
+
+```cpp
+// Polygon mode শুরু
+glBegin(GL_POLYGON);
+
+// 0 থেকে 359 degree পর্যন্ত ঘুরবে
+for(int i = 0; i < 360; i++)
+{
+    // Degree কে Radian এ convert
+    float angle = i * 3.1416 / 180.0;
+
+    // Circle-এর X coordinate বের করছি
+    // -0.1 = Center X
+    // 0.25 = Radius
+    float x = -0.1 + 0.25 * cos(angle);
+
+    // Circle-এর Y coordinate বের করছি
+    // 0.0 = Center Y
+    // 0.25 = Radius
+    float y = 0.0 + 0.25 * sin(angle);
+
+    // Calculated point-এ Vertex বসাচ্ছি
+    glVertex2f(x, y);
+}
+
+// Polygon drawing শেষ
+glEnd();
+```
+
+---
