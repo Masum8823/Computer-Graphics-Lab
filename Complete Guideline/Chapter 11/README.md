@@ -1175,3 +1175,70 @@ y = centerY + radius × sin(angle)
 **Answer:** Circle-এর মতো shape আরও smooth দেখাবে।
 
 ---
+
+# 37. Common Mistakes
+
+### Mistake 1: `sin()` এবং `cos()` উল্টে ফেলা
+
+Basic formula:
+
+```text
+x → cos()
+
+y → sin()
+```
+
+মনে রাখো:
+
+> **Cos → X, Sin → Y**
+
+---
+
+### Mistake 2: Degree সরাসরি `sin()`/`cos()`-এ দেওয়া
+
+ভুল:
+
+```cpp
+cos(i);
+sin(i);
+```
+
+আমাদের এই code-এ `i` degree হিসেবে আছে।
+
+তাই আগে:
+
+```cpp
+float angle = i * 3.1416 / 180.0;
+```
+
+দিয়ে Radian করতে হবে।
+
+---
+
+### Mistake 3: Radius আর Center গুলিয়ে ফেলা
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+```
+
+এখানে:
+
+```text
+-0.1 → Center X
+
+0.25 → Radius
+```
+
+---
+
+### Mistake 4: `i < 360` এর বদলে ভুল range
+
+Basic lab code-এর জন্য:
+
+```cpp
+for(int i = 0; i < 360; i++)
+```
+
+মনে রাখো।
+
+---
