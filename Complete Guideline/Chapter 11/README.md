@@ -1242,3 +1242,37 @@ for(int i = 0; i < 360; i++)
 মনে রাখো।
 
 ---
+
+# 38. Quick Revision
+
+```text
+GL_POLYGON
+    ↓
+Many Vertex
+
+for(i=0; i<360; i++)
+    ↓
+360° ঘোরা
+
+angle = i × π / 180
+    ↓
+Degree → Radian
+
+x = centerX + radius × cos(angle)
+    ↓
+X Coordinate
+
+y = centerY + radius × sin(angle)
+    ↓
+Y Coordinate
+
+glVertex2f(x,y)
+    ↓
+Vertex তৈরি
+
+সব Vertex Connect
+    ↓
+Circle
+```
+
+---
