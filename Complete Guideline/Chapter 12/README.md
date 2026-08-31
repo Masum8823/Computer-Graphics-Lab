@@ -173,3 +173,32 @@ i * 3.1416 / 180.0
 ```
 
 ---
+
+# 7. X Coordinate
+
+```cpp
+float x = 0.0 + 0.6 * cos(angle);
+```
+
+এখানে:
+
+```text
+0.0 → Center X
+
+0.6 → X Radius
+```
+
+অর্থাৎ:
+
+```text
+x = centerX + radiusX × cos(angle)
+```
+
+আমাদের:
+
+```text
+centerX = 0.0
+radiusX = 0.6
+```
+
+---
