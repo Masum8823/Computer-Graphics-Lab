@@ -82,3 +82,26 @@ glEnd();
 এখন line by line বুঝি।
 
 ---
+
+
+# 4. `glBegin(GL_POLYGON)`
+
+```cpp
+glBegin(GL_POLYGON);
+```
+
+এখানে OpenGL-কে বলছি:
+
+> আমরা Polygon drawing শুরু করছি।
+
+Circle-এর মতো এখানেও অনেকগুলো Vertex তৈরি করবো।
+
+```text
+Many Vertex
+     ↓
+GL_POLYGON
+     ↓
+Ellipse Shape
+```
+
+---
