@@ -231,3 +231,53 @@ radiusY = 0.3
 ```
 
 ---
+
+# 9. সবচেয়ে Important Difference
+
+Circle:
+
+```cpp
+x = centerX + 0.25 * cos(angle);
+y = centerY + 0.25 * sin(angle);
+```
+
+এখানে:
+
+```text
+X Radius = 0.25
+Y Radius = 0.25
+```
+
+দুটো equal।
+
+তাই:
+
+```text
+Circle
+```
+
+---
+
+Ellipse:
+
+```cpp
+x = centerX + 0.6 * cos(angle);
+y = centerY + 0.3 * sin(angle);
+```
+
+এখানে:
+
+```text
+X Radius = 0.6
+Y Radius = 0.3
+```
+
+দুটো different।
+
+তাই:
+
+```text
+Ellipse
+```
+
+---
