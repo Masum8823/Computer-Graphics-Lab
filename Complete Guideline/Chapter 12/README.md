@@ -142,3 +142,34 @@ Full Circle = 360°
 Ellipse-এর ক্ষেত্রেও আমরা পুরো 360° ঘুরে point তৈরি করি।
 
 ---
+
+# 6. `angle` তৈরি
+
+```cpp
+float angle = i * 3.1416 / 180.0;
+```
+
+এখানে degree-কে radian-এ convert করছি।
+
+কারণ:
+
+```cpp
+sin()
+cos()
+```
+
+এর জন্য angle radian-এ ব্যবহার করা হয়।
+
+Formula:
+
+```text
+Radian = Degree × π / 180
+```
+
+তাই:
+
+```cpp
+i * 3.1416 / 180.0
+```
+
+---
