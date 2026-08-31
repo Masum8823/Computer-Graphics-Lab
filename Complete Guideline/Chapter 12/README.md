@@ -202,3 +202,32 @@ radiusX = 0.6
 ```
 
 ---
+
+# 8. Y Coordinate
+
+```cpp
+float y = 0.0 + 0.3 * sin(angle);
+```
+
+এখানে:
+
+```text
+0.0 → Center Y
+
+0.3 → Y Radius
+```
+
+অর্থাৎ:
+
+```text
+y = centerY + radiusY × sin(angle)
+```
+
+আমাদের:
+
+```text
+centerY = 0.0
+radiusY = 0.3
+```
+
+---
