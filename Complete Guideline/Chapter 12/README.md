@@ -281,3 +281,73 @@ Ellipse
 ```
 
 ---
+
+# 10. `0.6` কেন?
+
+```cpp
+0.6 * cos(angle)
+```
+
+এখানে:
+
+```text
+0.6 = X Radius
+```
+
+অর্থাৎ Ellipse কতটা **left-right** দিকে বড় হবে সেটা control করে।
+
+```text
+X Radius বাড়ালে
+       ↓
+Ellipse বেশি চওড়া হবে
+```
+
+---
+
+# 11. `0.3` কেন?
+
+```cpp
+0.3 * sin(angle)
+```
+
+এখানে:
+
+```text
+0.3 = Y Radius
+```
+
+এটা Ellipse-এর **up-down** size control করে।
+
+```text
+Y Radius বাড়ালে
+       ↓
+Ellipse বেশি লম্বা হবে
+```
+
+---
+
+# 12. `0.6` এবং `0.3` কি Fixed?
+
+না।
+
+এগুলো শুধু example।
+
+চাইলে:
+
+```cpp
+x = 0.0 + 0.8 * cos(angle);
+y = 0.0 + 0.4 * sin(angle);
+```
+
+দিতে পারো।
+
+তাহলে:
+
+```text
+X Radius = 0.8
+Y Radius = 0.4
+```
+
+Ellipse আরও বড় হবে।
+
+---
