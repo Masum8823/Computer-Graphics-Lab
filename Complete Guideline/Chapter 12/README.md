@@ -40,3 +40,23 @@ Ellipse:
 ```
 
 ---
+
+# 2. Circle-এর সাথে Ellipse-এর সম্পর্ক
+
+Circle-এর formula ছিল:
+
+```cpp
+x = centerX + radius * cos(angle);
+y = centerY + radius * sin(angle);
+```
+
+Ellipse-এর ক্ষেত্রে আমরা **X radius** এবং **Y radius** আলাদা করে দিই।
+
+```cpp
+x = centerX + radiusX * cos(angle);
+y = centerY + radiusY * sin(angle);
+```
+
+এটাই সবচেয়ে important difference।
+
+---
