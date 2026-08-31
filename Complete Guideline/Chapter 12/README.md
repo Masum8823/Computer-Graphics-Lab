@@ -60,3 +60,25 @@ y = centerY + radiusY * sin(angle);
 এটাই সবচেয়ে important difference।
 
 ---
+
+# 3. Basic Ellipse Code
+
+```cpp
+glBegin(GL_POLYGON);
+
+for(int i = 0; i < 360; i++)
+{
+    float angle = i * 3.1416 / 180.0;
+
+    float x = 0.0 + 0.6 * cos(angle);
+    float y = 0.0 + 0.3 * sin(angle);
+
+    glVertex2f(x, y);
+}
+
+glEnd();
+```
+
+এখন line by line বুঝি।
+
+---
