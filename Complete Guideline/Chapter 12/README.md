@@ -702,3 +702,34 @@ Height বেশি
 ```
 
 ---
+
+
+# 25. Color যোগ করা
+
+Ellipse-এর আগে:
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+দিলে Ellipse Red হবে।
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_POLYGON);
+
+for(int i = 0; i < 360; i++)
+{
+    float angle = i * 3.1416 / 180.0;
+
+    float x = 0.0 + 0.6 * cos(angle);
+    float y = 0.0 + 0.3 * sin(angle);
+
+    glVertex2f(x, y);
+}
+
+glEnd();
+```
+
+---
