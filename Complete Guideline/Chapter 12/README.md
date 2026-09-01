@@ -612,3 +612,23 @@ Circle
 ```
 
 ---
+
+# 22. সহজ Rule
+
+```text
+radiusX = radiusY
+        ↓
+      Circle
+```
+
+আর:
+
+```text
+radiusX ≠ radiusY
+        ↓
+     Ellipse
+```
+
+এটা খুব important।
+
+---
