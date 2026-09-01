@@ -733,3 +733,67 @@ glEnd();
 ```
 
 ---
+
+
+# 26. Full Ellipse Program
+
+```cpp
+#include <GL/glut.h>
+#include <math.h>
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Ellipse-এর color Red
+    glColor3f(1.0, 0.0, 0.0);
+
+    // Polygon drawing শুরু
+    glBegin(GL_POLYGON);
+
+    // 0 থেকে 359 degree পর্যন্ত ঘুরবে
+    for(int i = 0; i < 360; i++)
+    {
+        // Degree → Radian
+        float angle = i * 3.1416 / 180.0;
+
+        // X coordinate
+        // 0.0 = Center X
+        // 0.6 = X Radius
+        float x = 0.0 + 0.6 * cos(angle);
+
+        // Y coordinate
+        // 0.0 = Center Y
+        // 0.3 = Y Radius
+        float y = 0.0 + 0.3 * sin(angle);
+
+        // Vertex তৈরি
+        glVertex2f(x, y);
+    }
+
+    // Drawing শেষ
+    glEnd();
+
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+
+    glutInitWindowSize(800, 600);
+
+    glutCreateWindow("Ellipse");
+
+    // Background Black
+    glClearColor(0.0, 0.0, 0.0, 1.0);
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
