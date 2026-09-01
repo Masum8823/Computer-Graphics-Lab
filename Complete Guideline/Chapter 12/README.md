@@ -449,3 +449,53 @@ Ellipse
 ```
 
 ---
+
+# 16. `glEnd()`
+
+```cpp
+glEnd();
+```
+
+এর মাধ্যমে Polygon drawing শেষ হচ্ছে।
+
+পুরো flow:
+
+```text
+glBegin(GL_POLYGON)
+        ↓
+for loop
+        ↓
+angle
+        ↓
+x,y calculate
+        ↓
+glVertex2f()
+        ↓
+glEnd()
+```
+
+---
+
+# 17. Ellipse-এর Center
+
+আমাদের code:
+
+```cpp
+float x = 0.0 + 0.6 * cos(angle);
+float y = 0.0 + 0.3 * sin(angle);
+```
+
+এখানে:
+
+```text
+Center X = 0.0
+Center Y = 0.0
+```
+
+তাই:
+
+```text
+Center = (0.0, 0.0)
+```
+
+---
