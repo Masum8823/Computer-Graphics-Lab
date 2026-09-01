@@ -579,3 +579,36 @@ Height = 2 × 0.3 = 0.6
 ```
 
 ---
+
+
+# 21. Circle কখন হবে?
+
+যদি:
+
+```text
+radiusX = radiusY
+```
+
+হয়, তাহলে Ellipse আর Ellipse থাকবে না—Circle হয়ে যাবে।
+
+যেমন:
+
+```cpp
+x = 0.0 + 0.4 * cos(angle);
+y = 0.0 + 0.4 * sin(angle);
+```
+
+এখানে:
+
+```text
+X Radius = 0.4
+Y Radius = 0.4
+```
+
+তাই:
+
+```text
+Circle
+```
+
+---
