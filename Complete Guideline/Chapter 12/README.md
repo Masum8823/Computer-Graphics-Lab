@@ -665,3 +665,40 @@ Height কম
 ```
 
 ---
+
+
+# 24. Vertical Ellipse
+
+```cpp
+float x = 0.0 + 0.3 * cos(angle);
+float y = 0.0 + 0.7 * sin(angle);
+```
+
+এখানে:
+
+```text
+X Radius = 0.3
+Y Radius = 0.7
+```
+
+তাই:
+
+```text
+Width কম
+Height বেশি
+```
+
+এটি vertical ellipse।
+
+```text
+       /\
+      /  \
+     /    \
+     |    |
+     |    |
+     \    /
+      \  /
+       \/
+```
+
+---
