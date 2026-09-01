@@ -499,3 +499,36 @@ Center = (0.0, 0.0)
 ```
 
 ---
+
+# 18. Ellipse-এর Position Change
+
+ধরো:
+
+```cpp
+float x = 0.3 + 0.6 * cos(angle);
+float y = 0.2 + 0.3 * sin(angle);
+```
+
+এখন:
+
+```text
+Center = (0.3, 0.2)
+```
+
+তাই Ellipse:
+
+```text
+Right → 0.3
+Up    → 0.2
+```
+
+দিকে move করবে।
+
+মনে রাখবে:
+
+```text
+centerX → Left/Right position
+centerY → Up/Down position
+```
+
+---
