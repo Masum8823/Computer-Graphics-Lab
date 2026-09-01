@@ -553,3 +553,29 @@ Y Radius = 0.4
 তাই Ellipse বড় হবে।
 
 ---
+
+# 20. Width এবং Height
+
+Ellipse-এর approximately:
+
+```text
+Width  = 2 × radiusX
+Height = 2 × radiusY
+```
+
+আমাদের example:
+
+```text
+radiusX = 0.6
+radiusY = 0.3
+```
+
+তাই:
+
+```text
+Width  = 2 × 0.6 = 1.2
+
+Height = 2 × 0.3 = 0.6
+```
+
+---
