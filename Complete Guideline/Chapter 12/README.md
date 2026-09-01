@@ -351,3 +351,42 @@ Y Radius = 0.4
 Ellipse আরও বড় হবে।
 
 ---
+
+# 13. Radius X vs Radius Y
+
+এটা খুব ভালোভাবে মনে রাখবে:
+
+```text
+radiusX
+   ↓
+Left ↔ Right
+```
+
+আর:
+
+```text
+radiusY
+   ↓
+Up ↕ Down
+```
+
+Diagram:
+
+```text
+              Y
+              ↑
+              |
+        .------------.
+      .'              '.
+     /                  \
+----●---------+----------●----→ X
+     \        |         /
+      '.      |       .'
+        '------------'
+
+    ←── radiusX ──→
+          ↑
+       radiusY
+```
+
+---
