@@ -390,3 +390,26 @@ Diagram:
 ```
 
 ---
+
+# 14. `glVertex2f(x,y)`
+
+```cpp
+glVertex2f(x, y);
+```
+
+এখানে calculated X এবং Y coordinate ব্যবহার করে একটি Vertex তৈরি হচ্ছে।
+
+```text
+x → Horizontal position
+y → Vertical position
+```
+
+তাই:
+
+```text
+(x,y)
+  ↓
+Vertex
+```
+
+---
