@@ -532,3 +532,24 @@ centerY → Up/Down position
 ```
 
 ---
+
+
+# 19. Ellipse-এর Size Change
+
+ধরো:
+
+```cpp
+float x = 0.0 + 0.8 * cos(angle);
+float y = 0.0 + 0.4 * sin(angle);
+```
+
+এখানে:
+
+```text
+X Radius = 0.8
+Y Radius = 0.4
+```
+
+তাই Ellipse বড় হবে।
+
+---
