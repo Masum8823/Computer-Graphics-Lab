@@ -413,3 +413,39 @@ Vertex
 ```
 
 ---
+
+# 15. কেন Loop-এর ভিতরে `glVertex2f()`?
+
+কারণ প্রতিটি angle-এর জন্য আলাদা point দরকার।
+
+```text
+i = 0
+ ↓
+Point
+
+i = 1
+ ↓
+Point
+
+i = 2
+ ↓
+Point
+
+...
+
+i = 359
+ ↓
+Point
+```
+
+সব point:
+
+```text
+GL_POLYGON
+     ↓
+Connect
+     ↓
+Ellipse
+```
+
+---
