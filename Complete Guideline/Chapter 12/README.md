@@ -632,3 +632,36 @@ radiusX ≠ radiusY
 এটা খুব important।
 
 ---
+
+# 23. Horizontal Ellipse
+
+```cpp
+float x = 0.0 + 0.7 * cos(angle);
+float y = 0.0 + 0.3 * sin(angle);
+```
+
+এখানে:
+
+```text
+X Radius = 0.7
+Y Radius = 0.3
+```
+
+তাই:
+
+```text
+Width বেশি
+Height কম
+```
+
+এটি horizontal ellipse।
+
+```text
+     __________
+   /            \
+  /              \
+  \              /
+   \____________/
+```
+
+---
