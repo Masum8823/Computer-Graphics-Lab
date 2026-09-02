@@ -810,3 +810,29 @@ int main(int argc, char** argv)
 | Formula   | `r` same     | `rx`, `ry` আলাদা |
 
 ---
+
+# 28. Formula Comparison
+
+### Circle
+
+```text
+x = centerX + radius × cos(angle)
+
+y = centerY + radius × sin(angle)
+```
+
+একই `radius`।
+
+---
+
+### Ellipse
+
+```text
+x = centerX + radiusX × cos(angle)
+
+y = centerY + radiusY × sin(angle)
+```
+
+দুটি আলাদা radius।
+
+---
