@@ -991,3 +991,35 @@ x = 0.0 + 0.6 * cos(angle);
 ```
 
 ---
+
+# 32. Quick Revision
+
+```text
+Ellipse
+   ↓
+GL_POLYGON
+   ↓
+for 0 → 360
+   ↓
+angle = degree × π / 180
+   ↓
+x = centerX + radiusX × cos(angle)
+   ↓
+y = centerY + radiusY × sin(angle)
+   ↓
+glVertex2f(x,y)
+   ↓
+glEnd()
+```
+
+সবচেয়ে important:
+
+```text
+Circle:
+radiusX = radiusY
+
+Ellipse:
+radiusX ≠ radiusY
+```
+
+---
