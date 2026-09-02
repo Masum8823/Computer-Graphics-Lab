@@ -62,3 +62,25 @@ glEnd();
 এখন একদম সহজ করে বুঝি।
 
 ---
+
+# 3. `glBegin(GL_POLYGON)`
+
+```cpp
+glBegin(GL_POLYGON);
+```
+
+এর মাধ্যমে আমরা বলছি:
+
+> এখন Polygon আঁকা শুরু করবো।
+
+Star-এর জন্য আমরা একাধিক Vertex দেবো।
+
+```text
+Multiple Vertex
+      ↓
+GL_POLYGON
+      ↓
+Star Shape
+```
+
+---
