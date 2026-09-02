@@ -797,3 +797,16 @@ int main(int argc, char** argv)
 ```
 
 ---
+# 27. Circle vs Ellipse
+
+| বিষয়      | Circle       | Ellipse          |
+| --------- | ------------ | ---------------- |
+| Primitive | `GL_POLYGON` | `GL_POLYGON`     |
+| Loop      | `0 → 360`    | `0 → 360`        |
+| `cos()`   | X            | X                |
+| `sin()`   | Y            | Y                |
+| X Radius  | Same         | আলাদা হতে পারে   |
+| Y Radius  | Same         | আলাদা হতে পারে   |
+| Formula   | `r` same     | `rx`, `ry` আলাদা |
+
+---
