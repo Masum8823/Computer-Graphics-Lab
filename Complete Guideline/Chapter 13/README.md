@@ -35,3 +35,30 @@
 আসলে আমরা Outer আর Inner point একটার পর একটা দেবো।
 
 ---
+
+# 2. Basic Star Code
+
+```cpp
+glBegin(GL_POLYGON);
+
+glVertex2f(0.0, 0.8);      // Top Outer
+glVertex2f(0.18, 0.25);    // Top Right Inner
+
+glVertex2f(0.76, 0.25);    // Right Outer
+glVertex2f(0.29, -0.1);    // Right Inner
+
+glVertex2f(0.47, -0.7);    // Bottom Right Outer
+glVertex2f(0.0, -0.3);     // Bottom Inner
+
+glVertex2f(-0.47, -0.7);   // Bottom Left Outer
+glVertex2f(-0.29, -0.1);   // Left Inner
+
+glVertex2f(-0.76, 0.25);   // Left Outer
+glVertex2f(-0.18, 0.25);   // Top Left Inner
+
+glEnd();
+```
+
+এখন একদম সহজ করে বুঝি।
+
+---
