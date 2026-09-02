@@ -1023,3 +1023,7 @@ radiusX ≠ radiusY
 ```
 
 ---
+
+# 33. One-Line Memory Trick
+
+> **Circle-এর formula-তেই X-এর radius আর Y-এর radius আলাদা করে দিলেই Ellipse: `x = cx + rx*cos(angle)`, `y = cy + ry*sin(angle)`।**
