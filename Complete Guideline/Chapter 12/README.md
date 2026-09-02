@@ -868,3 +868,83 @@ Ellipse:
 এটাই মূল difference।
 
 ---
+
+# 30. Viva Questions
+
+### Q1. Ellipse কী?
+
+**Answer:** একটি closed curved shape যার X এবং Y direction-এর radius সাধারণত সমান নয়।
+
+---
+
+### Q2. Ellipse আঁকার জন্য কোন primitive ব্যবহার করা হয়েছে?
+
+**Answer:** `GL_POLYGON`।
+
+---
+
+### Q3. Ellipse-এর formula কী?
+
+**Answer:**
+
+```text
+x = centerX + radiusX × cos(angle)
+
+y = centerY + radiusY × sin(angle)
+```
+
+---
+
+### Q4. `radiusX` কী control করে?
+
+**Answer:** Ellipse-এর left-right বা horizontal size।
+
+---
+
+### Q5. `radiusY` কী control করে?
+
+**Answer:** Ellipse-এর up-down বা vertical size।
+
+---
+
+### Q6. `radiusX = radiusY` হলে কী হবে?
+
+**Answer:** Ellipse একটি Circle হয়ে যাবে।
+
+---
+
+### Q7. `radiusX > radiusY` হলে?
+
+**Answer:** Ellipse horizontal হবে।
+
+---
+
+### Q8. `radiusY > radiusX` হলে?
+
+**Answer:** Ellipse vertical হবে।
+
+---
+
+### Q9. `cos()` কোন coordinate-এর জন্য?
+
+**Answer:** X coordinate।
+
+---
+
+### Q10. `sin()` কোন coordinate-এর জন্য?
+
+**Answer:** Y coordinate।
+
+---
+
+### Q11. `360` কেন ব্যবহার করা হয়?
+
+**Answer:** পুরো 360° ঘুরে Ellipse-এর সব Vertex তৈরি করার জন্য।
+
+---
+
+### Q12. `0.6` এবং `0.3` কি fixed?
+
+**Answer:** না। এগুলো X এবং Y radius-এর example value। প্রয়োজন অনুযায়ী পরিবর্তন করা যায়।
+
+---
