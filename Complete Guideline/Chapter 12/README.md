@@ -948,3 +948,46 @@ y = centerY + radiusY × sin(angle)
 **Answer:** না। এগুলো X এবং Y radius-এর example value। প্রয়োজন অনুযায়ী পরিবর্তন করা যায়।
 
 ---
+
+# 31. Common Mistakes
+
+### Mistake 1: Circle-এর মতো একই radius দেওয়া
+
+```cpp
+x = 0.0 + 0.5 * cos(angle);
+y = 0.0 + 0.5 * sin(angle);
+```
+
+এটা:
+
+> Circle
+
+Ellipse না।
+
+---
+
+### Mistake 2: `sin()` এবং `cos()` উল্টে ফেলা
+
+মনে রাখো:
+
+```text
+cos → X
+sin → Y
+```
+
+---
+
+### Mistake 3: Radius আর Center গুলিয়ে ফেলা
+
+```cpp
+x = 0.0 + 0.6 * cos(angle);
+```
+
+এখানে:
+
+```text
+0.0 → Center X
+0.6 → X Radius
+```
+
+---
