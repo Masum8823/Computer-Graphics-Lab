@@ -836,3 +836,35 @@ y = centerY + radiusY × sin(angle)
 দুটি আলাদা radius।
 
 ---
+
+# 29. Circle থেকে Ellipse বানানোর Shortcut
+
+তোমার Circle code যদি হয়:
+
+```cpp
+float x = 0.0 + 0.4 * cos(angle);
+float y = 0.0 + 0.4 * sin(angle);
+```
+
+Ellipse বানাতে শুধু:
+
+```cpp
+float x = 0.0 + 0.6 * cos(angle);
+float y = 0.0 + 0.3 * sin(angle);
+```
+
+করো।
+
+অর্থাৎ:
+
+```text
+Circle:
+0.4     0.4
+
+Ellipse:
+0.6     0.3
+```
+
+এটাই মূল difference।
+
+---
