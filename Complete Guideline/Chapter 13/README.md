@@ -272,3 +272,17 @@ glVertex2f(0.47, -0.7);
 > **Bottom Right Outer Point**
 
 ---
+
+# 13. ষষ্ঠ Vertex
+
+```cpp
+glVertex2f(0.0, -0.3);
+```
+
+এটা Star-এর নিচের মাঝামাঝি Inner Point।
+
+তাই:
+
+> **Bottom Inner Point**
+
+---
