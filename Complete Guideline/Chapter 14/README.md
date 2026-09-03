@@ -982,3 +982,53 @@ Body + Arms + Legs → GL_LINES
 ```
 
 ---
+
+# 32. সবচেয়ে সহজ Stickman Code
+
+Exam-এর সময় দ্রুত লিখতে চাইলে:
+
+```cpp id="7x8c2q"
+glColor3f(0,0,0);
+
+// Head
+glBegin(GL_POLYGON);
+
+for(int i=0; i<360; i++)
+{
+    float angle = i * 3.1416 / 180.0;
+
+    float x = 0.0 + 0.2 * cos(angle);
+    float y = 0.5 + 0.2 * sin(angle);
+
+    glVertex2f(x,y);
+}
+
+glEnd();
+
+// Body, Arms, Legs
+glBegin(GL_LINES);
+
+// Body
+glVertex2f(0.0,0.3);
+glVertex2f(0.0,-0.3);
+
+// Arms
+glVertex2f(0.0,0.15);
+glVertex2f(-0.4,-0.05);
+
+glVertex2f(0.0,0.15);
+glVertex2f(0.4,-0.05);
+
+// Legs
+glVertex2f(0.0,-0.3);
+glVertex2f(-0.3,-0.7);
+
+glVertex2f(0.0,-0.3);
+glVertex2f(0.3,-0.7);
+
+glEnd();
+```
+
+এটুকু বুঝে লিখতে পারলে Stickman-এর basic part হয়ে যাবে।
+
+---
