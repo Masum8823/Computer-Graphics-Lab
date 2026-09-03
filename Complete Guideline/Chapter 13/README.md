@@ -260,3 +260,15 @@ glVertex2f(0.29, -0.1);
 > **Right Inner Point**
 
 ---
+
+# 12. পঞ্চম Vertex
+
+```cpp
+glVertex2f(0.47, -0.7);
+```
+
+এটা:
+
+> **Bottom Right Outer Point**
+
+---
