@@ -852,3 +852,7 @@ Star
 ```
 
 ---
+
+# 32. One-Line Memory Trick
+
+> **Simple Star আঁকতে `GL_POLYGON` দিয়ে 10টা Vertex দাও—5টা Outer আর 5টা Inner Point, তারপর Outer → Inner → Outer → Inner order follow করো।**
