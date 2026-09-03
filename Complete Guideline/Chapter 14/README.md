@@ -371,3 +371,28 @@ End = (0.0, -0.3)
 এটাই Body।
 
 ---
+
+# 13. Body কেন `x = 0.0`?
+
+Body:
+
+```cpp id="0d2u5g"
+(0.0, 0.3)
+(0.0, -0.3)
+```
+
+দুটোর X একই:
+
+```text id="p9g2dg"
+X = 0.0
+```
+
+তাই line vertical হবে।
+
+```text id="c5ap7j"
+X same
+ ↓
+Vertical Line
+```
+
+---
