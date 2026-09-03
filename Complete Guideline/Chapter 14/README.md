@@ -248,3 +248,24 @@ float y = 0.5 + 0.2 * sin(angle);
 ```
 
 ---
+
+
+# 8. Head-এর Position
+
+আমাদের:
+
+```cpp id="j48d71"
+float x = 0.0 + 0.2 * cos(angle);
+float y = 0.5 + 0.2 * sin(angle);
+```
+
+তাই:
+
+```text id="9o7r9f"
+Center = (0.0, 0.5)
+Radius = 0.2
+```
+
+অর্থাৎ Head window-এর মাঝামাঝি উপরের দিকে থাকবে।
+
+---
