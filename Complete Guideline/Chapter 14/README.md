@@ -488,3 +488,38 @@ glVertex2f(0.4, -0.05);
 তৈরি করবে।
 
 ---
+
+# 17. Left Leg
+
+```cpp id="y6r7m2"
+glVertex2f(0.0, -0.3);
+glVertex2f(-0.3, -0.7);
+```
+
+Start:
+
+```text id="d4t5j7"
+(0.0, -0.3)
+```
+
+End:
+
+```text id="m0n9y1"
+(-0.3, -0.7)
+```
+
+X negative:
+
+```text id="p3x4zr"
+Left
+```
+
+Y negative:
+
+```text id="a7j3f0"
+Down
+```
+
+তাই line নিচে-বামে যাবে।
+
+---
