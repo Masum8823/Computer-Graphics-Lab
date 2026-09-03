@@ -768,3 +768,56 @@ Outer → Inner → Outer → Inner
 **Answer:** `glColor3f()` ব্যবহার করে।
 
 ---
+
+# 30. Common Mistakes
+
+### Mistake 1: সব Outer Point একসাথে দেওয়া
+
+ভুল pattern:
+
+```text
+Outer
+Outer
+Outer
+Outer
+Outer
+Inner
+Inner
+Inner
+...
+```
+
+এতে Star ঠিকভাবে হবে না।
+
+সঠিক:
+
+```text
+Outer
+Inner
+Outer
+Inner
+Outer
+Inner
+```
+
+---
+
+### Mistake 2: Vertex order এলোমেলো করা
+
+Star-এর shape-এর জন্য order খুব important।
+
+---
+
+### Mistake 3: Coordinate-এর sign ভুল করা
+
+মনে রাখবে:
+
+```text
+X positive → Right
+X negative → Left
+
+Y positive → Up
+Y negative → Down
+```
+
+---
