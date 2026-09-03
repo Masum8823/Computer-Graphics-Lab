@@ -556,3 +556,42 @@ Y negative → Down
 এটাই দুইটা Leg।
 
 ---
+
+# 20. পুরো Stickman-এর Coordinate
+
+```text id="q3r4lk"
+             Head Center
+               (0,0.5)
+                  O
+                 /|\
+                / | \
+               /  |  \
+                  |
+                  |
+                 / \
+                /   \
+```
+
+মূল coordinate:
+
+```text id="f2k9b3"
+Head Center
+(0.0, 0.5)
+
+Body
+(0.0, 0.3) → (0.0, -0.3)
+
+Left Arm
+(0.0, 0.15) → (-0.4, -0.05)
+
+Right Arm
+(0.0, 0.15) → (0.4, -0.05)
+
+Left Leg
+(0.0, -0.3) → (-0.3, -0.7)
+
+Right Leg
+(0.0, -0.3) → (0.3, -0.7)
+```
+
+---
