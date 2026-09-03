@@ -319,3 +319,25 @@ glEnd();
 আছে।
 
 ---
+
+# 11. এবার Body
+
+Body-এর জন্য:
+
+```cpp id="d9x2p4"
+glBegin(GL_LINES);
+```
+
+ব্যবহার করবো।
+
+কারণ Body একটা straight line।
+
+```text id="1s4t2b"
+GL_LINES
+   ↓
+2 Vertex
+   ↓
+1 Line
+```
+
+---
