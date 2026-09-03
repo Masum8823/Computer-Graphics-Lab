@@ -175,3 +175,28 @@ for(int i = 0; i < 360; i++)
 > 0 থেকে 359 degree পর্যন্ত ঘুরবো।
 
 ---
+
+# 5. Angle
+
+```cpp id="6x8y5e"
+float angle = i * 3.1416 / 180.0;
+```
+
+এটা:
+
+```text id="8m5g4r"
+Degree → Radian
+```
+
+convert করছে।
+
+কারণ:
+
+```cpp id="px2p6g"
+sin()
+cos()
+```
+
+এর জন্য Radian দরকার।
+
+---
