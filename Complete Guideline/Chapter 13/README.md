@@ -694,3 +694,23 @@ Outer → Inner → Outer → Inner
 | Main Idea         | অনেক point   | Outer + Inner point |
 
 ---
+
+# 28. Star vs Polygon
+
+Star-ও technically Polygon।
+
+কিন্তু সাধারণ Polygon:
+
+```text
+Outer → Outer → Outer
+```
+
+আর Star:
+
+```text
+Outer → Inner → Outer → Inner
+```
+
+এই Inner-Outer pattern-এর কারণেই Star-এর shape তৈরি হয়।
+
+---
