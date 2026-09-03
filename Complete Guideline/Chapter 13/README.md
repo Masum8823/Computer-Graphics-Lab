@@ -680,3 +680,17 @@ Outer → Inner → Outer → Inner
 এই order-এ Vertex দিতে হবে।
 
 ---
+
+
+# 27. Circle vs Star
+
+| বিষয়              | Circle       | Star                |
+| ----------------- | ------------ | ------------------- |
+| Primitive         | `GL_POLYGON` | `GL_POLYGON`        |
+| Vertex            | অনেক         | 10                  |
+| Loop              | থাকে         | দরকার নেই           |
+| `sin()` / `cos()` | লাগে         | লাগে না             |
+| Shape             | Round        | Star                |
+| Main Idea         | অনেক point   | Outer + Inner point |
+
+---
