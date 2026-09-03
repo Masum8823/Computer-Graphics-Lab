@@ -325,3 +325,23 @@ glVertex2f(-0.76, 0.25);
 > **Left Outer Point**
 
 ---
+
+# 17. দশম Vertex
+
+```cpp
+glVertex2f(-0.18, 0.25);
+```
+
+এটা:
+
+> **Top Left Inner Point**
+
+এরপর:
+
+```cpp
+glEnd();
+```
+
+দিয়ে drawing শেষ।
+
+---
