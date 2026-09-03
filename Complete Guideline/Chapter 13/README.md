@@ -206,3 +206,24 @@ Center-এর উপরে
 এটাই Star-এর **Top Outer Point**।
 
 ---
+
+# 9. দ্বিতীয় Vertex
+
+```cpp
+glVertex2f(0.18, 0.25);
+```
+
+এটা:
+
+```text
+X = 0.18
+Y = 0.25
+```
+
+এটা Top-এর একটু নিচে এবং ডানদিকে।
+
+এটা:
+
+> **Top Right Inner Point**
+
+---
