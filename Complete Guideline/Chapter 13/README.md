@@ -621,3 +621,41 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 25. Code Flow
+
+```text
+glClear()
+   ↓
+Screen Clear
+
+glColor3f()
+   ↓
+Color Set
+
+glBegin(GL_POLYGON)
+   ↓
+Drawing Start
+
+Outer Point
+   ↓
+Inner Point
+   ↓
+Outer Point
+   ↓
+Inner Point
+   ↓
+...
+   ↓
+10 Vertex
+
+glEnd()
+   ↓
+Drawing Finish
+
+glFlush()
+   ↓
+Output
+```
+
+---
