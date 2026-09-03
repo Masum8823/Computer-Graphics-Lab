@@ -759,3 +759,31 @@ float y = 0.5 + 0.3 * sin(angle);
 Head ছোট হবে।
 
 ---
+
+# 25. Body বড় করতে চাইলে
+
+বর্তমানে:
+
+```cpp id="z1m9v4"
+glVertex2f(0.0, 0.3);
+glVertex2f(0.0, -0.3);
+```
+
+এখানে Body length:
+
+```text id="h4y7g8"
+0.3 → -0.3
+```
+
+তুমি চাইলে:
+
+```cpp id="y0d3e8"
+glVertex2f(0.0, 0.3);
+glVertex2f(0.0, -0.5);
+```
+
+দিতে পারো।
+
+তাহলে Body আরও বড় হবে।
+
+---
