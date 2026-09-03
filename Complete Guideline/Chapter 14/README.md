@@ -150,3 +150,28 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+
+# 4. প্রথমে Head বুঝি
+
+Head-এর জন্য আমরা Circle-এর আগের code ব্যবহার করছি।
+
+```cpp id="b1e2j3"
+glBegin(GL_POLYGON);
+```
+
+এখানে:
+
+> Polygon drawing শুরু।
+
+তারপর:
+
+```cpp id="6o7q5v"
+for(int i = 0; i < 360; i++)
+```
+
+মানে:
+
+> 0 থেকে 359 degree পর্যন্ত ঘুরবো।
+
+---
