@@ -180,3 +180,29 @@ I = Inner Point
 এটাই Star-এর সবচেয়ে important concept।
 
 ---
+
+
+# 8. প্রথম Vertex
+
+```cpp
+glVertex2f(0.0, 0.8);
+```
+
+এটা:
+
+```text
+X = 0.0
+Y = 0.8
+```
+
+তাই point-টা:
+
+```text
+Center-এর উপরে
+```
+
+থাকবে।
+
+এটাই Star-এর **Top Outer Point**।
+
+---
