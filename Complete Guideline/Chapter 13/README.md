@@ -300,3 +300,15 @@ glVertex2f(-0.47, -0.7);
 কারণ X negative হওয়ায় এটা বামদিকে।
 
 ---
+
+# 15. অষ্টম Vertex
+
+```cpp
+glVertex2f(-0.29, -0.1);
+```
+
+এটা:
+
+> **Left Inner Point**
+
+---
