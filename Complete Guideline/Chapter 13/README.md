@@ -246,3 +246,17 @@ Y = 0.25
 > **Right Outer Point**
 
 ---
+
+# 11. চতুর্থ Vertex
+
+```cpp
+glVertex2f(0.29, -0.1);
+```
+
+এটা Right Outer Point-এর পরে ভিতরের দিকে আসে।
+
+তাই:
+
+> **Right Inner Point**
+
+---
