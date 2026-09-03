@@ -927,3 +927,31 @@ glVertex2f(0.4, 0.4);
 এরকম হাত উপরে থাকবে।
 
 ---
+
+# 30. Stickman-এর Basic Structure
+
+সবসময় মনে রাখবে:
+
+```text id="2r5g8a"
+          Head
+           O
+           |
+       ----|----
+           |
+          / \
+         /   \
+```
+
+এখানে:
+
+```text id="8m3j4k"
+O → Circle
+
+| → Body
+
+--- → Arms
+
+/ \ → Legs
+```
+
+---
