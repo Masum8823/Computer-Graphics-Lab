@@ -227,3 +227,24 @@ X = 0.0
 ```
 
 ---
+
+# 7. Head-এর Y Coordinate
+
+```cpp id="m2j9pu"
+float y = 0.5 + 0.2 * sin(angle);
+```
+
+এখানে:
+
+```text id="b2c4a7"
+0.5 → Center Y
+0.2 → Radius
+```
+
+অর্থাৎ Head-এর center:
+
+```text id="p9j3in"
+(0.0, 0.5)
+```
+
+---
