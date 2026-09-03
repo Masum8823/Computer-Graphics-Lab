@@ -523,3 +523,22 @@ Down
 তাই line নিচে-বামে যাবে।
 
 ---
+
+
+# 18. Right Leg
+
+```cpp id="1j3g0v"
+glVertex2f(0.0, -0.3);
+glVertex2f(0.3, -0.7);
+```
+
+এখানে:
+
+```text id="9j2l5r"
+X positive → Right
+Y negative → Down
+```
+
+তাই line নিচে-ডানে যাবে।
+
+---
