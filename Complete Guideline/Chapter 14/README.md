@@ -955,3 +955,30 @@ O → Circle
 ```
 
 ---
+
+
+# 31. Exam-এর জন্য Code ভাঙার Method
+
+যদি পরীক্ষায় বলে:
+
+> **Draw a Stickman using OpenGL**
+
+তাহলে মাথায় এই ৫টা জিনিস আনবে:
+
+```text id="1q6s8v"
+1. Head → Circle
+2. Body → Line
+3. Left Arm → Line
+4. Right Arm → Line
+5. Two Legs → Lines
+```
+
+তারপর:
+
+```text id="3k7b2m"
+Head → GL_POLYGON
+
+Body + Arms + Legs → GL_LINES
+```
+
+---
