@@ -269,3 +269,35 @@ Radius = 0.2
 অর্থাৎ Head window-এর মাঝামাঝি উপরের দিকে থাকবে।
 
 ---
+
+# 9. `glVertex2f(x,y)`
+
+```cpp id="k8f8g1"
+glVertex2f(x, y);
+```
+
+এখানে Circle-এর প্রতিটি point তৈরি হচ্ছে।
+
+```text id="q4h4df"
+angle
+  ↓
+x calculate
+  ↓
+y calculate
+  ↓
+glVertex2f(x,y)
+  ↓
+Point
+```
+
+অনেক point:
+
+```text id="z0m8vy"
+360 Point
+   ↓
+GL_POLYGON
+   ↓
+Head/Circle
+```
+
+---
