@@ -126,3 +126,21 @@ glVertex2f(0.0, 0.8);
 এটা Star-এর সবচেয়ে উপরের Outer Point।
 
 ---
+
+# 6. Inner Point কী?
+
+Star-এর ভিতরের ছোট point-গুলো:
+
+```text
+Inner Point
+```
+
+যেমন:
+
+```cpp
+glVertex2f(0.18, 0.25);
+```
+
+এটা Top-এর Outer Point-এর পরের Inner Point।
+
+---
