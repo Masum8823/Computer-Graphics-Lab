@@ -227,3 +227,22 @@ Y = 0.25
 > **Top Right Inner Point**
 
 ---
+
+# 10. তৃতীয় Vertex
+
+```cpp
+glVertex2f(0.76, 0.25);
+```
+
+এটা Star-এর ডানদিকে থাকা Outer Point।
+
+```text
+X = 0.76
+Y = 0.25
+```
+
+তাই:
+
+> **Right Outer Point**
+
+---
