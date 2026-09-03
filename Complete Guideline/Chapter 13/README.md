@@ -456,3 +456,22 @@ glVertex2f(0.0, 0.9);
 তাই পুরো Star বড়/ছোট করতে সব coordinate proportionally change করা ভালো।
 
 ---
+
+
+
+# 21. Star-এর Position Change
+
+ধরো Star-কে ডানদিকে নিতে চাই।
+
+তাহলে সব X coordinate-এর সাথে একটি value যোগ করতে পারো।
+
+Concept:
+
+```text
+x = x + centerX
+y = y + centerY
+```
+
+তবে beginner lab-এর জন্য manually coordinate change করলেই যথেষ্ট।
+
+---
