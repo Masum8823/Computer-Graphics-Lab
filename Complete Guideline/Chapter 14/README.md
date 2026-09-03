@@ -722,3 +722,40 @@ glClearColor(1.0, 1.0, 1.0, 1.0);
 তাই Black Stickman + White Background দেখা যাবে।
 
 ---
+
+# 24. Stickman-এর Head-এর Size Change
+
+বর্তমানে:
+
+```cpp id="b1q5r3"
+0.2
+```
+
+হলো Radius।
+
+যদি:
+
+```cpp id="j7m0s2"
+0.3
+```
+
+দাও:
+
+```cpp id="k3y8h5"
+float x = 0.0 + 0.3 * cos(angle);
+float y = 0.5 + 0.3 * sin(angle);
+```
+
+তাহলে Head বড় হবে।
+
+যদি:
+
+```text id="8w5j2x"
+0.1
+```
+
+দাও:
+
+Head ছোট হবে।
+
+---
