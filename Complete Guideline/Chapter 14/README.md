@@ -1142,3 +1142,56 @@ float y = 0.5 + 0.2 * sin(angle);
 ```
 
 ---
+
+# 35. Quick Revision
+
+```text id="p5g8k3"
+Stickman
+   ↓
+Head + Body + Arms + Legs
+
+Head
+   ↓
+GL_POLYGON
+   ↓
+Circle Formula
+
+Body
+   ↓
+GL_LINES
+
+Arms
+   ↓
+GL_LINES
+
+Legs
+   ↓
+GL_LINES
+```
+
+Circle:
+
+```text id="7v0m1z"
+x = centerX + radius × cos(angle)
+y = centerY + radius × sin(angle)
+```
+
+Lines:
+
+```text id="r6j3w9"
+2 Vertex
+   ↓
+1 Line
+```
+
+Coordinate:
+
+```text id="7c2h4p"
++X → Right
+-X → Left
+
++Y → Up
+-Y → Down
+```
+
+---
