@@ -714,3 +714,57 @@ Outer → Inner → Outer → Inner
 এই Inner-Outer pattern-এর কারণেই Star-এর shape তৈরি হয়।
 
 ---
+
+# 29. Viva Questions
+
+### Q1. Star আঁকার জন্য কোন primitive ব্যবহার করা হয়েছে?
+
+**Answer:** `GL_POLYGON`।
+
+---
+
+### Q2. 5-point Star-এর জন্য কতগুলো Vertex ব্যবহার করা হয়েছে?
+
+**Answer:** 10টি Vertex।
+
+---
+
+### Q3. 10টি Vertex কেন?
+
+**Answer:** 5টি Outer Point এবং 5টি Inner Point-এর জন্য।
+
+---
+
+### Q4. Star-এর Vertex কীভাবে দিতে হয়?
+
+**Answer:** Outer এবং Inner Point alternating order-এ দিতে হয়।
+
+```text
+Outer → Inner → Outer → Inner
+```
+
+---
+
+### Q5. Star-এর জন্য `sin()` এবং `cos()` দরকার হয়?
+
+**Answer:** এই simple manual-coordinate version-এ দরকার হয় না।
+
+---
+
+### Q6. `glBegin(GL_POLYGON)` কী করে?
+
+**Answer:** Polygon drawing শুরু করে।
+
+---
+
+### Q7. `glVertex2f()` কী করে?
+
+**Answer:** নির্দিষ্ট `(x,y)` coordinate-এ Vertex তৈরি করে।
+
+---
+
+### Q8. Star-এর Color কীভাবে change করবো?
+
+**Answer:** `glColor3f()` ব্যবহার করে।
+
+---
