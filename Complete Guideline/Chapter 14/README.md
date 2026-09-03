@@ -1195,3 +1195,8 @@ Coordinate:
 ```
 
 ---
+
+
+# 36. One-Line Memory Trick
+
+> **Stickman = 1টা Circle/Polygon Head + 1টা Body Line + 2টা Arm Line + 2টা Leg Line।**
