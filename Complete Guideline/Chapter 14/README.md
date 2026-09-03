@@ -878,3 +878,52 @@ Y Negative → Down
 ```
 
 ---
+
+
+# 29. Stickman-এর Hands Up করতে চাইলে
+
+এটা lab-এর জন্য ভালো practice।
+
+বর্তমানে:
+
+```cpp id="s8r6v3"
+glVertex2f(0.0, 0.15);
+glVertex2f(-0.4, -0.05);
+```
+
+এখানে Left Hand নিচের দিকে।
+
+যদি:
+
+```cpp id="n5j3q8"
+glVertex2f(0.0, 0.15);
+glVertex2f(-0.4, 0.4);
+```
+
+দাও:
+
+```text id="8s5l0q"
+Hand
+ ↑
+Up
+```
+
+Right side-ও:
+
+```cpp id="q9y4e2"
+glVertex2f(0.0, 0.15);
+glVertex2f(0.4, 0.4);
+```
+
+তাহলে:
+
+```text id="9v7r4x"
+       \ /
+        O
+        |
+       / \
+```
+
+এরকম হাত উপরে থাকবে।
+
+---
