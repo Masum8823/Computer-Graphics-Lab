@@ -42,3 +42,28 @@ Line → দুই পা
 এখানে আমরা **Circle + Lines** ব্যবহার করবো।
 
 ---
+
+
+# 2. আমাদের Stickman
+
+আমাদের Stickman-এর structure:
+
+```text id="n7h1pz"
+       O
+       |
+    ---|---
+       |
+      / \
+     /   \
+```
+
+এখানে:
+
+```text id="v2j5kk"
+ O      → Head
+ |      → Body
+---     → Arms
+/ \     → Legs
+```
+
+---
