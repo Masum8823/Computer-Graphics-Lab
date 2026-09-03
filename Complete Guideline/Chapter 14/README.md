@@ -341,3 +341,33 @@ GL_LINES
 ```
 
 ---
+
+# 12. Body Line
+
+```cpp id="r6m1os"
+glVertex2f(0.0, 0.3);
+glVertex2f(0.0, -0.3);
+```
+
+এখানে:
+
+```text id="i4qj8g"
+Start = (0.0, 0.3)
+
+End = (0.0, -0.3)
+```
+
+দুই point connect হবে।
+
+তাই:
+
+```text id="0byxpv"
+       O
+       |
+       |
+       |
+```
+
+এটাই Body।
+
+---
