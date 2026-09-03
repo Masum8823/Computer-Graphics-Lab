@@ -144,3 +144,39 @@ glVertex2f(0.18, 0.25);
 এটা Top-এর Outer Point-এর পরের Inner Point।
 
 ---
+
+# 7. Vertex Order খুব Important
+
+Star আঁকার সময় আমরা এই pattern follow করছি:
+
+```text
+Outer
+ ↓
+Inner
+ ↓
+Outer
+ ↓
+Inner
+ ↓
+Outer
+ ↓
+Inner
+...
+```
+
+অর্থাৎ:
+
+```text
+O → I → O → I → O → I → O → I → O → I
+```
+
+এখানে:
+
+```text
+O = Outer Point
+I = Inner Point
+```
+
+এটাই Star-এর সবচেয়ে important concept।
+
+---
