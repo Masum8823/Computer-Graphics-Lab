@@ -850,3 +850,31 @@ glVertex2f(0.3, -0.7);
 এখানেও `-0.7` পরিবর্তন করা যায়।
 
 ---
+
+# 28. Stickman-এর Position Change
+
+যদি পুরো Stickman-কে move করতে চাও, সব coordinate change করা যায়।
+
+যেমন ডানদিকে নিতে হলে:
+
+```text id="b2c7a9"
+X values → একটু বাড়াও
+```
+
+উপরে নিতে হলে:
+
+```text id="s0x4w7"
+Y values → বাড়াও
+```
+
+সহজভাবে:
+
+```text id="0g6zq8"
+X Positive → Right
+X Negative → Left
+
+Y Positive → Up
+Y Negative → Down
+```
+
+---
