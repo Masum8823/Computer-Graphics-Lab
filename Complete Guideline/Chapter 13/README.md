@@ -821,3 +821,34 @@ Y negative → Down
 ```
 
 ---
+
+
+# 31. Quick Revision
+
+```text
+Star
+ ↓
+GL_POLYGON
+ ↓
+10 Vertex
+ ↓
+5 Outer + 5 Inner
+ ↓
+Outer → Inner → Outer → Inner
+ ↓
+Star
+```
+
+সবচেয়ে important:
+
+```text
+5-point Star
+=
+5 Outer Point
++
+5 Inner Point
+=
+10 Vertex
+```
+
+---
