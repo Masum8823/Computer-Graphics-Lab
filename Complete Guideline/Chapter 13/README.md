@@ -371,3 +371,55 @@ glEnd();
 এটা concept বোঝানোর জন্য।
 
 ---
+
+# 19. Star-এর Vertex Order
+
+আমাদের order:
+
+```text
+1 → Top Outer
+
+2 → Top Right Inner
+
+3 → Right Outer
+
+4 → Right Inner
+
+5 → Bottom Right Outer
+
+6 → Bottom Inner
+
+7 → Bottom Left Outer
+
+8 → Left Inner
+
+9 → Left Outer
+
+10 → Top Left Inner
+```
+
+অর্থাৎ:
+
+```text
+Outer
+ ↓
+Inner
+ ↓
+Outer
+ ↓
+Inner
+ ↓
+Outer
+ ↓
+Inner
+ ↓
+Outer
+ ↓
+Inner
+ ↓
+Outer
+ ↓
+Inner
+```
+
+---
