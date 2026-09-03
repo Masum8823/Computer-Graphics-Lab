@@ -595,3 +595,37 @@ Right Leg
 ```
 
 ---
+
+# 21. কোন অংশে কোন Primitive?
+
+এটা খুব important।
+
+```text id="7zqf8n"
+Head
+ ↓
+GL_POLYGON
+
+Body
+ ↓
+GL_LINES
+
+Arms
+ ↓
+GL_LINES
+
+Legs
+ ↓
+GL_LINES
+```
+
+অর্থাৎ Stickman হলো:
+
+```text id="g4l2e1"
+Circle/Polygon
+       +
+Multiple Lines
+       ↓
+   Stickman
+```
+
+---
