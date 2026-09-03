@@ -506,3 +506,47 @@ glEnd();
 ```
 
 ---
+
+# 23. Star-এর Different Color
+
+Triangle-এর মতো প্রতিটি Vertex-এর আগে আলাদা Color দিলে color change হতে পারে।
+
+```cpp
+glBegin(GL_POLYGON);
+
+glColor3f(1,0,0);
+glVertex2f(0.0,0.8);
+
+glColor3f(0,1,0);
+glVertex2f(0.18,0.25);
+
+glColor3f(0,0,1);
+glVertex2f(0.76,0.25);
+
+glColor3f(1,1,0);
+glVertex2f(0.29,-0.1);
+
+glColor3f(1,0,1);
+glVertex2f(0.47,-0.7);
+
+glColor3f(0,1,1);
+glVertex2f(0.0,-0.3);
+
+glColor3f(1,0,0);
+glVertex2f(-0.47,-0.7);
+
+glColor3f(0,1,0);
+glVertex2f(-0.29,-0.1);
+
+glColor3f(0,0,1);
+glVertex2f(-0.76,0.25);
+
+glColor3f(1,1,0);
+glVertex2f(-0.18,0.25);
+
+glEnd();
+```
+
+তবে lab exam-এর basic Star-এর জন্য **একটা color রাখাই সহজ**।
+
+---
