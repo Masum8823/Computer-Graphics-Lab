@@ -475,3 +475,34 @@ y = y + centerY
 তবে beginner lab-এর জন্য manually coordinate change করলেই যথেষ্ট।
 
 ---
+
+# 22. Star-এর Color
+
+Star-এর আগে:
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+দিলে Star Red হবে।
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_POLYGON);
+
+glVertex2f(0.0, 0.8);
+glVertex2f(0.18, 0.25);
+glVertex2f(0.76, 0.25);
+glVertex2f(0.29, -0.1);
+glVertex2f(0.47, -0.7);
+glVertex2f(0.0, -0.3);
+glVertex2f(-0.47, -0.7);
+glVertex2f(-0.29, -0.1);
+glVertex2f(-0.76, 0.25);
+glVertex2f(-0.18, 0.25);
+
+glEnd();
+```
+
+---
