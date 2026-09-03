@@ -787,3 +787,38 @@ glVertex2f(0.0, -0.5);
 তাহলে Body আরও বড় হবে।
 
 ---
+
+# 26. Arms বড় করতে চাইলে
+
+বর্তমানে Left Arm:
+
+```cpp id="8l5k0a"
+glVertex2f(0.0, 0.15);
+glVertex2f(-0.4, -0.05);
+```
+
+`-0.4` আরও negative করলে:
+
+```text id="4h7w2f"
+Left Arm
+   ↓
+আরও left
+   ↓
+Arm বড়
+```
+
+Right Arm-এর:
+
+```cpp id="0x7m3r"
+0.4
+```
+
+বাড়ালে:
+
+```text id="f7s4w1"
+আরও right
+```
+
+যাবে।
+
+---
