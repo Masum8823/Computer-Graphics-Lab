@@ -200,3 +200,30 @@ cos()
 এর জন্য Radian দরকার।
 
 ---
+
+# 6. Head-এর X Coordinate
+
+```cpp id="5o2m6z"
+float x = 0.0 + 0.2 * cos(angle);
+```
+
+এখানে:
+
+```text id="0w8l8d"
+0.0 → Center X
+0.2 → Radius
+```
+
+তাই Head-এর center:
+
+```text id="l5d1oq"
+X = 0.0
+```
+
+এবং Head-এর radius:
+
+```text id="2vpgv8"
+0.2
+```
+
+---
