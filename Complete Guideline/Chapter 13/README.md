@@ -108,3 +108,21 @@ Star Shape
 ```
 
 ---
+
+# 5. Outer Point কী?
+
+Star-এর বাইরের বড় point-গুলোকে বলছি:
+
+```text
+Outer Point
+```
+
+যেমন:
+
+```cpp
+glVertex2f(0.0, 0.8);
+```
+
+এটা Star-এর সবচেয়ে উপরের Outer Point।
+
+---
