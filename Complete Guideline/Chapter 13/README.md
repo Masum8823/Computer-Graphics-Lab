@@ -423,3 +423,36 @@ Inner
 ```
 
 ---
+
+
+# 20. Star-এর Size কীভাবে Change করবো?
+
+যেমন:
+
+```cpp
+glVertex2f(0.0, 0.8);
+```
+
+এখানে `0.8` হলো Top Point-এর distance।
+
+এটা যদি:
+
+```cpp
+glVertex2f(0.0, 0.5);
+```
+
+করো, Star ছোট হবে।
+
+আর:
+
+```cpp
+glVertex2f(0.0, 0.9);
+```
+
+করলে বড় হবে।
+
+তবে শুধু একটা coordinate change করলে shape একটু distorted হতে পারে।
+
+তাই পুরো Star বড়/ছোট করতে সব coordinate proportionally change করা ভালো।
+
+---
