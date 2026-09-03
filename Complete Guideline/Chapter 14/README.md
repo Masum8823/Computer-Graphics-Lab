@@ -396,3 +396,40 @@ Vertical Line
 ```
 
 ---
+
+# 14. Left Arm
+
+```cpp id="z2p4m9"
+glVertex2f(0.0, 0.15);
+glVertex2f(-0.4, -0.05);
+```
+
+Start:
+
+```text id="4w5k3q"
+(0.0, 0.15)
+```
+
+End:
+
+```text id="3x1p7s"
+(-0.4, -0.05)
+```
+
+X negative হওয়ায় line:
+
+```text id="t9m3q7"
+Left side
+```
+
+যাবে।
+
+তাই:
+
+```text id="gj4w42"
+       |
+      /
+     /
+```
+
+---
