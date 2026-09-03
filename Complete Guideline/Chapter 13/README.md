@@ -550,3 +550,74 @@ glEnd();
 তবে lab exam-এর basic Star-এর জন্য **একটা color রাখাই সহজ**।
 
 ---
+
+# 24. Full Simple Program
+
+```cpp
+#include <GL/glut.h>
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Star-এর Color
+    glColor3f(1.0, 1.0, 0.0);
+
+    // Polygon শুরু
+    glBegin(GL_POLYGON);
+
+    // Top Outer
+    glVertex2f(0.0, 0.8);
+
+    // Top Right Inner
+    glVertex2f(0.18, 0.25);
+
+    // Right Outer
+    glVertex2f(0.76, 0.25);
+
+    // Right Inner
+    glVertex2f(0.29, -0.1);
+
+    // Bottom Right Outer
+    glVertex2f(0.47, -0.7);
+
+    // Bottom Inner
+    glVertex2f(0.0, -0.3);
+
+    // Bottom Left Outer
+    glVertex2f(-0.47, -0.7);
+
+    // Left Inner
+    glVertex2f(-0.29, -0.1);
+
+    // Left Outer
+    glVertex2f(-0.76, 0.25);
+
+    // Top Left Inner
+    glVertex2f(-0.18, 0.25);
+
+    glEnd();
+
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+
+    glutInitWindowSize(800, 600);
+
+    glutCreateWindow("Star");
+
+    // Background Black
+    glClearColor(0.0, 0.0, 0.0, 1.0);
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
