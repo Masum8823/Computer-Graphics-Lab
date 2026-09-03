@@ -301,3 +301,21 @@ Head/Circle
 ```
 
 ---
+
+# 10. Head শেষ
+
+```cpp id="m9t1qx"
+glEnd();
+```
+
+এখানে Head-এর Polygon drawing শেষ।
+
+তখন আমাদের কাছে:
+
+```text id="v4n0ae"
+       O
+```
+
+আছে।
+
+---
