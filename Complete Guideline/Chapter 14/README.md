@@ -1032,3 +1032,69 @@ glEnd();
 এটুকু বুঝে লিখতে পারলে Stickman-এর basic part হয়ে যাবে।
 
 ---
+
+# 33. Viva Questions
+
+### Q1. Stickman কী দিয়ে তৈরি করা হয়েছে?
+
+**Answer:** Circle/Polygon এবং Lines ব্যবহার করে।
+
+---
+
+### Q2. Head-এর জন্য কোন primitive ব্যবহার করেছি?
+
+**Answer:** `GL_POLYGON` দিয়ে Circle-এর মতো Head তৈরি করেছি।
+
+---
+
+### Q3. Body-এর জন্য কোন primitive?
+
+**Answer:** `GL_LINES`।
+
+---
+
+### Q4. `GL_LINES`-এ কয়টি Vertex-এ একটি Line হয়?
+
+**Answer:** 2টি Vertex।
+
+---
+
+### Q5. Stickman-এর Body-এর coordinate কী?
+
+```text id="w8d4b2"
+(0.0,0.3)
+to
+(0.0,-0.3)
+```
+
+---
+
+### Q6. Head-এর Radius কত?
+
+**Answer:** `0.2`।
+
+---
+
+### Q7. Head-এর Center কত?
+
+**Answer:** `(0.0, 0.5)`।
+
+---
+
+### Q8. Head-এর Circle code-এ `cos()` কী করে?
+
+**Answer:** X coordinate বের করতে সাহায্য করে।
+
+---
+
+### Q9. `sin()` কী করে?
+
+**Answer:** Y coordinate বের করতে সাহায্য করে।
+
+---
+
+### Q10. Stickman-এর হাত-পা বড় করতে কী change করতে হবে?
+
+**Answer:** তাদের endpoint-এর X/Y coordinate change করতে হবে।
+
+---
