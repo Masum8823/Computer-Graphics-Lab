@@ -629,3 +629,61 @@ Multiple Lines
 ```
 
 ---
+
+
+# 22. কেন `GL_LINES`-এ সবগুলো একসাথে দেওয়া যায়?
+
+আমরা লিখেছি:
+
+```cpp id="a2b4n7"
+glBegin(GL_LINES);
+
+glVertex2f(0.0, 0.3);
+glVertex2f(0.0, -0.3);
+
+glVertex2f(0.0, 0.15);
+glVertex2f(-0.4, -0.05);
+
+glVertex2f(0.0, 0.15);
+glVertex2f(0.4, -0.05);
+
+glVertex2f(0.0, -0.3);
+glVertex2f(-0.3, -0.7);
+
+glVertex2f(0.0, -0.3);
+glVertex2f(0.3, -0.7);
+
+glEnd();
+```
+
+`GL_LINES`-এ:
+
+```text id="f4j1zz"
+প্রতি 2 Vertex
+      ↓
+একটি Line
+```
+
+তাই:
+
+```text id="c7q8e5"
+1 + 2 → Body
+
+3 + 4 → Left Arm
+
+5 + 6 → Right Arm
+
+7 + 8 → Left Leg
+
+9 + 10 → Right Leg
+```
+
+মোট:
+
+```text id="5s8v4n"
+10 Vertex
+↓
+5 Lines
+```
+
+---
