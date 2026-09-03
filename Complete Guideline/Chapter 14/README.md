@@ -433,3 +433,36 @@ Left side
 ```
 
 ---
+
+
+# 15. Right Arm
+
+```cpp id="6p3d4a"
+glVertex2f(0.0, 0.15);
+glVertex2f(0.4, -0.05);
+```
+
+এখানে:
+
+```text id="8h3j1n"
+Start = (0.0, 0.15)
+
+End = (0.4, -0.05)
+```
+
+X positive হওয়ায় line:
+
+```text id="k6o7dp"
+Right side
+```
+
+যাবে।
+
+তাই:
+
+```text id="9a0g8s"
+      \
+       \
+```
+
+---
