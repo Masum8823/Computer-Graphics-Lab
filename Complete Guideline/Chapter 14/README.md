@@ -1098,3 +1098,47 @@ to
 **Answer:** তাদের endpoint-এর X/Y coordinate change করতে হবে।
 
 ---
+
+# 34. Common Mistakes
+
+### Mistake 1: Head-এর Center ভুলে যাওয়া
+
+```cpp id="0i9c7x"
+float y = 0.5 + 0.2 * sin(angle);
+```
+
+এখানে `0.5`:
+
+> Head-এর Center Y।
+
+---
+
+### Mistake 2: `GL_LINES`-এ 2 Vertex-এর rule ভুলে যাওয়া
+
+```text id="2g5z9s"
+2 Vertex
+   ↓
+1 Line
+```
+
+---
+
+### Mistake 3: Arm/Leg-এর X sign ভুল দেওয়া
+
+```text id="q9b7m2"
+- X → Left
+
++ X → Right
+```
+
+---
+
+### Mistake 4: Y direction ভুলে যাওয়া
+
+```text id="0y4v6n"
++ Y → Up
+
+- Y → Down
+```
+
+---
