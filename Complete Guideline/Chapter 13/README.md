@@ -659,3 +659,24 @@ Output
 ```
 
 ---
+
+
+# 26. Star-এর Main Concept
+
+Star-এর জন্য মূলত শুধু এইটা মনে রাখবে:
+
+```text
+5 Outer Point
++
+5 Inner Point
+```
+
+এবং:
+
+```text
+Outer → Inner → Outer → Inner
+```
+
+এই order-এ Vertex দিতে হবে।
+
+---
