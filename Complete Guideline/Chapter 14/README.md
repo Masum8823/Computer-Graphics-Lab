@@ -687,3 +687,38 @@ glEnd();
 ```
 
 ---
+
+
+# 23. `glColor3f()`
+
+আমরা লিখেছি:
+
+```cpp id="6m1s8a"
+glColor3f(0.0, 0.0, 0.0);
+```
+
+মানে:
+
+```text id="v6u4x5"
+R = 0
+G = 0
+B = 0
+```
+
+তাই:
+
+> Stickman Black হবে।
+
+Background:
+
+```cpp id="x1x0k3"
+glClearColor(1.0, 1.0, 1.0, 1.0);
+```
+
+মানে:
+
+> Background White।
+
+তাই Black Stickman + White Background দেখা যাবে।
+
+---
