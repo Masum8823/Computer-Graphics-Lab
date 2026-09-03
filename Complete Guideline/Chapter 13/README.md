@@ -312,3 +312,16 @@ glVertex2f(-0.29, -0.1);
 > **Left Inner Point**
 
 ---
+
+
+# 16. নবম Vertex
+
+```cpp
+glVertex2f(-0.76, 0.25);
+```
+
+এটা:
+
+> **Left Outer Point**
+
+---
