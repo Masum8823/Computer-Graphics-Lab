@@ -286,3 +286,17 @@ glVertex2f(0.0, -0.3);
 > **Bottom Inner Point**
 
 ---
+
+# 14. সপ্তম Vertex
+
+```cpp
+glVertex2f(-0.47, -0.7);
+```
+
+এটা:
+
+> **Bottom Left Outer Point**
+
+কারণ X negative হওয়ায় এটা বামদিকে।
+
+---
