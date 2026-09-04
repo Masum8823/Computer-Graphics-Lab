@@ -266,3 +266,25 @@ GL_TRIANGLES
 ```
 
 ---
+
+# 9. Roof-এর Color
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+মানে:
+
+```text
+R = 1
+G = 0
+B = 0
+```
+
+তাই Roof:
+
+> Red
+
+হবে।
+
+---
