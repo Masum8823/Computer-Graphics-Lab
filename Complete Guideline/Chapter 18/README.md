@@ -136,3 +136,23 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 3. প্রথমে House Body
+
+House-এর main body একটা Rectangle।
+
+তাই:
+
+```cpp
+glBegin(GL_QUADS);
+```
+
+ব্যবহার করেছি।
+
+```text
+Rectangle
+   ↓
+GL_QUADS
+```
+
+---
