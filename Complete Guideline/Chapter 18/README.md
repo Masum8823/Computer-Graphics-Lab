@@ -156,3 +156,21 @@ GL_QUADS
 ```
 
 ---
+
+# 4. House Body-এর Color
+
+```cpp
+glColor3f(0.8, 0.5, 0.2);
+```
+
+এখানে:
+
+```text
+R = 0.8
+G = 0.5
+B = 0.2
+```
+
+তাই Body একটা brown/orange ধরনের color হবে।
+
+---
