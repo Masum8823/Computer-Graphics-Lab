@@ -246,3 +246,23 @@ glEnd();
 আছে।
 
 ---
+
+# 8. এবার Roof
+
+House-এর Roof হলো Triangle।
+
+তাই:
+
+```cpp
+glBegin(GL_TRIANGLES);
+```
+
+ব্যবহার করেছি।
+
+```text
+Triangle
+   ↓
+GL_TRIANGLES
+```
+
+---
