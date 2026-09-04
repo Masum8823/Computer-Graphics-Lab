@@ -174,3 +174,26 @@ B = 0.2
 তাই Body একটা brown/orange ধরনের color হবে।
 
 ---
+
+# 5. House Body-এর চারটি Vertex
+
+```cpp
+glVertex2f(-0.6, 0.4);
+glVertex2f(0.6, 0.4);
+glVertex2f(0.6, -0.6);
+glVertex2f(-0.6, -0.6);
+```
+
+এগুলো হলো:
+
+```text
+Top Left      = (-0.6, 0.4)
+
+Top Right     = (0.6, 0.4)
+
+Bottom Right  = (0.6, -0.6)
+
+Bottom Left   = (-0.6, -0.6)
+```
+
+---
