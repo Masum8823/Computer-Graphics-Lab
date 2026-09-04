@@ -197,3 +197,29 @@ Bottom Left   = (-0.6, -0.6)
 ```
 
 ---
+
+# 6. Coordinate দিয়ে Body বুঝি
+
+```text
+        (-0.6,0.4) -------- (0.6,0.4)
+             |                   |
+             |      BODY         |
+             |                   |
+        (-0.6,-0.6) ------ (0.6,-0.6)
+```
+
+চারটি point:
+
+```text
+Top Left
+   ↓
+Top Right
+   ↓
+Bottom Right
+   ↓
+Bottom Left
+```
+
+এগুলো connect করলে Rectangle তৈরি হয়।
+
+---
