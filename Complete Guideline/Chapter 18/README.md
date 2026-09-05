@@ -475,3 +475,25 @@ Door → GL_QUADS
 ```
 
 ---
+
+# 18. Window
+
+Window-ও Rectangle।
+
+তাই:
+
+```cpp
+glBegin(GL_QUADS);
+```
+
+ব্যবহার করেছি।
+
+Color:
+
+```cpp
+glColor3f(0.0, 0.5, 1.0);
+```
+
+মানে একটা blue ধরনের color।
+
+---
