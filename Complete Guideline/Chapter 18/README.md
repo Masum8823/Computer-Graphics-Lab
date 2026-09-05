@@ -403,3 +403,26 @@ glColor3f(0.3, 0.1, 0.0);
 এটা dark brown ধরনের color।
 
 ---
+
+# 15. Door-এর Vertex
+
+```cpp
+glVertex2f(-0.2, -0.6);
+glVertex2f(0.2, -0.6);
+glVertex2f(0.2, 0.0);
+glVertex2f(-0.2, 0.0);
+```
+
+এখানে:
+
+```text
+Bottom Left   = (-0.2, -0.6)
+
+Bottom Right  = (0.2, -0.6)
+
+Top Right     = (0.2, 0.0)
+
+Top Left      = (-0.2, 0.0)
+```
+
+---
