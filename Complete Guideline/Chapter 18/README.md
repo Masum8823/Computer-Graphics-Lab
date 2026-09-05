@@ -381,3 +381,25 @@ Triangle + Rectangle
 ```
 
 ---
+
+# 14. এবার Door
+
+Door-ও একটা Rectangle।
+
+তাই:
+
+```cpp
+glBegin(GL_QUADS);
+```
+
+ব্যবহার করবো।
+
+Color:
+
+```cpp
+glColor3f(0.3, 0.1, 0.0);
+```
+
+এটা dark brown ধরনের color।
+
+---
