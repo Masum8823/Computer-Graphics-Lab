@@ -326,3 +326,33 @@ Top    = (0.0, 0.9)
 এই Triangle-টাই Roof।
 
 ---
+
+# 12. কেন Roof-এর Bottom Y `0.4`?
+
+Body-এর top:
+
+```text
+Y = 0.4
+```
+
+Roof-এর bottom:
+
+```text
+Y = 0.4
+```
+
+তাই দুটো একই জায়গায় meet করবে।
+
+```text
+Roof
+  ↓
+Y = 0.4
+  ↓
+Body Top
+  ↓
+Y = 0.4
+```
+
+এটা খুব important।
+
+---
