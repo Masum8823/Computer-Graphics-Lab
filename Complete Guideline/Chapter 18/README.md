@@ -426,3 +426,31 @@ Top Left      = (-0.2, 0.0)
 ```
 
 ---
+
+# 16. Door কেন নিচে আছে?
+
+House Body-এর bottom:
+
+```text
+Y = -0.6
+```
+
+Door-এর bottom:
+
+```text
+Y = -0.6
+```
+
+তাই Door ground-এর সাথে connected।
+
+```text
+House Bottom
+      ↓
+Y = -0.6
+
+Door Bottom
+      ↓
+Y = -0.6
+```
+
+---
