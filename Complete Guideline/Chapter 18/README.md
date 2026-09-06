@@ -595,3 +595,44 @@ House
 এটাই **Composite Shape**।
 
 ---
+# 23. `glColor3f()` কোথায় ব্যবহার করছি?
+
+প্রতিটি shape-এর আগে color change করছি।
+
+যেমন Body:
+
+```cpp
+glColor3f(0.8, 0.5, 0.2);
+```
+
+তারপর Roof:
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+তারপর Door:
+
+```cpp
+glColor3f(0.3, 0.1, 0.0);
+```
+
+তারপর Window:
+
+```cpp
+glColor3f(0.0, 0.5, 1.0);
+```
+
+অর্থাৎ:
+
+```text
+Color Set
+   ↓
+Shape Draw
+   ↓
+New Color Set
+   ↓
+Next Shape
+```
+
+---
