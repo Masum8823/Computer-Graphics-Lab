@@ -665,3 +665,24 @@ glVertex2f(-0.8, -0.6);
 ```
 
 ---
+# 25. Roof বড় করতে চাইলে
+
+বর্তমানে:
+
+```cpp
+glVertex2f(-0.7, 0.4);
+glVertex2f(0.7, 0.4);
+glVertex2f(0.0, 0.9);
+```
+
+যদি Roof চওড়া করতে চাও:
+
+```cpp
+glVertex2f(-0.9, 0.4);
+glVertex2f(0.9, 0.4);
+glVertex2f(0.0, 0.9);
+```
+
+তাহলে Roof-এর width বাড়বে।
+
+---
