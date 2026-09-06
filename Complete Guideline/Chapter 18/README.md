@@ -636,3 +636,32 @@ Next Shape
 ```
 
 ---
+# 24. House Body বড় করতে চাইলে
+
+বর্তমানে:
+
+```cpp
+glVertex2f(-0.6, 0.4);
+glVertex2f(0.6, 0.4);
+glVertex2f(0.6, -0.6);
+glVertex2f(-0.6, -0.6);
+```
+
+যদি:
+
+```text
+0.6 → 0.8
+```
+
+করো তাহলে Body width বাড়বে।
+
+যেমন:
+
+```cpp
+glVertex2f(-0.8, 0.4);
+glVertex2f(0.8, 0.4);
+glVertex2f(0.8, -0.6);
+glVertex2f(-0.8, -0.6);
+```
+
+---
