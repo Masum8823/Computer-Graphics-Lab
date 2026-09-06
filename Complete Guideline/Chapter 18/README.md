@@ -572,3 +572,26 @@ GL_QUADS
 ```
 
 ---
+
+
+# 22. House-এর Main Concept
+
+House কোনো নতুন complicated shape না।
+
+আমরা শুধু আগের শেখা shapeগুলো combine করেছি।
+
+```text
+Rectangle
+    +
+Triangle
+    +
+Rectangle
+    +
+Rectangle
+    ↓
+House
+```
+
+এটাই **Composite Shape**।
+
+---
