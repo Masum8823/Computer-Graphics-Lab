@@ -686,3 +686,31 @@ glVertex2f(0.0, 0.9);
 তাহলে Roof-এর width বাড়বে।
 
 ---
+
+# 26. Roof আরও লম্বা করতে চাইলে
+
+Top point:
+
+```cpp
+glVertex2f(0.0, 0.9);
+```
+
+এখানে `0.9` হলো Y coordinate।
+
+যদি:
+
+```cpp
+glVertex2f(0.0, 1.1);
+```
+
+দাও:
+
+```text
+Y বাড়বে
+ ↓
+Roof আরও উপরে যাবে
+ ↓
+Roof taller হবে
+```
+
+---
