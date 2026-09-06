@@ -497,3 +497,26 @@ glColor3f(0.0, 0.5, 1.0);
 মানে একটা blue ধরনের color।
 
 ---
+
+# 19. Window-এর Vertex
+
+```cpp
+glVertex2f(0.3, 0.2);
+glVertex2f(0.5, 0.2);
+glVertex2f(0.5, 0.0);
+glVertex2f(0.3, 0.0);
+```
+
+চারটা point:
+
+```text
+Top Left     = (0.3, 0.2)
+
+Top Right    = (0.5, 0.2)
+
+Bottom Right = (0.5, 0.0)
+
+Bottom Left  = (0.3, 0.0)
+```
+
+---
