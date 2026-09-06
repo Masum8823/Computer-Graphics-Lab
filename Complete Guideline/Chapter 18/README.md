@@ -540,3 +540,35 @@ Bottom Left  = (0.3, 0.0)
 ```
 
 ---
+
+# 21. কোন Shape কোথায়?
+
+এটা মুখস্থ রাখো:
+
+```text
+House Body
+    ↓
+Rectangle
+    ↓
+GL_QUADS
+
+Roof
+    ↓
+Triangle
+    ↓
+GL_TRIANGLES
+
+Door
+    ↓
+Rectangle
+    ↓
+GL_QUADS
+
+Window
+    ↓
+Rectangle
+    ↓
+GL_QUADS
+```
+
+---
