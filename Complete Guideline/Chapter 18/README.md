@@ -370,3 +370,31 @@ glVertex2f(-0.5, 0.0);
 এরকম হবে।
 
 ---
+
+# 30. Door-এর Handle যোগ করা
+
+Door-এর উপর ছোট একটা Point দিতে পারো।
+
+```cpp
+glPointSize(8);
+
+glBegin(GL_POINTS);
+
+glColor3f(1,1,0);
+
+glVertex2f(0.12, -0.3);
+
+glEnd();
+```
+
+এখানে:
+
+```text
+GL_POINTS
+   ↓
+Door Handle
+```
+
+তবে basic exam-এর জন্য এটা optional।
+
+---
