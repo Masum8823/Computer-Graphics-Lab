@@ -308,3 +308,27 @@ Top    = (0.0, 0.9)
 ```
 
 ---
+
+# 28. Window Move করা
+
+Window-এর:
+
+```cpp
+0.3
+0.5
+```
+
+X coordinate।
+
+এগুলো change করলে Window left/right move করবে।
+
+Y coordinate:
+
+```cpp
+0.2
+0.0
+```
+
+change করলে Window up/down move করবে।
+
+---
