@@ -422,3 +422,29 @@ Door Handle
 ```
 
 ---
+
+# 32. Exam-এ কীভাবে ভাববে?
+
+Question যদি আসে:
+
+> **Draw a House using OpenGL**
+
+প্রথমে shape ভাগ করবে:
+
+```text
+1. Body → Rectangle
+2. Roof → Triangle
+3. Door → Rectangle
+4. Window → Rectangle
+```
+
+তারপর primitive:
+
+```text
+Rectangle → GL_QUADS
+Triangle  → GL_TRIANGLES
+```
+
+তারপর coordinate বসাবে।
+
+---
