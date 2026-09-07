@@ -332,3 +332,41 @@ Y coordinate:
 change করলে Window up/down move করবে।
 
 ---
+# 29. দুইটা Window বানাতে চাইলে
+
+একটা Window-এর code copy করে X coordinate negative করে দিতে পারো।
+
+Existing:
+
+```cpp
+glVertex2f(0.3, 0.2);
+glVertex2f(0.5, 0.2);
+glVertex2f(0.5, 0.0);
+glVertex2f(0.3, 0.0);
+```
+
+Left Window:
+
+```cpp
+glVertex2f(-0.5, 0.2);
+glVertex2f(-0.3, 0.2);
+glVertex2f(-0.3, 0.0);
+glVertex2f(-0.5, 0.0);
+```
+
+তাহলে:
+
+```text
+       /\
+      /  \
+     /____\
+     | [] [] |
+     |       |
+     |  __   |
+     | |  |  |
+     |_|__|__|
+```
+
+এরকম হবে।
+
+---
