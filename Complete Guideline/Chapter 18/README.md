@@ -605,3 +605,7 @@ Coordinate rule:
 ```
 
 ---
+
+# 36. One-Line Memory Trick
+
+> **House = Rectangle Body + Triangle Roof + Rectangle Door + Rectangle Window।**
