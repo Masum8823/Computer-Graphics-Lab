@@ -569,3 +569,39 @@ Y = -0.6
 Body-এর bottom-এর সাথে match করেছে।
 
 ---
+
+# 35. Quick Revision
+
+```text
+House
+ ↓
+Composite Shape
+
+Body
+ ↓
+GL_QUADS
+
+Roof
+ ↓
+GL_TRIANGLES
+
+Door
+ ↓
+GL_QUADS
+
+Window
+ ↓
+GL_QUADS
+```
+
+Coordinate rule:
+
+```text
++X → Right
+-X → Left
+
++Y → Up
+-Y → Down
+```
+
+---
