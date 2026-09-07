@@ -521,3 +521,51 @@ Y = 0.4
 **Answer:** 3টি Vertex।
 
 ---
+
+
+# 34. Common Mistakes
+
+### Mistake 1: Roof-এর bottom আর Body-এর top একই Y না রাখা
+
+Body:
+
+```text
+Y = 0.4
+```
+
+তাহলে Roof-এর bottom-ও:
+
+```text
+Y = 0.4
+```
+
+রাখা ভালো।
+
+---
+
+### Mistake 2: Quad-এর Vertex ভুল order
+
+সাধারণভাবে:
+
+```text
+Top Left
+→ Top Right
+→ Bottom Right
+→ Bottom Left
+```
+
+দিলে সহজে Rectangle তৈরি হয়।
+
+---
+
+### Mistake 3: Door Body-এর বাইরে চলে যাওয়া
+
+Door-এর bottom:
+
+```text
+Y = -0.6
+```
+
+Body-এর bottom-এর সাথে match করেছে।
+
+---
