@@ -448,3 +448,76 @@ Triangle  → GL_TRIANGLES
 তারপর coordinate বসাবে।
 
 ---
+
+
+# 33. Viva Questions
+
+### Q1. House কীভাবে তৈরি করা হয়েছে?
+
+**Answer:** Multiple basic shapes combine করে House তৈরি করা হয়েছে।
+
+---
+
+### Q2. House Body-এর জন্য কী ব্যবহার করেছি?
+
+**Answer:** `GL_QUADS`।
+
+---
+
+### Q3. Roof-এর জন্য?
+
+**Answer:** `GL_TRIANGLES`।
+
+---
+
+### Q4. Door-এর জন্য?
+
+**Answer:** `GL_QUADS`।
+
+---
+
+### Q5. Window-এর জন্য?
+
+**Answer:** `GL_QUADS`।
+
+---
+
+### Q6. House-কে Composite Shape বলা হয় কেন?
+
+**Answer:** কারণ একাধিক basic shape একসাথে ব্যবহার করে House তৈরি করা হয়েছে।
+
+---
+
+### Q7. Roof এবং Body কীভাবে connect হয়েছে?
+
+**Answer:** Body-এর top এবং Roof-এর bottom-এর Y coordinate একই রাখা হয়েছে।
+
+```text
+Y = 0.4
+```
+
+---
+
+### Q8. `glColor3f()` কী করে?
+
+**Answer:** Shape-এর color set করে।
+
+---
+
+### Q9. `glVertex2f()` কী করে?
+
+**Answer:** `(x,y)` coordinate-এ Vertex define করে।
+
+---
+
+### Q10. `GL_QUADS`-এ কয়টি Vertex লাগে?
+
+**Answer:** 4টি Vertex।
+
+---
+
+### Q11. `GL_TRIANGLES`-এ কয়টি Vertex লাগে?
+
+**Answer:** 3টি Vertex।
+
+---
