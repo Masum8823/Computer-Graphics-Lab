@@ -398,3 +398,27 @@ Door Handle
 তবে basic exam-এর জন্য এটা optional।
 
 ---
+
+# 31. Full House Structure
+
+মনে রাখবে:
+
+```text
+             Roof
+          GL_TRIANGLES
+               ↓
+              /\
+             /  \
+            /____\
+               ↓
+           House Body
+           GL_QUADS
+               ↓
+         ┌──────────┐
+         │  Window  │
+         │          │
+         │   Door   │
+         └──────────┘
+```
+
+---
