@@ -984,3 +984,46 @@ Japan → Circle Center
 ```
 
 ---
+
+
+# 36. Quick Revision
+
+```text
+Japan Flag
+     ↓
+White Rectangle
+     +
+Red Circle
+     ↓
+Japan Flag
+```
+
+Rectangle:
+
+```text
+GL_QUADS
+```
+
+Circle:
+
+```text
+GL_POLYGON
+```
+
+Circle Formula:
+
+```text
+x = centerX + radius × cos(angle)
+
+y = centerY + radius × sin(angle)
+```
+
+আমাদের:
+
+```text
+Center = (0,0)
+
+Radius = 0.25
+```
+
+---
