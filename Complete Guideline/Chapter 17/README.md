@@ -985,3 +985,36 @@ Top Left
 কারণ Red Circle-কে Green-এর উপরে দেখাতে চাই।
 
 ---
+
+
+# 39. Quick Revision
+
+```text
+Bangladesh Flag
+       ↓
+Composite Shape
+       ↓
+ ┌─────────────┐
+ │   Green     │ → GL_QUADS
+ │      ●      │ → GL_POLYGON
+ │    Red      │
+ └─────────────┘
+```
+
+Circle formula:
+
+```text
+x = centerX + radius × cos(angle)
+
+y = centerY + radius × sin(angle)
+```
+
+আমাদের:
+
+```text
+Center = (-0.1, 0.0)
+
+Radius = 0.25
+```
+
+---
