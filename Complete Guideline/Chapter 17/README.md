@@ -772,3 +772,27 @@ B = 0
 ```
 
 ---
+
+# 34. পুরো Code-এর Logic
+
+```text
+glClear()
+   ↓
+Green Color Set
+   ↓
+GL_QUADS
+   ↓
+Green Rectangle
+   ↓
+Red Color Set
+   ↓
+GL_POLYGON
+   ↓
+360 Points
+   ↓
+Red Circle
+   ↓
+glFlush()
+```
+
+---
