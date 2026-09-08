@@ -274,3 +274,24 @@ for(int i = 0; i < 360; i++)
 প্রতিটি angle-এর জন্য একটি point তৈরি হবে।
 
 ---
+
+
+# 12. Angle Calculation
+
+```cpp
+float angle = i * 3.1416 / 180.0;
+```
+
+এখানে:
+
+```text
+Degree
+  ↓
+Radian
+```
+
+এ convert করা হচ্ছে।
+
+কারণ `sin()` এবং `cos()` সাধারণত Radian ব্যবহার করে।
+
+---
