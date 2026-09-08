@@ -154,3 +154,26 @@ B = 0.0
 তাই Green color হবে।
 
 ---
+
+# 6. Rectangle-এর চারটি Vertex
+
+```cpp
+glVertex2f(-0.8, 0.5);
+glVertex2f(0.8, 0.5);
+glVertex2f(0.8, -0.5);
+glVertex2f(-0.8, -0.5);
+```
+
+এগুলো হলো:
+
+```text
+Top Left     = (-0.8, 0.5)
+
+Top Right    = (0.8, 0.5)
+
+Bottom Right = (0.8, -0.5)
+
+Bottom Left  = (-0.8, -0.5)
+```
+
+---
