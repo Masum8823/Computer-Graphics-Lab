@@ -565,3 +565,20 @@ Radius = 0.3
 তাহলে Circle বড় হবে।
 
 ---
+# 24. Red Circle ছোট করতে চাইলে
+
+```cpp
+float x = -0.1 + 0.15 * cos(angle);
+float y = 0.0 + 0.15 * sin(angle);
+```
+
+তাহলে:
+
+```text
+Radius = 0.15
+```
+
+Circle ছোট হবে।
+
+---
+
