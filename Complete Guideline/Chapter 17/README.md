@@ -377,3 +377,73 @@ Radius = 0.25
 ```
 
 ---
+
+# 17. `glVertex2f(x,y)`
+
+```cpp
+glVertex2f(x, y);
+```
+
+প্রতিবার Circle-এর একটি নতুন point তৈরি করছে।
+
+```text
+angle
+ ↓
+cos/sin
+ ↓
+x,y
+ ↓
+glVertex2f()
+ ↓
+Point
+```
+
+360 বার করলে অনেকগুলো point পাওয়া যায়।
+
+তারপর:
+
+```text
+Many Points
+     ↓
+GL_POLYGON
+     ↓
+Circle
+```
+
+---
+
+# 18. Circle-এর Position কেন `-0.1`?
+
+এটা খুব important।
+
+যদি লিখতাম:
+
+```cpp
+float x = 0.0 + 0.25 * cos(angle);
+```
+
+তাহলে Circle একদম center-এ থাকতো।
+
+কিন্তু:
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+```
+
+দেওয়ায় Circle একটু **Left side-এ** চলে যায়।
+
+কারণ:
+
+```text
+-X → Left
+```
+
+তাই:
+
+```text
+-0.1
+```
+
+দেওয়া হয়েছে।
+
+---
