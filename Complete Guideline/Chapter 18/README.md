@@ -273,3 +273,26 @@ Radian
 কারণ `sin()` এবং `cos()` দিয়ে Circle বানানোর সময় Radian ব্যবহার করছি।
 
 ---
+
+# 11. Red Circle-এর X Coordinate
+
+```cpp
+float x = 0.0 + 0.25 * cos(angle);
+```
+
+এখানে:
+
+```text
+0.0 → Center X
+
+0.25 → Radius
+```
+
+তাই:
+
+```text
+Center X = 0.0
+Radius = 0.25
+```
+
+---
