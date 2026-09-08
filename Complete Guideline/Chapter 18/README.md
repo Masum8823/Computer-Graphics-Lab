@@ -548,3 +548,19 @@ Circle Right দিকে যাবে।
 ```
 
 ---
+
+# 22. Circle Left দিকে নিতে চাইলে
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+```
+
+তাহলে Circle Left দিকে যাবে।
+
+কারণ:
+
+```text
+-X → Left
+```
+
+---
