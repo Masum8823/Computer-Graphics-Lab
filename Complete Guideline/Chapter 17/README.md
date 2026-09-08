@@ -736,3 +736,23 @@ glVertex2f(-0.8, -0.6);
 তাহলে Flag taller হবে।
 
 ---
+
+# 32. Green-এর Color Change
+
+বর্তমানে:
+
+```cpp
+glColor3f(0.0, 0.5, 0.0);
+```
+
+এখানে Green-এর intensity বাড়াতে চাইলে:
+
+```cpp
+glColor3f(0.0, 0.8, 0.0);
+```
+
+দিতে পারো।
+
+তবে Lab-এর জন্য basic value মনে রাখলেই হবে।
+
+---
