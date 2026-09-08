@@ -652,3 +652,30 @@ glVertex2f(-0.8, -0.6);
 এতে Flag আরও tall হবে।
 
 ---
+
+
+# 28. Background Color
+
+Code-এ:
+
+```cpp
+glClearColor(0.7, 0.7, 0.7, 1.0);
+```
+
+দিয়েছি।
+
+এটা Window-এর background gray করবে।
+
+কারণ Flag-এর background নিজেই White Rectangle।
+
+তাই:
+
+```text
+Window Background → Gray
+
+Flag Background → White
+```
+
+এতে White Flag-এর boundary সহজে দেখা যাবে।
+
+---
