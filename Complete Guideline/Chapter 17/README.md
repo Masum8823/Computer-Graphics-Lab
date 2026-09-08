@@ -505,3 +505,36 @@ sin() + cos()
 ```
 
 ---
+
+
+# 22. কেন Rectangle আগে আঁকছি?
+
+আমরা প্রথমে:
+
+```text
+Green Rectangle
+```
+
+আঁকছি।
+
+তারপর তার উপরে:
+
+```text
+Red Circle
+```
+
+আঁকছি।
+
+OpenGL-এ পরের shape আগের shape-এর উপরে দেখা যায়।
+
+তাই:
+
+```text
+1st → Green Rectangle
+
+2nd → Red Circle
+```
+
+ফলে Red Circle Green-এর উপর দেখা যায়।
+
+---
