@@ -136,3 +136,21 @@ GL_QUADS
 ```
 
 ---
+
+# 5. Green Color
+
+```cpp
+glColor3f(0.0, 0.5, 0.0);
+```
+
+এখানে:
+
+```text
+R = 0.0
+G = 0.5
+B = 0.0
+```
+
+তাই Green color হবে।
+
+---
