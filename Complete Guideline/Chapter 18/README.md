@@ -105,3 +105,25 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 3. প্রথমে White Rectangle
+
+Japan Flag-এর main অংশ হলো একটা Rectangle।
+
+তাই:
+
+```cpp
+glBegin(GL_QUADS);
+```
+
+ব্যবহার করেছি।
+
+কারণ:
+
+```text
+Rectangle
+   ↓
+GL_QUADS
+```
+
+---
