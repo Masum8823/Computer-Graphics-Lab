@@ -796,3 +796,31 @@ glFlush()
 ```
 
 ---
+
+# 35. Exam-এ কীভাবে ভাববে?
+
+Question:
+
+> **Draw Bangladesh Flag using OpenGL**
+
+সাথে সাথে মনে করবে:
+
+```text
+Bangladesh Flag
+      ↓
+Green Rectangle
+      +
+Red Circle
+```
+
+তারপর:
+
+```text
+Rectangle → GL_QUADS
+
+Circle → GL_POLYGON
+         ↓
+       sin/cos
+```
+
+---
