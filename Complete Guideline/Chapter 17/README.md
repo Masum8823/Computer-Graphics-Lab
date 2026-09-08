@@ -232,3 +232,25 @@ B = 0
 অর্থাৎ Red।
 
 ---
+
+# 10. Circle-এর জন্য `GL_POLYGON`
+
+আমরা আগের Circle-এর মতো:
+
+```cpp
+glBegin(GL_POLYGON);
+```
+
+ব্যবহার করছি।
+
+কারণ Circle আমরা অনেকগুলো ছোট point দিয়ে Polygon-এর মতো বানাচ্ছি।
+
+```text
+Many Points
+     ↓
+GL_POLYGON
+     ↓
+Circle
+```
+
+---
