@@ -756,3 +756,19 @@ glColor3f(0.0, 0.8, 0.0);
 তবে Lab-এর জন্য basic value মনে রাখলেই হবে।
 
 ---
+
+# 33. Red Circle-এর Color
+
+```cpp
+glColor3f(1.0, 0.0, 0.0);
+```
+
+এটা pure Red।
+
+```text
+R = 1
+G = 0
+B = 0
+```
+
+---
