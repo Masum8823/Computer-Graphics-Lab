@@ -639,3 +639,16 @@ glVertex2f(-0.9, -0.5);
 এতে Flag আরও wide হবে।
 
 ---
+
+# 27. Flag Height বাড়ানো
+
+```cpp
+glVertex2f(-0.8, 0.6);
+glVertex2f(0.8, 0.6);
+glVertex2f(0.8, -0.6);
+glVertex2f(-0.8, -0.6);
+```
+
+এতে Flag আরও tall হবে।
+
+---
