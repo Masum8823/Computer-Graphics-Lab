@@ -358,3 +358,39 @@ Radius = 0.25
 ```
 
 ---
+
+# 15. `glVertex2f(x,y)`
+
+```cpp
+glVertex2f(x, y);
+```
+
+প্রতিবার Circle-এর একটি point তৈরি করছে।
+
+Flow:
+
+```text
+angle
+  ↓
+cos / sin
+  ↓
+x, y
+  ↓
+glVertex2f(x,y)
+  ↓
+Point
+```
+
+360 বার করলে অনেক point তৈরি হবে।
+
+তারপর:
+
+```text
+Many Points
+     ↓
+GL_POLYGON
+     ↓
+Circle
+```
+
+---
