@@ -357,3 +357,23 @@ float y = 0.0 + 0.25 * sin(angle);
 ```
 
 ---
+
+# 16. Circle-এর Radius
+
+এখানে:
+
+```text
+0.25
+```
+
+হলো Radius।
+
+তাই:
+
+```text
+Center = (-0.1, 0.0)
+
+Radius = 0.25
+```
+
+---
