@@ -340,3 +340,20 @@ Radius = 0.25
 ```
 
 ---
+
+# 15. Circle-এর Center
+
+আমাদের:
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+float y = 0.0 + 0.25 * sin(angle);
+```
+
+তাই Circle-এর center:
+
+```text
+(-0.1, 0.0)
+```
+
+---
