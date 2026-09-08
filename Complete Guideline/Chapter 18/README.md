@@ -459,3 +459,24 @@ Circle Center-এ।
 ---
 
 
+# 18. Japan Flag-এর Main Structure
+
+```text
+White Rectangle
+       +
+Red Circle
+       ↓
+Japan Flag
+```
+
+অর্থাৎ:
+
+```text
+Rectangle → GL_QUADS
+
+Circle → GL_POLYGON
+         ↓
+      sin/cos
+```
+
+---
