@@ -526,3 +526,25 @@ Radius = 0.15
 Circle ছোট হবে।
 
 ---
+
+# 21. Circle Right দিকে নিতে চাইলে
+
+```cpp
+float x = 0.1 + 0.25 * cos(angle);
+```
+
+তাহলে:
+
+```text
+Center X = 0.1
+```
+
+Circle Right দিকে যাবে।
+
+কারণ:
+
+```text
++X → Right
+```
+
+---
