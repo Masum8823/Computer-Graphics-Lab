@@ -798,3 +798,82 @@ glEnd();
 ```
 
 ---
+
+
+# 33. Viva Questions
+
+### Q1. Japan Flag কী দিয়ে তৈরি?
+
+**Answer:** একটি White Rectangle এবং একটি Red Circle দিয়ে।
+
+---
+
+### Q2. Rectangle-এর জন্য কোন primitive?
+
+**Answer:** `GL_QUADS`।
+
+---
+
+### Q3. Circle-এর জন্য কোন primitive?
+
+**Answer:** `GL_POLYGON`।
+
+---
+
+### Q4. Circle-এর Center কত?
+
+**Answer:**
+
+```text
+(0.0, 0.0)
+```
+
+---
+
+### Q5. Circle-এর Radius কত?
+
+**Answer:**
+
+```text
+0.25
+```
+
+---
+
+### Q6. Circle-এর X coordinate formula কী?
+
+**Answer:**
+
+```text
+x = centerX + radius × cos(angle)
+```
+
+---
+
+### Q7. Circle-এর Y coordinate formula কী?
+
+**Answer:**
+
+```text
+y = centerY + radius × sin(angle)
+```
+
+---
+
+### Q8. Circle-এর Center `(0,0)` কেন?
+
+**Answer:** Flag-এর মাঝখানে Circle রাখার জন্য।
+
+---
+
+### Q9. Circle বড় করতে কী পরিবর্তন করবো?
+
+**Answer:** Radius-এর value বাড়াবো।
+
+---
+
+### Q10. Japan Flag-কে Composite Shape বলা যায় কেন?
+
+**Answer:** একাধিক basic shape combine করে তৈরি করা হয়েছে।
+
+---
