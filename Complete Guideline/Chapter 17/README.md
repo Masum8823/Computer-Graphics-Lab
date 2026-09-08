@@ -1018,3 +1018,7 @@ Radius = 0.25
 ```
 
 ---
+
+# 40. One-Line Memory Trick
+
+> **Bangladesh Flag = Green `GL_QUADS` Rectangle + Red `GL_POLYGON` Circle।**
