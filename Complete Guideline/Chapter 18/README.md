@@ -296,3 +296,26 @@ Radius = 0.25
 ```
 
 ---
+
+# 12. Red Circle-এর Y Coordinate
+
+```cpp
+float y = 0.0 + 0.25 * sin(angle);
+```
+
+এখানে:
+
+```text
+0.0 → Center Y
+
+0.25 → Radius
+```
+
+তাই:
+
+```text
+Center Y = 0.0
+Radius = 0.25
+```
+
+---
