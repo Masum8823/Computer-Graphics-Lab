@@ -760,3 +760,41 @@ Circle → GL_POLYGON
 ```
 
 ---
+
+# 32. সবচেয়ে Important Part
+
+Exam-এর সময় এই অংশটা ভালোভাবে বুঝে রাখবে:
+
+```cpp
+// White Rectangle
+glColor3f(1.0, 1.0, 1.0);
+
+glBegin(GL_QUADS);
+
+glVertex2f(-0.8, 0.5);
+glVertex2f(0.8, 0.5);
+glVertex2f(0.8, -0.5);
+glVertex2f(-0.8, -0.5);
+
+glEnd();
+
+
+// Red Circle
+glColor3f(1.0, 0.0, 0.0);
+
+glBegin(GL_POLYGON);
+
+for(int i = 0; i < 360; i++)
+{
+    float angle = i * 3.1416 / 180.0;
+
+    float x = 0.0 + 0.25 * cos(angle);
+    float y = 0.0 + 0.25 * sin(angle);
+
+    glVertex2f(x, y);
+}
+
+glEnd();
+```
+
+---
