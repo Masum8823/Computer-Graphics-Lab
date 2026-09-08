@@ -487,3 +487,21 @@ Bangladesh Flag
 ```
 
 ---
+
+# 21. কোন অংশে কোন Primitive?
+
+এটা অবশ্যই মনে রাখবে:
+
+```text
+Green Background
+      ↓
+GL_QUADS
+
+Red Circle
+      ↓
+GL_POLYGON
+      ↓
+sin() + cos()
+```
+
+---
