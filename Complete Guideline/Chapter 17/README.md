@@ -661,3 +661,19 @@ Center Y = 0.2
 ```
 
 ---
+
+# 28. Red Circle নিচে নিতে চাইলে
+
+```cpp
+float y = -0.2 + 0.25 * sin(angle);
+```
+
+তাহলে:
+
+```text
+Center Y = -0.2
+```
+
+এবং Circle নিচে যাবে।
+
+---
