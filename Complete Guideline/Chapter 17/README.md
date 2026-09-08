@@ -613,3 +613,21 @@ Circle Right দিকে যাবে।
 ```
 
 ---
+
+# 26. Red Circle Left দিকে নিতে চাইলে
+
+যেমন:
+
+```cpp
+float x = -0.2 + 0.25 * cos(angle);
+```
+
+তাহলে Circle আরও Left দিকে যাবে।
+
+কারণ:
+
+```text
+-X → Left
+```
+
+---
