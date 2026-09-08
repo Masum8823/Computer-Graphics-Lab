@@ -564,3 +564,24 @@ float x = -0.1 + 0.25 * cos(angle);
 ```
 
 ---
+# 23. Circle উপরে নিতে চাইলে
+
+```cpp
+float y = 0.2 + 0.25 * sin(angle);
+```
+
+তাহলে:
+
+```text
+Center Y = 0.2
+```
+
+Circle উপরে যাবে।
+
+কারণ:
+
+```text
++Y → Up
+```
+
+---
