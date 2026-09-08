@@ -213,3 +213,23 @@ B = 0
 Color হবে।
 
 ---
+
+# 8. Circle-এর জন্য `GL_POLYGON`
+
+```cpp
+glBegin(GL_POLYGON);
+```
+
+ব্যবহার করছি।
+
+আগের Circle-এর মতো অনেকগুলো point তৈরি করে Polygon বানাচ্ছি।
+
+```text
+Many Points
+     ↓
+GL_POLYGON
+     ↓
+Circle
+```
+
+---
