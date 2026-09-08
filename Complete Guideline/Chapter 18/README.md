@@ -708,3 +708,27 @@ glClearColor(0.7, 0.7, 0.7, 1.0);
 দিয়েছি।
 
 ---
+
+# 30. Full Drawing Logic
+
+```text
+glClear()
+   ↓
+White Color
+   ↓
+GL_QUADS
+   ↓
+White Rectangle
+   ↓
+Red Color
+   ↓
+GL_POLYGON
+   ↓
+360 Points
+   ↓
+Red Circle
+   ↓
+glFlush()
+```
+
+---
