@@ -732,3 +732,31 @@ glFlush()
 ```
 
 ---
+
+# 31. Exam-এ কীভাবে চিনবে?
+
+Question যদি আসে:
+
+> Draw Japan Flag using OpenGL
+
+তাহলে সাথে সাথে মনে করবে:
+
+```text
+Japan Flag
+    ↓
+White Rectangle
+    +
+Red Circle
+```
+
+তারপর:
+
+```text
+Rectangle → GL_QUADS
+
+Circle → GL_POLYGON
+         ↓
+       sin/cos
+```
+
+---
