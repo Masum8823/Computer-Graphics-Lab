@@ -960,3 +960,27 @@ glEnd();
 ```
 
 ---
+
+
+# 35. Bangladesh Flag-এর সাথে Compare
+
+| বিষয়             | Bangladesh   | Japan        |
+| ---------------- | ------------ | ------------ |
+| Background       | Green        | White        |
+| Main Shape       | Rectangle    | Rectangle    |
+| Primitive        | `GL_QUADS`   | `GL_QUADS`   |
+| Circle           | Red          | Red          |
+| Circle Primitive | `GL_POLYGON` | `GL_POLYGON` |
+| Circle Center X  | `-0.1`       | `0.0`        |
+| Circle Center Y  | `0.0`        | `0.0`        |
+| Radius           | `0.25`       | `0.25`       |
+
+সবচেয়ে important difference:
+
+```text
+Bangladesh → Circle একটু Left
+
+Japan → Circle Center
+```
+
+---
