@@ -538,3 +538,30 @@ OpenGL-এ পরের shape আগের shape-এর উপরে দেখ�
 ফলে Red Circle Green-এর উপর দেখা যায়।
 
 ---
+
+# 23. Red Circle বড় করতে চাইলে
+
+বর্তমানে:
+
+```cpp
+0.25
+```
+
+হলো Radius।
+
+যদি:
+
+```cpp
+float x = -0.1 + 0.3 * cos(angle);
+float y = 0.0 + 0.3 * sin(angle);
+```
+
+দাও:
+
+```text
+Radius = 0.3
+```
+
+তাহলে Circle বড় হবে।
+
+---
