@@ -679,3 +679,32 @@ Flag Background → White
 এতে White Flag-এর boundary সহজে দেখা যাবে।
 
 ---
+
+# 29. কেন `glClearColor()` White না দিয়ে Gray?
+
+যদি:
+
+```cpp
+glClearColor(1.0, 1.0, 1.0, 1.0);
+```
+
+দাও, তাহলে:
+
+```text
+Window Background = White
+Flag = White
+```
+
+দুটো একই color হয়ে যাবে।
+
+তখন Flag-এর White অংশ আলাদা করে বোঝা কঠিন হতে পারে।
+
+তাই demonstration-এর জন্য:
+
+```cpp
+glClearColor(0.7, 0.7, 0.7, 1.0);
+```
+
+দিয়েছি।
+
+---
