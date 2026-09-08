@@ -114,3 +114,25 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 4. প্রথমে Green Rectangle
+
+Flag-এর main part হলো Green Rectangle।
+
+তাই:
+
+```cpp
+glBegin(GL_QUADS);
+```
+
+ব্যবহার করেছি।
+
+কারণ:
+
+```text
+Rectangle
+   ↓
+GL_QUADS
+```
+
+---
