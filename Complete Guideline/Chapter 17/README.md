@@ -934,3 +934,54 @@ glEnd();
 **Answer:** একাধিক basic shape একসাথে ব্যবহার করে তৈরি করা হয়েছে।
 
 ---
+
+# 38. Common Mistakes
+
+### Mistake 1: Circle-এর center ভুল করা
+
+```cpp
+float x = -0.1 + ...
+```
+
+এখানে `-0.1` হলো **Center X**, Radius না।
+
+---
+
+### Mistake 2: Radius ভুলে যাওয়া
+
+```cpp
+0.25
+```
+
+হলো Radius।
+
+```text
+x = centerX + radius × cos(angle)
+
+y = centerY + radius × sin(angle)
+```
+
+---
+
+### Mistake 3: Green Rectangle-এর coordinate ভুল করা
+
+Rectangle:
+
+```text
+Top Left
+→ Top Right
+→ Bottom Right
+→ Bottom Left
+```
+
+এই order-এ দিলে সহজে ঠিক থাকবে।
+
+---
+
+### Mistake 4: Circle আগে আঁকা
+
+আমরা আগে Green Rectangle এবং পরে Red Circle আঁকছি।
+
+কারণ Red Circle-কে Green-এর উপরে দেখাতে চাই।
+
+---
