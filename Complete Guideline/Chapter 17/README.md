@@ -864,3 +864,73 @@ glEnd();
 এই অংশটা ভালোভাবে বুঝে রাখলে Bangladesh Flag সহজেই লিখতে পারবে।
 
 ---
+
+# 37. Viva Questions
+
+### Q1. Bangladesh Flag আঁকতে কোন কোন shape ব্যবহার করেছি?
+
+**Answer:** একটি Rectangle এবং একটি Circle।
+
+---
+
+### Q2. Green Background-এর জন্য কোন primitive?
+
+**Answer:** `GL_QUADS`।
+
+---
+
+### Q3. Red Circle-এর জন্য কোন primitive?
+
+**Answer:** `GL_POLYGON`।
+
+---
+
+### Q4. Circle-এর জন্য `sin()` এবং `cos()` কেন ব্যবহার করেছি?
+
+**Answer:** Circle-এর বিভিন্ন `(x,y)` coordinate বের করার জন্য।
+
+---
+
+### Q5. Circle-এর Center কত?
+
+**Answer:**
+
+```text
+(-0.1, 0.0)
+```
+
+---
+
+### Q6. Circle-এর Radius কত?
+
+**Answer:**
+
+```text
+0.25
+```
+
+---
+
+### Q7. Circle-কে Left side-এ কেন রাখা হয়েছে?
+
+**Answer:** Center X হিসেবে `-0.1` দেওয়া হয়েছে।
+
+---
+
+### Q8. Circle বড় করতে কী change করবো?
+
+**Answer:** Radius `0.25` বাড়াতে হবে।
+
+---
+
+### Q9. Flag-এর Green part কোন shape?
+
+**Answer:** Rectangle।
+
+---
+
+### Q10. Flag-কে Composite Shape বলা যায় কেন?
+
+**Answer:** একাধিক basic shape একসাথে ব্যবহার করে তৈরি করা হয়েছে।
+
+---
