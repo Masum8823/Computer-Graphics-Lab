@@ -631,3 +631,33 @@ float x = -0.2 + 0.25 * cos(angle);
 ```
 
 ---
+
+# 27. Red Circle উপরে নিতে চাইলে
+
+বর্তমানে:
+
+```cpp
+float y = 0.0 + 0.25 * sin(angle);
+```
+
+যদি:
+
+```cpp
+float y = 0.2 + 0.25 * sin(angle);
+```
+
+দাও:
+
+```text
+Center Y = 0.2
+```
+
+তাই Circle উপরে যাবে।
+
+কারণ:
+
+```text
++Y → Up
+```
+
+---
