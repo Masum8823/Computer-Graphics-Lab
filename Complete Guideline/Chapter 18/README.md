@@ -1027,3 +1027,7 @@ Radius = 0.25
 ```
 
 ---
+
+# 37. One-Line Memory Trick
+
+> **Japan Flag = White `GL_QUADS` Rectangle + Centered Red `GL_POLYGON` Circle।**
