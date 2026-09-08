@@ -449,3 +449,41 @@ float x = -0.1 + 0.25 * cos(angle);
 ---
 
 
+# 19. কেন `y = 0.0`?
+
+```cpp
+float y = 0.0 + 0.25 * sin(angle);
+```
+
+এখানে Center Y:
+
+```text
+0.0
+```
+
+তাই Circle vertically center-এর কাছাকাছি থাকবে।
+
+---
+
+# 20. Flag-এর Complete Structure
+
+```text
+                 Green Rectangle
+┌──────────────────────────────────┐
+│                                  │
+│             🔴                   │
+│                                  │
+└──────────────────────────────────┘
+```
+
+Conceptually:
+
+```text
+Green Rectangle
+       +
+Red Circle
+       ↓
+Bangladesh Flag
+```
+
+---
