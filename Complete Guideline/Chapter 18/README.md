@@ -480,3 +480,31 @@ Circle → GL_POLYGON
 ```
 
 ---
+
+
+# 19. Circle বড় করতে চাইলে
+
+বর্তমানে:
+
+```cpp
+0.25
+```
+
+হলো Radius।
+
+যদি:
+
+```cpp
+float x = 0.0 + 0.35 * cos(angle);
+float y = 0.0 + 0.35 * sin(angle);
+```
+
+দাও:
+
+```text
+Radius = 0.35
+```
+
+তাহলে Circle বড় হবে।
+
+---
