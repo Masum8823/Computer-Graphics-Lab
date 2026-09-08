@@ -877,3 +877,86 @@ y = centerY + radius × sin(angle)
 **Answer:** একাধিক basic shape combine করে তৈরি করা হয়েছে।
 
 ---
+
+# 34. Common Mistakes
+
+### Mistake 1: Circle-এর Center ভুল করা
+
+Japan Flag-এর জন্য:
+
+```cpp
+float x = 0.0 + ...
+float y = 0.0 + ...
+```
+
+দেওয়া হয়েছে।
+
+তাই:
+
+```text
+Center = (0,0)
+```
+
+---
+
+### Mistake 2: Radius-কে Center ভাবা
+
+এখানে:
+
+```cpp
+0.0 + 0.25 * cos(angle)
+```
+
+এর:
+
+```text
+0.0 → Center X
+
+0.25 → Radius
+```
+
+---
+
+### Mistake 3: `sin()` এবং `cos()` উল্টে ফেলা
+
+মনে রাখবে:
+
+```text
+X → cos()
+
+Y → sin()
+```
+
+অর্থাৎ:
+
+```cpp
+x = centerX + radius * cos(angle);
+
+y = centerY + radius * sin(angle);
+```
+
+---
+
+### Mistake 4: `glBegin()` / `glEnd()` ভুলে যাওয়া
+
+Rectangle:
+
+```cpp
+glBegin(GL_QUADS);
+
+// vertices
+
+glEnd();
+```
+
+Circle:
+
+```cpp
+glBegin(GL_POLYGON);
+
+// vertices
+
+glEnd();
+```
+
+---
