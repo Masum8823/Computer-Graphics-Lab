@@ -426,3 +426,36 @@ Center Y = 0
 ```
 
 ---
+
+
+# 17. Bangladesh Flag vs Japan Flag
+
+দুটোই একই concept:
+
+```text
+Rectangle + Circle
+```
+
+কিন্তু Circle-এর position আলাদা।
+
+### Bangladesh:
+
+```cpp
+float x = -0.1 + 0.25 * cos(angle);
+float y = 0.0 + 0.25 * sin(angle);
+```
+
+Circle একটু Left-এ।
+
+### Japan:
+
+```cpp
+float x = 0.0 + 0.25 * cos(angle);
+float y = 0.0 + 0.25 * sin(angle);
+```
+
+Circle Center-এ।
+
+---
+
+
