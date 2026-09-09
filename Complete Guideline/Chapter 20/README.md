@@ -540,3 +540,39 @@ Pop
 ব্যবহার করলে transformation আলাদা রাখা যায়।
 
 ---
+
+# 22. Rotation-এর Formula
+
+Mathematicalভাবে rotation-এর ক্ষেত্রে:
+
+```text
+x' = x cosθ - y sinθ
+
+y' = x sinθ + y cosθ
+```
+
+এখানে:
+
+```text
+θ = Rotation Angle
+```
+
+যেমন:
+
+```text
+θ = 45°
+```
+
+তাহলে point-এর নতুন coordinate বের করা যায়।
+
+তবে OpenGL lab-এর basic code-এ সাধারণত manually এই formula লিখতে হয় না।
+
+OpenGL:
+
+```cpp
+glRotatef()
+```
+
+দিয়ে কাজটা করে দেয়।
+
+---
