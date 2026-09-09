@@ -747,3 +747,25 @@ glPopMatrix()
 করলে transformation আলাদা রাখা যায়।
 
 ---
+
+# 28. Translation vs Other Transformation
+
+Transformation-এর মধ্যে:
+
+```text
+Translation → Position Change
+
+Rotation    → Angle Change
+
+Scaling     → Size Change
+```
+
+মনে রাখবে:
+
+```text
+T → Translate → Move
+R → Rotate    → Turn
+S → Scale     → Size
+```
+
+---
