@@ -681,3 +681,39 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 26. দুইটা Object থাকলে
+
+ধরি:
+
+```text
+Object 1 → Right
+Object 2 → Left
+```
+
+তাহলে:
+
+```cpp
+// Object 1
+glPushMatrix();
+
+glTranslatef(0.5, 0.0, 0.0);
+
+// Draw Object 1
+
+glPopMatrix();
+
+
+// Object 2
+glPushMatrix();
+
+glTranslatef(-0.5, 0.0, 0.0);
+
+// Draw Object 2
+
+glPopMatrix();
+```
+
+এখানে দুই Object আলাদাভাবে move করবে।
+
+---
