@@ -571,3 +571,17 @@ glPopMatrix();
 ব্যবহার করা যায়।
 
 ---
+
+# 22. `glPushMatrix()` কী করে?
+
+```cpp
+glPushMatrix();
+```
+
+বর্তমান transformation state save করে রাখে।
+
+সহজ ভাষায়:
+
+> বর্তমান অবস্থাটা মনে রাখে।
+
+---
