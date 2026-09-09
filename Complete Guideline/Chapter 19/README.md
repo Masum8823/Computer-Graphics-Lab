@@ -274,3 +274,26 @@ Exam-এর জন্য সহজভাবে মনে রাখো:
 > `glTranslatef()` object-কে এক position থেকে অন্য position-এ move করে।
 
 ---
+
+# 10. শুধু Right দিকে নিতে চাইলে
+
+```cpp
+glTranslatef(0.5, 0.0, 0.0);
+```
+
+এখানে:
+
+```text
+Tx = 0.5
+Ty = 0
+```
+
+তাই:
+
+```text
+→ Right
+```
+
+দিকে যাবে।
+
+---
