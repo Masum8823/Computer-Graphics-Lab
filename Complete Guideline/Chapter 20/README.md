@@ -510,3 +510,33 @@ glPopMatrix();
 এভাবে দুই object-এর rotation আলাদা থাকবে।
 
 ---
+
+# 21. কেন Push/Pop দরকার?
+
+ধরি:
+
+```cpp
+glRotatef(45, 0.0, 0.0, 1.0);
+```
+
+করার পর Object 1 draw করলাম।
+
+তারপর Object 2 draw করলাম।
+
+Object 2-ও আগের rotation-এর effect পেতে পারে।
+
+তাই:
+
+```text
+Push
+ ↓
+Rotate
+ ↓
+Draw
+ ↓
+Pop
+```
+
+ব্যবহার করলে transformation আলাদা রাখা যায়।
+
+---
