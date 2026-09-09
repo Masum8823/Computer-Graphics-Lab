@@ -499,3 +499,26 @@ Translation = Position Change
 ```
 
 ---
+
+# 19. Translation-এ Size Change হয় না
+
+ধরি একটা Rectangle:
+
+```text
+Width  = 0.4
+Height = 0.4
+```
+
+Translation করার পরেও:
+
+```text
+Width  = 0.4
+Height = 0.4
+```
+
+থাকবে।
+
+শুধু জায়গা পরিবর্তন করবে।
+
+---
+
