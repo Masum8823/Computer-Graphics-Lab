@@ -832,3 +832,26 @@ Y → Down
 দিকে যাবে।
 
 ---
+
+# 32. Positive Translation
+
+```cpp
+glTranslatef(0.5, 0.3, 0.0);
+```
+
+মানে:
+
+```text
+X → Right
+Y → Up
+```
+
+অর্থাৎ:
+
+```text
+↗
+```
+
+দিকে যাবে।
+
+---
