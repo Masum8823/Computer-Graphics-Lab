@@ -1067,3 +1067,46 @@ Turn  → Rotate
 ```
 
 ---
+
+# 39. Quick Revision
+
+```text
+Rotation
+    ↓
+Object ঘোরানো
+    ↓
+Angle Change
+```
+
+Function:
+
+```cpp
+glRotatef(angle, x, y, z);
+```
+
+2D:
+
+```cpp
+glRotatef(angle, 0.0, 0.0, 1.0);
+```
+
+Direction:
+
+```text
++ Angle → Counter-clockwise
+- Angle → Clockwise
+```
+
+Example:
+
+```cpp
+glRotatef(45, 0.0, 0.0, 1.0);
+```
+
+মানে:
+
+```text
+45° Counter-clockwise Rotation
+```
+
+---
