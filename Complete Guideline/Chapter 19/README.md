@@ -882,3 +882,37 @@ glTranslatef(X, Y, Z)
 ```
 
 ---
+
+# 34. Exam-এ কীভাবে চিনবে?
+
+Question যদি আসে:
+
+> **Translate a rectangle to the right**
+
+তাহলে:
+
+```cpp
+glTranslatef(0.5, 0.0, 0.0);
+```
+
+Question:
+
+> **Translate upward**
+
+তাহলে:
+
+```cpp
+glTranslatef(0.0, 0.5, 0.0);
+```
+
+Question:
+
+> **Translate left and down**
+
+তাহলে:
+
+```cpp
+glTranslatef(-0.5, -0.5, 0.0);
+```
+
+---
