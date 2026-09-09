@@ -175,3 +175,25 @@ Rotation Angle
 ঘুরবে।
 
 ---
+
+# 6. `glRotatef()`-এর 4টি Parameter
+
+Function:
+
+```cpp
+glRotatef(angle, x, y, z);
+```
+
+এখানে:
+
+```text
+1st → Angle
+
+2nd → X-axis
+
+3rd → Y-axis
+
+4th → Z-axis
+```
+
+---
