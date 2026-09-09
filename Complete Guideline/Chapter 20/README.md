@@ -740,3 +740,28 @@ glPopMatrix();
 তবে basic lab-এ যদি শুধু simple rotation চায়, এই extra অংশ প্রয়োজন নাও হতে পারে।
 
 ---
+
+
+# 29. Simple Rotation বনাম Center Rotation
+
+### Simple:
+
+```cpp
+glRotatef(45, 0, 0, 1);
+```
+
+### নির্দিষ্ট Center-এর চারপাশে:
+
+```text
+Translate to Center
+        ↓
+Rotate
+        ↓
+Translate Back
+        ↓
+Draw
+```
+
+এই conceptটা মনে রাখলেই হবে।
+
+---
