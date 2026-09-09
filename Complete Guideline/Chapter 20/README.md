@@ -765,3 +765,38 @@ Draw
 এই conceptটা মনে রাখলেই হবে।
 
 ---
+
+# 30. Rotation Angle Change
+
+### 30°:
+
+```cpp
+glRotatef(30, 0, 0, 1);
+```
+
+### 45°:
+
+```cpp
+glRotatef(45, 0, 0, 1);
+```
+
+### 90°:
+
+```cpp
+glRotatef(90, 0, 0, 1);
+```
+
+### 180°:
+
+```cpp
+glRotatef(180, 0, 0, 1);
+```
+
+### -45°:
+
+```cpp
+glRotatef(-45, 0, 0, 1);
+```
+
+---
+
