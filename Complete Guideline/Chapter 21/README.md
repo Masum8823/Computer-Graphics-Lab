@@ -268,3 +268,27 @@ Y → 1 গুণ
 > কোনো size change হবে না।
 
 ---
+
+# 9. Factor > 1 হলে
+
+যেমন:
+
+```cpp
+glScalef(2.0, 2.0, 1.0);
+```
+
+তাহলে:
+
+```text
+2 > 1
+```
+
+তাই object বড় হবে।
+
+```text
+1.0 → Same Size
+2.0 → Bigger
+3.0 → আরও Bigger
+```
+
+---
