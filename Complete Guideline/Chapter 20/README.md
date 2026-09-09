@@ -1039,3 +1039,31 @@ glPopMatrix();
 
 ---
 
+# 38. Translation বনাম Rotation — খুব Important
+
+```text
+Translation
+     ↓
+Position Change
+     ↓
+glTranslatef()
+```
+
+আর:
+
+```text
+Rotation
+     ↓
+Angle Change
+     ↓
+glRotatef()
+```
+
+মনে রাখো:
+
+```text
+Move  → Translate
+Turn  → Rotate
+```
+
+---
