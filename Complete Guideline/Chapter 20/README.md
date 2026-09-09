@@ -635,3 +635,28 @@ glRotatef(-45, 0, 0, 1);
 → Clockwise
 
 ---
+
+# 25. Rotation Around Origin
+
+Basic OpenGL rotation সাধারণভাবে origin `(0,0)`-কে কেন্দ্র করে হয়।
+
+```text
+       +Y
+        ↑
+        |
+        |
+--------●--------→ +X
+       (0,0)
+```
+
+এখানে:
+
+```text
+(0,0)
+ ↓
+Rotation Center
+```
+
+ধরতে পারো।
+
+---
