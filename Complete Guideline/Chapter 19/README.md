@@ -1021,3 +1021,64 @@ Tx, Ty, Tz
 **Answer:** আগের saved transformation state-এ ফিরে যায়।
 
 ---
+
+# 36. Common Mistakes
+
+### Mistake 1: X এবং Y উল্টে ফেলা
+
+```cpp
+glTranslatef(0.5, 0.2, 0.0);
+```
+
+এখানে:
+
+```text
+0.5 → X
+0.2 → Y
+```
+
+---
+
+### Mistake 2: Positive/Negative ভুল করা
+
+```text
++X → Right
+-X → Left
+
++Y → Up
+-Y → Down
+```
+
+---
+
+### Mistake 3: `glTranslatef()`-এর পরে object না আঁকা
+
+Translation নিজে কোনো object আঁকে না।
+
+এটা শুধু transformation apply করে।
+
+তাই:
+
+```cpp
+glTranslatef(...);
+
+// এরপর Object draw করতে হবে
+```
+
+---
+
+### Mistake 4: Push/Pop ভুলে যাওয়া
+
+Multiple objects থাকলে safe structure:
+
+```cpp
+glPushMatrix();
+
+glTranslatef(...);
+
+// Draw
+
+glPopMatrix();
+```
+
+---
