@@ -677,3 +677,28 @@ Rotation Center
 তাই rotation দেখতে সুন্দর হবে।
 
 ---
+
+# 27. Object Center-এ না থাকলে কী হয়?
+
+ধরি Rectangle-এর coordinate:
+
+```text
+(0.2, 0.2)
+(0.6, 0.2)
+(0.6,-0.2)
+(0.2,-0.2)
+```
+
+এটা origin-এর Right side-এ।
+
+এখন:
+
+```cpp
+glRotatef(45, 0, 0, 1);
+```
+
+দিলে object শুধু নিজের জায়গায় ঘুরবে না, **origin-এর চারপাশে ঘুরে position-ও পরিবর্তন করতে পারে।**
+
+এটা খুব important concept।
+
+---
