@@ -423,3 +423,27 @@ Rectangle/square-এর size একই থাকবে।
 শুধু angle change হবে।
 
 ---
+
+# 18. `glPushMatrix()` কেন?
+
+আমরা লিখেছি:
+
+```cpp
+glPushMatrix();
+
+glRotatef(45, 0.0, 0.0, 1.0);
+
+// Draw Object
+
+glPopMatrix();
+```
+
+`glPushMatrix()`:
+
+> বর্তমান transformation state save করে।
+
+`glPopMatrix()`:
+
+> আগের state-এ ফিরে যায়।
+
+---
