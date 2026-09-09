@@ -160,3 +160,39 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+
+# 6. `glTranslatef()` বুঝি
+
+সবচেয়ে important line:
+
+```cpp
+glTranslatef(0.4, 0.2, 0.0);
+```
+
+এখানে:
+
+```text
+0.4 → X direction-এ move
+
+0.2 → Y direction-এ move
+
+0.0 → Z direction-এ move
+```
+
+তাই:
+
+```text
+X positive → Right
+Y positive → Up
+```
+
+Object:
+
+```text
+Right + Up
+```
+
+দিকে যাবে।
+
+---
