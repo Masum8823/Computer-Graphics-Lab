@@ -198,3 +198,32 @@ Height → 2 গুণ
 বড় হবে।
 
 ---
+
+
+# 6. `glScalef()`-এর 3টি Parameter
+
+Function:
+
+```cpp
+glScalef(Sx, Sy, Sz);
+```
+
+এখানে:
+
+```text
+1st → X-axis scaling
+
+2nd → Y-axis scaling
+
+3rd → Z-axis scaling
+```
+
+2D-এর জন্য:
+
+```text
+Sz = 1.0
+```
+
+রাখি।
+
+---
