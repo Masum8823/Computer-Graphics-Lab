@@ -300,3 +300,17 @@ glRotatef(-45, 0.0, 0.0, 1.0);
 এটা exam-এর জন্য important।
 
 ---
+
+# 11. 90 Degree Rotation
+
+```cpp
+glRotatef(90, 0.0, 0.0, 1.0);
+```
+
+মানে:
+
+```text
+Object → 90° rotate
+```
+
+---
