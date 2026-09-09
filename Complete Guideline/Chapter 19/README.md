@@ -196,3 +196,41 @@ Right + Up
 দিকে যাবে।
 
 ---
+
+# 7. Translation-এর আগে Rectangle
+
+আমাদের Rectangle:
+
+```cpp
+glBegin(GL_QUADS);
+
+glVertex2f(-0.2, 0.2);
+glVertex2f(0.2, 0.2);
+glVertex2f(0.2, -0.2);
+glVertex2f(-0.2, -0.2);
+
+glEnd();
+```
+
+এর Center:
+
+```text
+(0,0)
+```
+
+এরকম:
+
+```text
+       Y
+       ↑
+       |
+    ┌─────┐
+    │     │
+    │  ■  │
+    │     │
+    └─────┘
+       |
+-------+------------→ X
+```
+
+---
