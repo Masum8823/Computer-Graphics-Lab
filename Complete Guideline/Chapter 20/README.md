@@ -970,3 +970,72 @@ glRotatef(angle, 0.0, 0.0, 1.0);
 **Answer:** Basic ক্ষেত্রে origin `(0,0)`-কে কেন্দ্র করে।
 
 ---
+
+# 37. Common Mistakes
+
+### Mistake 1: Z-axis-এ `1` না দেওয়া
+
+2D rotation-এর জন্য:
+
+```cpp
+glRotatef(45, 0.0, 0.0, 1.0);
+```
+
+এখানে শেষের:
+
+```text
+1.0
+```
+
+Z-axis indicate করে।
+
+---
+
+### Mistake 2: X/Y axis-এ rotate করা
+
+Basic 2D rotation-এর জন্য:
+
+```text
+X = 0
+Y = 0
+Z = 1
+```
+
+মনে রাখবে।
+
+---
+
+### Mistake 3: Positive/Negative ভুল করা
+
+```text
++45° → Counter-clockwise
+
+-45° → Clockwise
+```
+
+---
+
+### Mistake 4: `glRotatef()` object আঁকার পরে দেওয়া
+
+ভালো structure:
+
+```cpp
+glPushMatrix();
+
+glRotatef(...);
+
+// তারপর Object draw
+
+glBegin(...);
+
+...
+
+glEnd();
+
+glPopMatrix();
+```
+
+অর্থাৎ **আগে transformation, পরে drawing**।
+
+---
+
