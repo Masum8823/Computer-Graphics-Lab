@@ -599,3 +599,31 @@ glPopMatrix();
 > আগের অবস্থায় ফিরে যায়।
 
 ---
+
+# 24. Safe Translation Structure
+
+Exam-এর জন্য এই structure মনে রাখতে পারো:
+
+```cpp
+glPushMatrix();
+
+glTranslatef(0.4, 0.2, 0.0);
+
+// Draw Object
+
+glPopMatrix();
+```
+
+Flow:
+
+```text
+Save
+ ↓
+Translate
+ ↓
+Draw
+ ↓
+Restore
+```
+
+---
