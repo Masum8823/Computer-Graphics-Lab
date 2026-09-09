@@ -466,3 +466,47 @@ Restore Previous State
 ```
 
 ---
+
+
+# 20. Multiple Object-এর ক্ষেত্রে
+
+ধরি আমাদের দুইটা object আছে।
+
+প্রথমটা:
+
+```text
+45° rotate
+```
+
+দ্বিতীয়টা:
+
+```text
+90° rotate
+```
+
+তাহলে:
+
+```cpp
+// Object 1
+glPushMatrix();
+
+glRotatef(45, 0.0, 0.0, 1.0);
+
+// Draw Object 1
+
+glPopMatrix();
+
+
+// Object 2
+glPushMatrix();
+
+glRotatef(90, 0.0, 0.0, 1.0);
+
+// Draw Object 2
+
+glPopMatrix();
+```
+
+এভাবে দুই object-এর rotation আলাদা থাকবে।
+
+---
