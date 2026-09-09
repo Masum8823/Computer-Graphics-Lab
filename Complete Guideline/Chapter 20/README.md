@@ -150,3 +150,28 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+
+# 5. সবচেয়ে Important Line
+
+```cpp
+glRotatef(45.0, 0.0, 0.0, 1.0);
+```
+
+এখানে:
+
+```text
+45.0
+ ↓
+Rotation Angle
+```
+
+অর্থাৎ object:
+
+```text
+45°
+```
+
+ঘুরবে।
+
+---
