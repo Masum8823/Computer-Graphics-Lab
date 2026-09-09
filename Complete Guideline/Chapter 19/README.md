@@ -522,3 +522,24 @@ Height = 0.4
 
 ---
 
+# 20. `glTranslatef()`-এর 3টি Parameter
+
+```cpp
+glTranslatef(Tx, Ty, Tz);
+```
+
+মানে:
+
+```text
+1st → X movement
+2nd → Y movement
+3rd → Z movement
+```
+
+2D graphics-এর ক্ষেত্রে:
+
+```cpp
+glTranslatef(Tx, Ty, 0.0);
+```
+
+---
