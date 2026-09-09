@@ -855,3 +855,30 @@ Y → Up
 দিকে যাবে।
 
 ---
+
+
+# 33. Translation-এর Main Code
+
+সবচেয়ে important line:
+
+```cpp
+glTranslatef(0.4, 0.2, 0.0);
+```
+
+এটা মনে রাখো:
+
+```text
+glTranslatef(X, Y, Z)
+```
+
+আর direction:
+
+```text
++X → Right
+-X → Left
+
++Y → Up
+-Y → Down
+```
+
+---
