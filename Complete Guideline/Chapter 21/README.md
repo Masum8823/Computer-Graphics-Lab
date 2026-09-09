@@ -227,3 +227,24 @@ Sz = 1.0
 রাখি।
 
 ---
+
+# 7. Scaling Factor কী?
+
+Scaling-এর value-কে Scaling Factor বলা যায়।
+
+যেমন:
+
+```cpp
+glScalef(2.0, 2.0, 1.0);
+```
+
+এখানে:
+
+```text
+X factor = 2
+Y factor = 2
+```
+
+মানে দুই direction-এই object 2 গুণ হবে।
+
+---
