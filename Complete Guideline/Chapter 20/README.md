@@ -1110,3 +1110,7 @@ glRotatef(45, 0.0, 0.0, 1.0);
 ```
 
 ---
+
+# 40. One-Line Memory Trick
+
+> **Rotation = Object ঘোরানো; `glRotatef(angle,0,0,1)`; +Angle = Counter-clockwise, -Angle = Clockwise।**
