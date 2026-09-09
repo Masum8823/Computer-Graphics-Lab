@@ -171,3 +171,30 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 5. সবচেয়ে Important Line
+
+```cpp
+glScalef(2.0, 2.0, 1.0);
+```
+
+এখানে:
+
+```text
+2.0 → X direction-এ 2 গুণ
+
+2.0 → Y direction-এ 2 গুণ
+
+1.0 → Z direction-এ কোনো change নেই
+```
+
+তাই object:
+
+```text
+Width  → 2 গুণ
+Height → 2 গুণ
+```
+
+বড় হবে।
+
+---
