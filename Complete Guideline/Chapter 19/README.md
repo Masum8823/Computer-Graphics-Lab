@@ -109,3 +109,54 @@ Ty → Y direction
 আমরা 2D graphics করছি, তাই Z = `0` রাখবো।
 
 ---
+
+# 5. Simple Translation Code
+
+```cpp
+#include <GL/glut.h>
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Translation শুরু
+    // Object-কে X দিকে 0.4
+    // এবং Y দিকে 0.2 move করবে
+    glTranslatef(0.4, 0.2, 0.0);
+
+    // Object-এর Color
+    glColor3f(1.0, 0.0, 0.0);
+
+    // একটি Rectangle draw করছি
+    glBegin(GL_QUADS);
+
+    glVertex2f(-0.2, 0.2);
+    glVertex2f(0.2, 0.2);
+    glVertex2f(0.2, -0.2);
+    glVertex2f(-0.2, -0.2);
+
+    glEnd();
+
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+
+    glutInitWindowSize(800, 600);
+
+    glutCreateWindow("Translation");
+
+    // Background Color
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
