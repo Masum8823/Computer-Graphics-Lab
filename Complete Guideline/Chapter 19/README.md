@@ -364,3 +364,27 @@ glTranslatef(0.0, -0.5, 0.0);
 ```
 
 ---
+
+# 15. Translation-এর Formula
+
+যদি:
+
+```text
+Original Point = (x,y)
+```
+
+এবং:
+
+```text
+Tx = 0.3
+Ty = 0.2
+```
+
+তাহলে:
+
+```text
+x' = x + 0.3
+y' = y + 0.2
+```
+
+---
