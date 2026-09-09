@@ -314,3 +314,18 @@ Object → 90° rotate
 ```
 
 ---
+
+
+# 12. 180 Degree Rotation
+
+```cpp
+glRotatef(180, 0.0, 0.0, 1.0);
+```
+
+মানে:
+
+```text
+Object → 180° rotate
+```
+
+---
