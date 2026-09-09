@@ -421,3 +421,81 @@ New Point:
 ```
 
 ---
+
+# 17. Rectangle-এর ক্ষেত্রে কী হবে?
+
+ধরি Rectangle-এর points:
+
+```text
+(-0.2, 0.2)
+(0.2, 0.2)
+(0.2,-0.2)
+(-0.2,-0.2)
+```
+
+Translation:
+
+```text
+Tx = 0.4
+Ty = 0.2
+```
+
+তাহলে প্রতিটি point-এর সাথে `0.4` এবং `0.2` যোগ হবে।
+
+### Point 1:
+
+```text
+(-0.2, 0.2)
+
+x' = -0.2 + 0.4 = 0.2
+y' =  0.2 + 0.2 = 0.4
+
+New = (0.2, 0.4)
+```
+
+### Point 2:
+
+```text
+(0.2, 0.2)
+
+New = (0.6, 0.4)
+```
+
+### Point 3:
+
+```text
+(0.2,-0.2)
+
+New = (0.6, 0.0)
+```
+
+### Point 4:
+
+```text
+(-0.2,-0.2)
+
+New = (0.2, 0.0)
+```
+
+তাই পুরো Rectangle একই shape রেখে move করবে।
+
+---
+
+# 18. Translation-এ Shape-এর কী Change হয়?
+
+Translation করলে:
+
+```text
+Shape Size     → Same
+Shape Angle    → Same
+Shape Shape    → Same
+Position       → Change
+```
+
+অর্থাৎ:
+
+```text
+Translation = Position Change
+```
+
+---
