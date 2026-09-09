@@ -543,3 +543,31 @@ glTranslatef(Tx, Ty, 0.0);
 ```
 
 ---
+
+# 21. `glPushMatrix()` এবং `glPopMatrix()`
+
+Translation-এর সময় একটা important ব্যাপার আছে।
+
+ধরি:
+
+```cpp
+glTranslatef(0.5, 0.0, 0.0);
+```
+
+তারপর আরও একটা object draw করলে সেই object-ও translated position পেতে পারে।
+
+এটা prevent করতে:
+
+```cpp
+glPushMatrix();
+
+glTranslatef(0.5, 0.0, 0.0);
+
+// Object
+
+glPopMatrix();
+```
+
+ব্যবহার করা যায়।
+
+---
