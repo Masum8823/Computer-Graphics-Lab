@@ -447,3 +447,22 @@ glPopMatrix();
 > আগের state-এ ফিরে যায়।
 
 ---
+
+
+# 19. Push/Pop Flow
+
+```text
+glPushMatrix()
+       ↓
+Save Current State
+       ↓
+glRotatef()
+       ↓
+Draw Object
+       ↓
+glPopMatrix()
+       ↓
+Restore Previous State
+```
+
+---
