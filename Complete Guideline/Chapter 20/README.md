@@ -879,3 +879,94 @@ Restore State
 ```
 
 ---
+
+# 36. Viva Questions
+
+### Q1. Rotation কী?
+
+**Answer:** কোনো object-কে নির্দিষ্ট angle অনুযায়ী ঘুরানোকে Rotation বলে।
+
+---
+
+### Q2. OpenGL-এ Rotation-এর function কী?
+
+**Answer:**
+
+```cpp
+glRotatef()
+```
+
+---
+
+### Q3. `glRotatef()`-এ কয়টি parameter?
+
+**Answer:** 4টি।
+
+```text
+angle, x, y, z
+```
+
+---
+
+### Q4. `angle` কী?
+
+**Answer:** Object কত degree rotate করবে।
+
+---
+
+### Q5. 2D rotation-এর জন্য কোন axis ব্যবহার করি?
+
+**Answer:** Z-axis।
+
+---
+
+### Q6. 2D rotation-এর জন্য সাধারণ code কী?
+
+**Answer:**
+
+```cpp
+glRotatef(angle, 0.0, 0.0, 1.0);
+```
+
+---
+
+### Q7. Positive angle কোন direction?
+
+**Answer:** Counter-clockwise।
+
+---
+
+### Q8. Negative angle কোন direction?
+
+**Answer:** Clockwise।
+
+---
+
+### Q9. Rotation করলে size change হয়?
+
+**Answer:** না।
+
+---
+
+### Q10. Rotation করলে কী change হয়?
+
+**Answer:** Object-এর angle/orientation change হয়।
+
+---
+### Q11. `glPushMatrix()` কেন ব্যবহার করি?
+
+**Answer:** Current transformation state save করার জন্য।
+
+---
+
+### Q12. `glPopMatrix()` কেন ব্যবহার করি?
+
+**Answer:** Previous transformation state restore করার জন্য।
+
+---
+
+### Q13. Rotation সাধারণত কোন point-এর চারপাশে হয়?
+
+**Answer:** Basic ক্ষেত্রে origin `(0,0)`-কে কেন্দ্র করে।
+
+---
