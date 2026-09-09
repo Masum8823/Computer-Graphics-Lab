@@ -93,3 +93,60 @@ S → Size
 ```
 
 ---
+
+
+# 4. Simple Rotation Code
+
+```cpp
+#include <GL/glut.h>
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Current transformation save
+    glPushMatrix();
+
+    // Object-কে 45 degree rotate করবে
+    // Z-axis বরাবর rotate করছি
+    glRotatef(45.0, 0.0, 0.0, 1.0);
+
+    // Red Color
+    glColor3f(1.0, 0.0, 0.0);
+
+    // Rectangle draw
+    glBegin(GL_QUADS);
+
+    glVertex2f(-0.3, 0.3);
+    glVertex2f(0.3, 0.3);
+    glVertex2f(0.3, -0.3);
+    glVertex2f(-0.3, -0.3);
+
+    glEnd();
+
+    // আগের transformation-এ ফিরে যাওয়া
+    glPopMatrix();
+
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+
+    glutInitWindowSize(800, 600);
+
+    glutCreateWindow("Rotation");
+
+    // Background Color
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
