@@ -702,3 +702,41 @@ glRotatef(45, 0, 0, 1);
 এটা খুব important concept।
 
 ---
+
+# 28. Object-কে নিজের Center-এর চারপাশে Rotate
+
+এটা একটু advanced, কিন্তু lab exam-এর জন্য জানা ভালো।
+
+ধরি object-এর নিজের center:
+
+```text
+(cx, cy)
+```
+
+তাহলে সাধারণভাবে:
+
+```text
+1. Center-এ নিয়ে আসি
+2. Rotate করি
+3. আবার আগের জায়গায় ফিরিয়ে দিই
+```
+
+Structure:
+
+```cpp
+glPushMatrix();
+
+glTranslatef(cx, cy, 0.0);
+
+glRotatef(45, 0.0, 0.0, 1.0);
+
+glTranslatef(-cx, -cy, 0.0);
+
+// Draw Object
+
+glPopMatrix();
+```
+
+তবে basic lab-এ যদি শুধু simple rotation চায়, এই extra অংশ প্রয়োজন নাও হতে পারে।
+
+---
