@@ -74,3 +74,22 @@ Z = 1
 রাখি।
 
 ---
+# 3. সহজে মনে রাখো
+
+```text
+Translation → Move
+
+Rotation → Rotate / ঘুরানো
+
+Scaling → Size Change
+```
+
+অর্থাৎ:
+
+```text
+T → Move
+R → Rotate
+S → Size
+```
+
+---
