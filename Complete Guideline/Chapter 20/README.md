@@ -197,3 +197,26 @@ glRotatef(angle, x, y, z);
 ```
 
 ---
+
+
+# 7. 2D Graphics-এ কেন Z = 1?
+
+আমরা 2D graphics করছি।
+
+আমাদের object থাকে:
+
+```text
+X-Y Plane
+```
+
+তাই object-কে screen-এর উপর ঘোরাতে হলে **Z-axis বরাবর rotation** করতে হয়।
+
+তাই:
+
+```cpp
+glRotatef(45, 0.0, 0.0, 1.0);
+```
+
+মনে রাখবে।
+
+---
