@@ -769,3 +769,27 @@ S → Scale     → Size
 ```
 
 ---
+
+# 29. Translation-এর Simple Diagram
+
+```text
+Original:
+
+       ■
+
+
+Translation:
+
+       ■  ─────────→  ■
+```
+
+Shape একই:
+
+```text
+Before → ■
+After  → ■
+```
+
+শুধু position change।
+
+---
