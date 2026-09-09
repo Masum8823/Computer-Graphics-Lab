@@ -280,3 +280,23 @@ glRotatef(45, 0.0, 0.0, 1.0);
 ```
 
 ---
+
+# 10. Negative Angle
+
+যদি লিখি:
+
+```cpp
+glRotatef(-45, 0.0, 0.0, 1.0);
+```
+
+তাহলে object বিপরীত দিকে rotate করবে।
+
+```text
++45° → Counter-clockwise
+
+-45° → Clockwise
+```
+
+এটা exam-এর জন্য important।
+
+---
