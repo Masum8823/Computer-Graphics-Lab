@@ -809,3 +809,26 @@ Y movement = 0
 ```
 
 ---
+
+# 31. Negative Translation
+
+```cpp
+glTranslatef(-0.5, -0.3, 0.0);
+```
+
+মানে:
+
+```text
+X → Left
+Y → Down
+```
+
+অর্থাৎ Object:
+
+```text
+↙
+```
+
+দিকে যাবে।
+
+---
