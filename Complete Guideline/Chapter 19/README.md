@@ -916,3 +916,108 @@ glTranslatef(-0.5, -0.5, 0.0);
 ```
 
 ---
+
+
+# 35. Viva Questions
+
+### Q1. Translation কী?
+
+**Answer:** Translation হলো object-কে এক position থেকে অন্য position-এ move করা।
+
+---
+
+### Q2. OpenGL-এ Translation-এর function কী?
+
+**Answer:**
+
+```cpp
+glTranslatef()
+```
+
+---
+
+### Q3. `glTranslatef()`-এর parameter কয়টি?
+
+**Answer:** 3টি।
+
+```text
+Tx, Ty, Tz
+```
+
+---
+
+### Q4. `Tx` কী?
+
+**Answer:** X-axis বরাবর movement।
+
+---
+
+### Q5. `Ty` কী?
+
+**Answer:** Y-axis বরাবর movement।
+
+---
+
+### Q6. 2D graphics-এ `Tz` কত রাখি?
+
+**Answer:**
+
+```text
+0.0
+```
+
+---
+
+### Q7. Positive X কোন দিকে?
+
+**Answer:** Right।
+
+---
+
+### Q8. Negative X কোন দিকে?
+
+**Answer:** Left।
+
+---
+
+### Q9. Positive Y কোন দিকে?
+
+**Answer:** Up।
+
+---
+
+### Q10. Negative Y কোন দিকে?
+
+**Answer:** Down।
+
+---
+
+### Q11. Translation করলে object-এর size change হয়?
+
+**Answer:** না।
+
+---
+
+### Q12. Translation করলে object-এর angle change হয়?
+
+**Answer:** না।
+
+---
+
+### Q13. Translation-এ কী change হয়?
+
+**Answer:** Object-এর position change হয়।
+
+---
+
+### Q14. `glPushMatrix()` কী করে?
+
+**Answer:** বর্তমান transformation state save করে।
+
+---
+
+### Q15. `glPopMatrix()` কী করে?
+
+**Answer:** আগের saved transformation state-এ ফিরে যায়।
+
+---
