@@ -831,3 +831,31 @@ glRotatef(45, 0.0, 0.0, 1.0);
 ```
 
 ---
+
+
+# 34. Main Code Structure
+
+Exam-এর জন্য সবচেয়ে useful structure:
+
+```cpp
+glPushMatrix();
+
+// Rotation
+glRotatef(45, 0.0, 0.0, 1.0);
+
+// Draw Object
+glBegin(GL_QUADS);
+
+glVertex2f(-0.3, 0.3);
+glVertex2f(0.3, 0.3);
+glVertex2f(0.3, -0.3);
+glVertex2f(-0.3, -0.3);
+
+glEnd();
+
+glPopMatrix();
+```
+
+এটাই ভালোভাবে বুঝে রাখো।
+
+---
