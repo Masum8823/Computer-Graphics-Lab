@@ -92,3 +92,25 @@ glScalef(Sx, Sy, 1.0);
 ব্যবহার করি।
 
 ---
+
+
+
+# 3. সহজে মনে রাখো
+
+Transformation তিনটা:
+
+```text
+Translation → Position Change
+Rotation    → Angle Change
+Scaling     → Size Change
+```
+
+অর্থাৎ:
+
+```text
+T → Move
+R → Rotate
+S → Size
+```
+
+---
