@@ -627,3 +627,57 @@ Restore
 ```
 
 ---
+
+# 25. Example with Push/Pop
+
+```cpp
+#include <GL/glut.h>
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Current transformation save
+    glPushMatrix();
+
+    // Object-কে Right এবং Up দিকে move
+    glTranslatef(0.4, 0.2, 0.0);
+
+    // Red Color
+    glColor3f(1.0, 0.0, 0.0);
+
+    // Rectangle
+    glBegin(GL_QUADS);
+
+    glVertex2f(-0.2, 0.2);
+    glVertex2f(0.2, 0.2);
+    glVertex2f(0.2, -0.2);
+    glVertex2f(-0.2, -0.2);
+
+    glEnd();
+
+    // আগের transformation-এ ফিরে যাওয়া
+    glPopMatrix();
+
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+
+    glutInitWindowSize(800, 600);
+
+    glutCreateWindow("Translation");
+
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
