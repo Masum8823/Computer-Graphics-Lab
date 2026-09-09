@@ -87,3 +87,25 @@ y' = 0.3 + 0.2
 অর্থাৎ Point-টা Right এবং Up দিকে গেছে।
 
 ---
+
+# 4. OpenGL-এ Translation
+
+OpenGL-এ Translation করার জন্য:
+
+```cpp
+glTranslatef(Tx, Ty, 0);
+```
+
+ব্যবহার করা যায়।
+
+এখানে:
+
+```text
+Tx → X direction
+Ty → Y direction
+0  → Z direction
+```
+
+আমরা 2D graphics করছি, তাই Z = `0` রাখবো।
+
+---
