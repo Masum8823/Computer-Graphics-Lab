@@ -1128,3 +1128,7 @@ glPopMatrix()
 ```
 
 ---
+
+# 38. One-Line Memory Trick
+
+> **Translation = Object Move; `glTranslatef(X,Y,0)`; +X Right, -X Left, +Y Up, -Y Down।**
