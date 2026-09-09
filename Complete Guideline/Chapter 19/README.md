@@ -717,3 +717,33 @@ glPopMatrix();
 এখানে দুই Object আলাদাভাবে move করবে।
 
 ---
+
+# 27. কেন `Push/Pop` ব্যবহার করি?
+
+ধরি:
+
+```cpp
+glTranslatef(0.5, 0.0, 0.0);
+```
+
+করার পর Object 1 draw করলাম।
+
+তারপর Object 2 draw করলাম।
+
+তাহলে Object 2-ও সেই transformation পেয়ে যেতে পারে।
+
+তাই:
+
+```text
+glPushMatrix()
+       ↓
+Translation
+       ↓
+Object Draw
+       ↓
+glPopMatrix()
+```
+
+করলে transformation আলাদা রাখা যায়।
+
+---
