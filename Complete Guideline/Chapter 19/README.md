@@ -263,3 +263,14 @@ move করবে।
 অর্থাৎ Right এবং Up দিকে গেছে।
 
 ---
+
+
+# 9. খুব Important Concept
+
+Translation shape-এর coordinate **change করে না**, বরং object-এর পুরো coordinate system-কে shift করে।
+
+Exam-এর জন্য সহজভাবে মনে রাখো:
+
+> `glTranslatef()` object-কে এক position থেকে অন্য position-এ move করে।
+
+---
