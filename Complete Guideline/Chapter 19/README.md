@@ -793,3 +793,19 @@ After  → ■
 শুধু position change।
 
 ---
+# 30. যদি `Tx = 0` এবং `Ty = 0`
+
+```cpp
+glTranslatef(0.0, 0.0, 0.0);
+```
+
+তাহলে কোনো movement হবে না।
+
+কারণ:
+
+```text
+X movement = 0
+Y movement = 0
+```
+
+---
