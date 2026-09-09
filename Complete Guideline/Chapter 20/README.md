@@ -859,3 +859,23 @@ glPopMatrix();
 এটাই ভালোভাবে বুঝে রাখো।
 
 ---
+
+# 35. Code-এর Flow
+
+```text
+glPushMatrix()
+      ↓
+Save State
+      ↓
+glRotatef()
+      ↓
+Object Rotate
+      ↓
+Draw Object
+      ↓
+glPopMatrix()
+      ↓
+Restore State
+```
+
+---
