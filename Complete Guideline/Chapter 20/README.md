@@ -396,3 +396,30 @@ Scaling     → Bigger/Smaller
 ```
 
 ---
+
+# 17. Rotation-এর আগে ও পরে
+
+ধরি:
+
+```text
+Before:
+
+┌────┐
+│    │
+└────┘
+```
+
+45° Rotation-এর পরে:
+
+```text
+   ╱──╲
+  ╱    ╲
+  ╲    ╱
+   ╲──╱
+```
+
+Rectangle/square-এর size একই থাকবে।
+
+শুধু angle change হবে।
+
+---
