@@ -341,3 +341,26 @@ glTranslatef(0.0, -0.5, 0.0);
 ```
 
 ---
+
+# 14. চার Direction মনে রাখো
+
+```text
+             +Y
+              ↑
+              |
+       -X ←---+---→ +X
+              |
+              ↓
+             -Y
+```
+
+তাই:
+
+```text
++X → Right
+-X → Left
++Y → Up
+-Y → Down
+```
+
+---
