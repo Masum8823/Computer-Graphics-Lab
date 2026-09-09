@@ -252,3 +252,31 @@ Rotation হচ্ছে:
 অর্থাৎ object নিজের position-এর চারপাশে ঘুরছে।
 
 ---
+
+
+# 9. Positive Angle
+
+যেমন:
+
+```cpp
+glRotatef(45, 0.0, 0.0, 1.0);
+```
+
+এখানে:
+
+```text
++45°
+```
+
+মানে সাধারণভাবে **counter-clockwise** direction-এ rotate করবে।
+
+সহজভাবে:
+
+```text
+     ↖
+      |
+      |
+      ●
+```
+
+---
