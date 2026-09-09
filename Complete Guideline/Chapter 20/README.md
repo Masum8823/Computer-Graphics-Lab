@@ -607,3 +607,31 @@ Up side
 চলে যাবে।
 
 ---
+
+# 24. Rotation Direction
+
+মনে রাখবে:
+
+```text
++ Angle → Counter-clockwise
+
+- Angle → Clockwise
+```
+
+যেমন:
+
+```cpp
+glRotatef(45, 0, 0, 1);
+```
+
+→ Counter-clockwise
+
+আর:
+
+```cpp
+glRotatef(-45, 0, 0, 1);
+```
+
+→ Clockwise
+
+---
