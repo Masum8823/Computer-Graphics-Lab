@@ -1082,3 +1082,49 @@ glPopMatrix();
 ```
 
 ---
+
+# 37. Quick Revision
+
+```text
+Translation
+     ↓
+Object Move
+     ↓
+Position Change
+```
+
+Function:
+
+```cpp
+glTranslatef(Tx, Ty, Tz);
+```
+
+Direction:
+
+```text
++X → Right
+-X → Left
++Y → Up
+-Y → Down
+```
+
+Formula:
+
+```text
+x' = x + Tx
+y' = y + Ty
+```
+
+Push/Pop:
+
+```text
+glPushMatrix()
+      ↓
+glTranslatef()
+      ↓
+Draw Object
+      ↓
+glPopMatrix()
+```
+
+---
