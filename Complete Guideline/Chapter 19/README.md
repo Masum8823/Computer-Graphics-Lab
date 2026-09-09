@@ -28,3 +28,27 @@ New Position
 Square-এর shape একই থাকবে, শুধু position change হবে।
 
 ---
+
+# 2. Translation-এর Basic Formula
+
+একটি point যদি হয়:
+
+```text
+(x, y)
+```
+
+Translation-এর পরে:
+
+```text
+x' = x + Tx
+y' = y + Ty
+```
+
+এখানে:
+
+```text
+Tx = X direction-এ কতটুকু move করবে
+Ty = Y direction-এ কতটুকু move করবে
+```
+
+---
