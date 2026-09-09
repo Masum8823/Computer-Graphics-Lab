@@ -377,3 +377,22 @@ Angle    → Change
 > **Rotation = Angle Change**
 
 ---
+
+
+# 16. Translation বনাম Rotation
+
+| Transformation | কী Change করে? |
+| -------------- | -------------- |
+| Translation    | Position       |
+| Rotation       | Angle          |
+| Scaling        | Size           |
+
+মনে রাখো:
+
+```text
+Translation → Move
+Rotation    → Turn
+Scaling     → Bigger/Smaller
+```
+
+---
