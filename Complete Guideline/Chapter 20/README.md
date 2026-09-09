@@ -360,3 +360,20 @@ Full Circle
 ```
 
 ---
+
+# 15. Rotation করলে কী Change হয়?
+
+Rotation করলে:
+
+```text
+Position → সাধারণত same
+Size     → same
+Shape    → same
+Angle    → Change
+```
+
+সবচেয়ে সহজ:
+
+> **Rotation = Angle Change**
+
+---
