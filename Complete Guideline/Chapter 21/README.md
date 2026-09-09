@@ -317,3 +317,18 @@ glScalef(0.5, 0.5, 1.0);
 ```
 
 ---
+
+# 11. Factor = 0 হলে
+
+```cpp
+glScalef(0.0, 0.0, 1.0);
+```
+
+এতে X এবং Y direction-এর size zero হয়ে যাবে।
+
+অর্থাৎ object দেখা যাবে না/degenerate হয়ে যাবে।
+
+তাই basic scaling-এ `0` avoid করাই ভালো।
+
+---
+
