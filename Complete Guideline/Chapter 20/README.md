@@ -821,3 +821,13 @@ glRotatef(-45, 0.0, 0.0, 1.0);
 ```
 
 ---
+
+# 33. Exam-এ যদি বলে "Rotate Counter-clockwise 45°"
+
+তাহলে:
+
+```cpp
+glRotatef(45, 0.0, 0.0, 1.0);
+```
+
+---
