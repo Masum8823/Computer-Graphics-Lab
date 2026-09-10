@@ -470,3 +470,19 @@ Y → 2 গুণ
 তাই object tall হবে।
 
 ---
+
+
+# 18. Object ছোট করতে চাইলে
+
+```cpp
+glScalef(0.5, 0.5, 1.0);
+```
+
+মানে:
+
+```text
+Width  → Half
+Height → Half
+```
+
+---
