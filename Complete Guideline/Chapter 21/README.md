@@ -378,3 +378,30 @@ Y = 2
 দুই দিকেই সমানভাবে বড় হবে।
 
 ---
+
+# 14. Non-Uniform Scaling
+
+যখন:
+
+```text
+Sx ≠ Sy
+```
+
+তখন Non-Uniform Scaling।
+
+Example:
+
+```cpp
+glScalef(2.0, 1.0, 1.0);
+```
+
+এখানে:
+
+```text
+X → 2 গুণ
+Y → 1 গুণ
+```
+
+তাই object শুধু width-এর দিকে বড় হবে।
+
+---
