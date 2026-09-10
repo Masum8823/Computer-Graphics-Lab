@@ -352,3 +352,29 @@ Object-এর overall proportion একই থাকবে।
 এটাকে **Uniform Scaling** বলা হয়।
 
 ---
+# 13. Uniform Scaling
+
+যখন:
+
+```text
+Sx = Sy
+```
+
+তখন Uniform Scaling।
+
+Example:
+
+```cpp
+glScalef(2.0, 2.0, 1.0);
+```
+
+মানে:
+
+```text
+X = 2
+Y = 2
+```
+
+দুই দিকেই সমানভাবে বড় হবে।
+
+---
