@@ -502,3 +502,21 @@ Y → 3 গুণ
 ```
 
 ---
+
+
+# 20. X Direction-এ 3 গুণ এবং Y Direction-এ 2 গুণ
+
+```cpp
+glScalef(3.0, 2.0, 1.0);
+```
+
+মানে:
+
+```text
+Width  → 3 গুণ
+Height → 2 গুণ
+```
+
+এটা Non-Uniform Scaling।
+
+---
