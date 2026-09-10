@@ -520,3 +520,27 @@ Height → 2 গুণ
 এটা Non-Uniform Scaling।
 
 ---
+
+# 21. Scaling-এর Formula
+
+যদি কোনো point:
+
+```text
+(x, y)
+```
+
+হয় এবং scaling:
+
+```text
+Sx, Sy
+```
+
+হয়, তাহলে:
+
+```text
+x' = x × Sx
+
+y' = y × Sy
+```
+
+---
