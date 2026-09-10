@@ -332,3 +332,23 @@ glScalef(0.0, 0.0, 1.0);
 
 ---
 
+# 12. X এবং Y একই হলে
+
+```cpp
+glScalef(2.0, 2.0, 1.0);
+```
+
+X এবং Y একই factor।
+
+তাই:
+
+```text
+Width  → 2 গুণ
+Height → 2 গুণ
+```
+
+Object-এর overall proportion একই থাকবে।
+
+এটাকে **Uniform Scaling** বলা হয়।
+
+---
