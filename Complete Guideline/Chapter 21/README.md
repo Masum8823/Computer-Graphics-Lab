@@ -680,3 +680,44 @@ Scaling করলে object-এর points origin থেকে দূরে/ক�
 কিন্তু আসলে scaling origin-এর reference-এ হচ্ছে।
 
 ---
+
+# 27. নির্দিষ্ট Center-এর চারপাশে Scaling
+
+যদি কোনো object-এর নিজের center:
+
+```text
+(cx, cy)
+```
+
+হয়, তাহলে সাধারণ concept:
+
+```text
+1. Object-এর center-এ যাও
+2. Scale করো
+3. আগের জায়গায় ফিরে আসো
+```
+
+Structure:
+
+```cpp
+glPushMatrix();
+
+glTranslatef(cx, cy, 0.0);
+
+glScalef(2.0, 2.0, 1.0);
+
+glTranslatef(-cx, -cy, 0.0);
+
+// Draw Object
+
+glPopMatrix();
+```
+
+এটা একটু advanced। Basic exam-এ শুধু `glScalef()` চাইলেই সাধারণত এটুকুই যথেষ্ট:
+
+```cpp
+glScalef(2.0, 2.0, 1.0);
+```
+
+---
+
