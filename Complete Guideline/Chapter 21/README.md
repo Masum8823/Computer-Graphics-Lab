@@ -881,3 +881,21 @@ Scaling     → Bigger
 ```
 
 ---
+
+
+# 35. Scaling-এর Main Code
+
+Exam-এর জন্য সবচেয়ে important:
+
+```cpp
+glPushMatrix();
+
+// Object 2 গুণ বড়
+glScalef(2.0, 2.0, 1.0);
+
+// Draw Object
+
+glPopMatrix();
+```
+
+---
