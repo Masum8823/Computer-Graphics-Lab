@@ -853,3 +853,31 @@ Object → Bigger
 ```
 
 ---
+
+# 34. Transformation তিনটা একসাথে
+
+OpenGL-এ তিনটা একসাথে করা যায়:
+
+```cpp
+glPushMatrix();
+
+glTranslatef(0.4, 0.2, 0.0);
+
+glRotatef(45, 0.0, 0.0, 1.0);
+
+glScalef(2.0, 2.0, 1.0);
+
+// Draw Object
+
+glPopMatrix();
+```
+
+এখানে:
+
+```text
+Translation → Move
+Rotation    → Rotate
+Scaling     → Bigger
+```
+
+---
