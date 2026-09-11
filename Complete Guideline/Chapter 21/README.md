@@ -638,3 +638,26 @@ y' = y × Sy
 যদি object origin-এর center-এ থাকে, scaling দেখতে সুন্দর এবং সহজ হয়।
 
 ---
+
+# 25. Scaling সাধারণত কোথাকে কেন্দ্র করে হয়?
+
+Basic OpenGL scaling সাধারণত:
+
+```text
+Origin = (0,0)
+```
+
+কে reference ধরে।
+
+```text
+       +Y
+        ↑
+        |
+        |
+--------●--------→ +X
+       (0,0)
+```
+
+তাই object যদি origin-এর center-এ থাকে, scaling সহজে বোঝা যায়।
+
+---
