@@ -617,3 +617,24 @@ Y coordinates → 2 গুণ
 তাই Rectangle বড় হবে।
 
 ---
+
+# 24. Scaling করলে Position-ও কেন Change মনে হয়?
+
+এটা একটা important point।
+
+Scaling formula:
+
+```text
+x' = x × Sx
+y' = y × Sy
+```
+
+তাই origin থেকে দূরের point আরও দূরে যায়।
+
+কিন্তু আসল transformation হলো:
+
+> Object-এর size change হচ্ছে।
+
+যদি object origin-এর center-এ থাকে, scaling দেখতে সুন্দর এবং সহজ হয়।
+
+---
