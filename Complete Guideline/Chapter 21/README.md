@@ -823,3 +823,33 @@ Pop
 ব্যবহার করি।
 
 ---
+
+
+
+# 33. Scaling এবং Rotation
+
+### Rotation:
+
+```cpp
+glRotatef(45, 0, 0, 1);
+```
+
+মানে:
+
+```text
+Object → Rotate
+```
+
+### Scaling:
+
+```cpp
+glScalef(2, 2, 1);
+```
+
+মানে:
+
+```text
+Object → Bigger
+```
+
+---
