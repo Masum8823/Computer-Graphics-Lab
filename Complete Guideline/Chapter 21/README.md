@@ -793,3 +793,33 @@ glPopMatrix();
 এতে দুই object আলাদাভাবে scale হবে।
 
 ---
+
+# 31. কেন Push/Pop দরকার?
+
+ধরি:
+
+```cpp
+glScalef(2.0, 2.0, 1.0);
+```
+
+করলাম।
+
+তারপর আরেকটা object draw করলাম।
+
+দ্বিতীয় object-ও এই scaling-এর effect পেতে পারে।
+
+তাই:
+
+```text
+Push
+ ↓
+Scale
+ ↓
+Draw Object
+ ↓
+Pop
+```
+
+ব্যবহার করি।
+
+---
