@@ -757,3 +757,39 @@ Pop  → Restore
 ```
 
 ---
+
+# 30. Multiple Object-এর ক্ষেত্রে
+
+ধরি:
+
+```text
+Object 1 → বড়
+Object 2 → ছোট
+```
+
+তাহলে:
+
+```cpp
+// Object 1
+glPushMatrix();
+
+glScalef(2.0, 2.0, 1.0);
+
+// Draw Object 1
+
+glPopMatrix();
+
+
+// Object 2
+glPushMatrix();
+
+glScalef(0.5, 0.5, 1.0);
+
+// Draw Object 2
+
+glPopMatrix();
+```
+
+এতে দুই object আলাদাভাবে scale হবে।
+
+---
