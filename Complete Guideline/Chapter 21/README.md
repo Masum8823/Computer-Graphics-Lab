@@ -661,3 +661,22 @@ Origin = (0,0)
 তাই object যদি origin-এর center-এ থাকে, scaling সহজে বোঝা যায়।
 
 ---
+
+
+# 26. Object Center-এ না থাকলে
+
+ধরি object:
+
+```text
+Right side
+```
+
+এ আছে।
+
+Scaling করলে object-এর points origin থেকে দূরে/কাছে যেতে পারে।
+
+ফলে মনে হতে পারে object position-ও change করছে।
+
+কিন্তু আসলে scaling origin-এর reference-এ হচ্ছে।
+
+---
