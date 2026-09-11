@@ -721,3 +721,39 @@ glScalef(2.0, 2.0, 1.0);
 
 ---
 
+# 28. `glPushMatrix()` কেন ব্যবহার করি?
+
+আমরা লিখতে পারি:
+
+```cpp
+glPushMatrix();
+
+glScalef(2.0, 2.0, 1.0);
+
+// Draw Object
+
+glPopMatrix();
+```
+
+`glPushMatrix()`:
+
+> বর্তমান transformation state save করে।
+
+---
+
+# 29. `glPopMatrix()` কী করে?
+
+```cpp
+glPopMatrix();
+```
+
+আগের saved transformation state-এ ফিরে যায়।
+
+সহজভাবে:
+
+```text
+Push → Save
+Pop  → Restore
+```
+
+---
