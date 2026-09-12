@@ -1159,3 +1159,55 @@ glPopMatrix();
 > **আগে Scaling, তারপর Drawing।**
 
 ---
+
+# 40. Quick Revision
+
+```text
+Scaling
+   ↓
+Size Change
+```
+
+Function:
+
+```cpp
+glScalef(Sx, Sy, Sz);
+```
+
+2D:
+
+```cpp
+glScalef(Sx, Sy, 1.0);
+```
+
+Factor:
+
+```text
+> 1 → Bigger
+
+= 1 → Same
+
+< 1 → Smaller
+```
+
+Uniform:
+
+```text
+Sx = Sy
+```
+
+Non-Uniform:
+
+```text
+Sx ≠ Sy
+```
+
+Formula:
+
+```text
+x' = x × Sx
+
+y' = y × Sy
+```
+
+---
