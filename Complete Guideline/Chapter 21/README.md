@@ -1074,3 +1074,88 @@ Sx, Sy, Sz
 **Answer:** Previous transformation state restore করার জন্য।
 
 ---
+
+
+# 39. Common Mistakes
+
+### Mistake 1: `glScale()` লেখা
+
+ভুল:
+
+```cpp
+glScale(2, 2, 1);
+```
+
+সঠিক:
+
+```cpp
+glScalef(2, 2, 1);
+```
+
+Function-এর শেষে `f` আছে।
+
+---
+
+### Mistake 2: X এবং Y ভুল করা
+
+```cpp
+glScalef(2.0, 1.0, 1.0);
+```
+
+মানে:
+
+```text
+X → 2 গুণ
+Y → Same
+```
+
+আর:
+
+```cpp
+glScalef(1.0, 2.0, 1.0);
+```
+
+মানে:
+
+```text
+X → Same
+Y → 2 গুণ
+```
+
+---
+
+### Mistake 3: 2D-তে Z ভুলে যাওয়া
+
+Basic 2D scaling:
+
+```cpp
+glScalef(Sx, Sy, 1.0);
+```
+
+শেষে:
+
+```text
+1.0 → Z
+```
+
+---
+
+### Mistake 4: Transformation-এর আগে Object draw করা
+
+সঠিক order:
+
+```cpp
+glPushMatrix();
+
+glScalef(2.0, 2.0, 1.0);
+
+// তারপর Object draw
+
+glPopMatrix();
+```
+
+অর্থাৎ:
+
+> **আগে Scaling, তারপর Drawing।**
+
+---
