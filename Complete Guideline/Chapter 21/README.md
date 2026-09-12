@@ -1230,3 +1230,8 @@ S → Scale → Size
 ```
 
 ---
+
+
+# 42. One-Line Memory Trick
+
+> **Scaling = Object-এর size বড়/ছোট করা; `glScalef(Sx,Sy,1)`; Factor > 1 হলে বড়, 0–1 হলে ছোট, 1 হলে same।**
