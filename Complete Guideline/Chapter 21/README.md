@@ -976,3 +976,101 @@ glScalef(1.0, 2.0, 1.0);
 ```
 
 ---
+
+# 38. Viva Questions
+
+### Q1. Scaling কী?
+
+**Answer:** Object-এর size বড় বা ছোট করাকে Scaling বলে।
+
+---
+
+### Q2. OpenGL-এ Scaling-এর function কী?
+
+**Answer:**
+
+```cpp
+glScalef()
+```
+
+---
+
+### Q3. `glScalef()`-এ কয়টি parameter?
+
+**Answer:** 3টি।
+
+```text
+Sx, Sy, Sz
+```
+
+---
+
+### Q4. `Sx` কী?
+
+**Answer:** X-axis বরাবর scaling factor।
+
+---
+
+### Q5. `Sy` কী?
+
+**Answer:** Y-axis বরাবর scaling factor।
+
+---
+
+### Q6. 2D graphics-এ `Sz` কত রাখি?
+
+**Answer:**
+
+```text
+1.0
+```
+
+---
+
+### Q7. Factor `2.0` দিলে কী হবে?
+
+**Answer:** Object 2 গুণ বড় হবে।
+
+---
+
+### Q8. Factor `0.5` দিলে কী হবে?
+
+**Answer:** Object অর্ধেক ছোট হবে।
+
+---
+
+### Q9. Factor `1.0` দিলে কী হবে?
+
+**Answer:** Size অপরিবর্তিত থাকবে।
+
+---
+
+### Q10. `Sx = Sy` হলে কী ধরনের Scaling?
+
+**Answer:** Uniform Scaling।
+
+---
+
+### Q11. `Sx ≠ Sy` হলে?
+
+**Answer:** Non-Uniform Scaling।
+
+---
+
+### Q12. Scaling করলে কী change হয়?
+
+**Answer:** Object-এর size change হয়।
+
+---
+
+### Q13. `glPushMatrix()` কেন ব্যবহার করি?
+
+**Answer:** Transformation state save করার জন্য।
+
+---
+
+### Q14. `glPopMatrix()` কেন?
+
+**Answer:** Previous transformation state restore করার জন্য।
+
+---
