@@ -1211,3 +1211,22 @@ y' = y × Sy
 ```
 
 ---
+
+
+# 41. Three Transformations — Final Revision
+
+| Transformation | Function         | Main কাজ           |
+| -------------- | ---------------- | ------------------ |
+| Translation    | `glTranslatef()` | Object Move        |
+| Rotation       | `glRotatef()`    | Object Rotate      |
+| Scaling        | `glScalef()`     | Object Size Change |
+
+মনে রাখবে:
+
+```text
+T → Translate → Move
+R → Rotate → Turn
+S → Scale → Size
+```
+
+---
