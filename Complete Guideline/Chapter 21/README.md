@@ -899,3 +899,31 @@ glPopMatrix();
 ```
 
 ---
+
+# 36. Scaling Factor মনে রাখার Trick
+
+```text
+Factor > 1
+     ↓
+Bigger
+
+Factor = 1
+     ↓
+Same
+
+0 < Factor < 1
+     ↓
+Smaller
+```
+
+উদাহরণ:
+
+```text
+2.0 → বড়
+1.0 → একই
+0.5 → ছোট
+0.2 → আরও ছোট
+```
+
+---
+
