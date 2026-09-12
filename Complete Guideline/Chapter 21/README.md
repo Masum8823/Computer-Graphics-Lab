@@ -927,3 +927,52 @@ Smaller
 
 ---
 
+# 37. Exam-এ কীভাবে চিনবে?
+
+Question:
+
+> **Scale the rectangle 2 times**
+
+তাহলে:
+
+```cpp
+glScalef(2.0, 2.0, 1.0);
+```
+
+---
+
+Question:
+
+> **Make the object half size**
+
+তাহলে:
+
+```cpp
+glScalef(0.5, 0.5, 1.0);
+```
+
+---
+
+Question:
+
+> **Increase width only**
+
+তাহলে:
+
+```cpp
+glScalef(2.0, 1.0, 1.0);
+```
+
+---
+
+Question:
+
+> **Increase height only**
+
+তাহলে:
+
+```cpp
+glScalef(1.0, 2.0, 1.0);
+```
+
+---
