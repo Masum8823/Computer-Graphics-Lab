@@ -39,3 +39,39 @@ Rotation-এর formula-তেও `sin` এবং `cos` আছে।
 এগুলোকে **একটা common matrix format**-এ আনার জন্য আমরা **Homogeneous Coordinates** ব্যবহার করি।
 
 ---
+
+
+# 2. Normal Coordinate
+
+আমরা সাধারণত একটি 2D point লিখি:
+
+```text
+(x, y)
+```
+
+যেমন:
+
+```text
+(2, 3)
+```
+
+কিন্তু Homogeneous Coordinate-এ লিখি:
+
+```text
+(x, y, 1)
+```
+
+তাই:
+
+```text
+Normal:
+
+(x, y)
+
+
+Homogeneous:
+
+(x, y, 1)
+```
+
+---
