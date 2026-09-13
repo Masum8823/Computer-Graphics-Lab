@@ -151,3 +151,34 @@ New Point
 ```
 
 ---
+
+
+# 6. Translation Matrix
+
+Translation-এর জন্য matrix:
+
+```text
+      ┌             ┐
+      │ 1   0   Tx  │
+T  =  │ 0   1   Ty  │
+      │ 0   0   1   │
+      └             ┘
+```
+
+আর point:
+
+```text
+      ┌   ┐
+      │ x │
+P  =  │ y │
+      │ 1 │
+      └   ┘
+```
+
+তাহলে:
+
+```text
+P' = T × P
+```
+
+---
