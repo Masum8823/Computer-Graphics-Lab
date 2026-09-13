@@ -182,3 +182,24 @@ P' = T × P
 ```
 
 ---
+
+
+# 7. Translation Matrix সহজভাবে
+
+মনে রাখবে:
+
+```text
+┌ 1  0  Tx ┐
+│ 0  1  Ty │
+└ 0  0  1  ┘
+```
+
+এখানে:
+
+```text
+Tx → X direction movement
+
+Ty → Y direction movement
+```
+
+---
