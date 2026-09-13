@@ -123,3 +123,31 @@ P  =  │ y │
 ```
 
 ---
+
+# 5. Transformation Matrix
+
+Homogeneous coordinate ব্যবহার করে transformation:
+
+```text
+P' = T × P
+```
+
+এখানে:
+
+```text
+P  → Original Point
+T  → Transformation Matrix
+P' → New Point
+```
+
+সহজভাবে:
+
+```text
+Original Point
+      ↓
+Transformation Matrix
+      ↓
+New Point
+```
+
+---
