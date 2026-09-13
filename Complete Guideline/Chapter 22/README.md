@@ -98,3 +98,28 @@ Exam-এর জন্য এই lineটা খুব important:
 > **2D homogeneous coordinate-এ একটি point-কে `(x, y, 1)` হিসেবে represent করা হয়।**
 
 ---
+# 4. Homogeneous Coordinate
+
+ধরি একটি point:
+
+```text
+P = (x, y)
+```
+
+Homogeneous form:
+
+```text
+P = (x, y, 1)
+```
+
+Matrix form:
+
+```text
+      ┌   ┐
+      │ x │
+P  =  │ y │
+      │ 1 │
+      └   ┘
+```
+
+---
