@@ -250,4 +250,25 @@ New Point:
 ```
 
 ---
+# 10. Scaling Matrix
+
+Scaling-এর matrix:
+
+```text
+      ┌             ┐
+S  =  │ Sx  0   0   │
+      │ 0   Sy  0   │
+      │ 0   0   1   │
+      └             ┘
+```
+
+এখানে:
+
+```text
+Sx → X-axis scaling
+
+Sy → Y-axis scaling
+```
+
+---
 
