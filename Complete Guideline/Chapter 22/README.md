@@ -419,3 +419,24 @@ New Point:
 ```
 
 ---
+# 17. কেন Homogeneous Transformation দরকার?
+
+সব Transformation-কে একই matrix format-এ আনার জন্য।
+
+```text
+Translation
+     ↓
+Matrix
+
+Rotation
+     ↓
+Matrix
+
+Scaling
+     ↓
+Matrix
+```
+
+তাই একাধিক transformation একসাথে করা সহজ হয়।
+
+---
