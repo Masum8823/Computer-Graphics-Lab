@@ -75,3 +75,26 @@ Homogeneous:
 ```
 
 ---
+# 3. কেন extra `1`?
+
+এই `1`-এর কারণে Translation-ও matrix multiplication দিয়ে করা সম্ভব হয়।
+
+অর্থাৎ:
+
+```text
+(x, y)
+```
+
+থেকে:
+
+```text
+(x, y, 1)
+```
+
+করলে Translation, Rotation এবং Scaling—সবগুলোকে matrix দিয়ে represent করা যায়।
+
+Exam-এর জন্য এই lineটা খুব important:
+
+> **2D homogeneous coordinate-এ একটি point-কে `(x, y, 1)` হিসেবে represent করা হয়।**
+
+---
