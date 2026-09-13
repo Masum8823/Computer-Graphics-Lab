@@ -317,3 +317,24 @@ New Point:
 ```
 
 ---
+
+
+# 13. Rotation Matrix
+
+2D Rotation-এর matrix:
+
+```text
+      ┌                    ┐
+R  =  │ cosθ   -sinθ   0  │
+      │ sinθ    cosθ   0  │
+      │  0        0    1  │
+      └                    ┘
+```
+
+এখানে:
+
+```text
+θ = Rotation Angle
+```
+
+---
