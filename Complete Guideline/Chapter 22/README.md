@@ -272,3 +272,16 @@ Sy → Y-axis scaling
 
 ---
 
+# 11. Scaling Formula
+
+Matrix multiplication করলে:
+
+```text
+x' = x × Sx
+
+y' = y × Sy
+```
+
+এটাই আমাদের আগের Scaling-এর formula।
+
+---
