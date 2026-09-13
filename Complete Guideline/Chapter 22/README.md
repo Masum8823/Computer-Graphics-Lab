@@ -203,3 +203,17 @@ Ty → Y direction movement
 ```
 
 ---
+
+# 8. Translation Matrix থেকে Formula
+
+Multiplication করলে:
+
+```text
+x' = x + Tx
+
+y' = y + Ty
+```
+
+অর্থাৎ আমরা আগে যে formula শিখেছি সেটাই পাওয়া যায়।
+
+---
