@@ -390,3 +390,32 @@ New Point:
 ```
 
 ---
+# 16. তিনটি Transformation-এর Matrix
+
+এটা **খুব important**।
+
+### Translation
+
+```text
+┌ 1  0  Tx ┐
+│ 0  1  Ty │
+└ 0  0  1  ┘
+```
+
+### Scaling
+
+```text
+┌ Sx  0  0 ┐
+│ 0  Sy  0 │
+└ 0   0  1 │
+```
+
+### Rotation
+
+```text
+┌ cosθ  -sinθ  0 ┐
+│ sinθ   cosθ  0 │
+└  0       0   1 │
+```
+
+---
