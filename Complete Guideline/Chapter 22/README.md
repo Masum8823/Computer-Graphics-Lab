@@ -338,3 +338,16 @@ R  =  │ cosθ   -sinθ   0  │
 ```
 
 ---
+# 14. Rotation Formula
+
+Matrix multiplication-এর পরে:
+
+```text
+x' = x cosθ - y sinθ
+
+y' = x sinθ + y cosθ
+```
+
+এই formula আমরা Rotation-এর notes-এও দেখেছি।
+
+---
