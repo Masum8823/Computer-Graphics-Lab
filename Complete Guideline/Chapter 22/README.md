@@ -285,3 +285,35 @@ y' = y × Sy
 এটাই আমাদের আগের Scaling-এর formula।
 
 ---
+# 12. Example
+
+ধরি:
+
+```text
+Point = (2, 3)
+```
+
+Scaling:
+
+```text
+Sx = 2
+Sy = 3
+```
+
+তাহলে:
+
+```text
+x' = 2 × 2
+   = 4
+
+y' = 3 × 3
+   = 9
+```
+
+New Point:
+
+```text
+(4, 9)
+```
+
+---
