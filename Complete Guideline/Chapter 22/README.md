@@ -440,3 +440,25 @@ Matrix
 তাই একাধিক transformation একসাথে করা সহজ হয়।
 
 ---
+# 18. Composite Transformation
+
+একাধিক transformation একসাথে করলে তাকে:
+
+> **Composite Transformation**
+
+বলে।
+
+যেমন:
+
+```text
+Translation
+     +
+Rotation
+     +
+Scaling
+```
+
+একসাথে apply করা।
+
+---
+
