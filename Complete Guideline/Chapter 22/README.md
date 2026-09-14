@@ -652,3 +652,22 @@ glScalef(2.0, 2.0, 1.0);
 Scaling transformation apply করে।
 
 ---
+# 25. `glTranslatef()` বনাম Translation Matrix
+
+OpenGL:
+
+```cpp
+glTranslatef(Tx, Ty, 0);
+```
+
+Mathematics:
+
+```text
+┌ 1  0  Tx ┐
+│ 0  1  Ty │
+└ 0  0  1  ┘
+```
+
+অর্থাৎ একই transformation-এর দুইটা representation।
+
+---
