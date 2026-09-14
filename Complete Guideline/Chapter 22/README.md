@@ -515,3 +515,25 @@ P' = T × R × S × P
 ```
 
 ---
+
+# 21. Transformation Order খুব Important
+
+এটা মনে রাখবে:
+
+> **Transformation-এর order change করলে result-ও change হতে পারে।**
+
+যেমন:
+
+```text
+Translate → Rotate
+```
+
+এবং:
+
+```text
+Rotate → Translate
+```
+
+একই result নাও হতে পারে।
+
+---
