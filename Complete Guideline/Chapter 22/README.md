@@ -592,3 +592,30 @@ Tx = 2
 > **Order matters.**
 
 ---
+# 23. Homogeneous Coordinate-এর Main Idea
+
+Normal point:
+
+```text
+(x, y)
+```
+
+কে:
+
+```text
+(x, y, 1)
+```
+
+করি।
+
+তারপর:
+
+```text
+Transformation Matrix
+        ×
+Homogeneous Point
+        ↓
+New Point
+```
+
+---
