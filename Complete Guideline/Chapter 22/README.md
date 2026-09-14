@@ -619,3 +619,36 @@ New Point
 ```
 
 ---
+# 24. OpenGL-এর সাথে Relation
+
+আমরা আগের notes-এ ব্যবহার করেছি:
+
+```cpp
+glTranslatef();
+glRotatef();
+glScalef();
+```
+
+এই function-গুলো internally transformation matrix-এর concept ব্যবহার করে।
+
+যেমন:
+
+```cpp
+glTranslatef(0.5, 0.2, 0.0);
+```
+
+Translation transformation apply করে।
+
+```cpp
+glRotatef(45, 0.0, 0.0, 1.0);
+```
+
+Rotation transformation apply করে।
+
+```cpp
+glScalef(2.0, 2.0, 1.0);
+```
+
+Scaling transformation apply করে।
+
+---
