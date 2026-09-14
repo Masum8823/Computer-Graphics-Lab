@@ -462,3 +462,26 @@ Scaling
 
 ---
 
+# 19. Composite Transformation Example
+
+ধরি একটি object:
+
+```text
+1. প্রথমে বড় হবে
+2. তারপর rotate হবে
+3. তারপর move হবে
+```
+
+তাহলে:
+
+```text
+Scaling
+   ↓
+Rotation
+   ↓
+Translation
+```
+
+এগুলো matrix দিয়ে একসাথে represent করা যায়।
+
+---
