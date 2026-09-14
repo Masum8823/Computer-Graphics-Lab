@@ -740,3 +740,31 @@ Translation
 এটাই Composite/Homogeneous Transformation-এর বড় সুবিধা।
 
 ---
+
+# 29. কেন 3×3 Matrix?
+
+2D-এর জন্য homogeneous coordinate:
+
+```text
+(x, y, 1)
+```
+
+এখানে মোট 3টি value।
+
+তাই transformation matrix হয়:
+
+```text
+3 × 3
+```
+
+অর্থাৎ:
+
+```text
+┌       ┐
+│       │
+│ 3×3   │
+│       │
+└       ┘
+```
+
+---
