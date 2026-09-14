@@ -485,3 +485,33 @@ Translation
 এগুলো matrix দিয়ে একসাথে represent করা যায়।
 
 ---
+
+# 20. Composite Matrix
+
+ধরি:
+
+```text
+T = Translation Matrix
+R = Rotation Matrix
+S = Scaling Matrix
+```
+
+তাহলে Composite Transformation:
+
+```text
+M = T × R × S
+```
+
+এবং:
+
+```text
+P' = M × P
+```
+
+অর্থাৎ:
+
+```text
+P' = T × R × S × P
+```
+
+---
