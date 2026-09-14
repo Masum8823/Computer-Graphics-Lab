@@ -689,3 +689,21 @@ Mathematics:
 ```
 
 ---
+
+# 27. `glScalef()` বনাম Scaling Matrix
+
+OpenGL:
+
+```cpp
+glScalef(Sx, Sy, 1);
+```
+
+Mathematics:
+
+```text
+┌ Sx  0   0 ┐
+│ 0   Sy  0 │
+└ 0   0   1 │
+```
+
+---
