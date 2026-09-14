@@ -671,3 +671,21 @@ Mathematics:
 অর্থাৎ একই transformation-এর দুইটা representation।
 
 ---
+
+# 26. `glRotatef()` বনাম Rotation Matrix
+
+OpenGL:
+
+```cpp
+glRotatef(angle, 0, 0, 1);
+```
+
+Mathematics:
+
+```text
+┌ cosθ  -sinθ  0 ┐
+│ sinθ   cosθ  0 │
+└  0       0   1 │
+```
+
+---
