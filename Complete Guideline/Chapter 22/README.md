@@ -707,3 +707,36 @@ Mathematics:
 ```
 
 ---
+# 28. একটা খুব সহজ Real-Life Example
+
+ধরি একটা **car** আছে।
+
+প্রথমে:
+
+```text
+Scaling
+```
+
+→ Car বড় হলো।
+
+তারপর:
+
+```text
+Rotation
+```
+
+→ Car ঘুরলো।
+
+তারপর:
+
+```text
+Translation
+```
+
+→ Car অন্য জায়গায় চলে গেল।
+
+এই তিনটাকে matrix-এর মাধ্যমে একসাথে represent করা যায়।
+
+এটাই Composite/Homogeneous Transformation-এর বড় সুবিধা।
+
+---
