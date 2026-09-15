@@ -279,3 +279,48 @@ dy = 5 - 2
 অর্থাৎ Y direction-এ distance = `3`।
 
 ---
+# 9. `steps`
+
+সবচেয়ে important line:
+
+```cpp
+int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+```
+
+এর মানে:
+
+```text
+steps = max(|dx|, |dy|)
+```
+
+অর্থাৎ `dx` এবং `dy`-এর মধ্যে যেটা বড়, সেটাই `steps`।
+
+---
+
+# 10. কেন বড় value নিতে হবে?
+
+ধরি:
+
+```text
+dx = 6
+dy = 3
+```
+
+এখানে:
+
+```text
+X distance = 6
+Y distance = 3
+```
+
+তাহলে:
+
+```text
+steps = 6
+```
+
+কারণ X direction-এ বেশি distance cover করতে হবে।
+
+এতে line-এর points যথেষ্ট smooth হবে।
+
+---
