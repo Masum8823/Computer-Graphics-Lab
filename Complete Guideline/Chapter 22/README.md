@@ -1027,3 +1027,69 @@ Translation + Rotation + Scaling
 **Answer:** কারণ transformation-এর order পরিবর্তন করলে final result পরিবর্তন হতে পারে।
 
 ---
+# 41. Common Mistakes
+
+### Mistake 1: `(x,y,0)` লেখা
+
+Homogeneous 2D point:
+
+```text
+(x,y,1)
+```
+
+এখানে শেষ value:
+
+```text
+1
+```
+
+---
+
+### Mistake 2: Translation matrix ভুল লেখা
+
+সঠিক:
+
+```text
+┌ 1  0  Tx ┐
+│ 0  1  Ty │
+└ 0  0  1  ┘
+```
+
+---
+
+### Mistake 3: Rotation matrix-এ `-sin` ভুলে যাওয়া
+
+সঠিক:
+
+```text
+cosθ  -sinθ
+sinθ   cosθ
+```
+
+---
+
+### Mistake 4: Transformation order ভুলে যাওয়া
+
+```text
+T × R
+```
+
+এবং:
+
+```text
+R × T
+```
+
+একই result নাও দিতে পারে।
+
+কারণ:
+
+> **Matrix multiplication is not commutative.**
+
+অর্থাৎ:
+
+```text
+A × B ≠ B × A
+```
+
+---
