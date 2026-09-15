@@ -836,3 +836,16 @@ Homogeneous:
 `Tx` এবং `Ty` **শেষ column-এ** থাকে।
 
 ---
+
+
+# 33. Scaling Matrix মনে রাখার Trick
+
+```text
+┌ Sx  0  0 ┐
+│ 0   Sy  0 │
+└ 0    0  1 │
+```
+
+`Sx` এবং `Sy` diagonal-এ থাকে।
+
+---
