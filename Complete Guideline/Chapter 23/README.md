@@ -251,3 +251,31 @@ dx = 8 - 2
 অর্থাৎ X direction-এ distance = `6`।
 
 ---
+
+# 8. `dy`
+
+```cpp
+int dy = y2 - y1;
+```
+
+এটা Y-axis বরাবর distance বের করে।
+
+Formula:
+
+```text
+dy = y2 - y1
+```
+
+যেমন:
+
+```text
+y1 = 2
+y2 = 5
+
+dy = 5 - 2
+   = 3
+```
+
+অর্থাৎ Y direction-এ distance = `3`।
+
+---
