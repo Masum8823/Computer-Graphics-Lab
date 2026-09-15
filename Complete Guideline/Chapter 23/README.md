@@ -195,3 +195,32 @@ abs()
 তাই `math.h` লাগছে।
 
 ---
+# 6. Function তৈরি
+
+```cpp
+void DrawLine(int x1, int y1, int x2, int y2)
+```
+
+এটা আমাদের নিজের তৈরি function।
+
+চারটা parameter:
+
+```text
+x1 → Starting X
+
+y1 → Starting Y
+
+x2 → Ending X
+
+y2 → Ending Y
+```
+
+অর্থাৎ:
+
+```text
+(x1,y1) → Start
+
+(x2,y2) → End
+```
+
+---
