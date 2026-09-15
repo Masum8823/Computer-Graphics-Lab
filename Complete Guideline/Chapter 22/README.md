@@ -807,3 +807,21 @@ Exam-এ মনে রাখো:
 ```
 
 ---
+
+# 31. Homogeneous Coordinate-এর সবচেয়ে Important Point
+
+Normal:
+
+```text
+(x,y)
+```
+
+Homogeneous:
+
+```text
+(x,y,1)
+```
+
+এই extra `1` থাকার কারণে Translation matrix দিয়ে করা সম্ভব।
+
+---
