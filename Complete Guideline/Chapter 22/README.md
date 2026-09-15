@@ -768,3 +768,42 @@ Translation
 ```
 
 ---
+# 30. 2D বনাম 3D
+
+### 2D
+
+Point:
+
+```text
+(x, y, 1)
+```
+
+Matrix:
+
+```text
+3 × 3
+```
+
+### 3D
+
+Point:
+
+```text
+(x, y, z, 1)
+```
+
+Matrix:
+
+```text
+4 × 4
+```
+
+Exam-এ মনে রাখো:
+
+```text
+2D → 3×3
+
+3D → 4×4
+```
+
+---
