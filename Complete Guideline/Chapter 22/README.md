@@ -849,3 +849,21 @@ Homogeneous:
 `Sx` এবং `Sy` diagonal-এ থাকে।
 
 ---
+
+# 34. Rotation Matrix মনে রাখার Trick
+
+```text
+┌ cosθ  -sinθ  0 ┐
+│ sinθ   cosθ  0 │
+└  0       0   1 │
+```
+
+মনে রাখবে:
+
+```text
+cos  -sin
+
+sin   cos
+```
+
+---
