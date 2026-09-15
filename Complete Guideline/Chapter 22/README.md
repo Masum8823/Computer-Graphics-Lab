@@ -825,3 +825,14 @@ Homogeneous:
 এই extra `1` থাকার কারণে Translation matrix দিয়ে করা সম্ভব।
 
 ---
+# 32. Translation Matrix মনে রাখার Trick
+
+```text
+┌ 1  0  Tx ┐
+│ 0  1  Ty │
+└ 0  0  1  ┘
+```
+
+`Tx` এবং `Ty` **শেষ column-এ** থাকে।
+
+---
