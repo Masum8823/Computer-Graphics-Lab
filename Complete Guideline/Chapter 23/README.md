@@ -99,3 +99,54 @@ y = y + yIncrement
 এবং point plot করি।
 
 ---
+
+# 4. Full DDA Code
+
+```cpp
+#include <GL/glut.h>
+#include <math.h>
+
+// DDA Line Drawing Function
+void DrawLine(int x1, int y1, int x2, int y2)
+{
+    // X direction-এ কত দূরত্ব
+    int dx = x2 - x1;
+
+    // Y direction-এ কত দূরত্ব
+    int dy = y2 - y1;
+
+    // dx এবং dy-এর মধ্যে বড় মানটি steps হবে
+    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+
+    // প্রতি step-এ X কত করে বাড়বে
+    float xIncrement = dx / (float)steps;
+
+    // প্রতি step-এ Y কত করে বাড়বে
+    float yIncrement = dy / (float)steps;
+
+    // Starting point
+    float x = x1;
+    float y = y1;
+
+    // Point drawing শুরু
+    glBegin(GL_POINTS);
+
+    // মোট steps বার loop চলবে
+    for(int i = 0; i <= steps; i++)
+    {
+        // Current point draw করবে
+        glVertex2f(x, y);
+
+        // পরবর্তী point-এর জন্য X update
+        x = x + xIncrement;
+
+        // পরবর্তী point-এর জন্য Y update
+        y = y + yIncrement;
+    }
+
+    // Point drawing শেষ
+    glEnd();
+}
+```
+
+---
