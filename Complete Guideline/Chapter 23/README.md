@@ -56,3 +56,46 @@ DDA:
 এই pointগুলোকে plot করলে line তৈরি হবে।
 
 ---
+
+# 3. DDA-এর Main Formula
+
+প্রথমে:
+
+```text
+dx = x2 - x1
+
+dy = y2 - y1
+```
+
+তারপর:
+
+```text
+steps = max(|dx|, |dy|)
+```
+
+তারপর:
+
+```text
+xIncrement = dx / steps
+
+yIncrement = dy / steps
+```
+
+তারপর:
+
+```text
+x = x1
+y = y1
+```
+
+প্রতিবার:
+
+```text
+x = x + xIncrement
+
+y = y + yIncrement
+```
+
+এবং point plot করি।
+
+---
