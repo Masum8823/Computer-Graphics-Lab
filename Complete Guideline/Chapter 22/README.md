@@ -894,3 +894,45 @@ Rotation:
 এই তিনটা **mid exam-এর জন্য অবশ্যই মুখস্থ/বোঝা ভালো**।
 
 ---
+
+# 36. Exam-এ যদি আসে: "Define Homogeneous Coordinates"
+
+সহজ Answer:
+
+> Homogeneous coordinate is a representation of a 2D point `(x,y)` as `(x,y,1)` so that translation, rotation and scaling can be represented using matrix multiplication.
+
+---
+
+# 37. Exam-এ যদি আসে: "Why Homogeneous Coordinates are Used?"
+
+Answer:
+
+> Homogeneous coordinates are used to represent different 2D transformations in a common matrix form.
+
+আরও সহজ:
+
+> **সব transformation-কে matrix-এর মাধ্যমে করার জন্য।**
+
+---
+
+# 38. Exam-এ যদি আসে: "What is Homogeneous Transformation?"
+
+Answer:
+
+> Homogeneous Transformation is a method of representing 2D or 3D transformations using matrices and homogeneous coordinates.
+
+---
+
+# 39. Exam-এ যদি আসে: "What is Composite Transformation?"
+
+Answer:
+
+> Applying two or more transformations together is called Composite Transformation.
+
+Example:
+
+```text
+Translation + Rotation + Scaling
+```
+
+---
