@@ -1093,3 +1093,52 @@ A × B ≠ B × A
 ```
 
 ---
+# 42. Quick Revision
+
+### Homogeneous Point
+
+```text
+(x,y)
+  ↓
+(x,y,1)
+```
+
+### 2D Matrix
+
+```text
+3 × 3
+```
+
+### Translation
+
+```text
+┌ 1  0  Tx ┐
+│ 0  1  Ty │
+└ 0  0  1  ┘
+```
+
+### Scaling
+
+```text
+┌ Sx  0   0 ┐
+│ 0   Sy  0 │
+└ 0   0   1 │
+```
+
+### Rotation
+
+```text
+┌ cosθ  -sinθ  0 ┐
+│ sinθ   cosθ  0 │
+└ 0       0   1 │
+```
+
+### Composite Transformation
+
+```text
+Multiple Transformations
+          ↓
+Composite Transformation
+```
+
+---
