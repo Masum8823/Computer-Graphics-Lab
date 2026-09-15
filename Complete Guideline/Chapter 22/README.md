@@ -1142,3 +1142,28 @@ Composite Transformation
 ```
 
 ---
+# 43. Final Memory Trick
+
+```text
+2D Point
+   ↓
+(x,y,1)
+   ↓
+3×3 Matrix
+   ↓
+Transformation
+```
+
+আর তিনটা main matrix:
+
+```text
+T → Translation → Move
+
+R → Rotation → Turn
+
+S → Scaling → Size
+```
+
+সবচেয়ে important:
+
+> **Homogeneous Transformation-এর main idea হলো 2D point-কে `(x,y,1)` করে 3×3 matrix ব্যবহার করে Translation, Rotation ও Scaling করা।**
