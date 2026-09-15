@@ -867,3 +867,30 @@ sin   cos
 ```
 
 ---
+# 35. তিন Matrix একসাথে
+
+```text
+Translation:
+
+┌ 1  0  Tx ┐
+│ 0  1  Ty │
+└ 0  0  1  ┘
+
+
+Scaling:
+
+┌ Sx  0   0 ┐
+│ 0   Sy  0 │
+└ 0   0   1 │
+
+
+Rotation:
+
+┌ cosθ  -sinθ  0 ┐
+│ sinθ   cosθ  0 │
+└  0       0   1 │
+```
+
+এই তিনটা **mid exam-এর জন্য অবশ্যই মুখস্থ/বোঝা ভালো**।
+
+---
