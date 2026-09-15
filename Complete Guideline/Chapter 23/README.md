@@ -224,3 +224,30 @@ y2 → Ending Y
 ```
 
 ---
+# 7. `dx`
+
+```cpp
+int dx = x2 - x1;
+```
+
+এটা X-axis বরাবর distance বের করে।
+
+Formula:
+
+```text
+dx = x2 - x1
+```
+
+যেমন:
+
+```text
+x1 = 2
+x2 = 8
+
+dx = 8 - 2
+   = 6
+```
+
+অর্থাৎ X direction-এ distance = `6`।
+
+---
