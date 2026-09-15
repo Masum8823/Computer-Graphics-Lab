@@ -150,3 +150,48 @@ void DrawLine(int x1, int y1, int x2, int y2)
 ```
 
 ---
+# 5. Code Line by Line
+
+এখন একদম line by line বুঝি।
+
+---
+
+## Step 1: Header File
+
+```cpp
+#include <GL/glut.h>
+```
+
+এটা FreeGLUT/OpenGL-এর function ব্যবহার করার জন্য।
+
+যেমন:
+
+```cpp
+glBegin()
+glEnd()
+glVertex2f()
+```
+
+ইত্যাদি।
+
+---
+
+## Step 2: Math Header
+
+```cpp
+#include <math.h>
+```
+
+এটা mathematical function-এর জন্য।
+
+DDA-তে আমরা:
+
+```cpp
+abs()
+```
+
+ব্যবহার করছি।
+
+তাই `math.h` লাগছে।
+
+---
