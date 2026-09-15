@@ -936,3 +936,94 @@ Translation + Rotation + Scaling
 ```
 
 ---
+# 40. Viva Questions
+
+### Q1. Homogeneous coordinate কী?
+
+**Answer:** 2D point `(x,y)`-কে `(x,y,1)` হিসেবে represent করাকে homogeneous coordinate বলা হয়।
+
+---
+
+### Q2. 2D homogeneous coordinate কী?
+
+**Answer:**
+
+```text
+(x, y, 1)
+```
+
+---
+
+### Q3. 2D transformation matrix কত × কত?
+
+**Answer:**
+
+```text
+3 × 3
+```
+
+---
+
+### Q4. 3D transformation matrix কত × কত?
+
+**Answer:**
+
+```text
+4 × 4
+```
+
+---
+
+### Q5. কেন homogeneous coordinate ব্যবহার করি?
+
+**Answer:** Translation, Rotation, Scaling ইত্যাদি transformation-কে একই matrix format-এ represent করার জন্য।
+
+---
+
+### Q6. Translation matrix কী?
+
+**Answer:**
+
+```text
+┌ 1  0  Tx ┐
+│ 0  1  Ty │
+└ 0  0  1  ┘
+```
+
+---
+
+### Q7. Scaling matrix কী?
+
+**Answer:**
+
+```text
+┌ Sx  0   0 ┐
+│ 0   Sy  0 │
+└ 0   0   1 │
+```
+
+---
+
+### Q8. Rotation matrix কী?
+
+**Answer:**
+
+```text
+┌ cosθ  -sinθ  0 ┐
+│ sinθ   cosθ  0 │
+└ 0       0    1 │
+```
+
+---
+
+### Q9. Composite Transformation কী?
+
+**Answer:** একাধিক transformation একসাথে apply করাকে Composite Transformation বলে।
+
+---
+
+### Q10. Transformation-এর order important কেন?
+
+**Answer:** কারণ transformation-এর order পরিবর্তন করলে final result পরিবর্তন হতে পারে।
+
+---
