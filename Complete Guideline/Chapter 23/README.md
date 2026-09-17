@@ -445,3 +445,21 @@ steps = 8
 এই decimal value দরকার।
 
 ---
+
+# 16. Y Increment
+
+```cpp
+float yIncrement = dy / (float)steps;
+```
+
+এর মানে:
+
+> প্রতিটি step-এ Y কত করে change করবে।
+
+Formula:
+
+```text
+yIncrement = dy / steps
+```
+
+---
