@@ -396,3 +396,28 @@ xIncrement = dx / steps
 ```
 
 ---
+# 14. Example
+
+ধরি:
+
+```text
+dx = 6
+steps = 6
+```
+
+তাহলে:
+
+```text
+xIncrement = 6 / 6
+           = 1
+```
+
+অর্থাৎ প্রতিবার X:
+
+```text
++1
+```
+
+করে বাড়বে।
+
+---
