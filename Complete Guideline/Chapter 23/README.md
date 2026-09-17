@@ -346,3 +346,35 @@ abs(-5) = 5
 তাই negative distance হলেও আমরা positive step count পাই।
 
 ---
+
+
+# 12. `?:` এইটা কী?
+
+এই line:
+
+```cpp
+int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+```
+
+একটু confusing হতে পারে।
+
+এটা সহজভাবে:
+
+```cpp
+if(abs(dx) > abs(dy))
+    steps = abs(dx);
+else
+    steps = abs(dy);
+```
+
+এর মতো।
+
+অর্থাৎ:
+
+```text
+dx বড় → dx নাও
+
+dy বড় → dy নাও
+```
+
+---
