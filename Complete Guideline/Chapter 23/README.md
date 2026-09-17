@@ -324,3 +324,25 @@ steps = 6
 এতে line-এর points যথেষ্ট smooth হবে।
 
 ---
+
+# 11. `abs()` কী?
+
+```cpp
+abs(dx)
+```
+
+মানে:
+
+> `dx`-এর absolute value।
+
+যেমন:
+
+```text
+abs(5)  = 5
+
+abs(-5) = 5
+```
+
+তাই negative distance হলেও আমরা positive step count পাই।
+
+---
