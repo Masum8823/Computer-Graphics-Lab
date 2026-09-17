@@ -378,3 +378,21 @@ dy বড় → dy নাও
 ```
 
 ---
+
+# 13. X Increment
+
+```cpp
+float xIncrement = dx / (float)steps;
+```
+
+এর মানে:
+
+> প্রতিটি step-এ X কত করে change করবে।
+
+Formula:
+
+```text
+xIncrement = dx / steps
+```
+
+---
