@@ -511,3 +511,21 @@ y = y1
 ```
 
 ---
+
+# 19. `glBegin(GL_POINTS)`
+
+```cpp
+glBegin(GL_POINTS);
+```
+
+আমরা DDA-তে অনেকগুলো point plot করব।
+
+তাই:
+
+```text
+GL_POINTS
+```
+
+ব্যবহার করছি।
+
+---
