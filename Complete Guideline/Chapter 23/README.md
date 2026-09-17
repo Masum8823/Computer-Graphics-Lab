@@ -421,3 +421,27 @@ xIncrement = 6 / 6
 করে বাড়বে।
 
 ---
+# 15. কেন `(float)`?
+
+```cpp
+dx / (float)steps
+```
+
+এখানে `(float)` দেওয়ার কারণ হলো আমরা **decimal value** পেতে চাই।
+
+যেমন:
+
+```text
+dx = 5
+steps = 8
+```
+
+তাহলে:
+
+```text
+5 / 8 = 0.625
+```
+
+এই decimal value দরকার।
+
+---
