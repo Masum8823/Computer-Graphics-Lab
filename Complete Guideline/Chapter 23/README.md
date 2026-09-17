@@ -529,3 +529,20 @@ GL_POINTS
 ব্যবহার করছি।
 
 ---
+# 20. Loop
+
+```cpp
+for(int i = 0; i <= steps; i++)
+```
+
+এই loop:
+
+```text
+0 → 1 → 2 → 3 → ... → steps
+```
+
+পর্যন্ত চলবে।
+
+প্রতিটি iteration-এ একটি point draw হবে।
+
+---
