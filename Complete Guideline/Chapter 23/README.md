@@ -488,3 +488,26 @@ yIncrement = 3 / 6
 করে বাড়বে।
 
 ---
+
+# 18. Starting Point
+
+```cpp
+float x = x1;
+float y = y1;
+```
+
+এখানে আমরা শুরু করছি:
+
+```text
+x = x1
+
+y = y1
+```
+
+অর্থাৎ:
+
+```text
+(x,y) = Starting Point
+```
+
+---
