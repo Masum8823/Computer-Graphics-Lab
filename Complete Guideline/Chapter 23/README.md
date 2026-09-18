@@ -600,3 +600,27 @@ new x = 2 + 1
 ```
 
 ---
+
+# 23. Y Update
+
+```cpp
+y = y + yIncrement;
+```
+
+মানে:
+
+```text
+নতুন Y = পুরোনো Y + Y Increment
+```
+
+যেমন:
+
+```text
+y = 2
+yIncrement = 0.5
+
+new y = 2 + 0.5
+      = 2.5
+```
+
+---
