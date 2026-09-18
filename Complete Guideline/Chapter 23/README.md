@@ -634,3 +634,42 @@ glEnd();
 Point drawing শেষ।
 
 ---
+# 25. পুরো Process একসাথে
+
+ধরি:
+
+```text
+Start = (2,2)
+
+End = (8,5)
+```
+
+তাহলে:
+
+```text
+dx = 8 - 2 = 6
+
+dy = 5 - 2 = 3
+
+steps = max(6,3)
+      = 6
+```
+
+তারপর:
+
+```text
+xIncrement = 6/6
+           = 1
+
+yIncrement = 3/6
+           = 0.5
+```
+
+Start:
+
+```text
+x = 2
+y = 2
+```
+
+---
