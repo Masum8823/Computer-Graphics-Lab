@@ -576,3 +576,27 @@ glVertex2f(x, y);
 ইত্যাদি।
 
 ---
+
+# 22. X Update
+
+```cpp
+x = x + xIncrement;
+```
+
+মানে:
+
+```text
+নতুন X = পুরোনো X + X Increment
+```
+
+যেমন:
+
+```text
+x = 2
+xIncrement = 1
+
+new x = 2 + 1
+      = 3
+```
+
+---
