@@ -624,3 +624,13 @@ new y = 2 + 0.5
 ```
 
 ---
+
+# 24. `glEnd()`
+
+```cpp
+glEnd();
+```
+
+Point drawing শেষ।
+
+---
