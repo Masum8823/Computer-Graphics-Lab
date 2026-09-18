@@ -858,3 +858,107 @@ DrawLine(-200, -100, 200, 150);
 সহজে দেখা যাবে।
 
 ---
+
+
+# 31. Better Complete Code
+
+```cpp
+#include <GL/glut.h>
+#include <math.h>
+
+// DDA Line Drawing Function
+void DrawLine(int x1, int y1, int x2, int y2)
+{
+    // X direction-এর distance
+    int dx = x2 - x1;
+
+    // Y direction-এর distance
+    int dy = y2 - y1;
+
+    // বড় distance = steps
+    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+
+    // প্রতি step-এ X change
+    float xIncrement = dx / (float)steps;
+
+    // প্রতি step-এ Y change
+    float yIncrement = dy / (float)steps;
+
+    // Starting point
+    float x = x1;
+    float y = y1;
+
+    // Point drawing
+    glBegin(GL_POINTS);
+
+    for(int i = 0; i <= steps; i++)
+    {
+        // Current point draw
+        glVertex2f(x, y);
+
+        // X এবং Y update
+        x += xIncrement;
+        y += yIncrement;
+    }
+
+    glEnd();
+}
+
+void display()
+{
+    // Screen clear
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Line color
+    glColor3f(1.0, 0.0, 0.0);
+
+    // Point size
+    glPointSize(3.0);
+
+    // DDA line
+    DrawLine(-200, -100, 200, 150);
+
+    // Display
+    glFlush();
+}
+
+void init()
+{
+    // Projection mode
+    glMatrixMode(GL_PROJECTION);
+
+    // Reset matrix
+    glLoadIdentity();
+
+    // Coordinate range
+    gluOrtho2D(-400, 400, -300, 300);
+
+    // Background color
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+}
+
+int main(int argc, char** argv)
+{
+    // GLUT initialize
+    glutInit(&argc, argv);
+
+    // Window size
+    glutInitWindowSize(800, 600);
+
+    // Window create
+    glutCreateWindow("DDA Line");
+
+    // Initialization
+    init();
+
+    // Display function
+    glutDisplayFunc(display);
+
+    // Main loop
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
