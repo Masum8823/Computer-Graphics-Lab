@@ -546,3 +546,33 @@ for(int i = 0; i <= steps; i++)
 প্রতিটি iteration-এ একটি point draw হবে।
 
 ---
+
+# 21. Point Draw
+
+```cpp
+glVertex2f(x, y);
+```
+
+এটা current `(x,y)` point screen-এ draw করবে।
+
+যেমন:
+
+```text
+(2,2)
+```
+
+তারপর:
+
+```text
+(3,2.5)
+```
+
+তারপর:
+
+```text
+(4,3)
+```
+
+ইত্যাদি।
+
+---
