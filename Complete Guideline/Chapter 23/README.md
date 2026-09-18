@@ -830,3 +830,31 @@ DrawLine(-200, -100, 200, 150);
 তাই এই code **সরাসরি সুন্দরভাবে দেখানোর জন্য coordinate system set করা ভালো**।
 
 ---
+# 30. Coordinate System Set করা
+
+`main()`-এ অথবা initialization-এর মাধ্যমে:
+
+```cpp
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+
+gluOrtho2D(-400, 400, -300, 300);
+```
+
+দিলে আমরা coordinate range করতে পারি:
+
+```text
+X → -400 থেকে +400
+
+Y → -300 থেকে +300
+```
+
+তখন:
+
+```cpp
+DrawLine(-200, -100, 200, 150);
+```
+
+সহজে দেখা যাবে।
+
+---
