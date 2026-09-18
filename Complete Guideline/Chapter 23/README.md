@@ -802,3 +802,31 @@ int main(int argc, char** argv)
 
 ---
 
+# 29. একটা Important Problem
+
+উপরের code-এ:
+
+```cpp
+DrawLine(-200, -100, 200, 150);
+```
+
+আমরা coordinate হিসেবে:
+
+```text
+-200
++200
+```
+
+ব্যবহার করেছি।
+
+কিন্তু OpenGL-এর default coordinate সাধারণত:
+
+```text
+-1 থেকে +1
+```
+
+এর মধ্যে।
+
+তাই এই code **সরাসরি সুন্দরভাবে দেখানোর জন্য coordinate system set করা ভালো**।
+
+---
