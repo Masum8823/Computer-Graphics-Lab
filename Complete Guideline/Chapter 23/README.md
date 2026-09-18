@@ -718,3 +718,87 @@ Y
 একসাথে দেখলে straight line।
 
 ---
+
+# 28. Full OpenGL Program
+
+এখন DDA-কে complete FreeGLUT program-এর মধ্যে বসাই।
+
+```cpp
+#include <GL/glut.h>
+#include <math.h>
+
+// DDA Algorithm
+void DrawLine(int x1, int y1, int x2, int y2)
+{
+    // X এবং Y distance
+    int dx = x2 - x1;
+    int dy = y2 - y1;
+
+    // বড় distance-টাই steps
+    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+
+    // প্রতি step-এ X কত change করবে
+    float xIncrement = dx / (float)steps;
+
+    // প্রতি step-এ Y কত change করবে
+    float yIncrement = dy / (float)steps;
+
+    // Starting point
+    float x = x1;
+    float y = y1;
+
+    // Point drawing শুরু
+    glBegin(GL_POINTS);
+
+    // প্রতিটি point draw
+    for(int i = 0; i <= steps; i++)
+    {
+        glVertex2f(x, y);
+
+        // পরের point
+        x = x + xIncrement;
+        y = y + yIncrement;
+    }
+
+    // Point drawing শেষ
+    glEnd();
+}
+
+void display()
+{
+    // Screen clear
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Line draw
+    DrawLine(-200, -100, 200, 150);
+
+    // Drawing শেষ
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    // GLUT initialize
+    glutInit(&argc, argv);
+
+    // Window size
+    glutInitWindowSize(800, 600);
+
+    // Window create
+    glutCreateWindow("DDA Line");
+
+    // Background color
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+
+    // Display function
+    glutDisplayFunc(display);
+
+    // Main loop
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
+
