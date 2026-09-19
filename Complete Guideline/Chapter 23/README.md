@@ -1245,3 +1245,33 @@ calculation ব্যবহার হয়।
 তাই এটি সবসময় integer-based algorithm-এর মতো efficient নয়।
 
 ---
+
+# 42. DDA বনাম Normal OpenGL Line
+
+Normal OpenGL:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(x1, y1);
+glVertex2f(x2, y2);
+
+glEnd();
+```
+
+এখানে OpenGL নিজেই line draw করে।
+
+কিন্তু DDA-তে আমরা manually:
+
+```text
+dx
+dy
+steps
+increment
+points
+```
+
+calculate করে line তৈরি করি।
+
+---
+
