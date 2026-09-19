@@ -1275,3 +1275,25 @@ calculate করে line তৈরি করি।
 
 ---
 
+# 43. DDA বনাম Bresenham
+
+পরের দিকে আমরা Bresenham Line Algorithm পড়ব।
+
+Basic difference:
+
+| DDA                          | Bresenham           |
+| ---------------------------- | ------------------- |
+| Floating-point calculation   | Integer calculation |
+| তুলনামূলক সহজ                | একটু বেশি logical   |
+| Fractional value ব্যবহার করে | Integer-based       |
+| তুলনামূলক slower             | Faster              |
+
+মনে রাখবে:
+
+```text
+DDA → Floating Point
+
+Bresenham → Integer
+```
+
+---
