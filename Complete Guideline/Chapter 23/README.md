@@ -1047,3 +1047,22 @@ Repeat until steps complete
 ```
 
 ---
+# 35. DDA-এর মূল Idea
+
+সবচেয়ে সহজভাবে:
+
+```text
+Start Point
+     ↓
+dx, dy বের করি
+     ↓
+steps বের করি
+     ↓
+প্রতি step-এ x এবং y update করি
+     ↓
+Point plot করি
+     ↓
+Line তৈরি
+```
+
+---
