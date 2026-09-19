@@ -1199,3 +1199,25 @@ X change করবে না।
 ```
 
 ---
+# 40. DDA-এর সুবিধা
+
+### 1. সহজ Algorithm
+
+বোঝা এবং implement করা সহজ।
+
+### 2. Simple Calculation
+
+মূলত:
+
+```text
+Addition
+Division
+```
+
+ব্যবহার করে।
+
+### 3. Different Slope Handle করতে পারে
+
+Positive/negative/horizontal/vertical line draw করতে পারে।
+
+---
