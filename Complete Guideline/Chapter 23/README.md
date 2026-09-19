@@ -1465,3 +1465,16 @@ for(i = 0; i <= steps; i++)
 এটাই পুরো DDA-এর heart।
 
 ---
+# 47. One-Line Memory Trick
+
+> **DDA = ****dx, dy → steps → increment → point plot → x,y update****।**
+
+আর সবচেয়ে important formula:
+
+```text
+dx = x2 - x1
+dy = y2 - y1
+steps = max(|dx|,|dy|)
+xInc = dx/steps
+yInc = dy/steps
+```
