@@ -1297,3 +1297,105 @@ Bresenham → Integer
 ```
 
 ---
+
+# 44. Viva Questions
+
+### Q1. DDA-এর full form কী?
+
+**Answer:**
+
+> Digital Differential Analyzer.
+
+---
+
+### Q2. DDA কী?
+
+**Answer:**
+
+> DDA is a line drawing algorithm used to draw a line between two points.
+
+---
+
+### Q3. DDA-এর প্রথম calculation কী?
+
+**Answer:**
+
+```text
+dx = x2 - x1
+
+dy = y2 - y1
+```
+
+---
+
+### Q4. Steps কীভাবে বের করি?
+
+**Answer:**
+
+```text
+steps = max(|dx|, |dy|)
+```
+
+---
+
+### Q5. X increment-এর formula?
+
+**Answer:**
+
+```text
+xIncrement = dx / steps
+```
+
+---
+
+### Q6. Y increment-এর formula?
+
+**Answer:**
+
+```text
+yIncrement = dy / steps
+```
+
+---
+
+### Q7. কেন `abs()` ব্যবহার করি?
+
+**Answer:** Negative value বাদ দিয়ে absolute distance পাওয়ার জন্য।
+
+---
+
+### Q8. DDA-তে কেন `float` ব্যবহার করি?
+
+**Answer:** Increment-এ fractional/decimal value আসতে পারে।
+
+---
+
+### Q9. DDA-তে কোন primitive ব্যবহার করেছি?
+
+**Answer:**
+
+```cpp
+GL_POINTS
+```
+
+কারণ DDA অনেকগুলো point plot করে line তৈরি করে।
+
+---
+
+### Q10. DDA-এর disadvantage কী?
+
+**Answer:** Floating-point calculation ব্যবহার করার কারণে তুলনামূলকভাবে slow হতে পারে।
+
+---
+
+### Q11. DDA এবং Bresenham-এর main difference কী?
+
+**Answer:**
+
+```text
+DDA → Floating Point
+
+Bresenham → Integer
+```
+
+---
