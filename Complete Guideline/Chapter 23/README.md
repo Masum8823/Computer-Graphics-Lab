@@ -1014,3 +1014,36 @@ y = y + yIncrement
 ```
 
 ---
+
+# 34. Algorithm Steps
+
+DDA-এর algorithm:
+
+```text
+Step 1:
+dx = x2 - x1
+dy = y2 - y1
+
+Step 2:
+steps = max(|dx|, |dy|)
+
+Step 3:
+xIncrement = dx / steps
+yIncrement = dy / steps
+
+Step 4:
+x = x1
+y = y1
+
+Step 5:
+Plot(x,y)
+
+Step 6:
+x = x + xIncrement
+y = y + yIncrement
+
+Step 7:
+Repeat until steps complete
+```
+
+---
