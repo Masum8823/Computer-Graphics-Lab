@@ -962,3 +962,23 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 32. `gluOrtho2D()` কী?
+
+```cpp
+gluOrtho2D(-400, 400, -300, 300);
+```
+
+এটা আমাদের coordinate system define করে।
+
+মানে:
+
+```text
+X → -400 to +400
+
+Y → -300 to +300
+```
+
+তাই আমরা pixel-like coordinate ব্যবহার করতে পারি।
+
+---
