@@ -1165,3 +1165,37 @@ Y change করবে না।
 ```
 
 ---
+
+# 39. Vertical Line
+
+যদি:
+
+```text
+x1 = x2
+```
+
+তাহলে:
+
+```text
+dx = 0
+```
+
+তাই:
+
+```text
+xIncrement = 0
+```
+
+X change করবে না।
+
+শুধু Y change হবে।
+
+```text
+●
+●
+●
+●
+●
+```
+
+---
