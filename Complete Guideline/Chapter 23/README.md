@@ -1399,3 +1399,43 @@ Bresenham → Integer
 ```
 
 ---
+
+# 45. Mid Exam-এর জন্য সবচেয়ে Important অংশ
+
+এই ৫টা জিনিস **অবশ্যই বুঝে রাখবে**:
+
+### 1. `dx`
+
+```text
+dx = x2 - x1
+```
+
+### 2. `dy`
+
+```text
+dy = y2 - y1
+```
+
+### 3. `steps`
+
+```text
+steps = max(|dx|, |dy|)
+```
+
+### 4. Increment
+
+```text
+xIncrement = dx / steps
+
+yIncrement = dy / steps
+```
+
+### 5. Update
+
+```text
+x = x + xIncrement
+
+y = y + yIncrement
+```
+
+---
