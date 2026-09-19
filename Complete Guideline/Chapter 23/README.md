@@ -1439,3 +1439,29 @@ y = y + yIncrement
 ```
 
 ---
+# 46. একদম Short Version
+
+```cpp
+dx = x2 - x1;
+dy = y2 - y1;
+
+steps = max(abs(dx), abs(dy));
+
+xIncrement = dx / steps;
+yIncrement = dy / steps;
+
+x = x1;
+y = y1;
+
+for(i = 0; i <= steps; i++)
+{
+    plot(x,y);
+
+    x = x + xIncrement;
+    y = y + yIncrement;
+}
+```
+
+এটাই পুরো DDA-এর heart।
+
+---
