@@ -1221,3 +1221,27 @@ Division
 Positive/negative/horizontal/vertical line draw করতে পারে।
 
 ---
+
+# 41. DDA-এর অসুবিধা
+
+DDA-তে:
+
+```text
+Floating Point
+```
+
+calculation ব্যবহার হয়।
+
+যেমন:
+
+```text
+0.5
+0.25
+0.625
+```
+
+ইত্যাদি।
+
+তাই এটি সবসময় integer-based algorithm-এর মতো efficient নয়।
+
+---
