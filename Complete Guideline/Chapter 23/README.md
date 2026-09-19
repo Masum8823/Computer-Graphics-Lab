@@ -982,3 +982,35 @@ Y → -300 to +300
 তাই আমরা pixel-like coordinate ব্যবহার করতে পারি।
 
 ---
+
+# 33. DDA Algorithm-এর Short Formula
+
+Exam-এর জন্য এই অংশটা মুখস্থ রাখো:
+
+```text
+dx = x2 - x1
+
+dy = y2 - y1
+
+steps = max(|dx|, |dy|)
+
+xIncrement = dx / steps
+
+yIncrement = dy / steps
+
+x = x1
+
+y = y1
+```
+
+তারপর loop:
+
+```text
+Plot(x,y)
+
+x = x + xIncrement
+
+y = y + yIncrement
+```
+
+---
