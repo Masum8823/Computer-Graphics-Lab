@@ -429,3 +429,30 @@ GL_POINTS
 ব্যবহার করছি।
 
 ---
+# 18. `while`
+
+```cpp
+while(x <= x2)
+```
+
+যতক্ষণ X শেষ point পর্যন্ত যায়, loop চলবে।
+
+---
+
+# 19. Current Point Draw
+
+```cpp
+glVertex2i(x, y);
+```
+
+Current `(x,y)` point draw করবে।
+
+এখানে:
+
+```text
+2i → 2D Integer coordinate
+```
+
+কারণ Bresenham integer coordinate ব্যবহার করে।
+
+---
