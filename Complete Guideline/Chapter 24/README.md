@@ -412,3 +412,20 @@ y = starting Y
 ```
 
 ---
+# 17. `glBegin(GL_POINTS)`
+
+```cpp
+glBegin(GL_POINTS);
+```
+
+Bresenham algorithm আমরা একেকটা pixel/point plot করে line বানাচ্ছি।
+
+তাই:
+
+```text
+GL_POINTS
+```
+
+ব্যবহার করছি।
+
+---
