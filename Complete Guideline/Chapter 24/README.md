@@ -352,3 +352,30 @@ dy = 5 - 2
 ```
 
 ---
+
+# 14. Initial `p`
+
+```cpp
+int p = 2 * dy - dx;
+```
+
+এটা Bresenham-এর **decision parameter**।
+
+Formula:
+
+```text
+p = 2dy - dx
+```
+
+Example:
+
+```text
+dx = 6
+dy = 3
+
+p = 2(3) - 6
+  = 6 - 6
+  = 0
+```
+
+---
