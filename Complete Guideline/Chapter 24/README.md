@@ -221,3 +221,25 @@ p = p + 2dy - 2dx
 ```
 
 ---
+# 8. Main Logic
+
+এটা খুব ভালো করে বুঝবে:
+
+```text
+p < 0
+ ↓
+(x+1, y)
+ ↓
+p = p + 2dy
+
+
+p >= 0
+ ↓
+(x+1, y+1)
+ ↓
+p = p + 2dy - 2dx
+```
+
+এটাই Bresenham-এর main logic।
+
+---
