@@ -312,3 +312,23 @@ void DrawLine(int x1, int y1, int x2, int y2)
 ```
 
 ---
+
+# 12. `dx`
+
+```cpp
+int dx = x2 - x1;
+```
+
+X-axis বরাবর distance।
+
+Example:
+
+```text
+x1 = 2
+x2 = 8
+
+dx = 8 - 2
+   = 6
+```
+
+---
