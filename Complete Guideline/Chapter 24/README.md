@@ -142,3 +142,21 @@ y + 1
 Bresenham `p` দেখে সিদ্ধান্ত নেয়।
 
 ---
+
+# 5. Formula
+
+যদি:
+
+```text
+dx > dy
+```
+
+তাহলে:
+
+```text
+p = 2dy - dx
+```
+
+এটাই initial decision parameter।
+
+---
