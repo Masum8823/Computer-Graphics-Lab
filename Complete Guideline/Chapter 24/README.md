@@ -379,3 +379,36 @@ p = 2(3) - 6
 ```
 
 ---
+# 15. Starting X
+
+```cpp
+int x = x1;
+```
+
+মানে:
+
+```text
+x = starting X
+```
+
+---
+
+# 16. Starting Y
+
+```cpp
+int y = y1;
+```
+
+মানে:
+
+```text
+y = starting Y
+```
+
+অর্থাৎ শুরু করছি:
+
+```text
+(x,y) = (x1,y1)
+```
+
+---
