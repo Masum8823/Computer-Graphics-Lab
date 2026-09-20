@@ -107,3 +107,38 @@ x = x + 1
 Bresenham একটি **decision parameter `p`** ব্যবহার করে decide করে কোন point নিতে হবে।
 
 ---
+
+
+# 4. Example
+
+ধরি:
+
+```text
+Start = (2,2)
+
+End = (8,5)
+```
+
+তাহলে:
+
+```text
+dx = 8 - 2 = 6
+
+dy = 5 - 2 = 3
+```
+
+এখন প্রতিটি X step-এ Y হয়:
+
+```text
+same y
+```
+
+অথবা:
+
+```text
+y + 1
+```
+
+Bresenham `p` দেখে সিদ্ধান্ত নেয়।
+
+---
