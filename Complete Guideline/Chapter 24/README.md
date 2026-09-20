@@ -284,3 +284,31 @@ void DrawLine(int x1, int y1, int x2, int y2)
 ```
 
 ---
+
+# 10. এখন Line by Line
+
+## Header
+
+```cpp
+#include <GL/glut.h>
+```
+
+OpenGL/FreeGLUT-এর functions ব্যবহার করার জন্য।
+
+---
+
+# 11. Function
+
+```cpp
+void DrawLine(int x1, int y1, int x2, int y2)
+```
+
+চারটি coordinate নিচ্ছে:
+
+```text
+(x1,y1) → Starting Point
+
+(x2,y2) → Ending Point
+```
+
+---
