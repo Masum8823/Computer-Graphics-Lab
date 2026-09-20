@@ -70,3 +70,40 @@ Decision Parameter
 > **Bresenham → Integer**
 
 ---
+
+
+# 3. Bresenham-এর Basic Idea
+
+ধরি line-এর slope:
+
+```text
+0 < m < 1
+```
+
+অর্থাৎ line খুব বেশি steep না।
+
+তাহলে X direction-এ আমরা প্রতিবার:
+
+```text
+x = x + 1
+```
+
+করব।
+
+কিন্তু Y কখন বাড়বে?
+
+এই দুইটা option থাকবে:
+
+```text
+(x+1, y)
+```
+
+অথবা:
+
+```text
+(x+1, y+1)
+```
+
+Bresenham একটি **decision parameter `p`** ব্যবহার করে decide করে কোন point নিতে হবে।
+
+---
