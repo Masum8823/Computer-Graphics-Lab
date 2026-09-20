@@ -332,3 +332,23 @@ dx = 8 - 2
 ```
 
 ---
+
+# 13. `dy`
+
+```cpp
+int dy = y2 - y1;
+```
+
+Y-axis বরাবর distance।
+
+Example:
+
+```text
+y1 = 2
+y2 = 5
+
+dy = 5 - 2
+   = 3
+```
+
+---
