@@ -40,3 +40,33 @@ End
 ```
 
 ---
+# 2. DDA-এর সাথে Main Difference
+
+### DDA:
+
+```text
+dx
+dy
+steps
+xIncrement
+yIncrement
+```
+
+এবং decimal value ব্যবহার করে।
+
+### Bresenham:
+
+```text
+dx
+dy
+Decision Parameter
+```
+
+এবং মূলত **integer calculation** ব্যবহার করে।
+
+মনে রাখবে:
+
+> **DDA → Floating Point**
+> **Bresenham → Integer**
+
+---
