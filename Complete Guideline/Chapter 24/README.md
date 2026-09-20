@@ -243,3 +243,44 @@ p = p + 2dy - 2dx
 এটাই Bresenham-এর main logic।
 
 ---
+# 9. Basic Code
+
+এখন basic Bresenham code:
+
+```cpp
+void DrawLine(int x1, int y1, int x2, int y2)
+{
+    int dx = x2 - x1;              // X direction-এর distance
+    int dy = y2 - y1;              // Y direction-এর distance
+
+    int p = 2 * dy - dx;            // Initial decision parameter
+
+    int x = x1;                    // Starting X
+    int y = y1;                    // Starting Y
+
+    glBegin(GL_POINTS);            // Point drawing শুরু
+
+    while(x <= x2)
+    {
+        glVertex2i(x, y);          // Current point draw
+
+        x++;                       // X সবসময় 1 করে বাড়বে
+
+        if(p < 0)
+        {
+            // p negative হলে Y change হবে না
+            p = p + 2 * dy;
+        }
+        else
+        {
+            // p positive হলে Y 1 করে বাড়বে
+            y++;
+            p = p + 2 * dy - 2 * dx;
+        }
+    }
+
+    glEnd();                       // Point drawing শেষ
+}
+```
+
+---
