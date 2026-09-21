@@ -558,3 +558,17 @@ y = y + 1
 ```
 
 ---
+
+# 25. `p` Update যখন Positive
+
+```cpp
+p = p + 2 * dy - 2 * dx;
+```
+
+Formula:
+
+```text
+p = p + 2dy - 2dx
+```
+
+---
