@@ -592,3 +592,40 @@ p=p+2dy     p=p+2dy-2dx
 ```
 
 ---
+
+# 27. Example হাতে করি
+
+ধরি:
+
+```text
+Start = (2,2)
+
+End = (8,5)
+```
+
+তাহলে:
+
+```text
+dx = 8 - 2 = 6
+
+dy = 5 - 2 = 3
+```
+
+Initial:
+
+```text
+p = 2dy - dx
+
+p = 2(3) - 6
+
+p = 0
+```
+
+Starting:
+
+```text
+x = 2
+y = 2
+```
+
+---
