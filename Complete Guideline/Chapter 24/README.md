@@ -783,3 +783,139 @@ Bresenham `p` দেখে decide করে কোনটা line-এর কা�
 > **`p` = Decision Parameter**
 
 ---
+
+# 33. `p < 0` হলে কী হয়?
+
+```text
+p < 0
+```
+
+তাহলে:
+
+```text
+(x+1, y)
+```
+
+নেব।
+
+মানে:
+
+```text
+x → +1
+
+y → same
+```
+
+Code:
+
+```cpp
+p = p + 2 * dy;
+```
+
+---
+
+# 34. `p >= 0` হলে কী হয়?
+
+```text
+p >= 0
+```
+
+তাহলে:
+
+```text
+(x+1, y+1)
+```
+
+নেব।
+
+মানে:
+
+```text
+x → +1
+
+y → +1
+```
+
+Code:
+
+```cpp
+y++;
+
+p = p + 2 * dy - 2 * dx;
+```
+
+---
+
+# 35. কেন `while(x <= x2)`?
+
+এই basic version-এ আমরা ধরে নিচ্ছি:
+
+```text
+x2 > x1
+```
+
+এবং:
+
+```text
+0 < slope < 1
+```
+
+অর্থাৎ:
+
+```text
+dx > dy
+```
+
+তাই X direction-এ এগোতে থাকি:
+
+```text
+x1 → x1+1 → x1+2 → ... → x2
+```
+
+---
+
+# 36. Important Condition
+
+এই basic Bresenham code-এর জন্য সাধারণত:
+
+```text
+0 < m < 1
+```
+
+অর্থাৎ:
+
+```text
+0 < dy/dx < 1
+```
+
+এবং:
+
+```text
+dx > dy
+```
+
+ধরা হয়।
+
+---
+
+# 37. Negative Slope হলে?
+
+যদি:
+
+```text
+dy < 0
+```
+
+তাহলে Y কমবে।
+
+তখন:
+
+```cpp
+y--;
+```
+
+ব্যবহার করতে হবে।
+
+কিন্তু **lab exam-এর basic implementation**-এ অনেক সময় প্রথমে `0 < m < 1` case-টাই শেখানো হয়।
+
+---
