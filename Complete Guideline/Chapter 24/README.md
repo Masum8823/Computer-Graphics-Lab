@@ -919,3 +919,29 @@ y--;
 কিন্তু **lab exam-এর basic implementation**-এ অনেক সময় প্রথমে `0 < m < 1` case-টাই শেখানো হয়।
 
 ---
+
+# 38. Vertical Line?
+
+যদি:
+
+```text
+x1 = x2
+```
+
+তাহলে:
+
+```text
+dx = 0
+```
+
+এই basic code দিয়ে সেটা handle করা যাবে না।
+
+কারণ এই version:
+
+```text
+dx > dy
+```
+
+case ধরে লেখা।
+
+---
