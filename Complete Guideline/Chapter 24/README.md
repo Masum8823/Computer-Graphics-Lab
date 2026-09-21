@@ -572,3 +572,23 @@ p = p + 2dy - 2dx
 ```
 
 ---
+
+# 26. Full Logic এক নজরে
+
+```text
+Current Point
+     ↓
+Check p
+     ↓
+┌───────────────┐
+│               │
+p < 0          p >= 0
+│               │
+↓               ↓
+(x+1,y)      (x+1,y+1)
+│               │
+↓               ↓
+p=p+2dy     p=p+2dy-2dx
+```
+
+---
