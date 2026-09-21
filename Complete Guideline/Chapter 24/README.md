@@ -456,3 +456,19 @@ Current `(x,y)` point draw করবে।
 কারণ Bresenham integer coordinate ব্যবহার করে।
 
 ---
+
+# 20. X Increase
+
+```cpp
+x++;
+```
+
+এর মানে:
+
+```text
+x = x + 1
+```
+
+Bresenham-এর এই case-এ প্রতিবার X এক করে বাড়ছে।
+
+---
