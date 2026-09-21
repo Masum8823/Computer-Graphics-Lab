@@ -760,3 +760,26 @@ Y
 এই points-গুলো খুব কাছাকাছি থাকায় চোখে line-এর মতো দেখা যায়।
 
 ---
+# 32. কেন `p` দরকার?
+
+এটাই সবচেয়ে important concept।
+
+প্রতিবার আমাদের সামনে দুইটা possible point:
+
+```text
+(x+1, y)
+```
+
+অথবা:
+
+```text
+(x+1, y+1)
+```
+
+Bresenham `p` দেখে decide করে কোনটা line-এর কাছাকাছি।
+
+তাই:
+
+> **`p` = Decision Parameter**
+
+---
