@@ -1345,3 +1345,15 @@ p=p+2dy       y++
 ```
 
 ---
+# 47. এক লাইনে মনে রাখো
+
+> **Bresenham = `dx, dy → p → p check → next pixel select → line draw`**
+
+আর DDA-এর সাথে:
+
+```text
+DDA        → Increment
+Bresenham  → Decision Parameter
+```
+
+এই দুইটা difference মাথায় থাকলে lab viva-তে অনেক সহজে answer দিতে পারবে।
