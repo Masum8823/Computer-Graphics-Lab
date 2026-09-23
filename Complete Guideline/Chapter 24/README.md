@@ -963,3 +963,115 @@ Vertical line
 কিন্তু তোমার **basic lab exam-এর জন্য** আগে এই version ভালোভাবে বুঝে রাখো।
 
 ---
+
+# 40. Complete FreeGLUT Program
+
+```cpp
+#include <GL/glut.h>
+
+// Bresenham Line Drawing
+void DrawLine(int x1, int y1, int x2, int y2)
+{
+    // X distance
+    int dx = x2 - x1;
+
+    // Y distance
+    int dy = y2 - y1;
+
+    // Initial decision parameter
+    int p = 2 * dy - dx;
+
+    // Starting point
+    int x = x1;
+    int y = y1;
+
+    // Point drawing শুরু
+    glBegin(GL_POINTS);
+
+    // X শেষ point পর্যন্ত যাবে
+    while(x <= x2)
+    {
+        // Current point draw
+        glVertex2i(x, y);
+
+        // X সবসময় 1 করে বাড়বে
+        x++;
+
+        // Decision
+        if(p < 0)
+        {
+            // Y একই থাকবে
+            p = p + 2 * dy;
+        }
+        else
+        {
+            // Y 1 করে বাড়বে
+            y++;
+
+            // Decision parameter update
+            p = p + 2 * dy - 2 * dx;
+        }
+    }
+
+    // Point drawing শেষ
+    glEnd();
+}
+
+void display()
+{
+    // Screen clear
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Line color
+    glColor3f(1.0, 0.0, 0.0);
+
+    // Point size
+    glPointSize(3.0);
+
+    // Bresenham line
+    DrawLine(-200, -100, 200, 150);
+
+    // Display
+    glFlush();
+}
+
+void init()
+{
+    // Projection mode
+    glMatrixMode(GL_PROJECTION);
+
+    // Reset matrix
+    glLoadIdentity();
+
+    // Coordinate system
+    gluOrtho2D(-400, 400, -300, 300);
+
+    // Background color
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+}
+
+int main(int argc, char** argv)
+{
+    // GLUT initialize
+    glutInit(&argc, argv);
+
+    // Window size
+    glutInitWindowSize(800, 600);
+
+    // Window create
+    glutCreateWindow("Bresenham Line");
+
+    // Initialize
+    init();
+
+    // Display function
+    glutDisplayFunc(display);
+
+    // Main loop
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
