@@ -1142,3 +1142,37 @@ else
 > **Bresenham → Decision Parameter দিয়ে line**
 
 ---
+
+# 43. Bresenham Algorithm Steps
+
+```text
+Step 1:
+dx = x2 - x1
+dy = y2 - y1
+
+Step 2:
+p = 2dy - dx
+
+Step 3:
+x = x1
+y = y1
+
+Step 4:
+Plot(x,y)
+
+Step 5:
+x = x + 1
+
+Step 6:
+If p < 0:
+    p = p + 2dy
+
+Otherwise:
+    y = y + 1
+    p = p + 2dy - 2dx
+
+Step 7:
+Repeat until x = x2
+```
+
+---
