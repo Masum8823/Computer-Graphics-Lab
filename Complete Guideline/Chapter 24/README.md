@@ -1212,3 +1212,109 @@ p = p + 2dy - 2dx
 এগুলো **অবশ্যই মুখস্থ** রাখবে।
 
 ---
+
+# 45. Viva Questions
+
+### Q1. Bresenham কী?
+
+**Answer:**
+
+> Bresenham is a line drawing algorithm used to draw a line between two points using mainly integer calculations.
+
+---
+
+### Q2. Bresenham-এর main advantage কী?
+
+**Answer:**
+
+> It uses integer arithmetic, so it is faster and more efficient than DDA.
+
+---
+
+### Q3. Bresenham-এর decision parameter কী?
+
+**Answer:**
+
+```text
+p = 2dy - dx
+```
+
+---
+
+### Q4. `p < 0` হলে কী করি?
+
+**Answer:**
+
+```text
+(x+1, y)
+```
+
+নিই এবং:
+
+```text
+p = p + 2dy
+```
+
+---
+
+### Q5. `p >= 0` হলে কী করি?
+
+**Answer:**
+
+```text
+(x+1, y+1)
+```
+
+নিই এবং:
+
+```text
+p = p + 2dy - 2dx
+```
+
+---
+
+### Q6. Bresenham-এ floating point লাগে?
+
+**Answer:**
+
+> No. Basic Bresenham uses integer calculations.
+
+---
+
+### Q7. `p` কী?
+
+**Answer:**
+
+> `p` is the decision parameter used to select the next pixel.
+
+---
+
+### Q8. Bresenham-এ কোন OpenGL primitive ব্যবহার করা হয়েছে?
+
+**Answer:**
+
+```text
+GL_POINTS
+```
+
+---
+
+### Q9. `glVertex2i()` কেন ব্যবহার করেছি?
+
+**Answer:**
+
+> Bresenham integer coordinates নিয়ে কাজ করে, তাই `glVertex2i()` ব্যবহার করা হয়েছে।
+
+---
+
+### Q10. DDA এবং Bresenham-এর main difference?
+
+**Answer:**
+
+```text
+DDA → Floating Point
+
+Bresenham → Integer
+```
+
+---
