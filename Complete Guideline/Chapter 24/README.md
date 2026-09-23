@@ -945,3 +945,21 @@ dx > dy
 case ধরে লেখা।
 
 ---
+# 39. General Bresenham Algorithm
+
+যদি সব ধরনের line handle করতে চাই, তাহলে একটু advanced code লাগবে।
+
+সেখানে handle করতে হবে:
+
+```text
+Positive slope
+Negative slope
+Steep slope
+Shallow slope
+Horizontal line
+Vertical line
+```
+
+কিন্তু তোমার **basic lab exam-এর জন্য** আগে এই version ভালোভাবে বুঝে রাখো।
+
+---
