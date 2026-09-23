@@ -1176,3 +1176,39 @@ Repeat until x = x2
 ```
 
 ---
+
+# 44. সবচেয়ে Important Formula
+
+### `dx`
+
+```text
+dx = x2 - x1
+```
+
+### `dy`
+
+```text
+dy = y2 - y1
+```
+
+### Initial Decision Parameter
+
+```text
+p = 2dy - dx
+```
+
+### যদি `p < 0`
+
+```text
+p = p + 2dy
+```
+
+### যদি `p >= 0`
+
+```text
+p = p + 2dy - 2dx
+```
+
+এগুলো **অবশ্যই মুখস্থ** রাখবে।
+
+---
