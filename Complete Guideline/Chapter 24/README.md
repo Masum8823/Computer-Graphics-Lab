@@ -1108,3 +1108,37 @@ Decision Parameter
 ```
 
 ---
+# 42. DDA-এর Code বনাম Bresenham Code
+
+### DDA
+
+```cpp
+float xIncrement = dx / (float)steps;
+float yIncrement = dy / (float)steps;
+
+x = x + xIncrement;
+y = y + yIncrement;
+```
+
+### Bresenham
+
+```cpp
+int p = 2 * dy - dx;
+
+if(p < 0)
+{
+    p = p + 2 * dy;
+}
+else
+{
+    y++;
+    p = p + 2 * dy - 2 * dx;
+}
+```
+
+তাই সহজে মনে রাখবে:
+
+> **DDA → Increment দিয়ে line**
+> **Bresenham → Decision Parameter দিয়ে line**
+
+---
