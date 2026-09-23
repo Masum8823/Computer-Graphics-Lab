@@ -1075,3 +1075,36 @@ int main(int argc, char** argv)
 ```
 
 ---
+
+# 41. DDA vs Bresenham
+
+এটা exam-এ খুব important।
+
+| বিষয়          | DDA                           | Bresenham                |
+| ------------- | ----------------------------- | ------------------------ |
+| Full Form     | Digital Differential Analyzer | Bresenham Line Algorithm |
+| Calculation   | Floating Point                | Integer                  |
+| Main idea     | Increment                     | Decision Parameter       |
+| Main variable | xIncrement, yIncrement        | `p`                      |
+| Speed         | তুলনামূলক slow                | তুলনামূলক fast           |
+| Accuracy      | ভালো                          | ভালো                     |
+| Point drawing | `GL_POINTS`                   | `GL_POINTS`              |
+
+সবচেয়ে important:
+
+```text
+DDA
+↓
+Floating Point
+↓
+Increment
+
+
+Bresenham
+↓
+Integer
+↓
+Decision Parameter
+```
+
+---
