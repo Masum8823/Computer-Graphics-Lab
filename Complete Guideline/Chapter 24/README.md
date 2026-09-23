@@ -1318,3 +1318,30 @@ Bresenham → Integer
 ```
 
 ---
+
+# 46. Mid Exam Quick Revision
+
+শুধু এগুলো দেখলেই Bresenham-এর পুরো concept মনে পড়ে যাবে:
+
+```text
+Bresenham
+    ↓
+Two Points
+    ↓
+dx = x2 - x1
+dy = y2 - y1
+    ↓
+p = 2dy - dx
+    ↓
+p < 0 ?
+ ┌──────────────┐
+ Yes            No
+ ↓               ↓
+(x+1,y)       (x+1,y+1)
+ ↓               ↓
+p=p+2dy       y++
+               ↓
+          p=p+2dy-2dx
+```
+
+---
