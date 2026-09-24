@@ -460,3 +460,27 @@ GL_POINTS
 ব্যবহার করছি।
 
 ---
+
+# 16. `while(x <= y)`
+
+```cpp
+while(x <= y)
+```
+
+আমরা শুধু circle-এর **1/8 অংশ** calculate করছি।
+
+যখন:
+
+```text
+x > y
+```
+
+হয়ে যাবে, তখন ওই অংশ শেষ।
+
+তাই loop condition:
+
+```text
+x <= y
+```
+
+---
