@@ -51,3 +51,26 @@ r → Radius
 কিন্তু পুরো equation বারবার calculate না করে Midpoint Algorithm একটা **decision parameter ****`p`** ব্যবহার করে।
 
 ---
+# 2. Main Idea
+
+Circle-এর পুরো অংশ একসাথে calculate করার দরকার নেই।
+
+একটা অংশ calculate করলেই symmetry-এর কারণে বাকি অংশগুলো পাওয়া যায়।
+
+Circle-এর একটি point:
+
+```text
+(x, y)
+```
+
+থাকলে একই ধরনের আরও 7টি point পাওয়া যায়।
+
+অর্থাৎ:
+
+```text
+8 Symmetric Points
+```
+
+এই কারণে Midpoint Circle Algorithm খুব efficient।
+
+---
