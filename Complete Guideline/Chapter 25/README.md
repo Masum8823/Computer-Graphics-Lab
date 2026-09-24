@@ -549,3 +549,25 @@ glVertex2i(xc - x, yc - y);
 ```
 
 ---
+
+# 21. বাকি 4 Point
+
+এখন X এবং Y swap করি।
+
+```cpp
+glVertex2i(xc + y, yc + x);
+glVertex2i(xc - y, yc + x);
+glVertex2i(xc + y, yc - x);
+glVertex2i(xc - y, yc - x);
+```
+
+এগুলো:
+
+```text
+(+y,+x)
+(-y,+x)
+(+y,-x)
+(-y,-x)
+```
+
+---
