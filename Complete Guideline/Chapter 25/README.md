@@ -99,3 +99,37 @@ Circle-এর একটি point:
 Center যদি `(xc, yc)` হয়, তাহলে center-এর সাথে যোগ হবে।
 
 ---
+
+# 4. Example
+
+ধরি:
+
+```text
+Center = (0,0)
+
+Radius = 5
+```
+
+একটি point যদি হয়:
+
+```text
+(3,4)
+```
+
+তাহলে circle-এর symmetric points:
+
+```text
+(3,4)
+(-3,4)
+(3,-4)
+(-3,-4)
+
+(4,3)
+(-4,3)
+(4,-3)
+(-4,-3)
+```
+
+এই 8টা point একই circle-এর উপর থাকবে।
+
+---
