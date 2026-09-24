@@ -523,3 +523,16 @@ glVertex2i(xc - x, yc + y);
 ```
 
 ---
+# 19. তৃতীয় Point
+
+```cpp
+glVertex2i(xc + x, yc - y);
+```
+
+এখানে:
+
+```text
+(+x,-y)
+```
+
+---
