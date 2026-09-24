@@ -31,3 +31,23 @@ Circle Draw
 ```
 
 ---
+
+# 1. Circle-এর Basic Equation
+
+Mathematics-এ circle-এর equation:
+
+```text
+(x - xc)² + (y - yc)² = r²
+```
+
+যেখানে:
+
+```text
+(xc, yc) → Circle Center
+
+r → Radius
+```
+
+কিন্তু পুরো equation বারবার calculate না করে Midpoint Algorithm একটা **decision parameter ****`p`** ব্যবহার করে।
+
+---
