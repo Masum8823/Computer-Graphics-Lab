@@ -346,3 +346,99 @@ void DrawCircle(int xc, int yc, int r)
 ```
 
 ---
+
+# 11. Code Line by Line
+
+## Function
+
+```cpp
+void DrawCircle(int xc, int yc, int r)
+```
+
+তিনটা parameter:
+
+```text
+xc → Center-এর X
+
+yc → Center-এর Y
+
+r → Radius
+```
+
+যেমন:
+
+```cpp
+DrawCircle(0, 0, 100);
+```
+
+মানে:
+
+```text
+Center = (0,0)
+Radius = 100
+```
+
+---
+
+# 12. `x = 0`
+
+```cpp
+int x = 0;
+```
+
+আমরা circle-এর top point থেকে শুরু করছি।
+
+---
+
+# 13. `y = r`
+
+```cpp
+int y = r;
+```
+
+Radius যদি:
+
+```text
+r = 100
+```
+
+হয়:
+
+```text
+y = 100
+```
+
+Starting point:
+
+```text
+(0,100)
+```
+
+Center `(0,0)` হলে এটা circle-এর top point।
+
+---
+
+# 14. `p = 1-r`
+
+```cpp
+int p = 1 - r;
+```
+
+এটা হলো initial decision parameter।
+
+Formula:
+
+```text
+p = 1 - r
+```
+
+যেমন:
+
+```text
+r = 100
+
+p = 1 - 100
+  = -99
+```
+
+---
