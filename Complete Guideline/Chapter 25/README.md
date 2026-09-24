@@ -161,3 +161,36 @@ Full Circle
 ```
 
 ---
+
+# 6. Starting Point
+
+Midpoint Circle Algorithm-এ আমরা শুরু করি:
+
+```text
+x = 0
+y = r
+```
+
+অর্থাৎ circle-এর top point থেকে।
+
+যদি:
+
+```text
+center = (0,0)
+radius = 5
+```
+
+তাহলে:
+
+```text
+x = 0
+y = 5
+```
+
+Starting point:
+
+```text
+(0,5)
+```
+
+---
