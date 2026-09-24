@@ -74,3 +74,28 @@ Circle-এর একটি point:
 এই কারণে Midpoint Circle Algorithm খুব efficient।
 
 ---
+# 3. 8-Way Symmetry
+
+ধরি আমরা একটি point পেলাম:
+
+```text
+(x, y)
+```
+
+তাহলে একই circle-এর আরও point:
+
+```text
+(x, y)
+(-x, y)
+(x, -y)
+(-x, -y)
+
+(y, x)
+(-y, x)
+(y, -x)
+(-y, -x)
+```
+
+Center যদি `(xc, yc)` হয়, তাহলে center-এর সাথে যোগ হবে।
+
+---
