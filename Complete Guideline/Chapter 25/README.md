@@ -536,3 +536,16 @@ glVertex2i(xc + x, yc - y);
 ```
 
 ---
+# 20. চতুর্থ Point
+
+```cpp
+glVertex2i(xc - x, yc - y);
+```
+
+এখানে:
+
+```text
+(-x,-y)
+```
+
+---
