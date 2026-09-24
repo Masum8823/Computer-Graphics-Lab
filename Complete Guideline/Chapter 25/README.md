@@ -442,3 +442,21 @@ p = 1 - 100
 ```
 
 ---
+
+# 15. `glBegin(GL_POINTS)`
+
+```cpp
+glBegin(GL_POINTS);
+```
+
+আমরা point plot করে circle তৈরি করছি।
+
+তাই:
+
+```text
+GL_POINTS
+```
+
+ব্যবহার করছি।
+
+---
