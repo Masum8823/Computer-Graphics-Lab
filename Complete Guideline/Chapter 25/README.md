@@ -222,3 +222,40 @@ p = 1 - 5
 ```
 
 ---
+
+# 8. Decision কী?
+
+প্রতিবার আমাদের next point choose করতে হবে।
+
+দুটি possible direction:
+
+```text
+E  → East
+SE → South-East
+```
+
+সহজভাবে:
+
+```text
+p < 0
+↓
+East point
+
+p >= 0
+↓
+South-East point
+```
+
+অর্থাৎ:
+
+```text
+p < 0
+→ x বাড়বে
+→ y একই থাকবে
+
+p >= 0
+→ x বাড়বে
+→ y কমবে
+```
+
+---
