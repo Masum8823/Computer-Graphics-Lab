@@ -133,3 +133,31 @@ Radius = 5
 এই 8টা point একই circle-এর উপর থাকবে।
 
 ---
+
+# 5. কেন শুধু 1/8 Circle calculate করি?
+
+Circle দেখতে:
+
+```text
+        ● ● ●
+     ●       ●
+   ●           ●
+  ●      +      ●
+   ●           ●
+     ●       ●
+        ● ● ●
+```
+
+Circle-এর একটা ছোট অংশ calculate করলেই symmetry দিয়ে পুরো circle পাওয়া যায়।
+
+তাই:
+
+```text
+1/8 অংশ calculate
+        ↓
+8টি symmetric point plot
+        ↓
+Full Circle
+```
+
+---
