@@ -509,3 +509,17 @@ y = 5
 ```
 
 ---
+
+# 18. দ্বিতীয় Point
+
+```cpp
+glVertex2i(xc - x, yc + y);
+```
+
+এখানে X-এর negative side।
+
+```text
+(-x,+y)
+```
+
+---
