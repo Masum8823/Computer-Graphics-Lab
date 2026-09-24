@@ -194,3 +194,31 @@ Starting point:
 ```
 
 ---
+# 7. Initial Decision Parameter
+
+Basic Midpoint Circle Algorithm-এর জন্য:
+
+```text
+p = 1 - r
+```
+
+অর্থাৎ:
+
+```cpp
+p = 1 - r;
+```
+
+যদি:
+
+```text
+r = 5
+```
+
+তাহলে:
+
+```text
+p = 1 - 5
+  = -4
+```
+
+---
