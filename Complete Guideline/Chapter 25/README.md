@@ -299,3 +299,50 @@ p = p + 2x + 1 - 2y
 ```
 
 ---
+# 10. Basic Code
+
+```cpp
+void DrawCircle(int xc, int yc, int r)
+{
+    int x = 0;                  // Starting X
+    int y = r;                  // Starting Y = radius
+
+    int p = 1 - r;              // Initial decision parameter
+
+    glBegin(GL_POINTS);         // Point drawing শুরু
+
+    while(x <= y)
+    {
+        // 8টি symmetric point draw
+        glVertex2i(xc + x, yc + y);
+        glVertex2i(xc - x, yc + y);
+        glVertex2i(xc + x, yc - y);
+        glVertex2i(xc - x, yc - y);
+
+        glVertex2i(xc + y, yc + x);
+        glVertex2i(xc - y, yc + x);
+        glVertex2i(xc + y, yc - x);
+        glVertex2i(xc - y, yc - x);
+
+        // X এক ধাপ বাড়বে
+        x++;
+
+        if(p < 0)
+        {
+            // East point নেওয়া হয়েছে
+            p = p + 2 * x + 1;
+        }
+        else
+        {
+            // South-East point নেওয়া হয়েছে
+            y--;
+
+            p = p + 2 * x + 1 - 2 * y;
+        }
+    }
+
+    glEnd();                    // Point drawing শেষ
+}
+```
+
+---
