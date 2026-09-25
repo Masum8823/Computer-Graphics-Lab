@@ -1,88 +1,82 @@
-# Midpoint Circle Drawing Algorithm
+# Bresenham Circle Drawing Algorithm
 
-> **Midpoint Circle Algorithm** হলো computer graphics-এ একটি circle draw করার algorithm।
+> **Bresenham Circle Algorithm** হলো computer graphics-এ circle draw করার একটি efficient algorithm। এটি integer calculation এবং decision parameter ব্যবহার করে circle-এর points নির্বাচন করে।
 
-আমরা আগে সাধারণভাবে circle এভাবে এঁকেছিলাম:
-
-```cpp
-for(int i = 0; i < 360; i++)
-{
-    float angle = i * 3.1416 / 180.0;
-
-    float x = xc + r * cos(angle);
-    float y = yc + r * sin(angle);
-
-    glVertex2f(x, y);
-}
-```
-
-এখানে `sin()` এবং `cos()` ব্যবহার করেছি।
-
-কিন্তু **Midpoint Circle Algorithm**-এ আমরা এইভাবে circle draw করি না।
-
-এখানে মূল idea:
+আগের **Midpoint Circle**-এর মতো এখানেও সবচেয়ে important concept হলো:
 
 ```text
+8-Way Symmetry
++
 Decision Parameter
-        ↓
-Next Point নির্বাচন
-        ↓
-Circle Draw
+=
+Circle
 ```
 
 ---
 
-# 1. Circle-এর Basic Equation
+# 1. Bresenham Circle কী?
 
-Mathematics-এ circle-এর equation:
+Bresenham Line Algorithm-এর মতোই Bresenham Circle Algorithm-ও pixel/point নির্বাচন করে circle আঁকে।
 
-```text
-(x - xc)² + (y - yc)² = r²
-```
-
-যেখানে:
+এখানে:
 
 ```text
-(xc, yc) → Circle Center
-
-r → Radius
+sin() ❌
+cos() ❌
+Floating Point ❌
 ```
 
-কিন্তু পুরো equation বারবার calculate না করে Midpoint Algorithm একটা **decision parameter ****`p`** ব্যবহার করে।
+এর পরিবর্তে:
+
+```text
+Integer Calculation ✅
+Decision Parameter ✅
+8-Way Symmetry ✅
+```
+
+ব্যবহার করা হয়।
 
 ---
-# 2. Main Idea
 
-Circle-এর পুরো অংশ একসাথে calculate করার দরকার নেই।
+# 2. Circle-এর Basic Idea
 
-একটা অংশ calculate করলেই symmetry-এর কারণে বাকি অংশগুলো পাওয়া যায়।
-
-Circle-এর একটি point:
+ধরি circle-এর center:
 
 ```text
-(x, y)
+(xc, yc)
 ```
 
-থাকলে একই ধরনের আরও 7টি point পাওয়া যায়।
-
-অর্থাৎ:
+এবং radius:
 
 ```text
+r
+```
+
+আমরা circle-এর পুরো অংশ calculate করব না।
+
+শুধু **1/8 অংশ** calculate করব।
+
+তারপর symmetry ব্যবহার করে একই point-এর 8টি position plot করব।
+
+```text
+1/8 Circle
+    ↓
 8 Symmetric Points
+    ↓
+Full Circle
 ```
 
-এই কারণে Midpoint Circle Algorithm খুব efficient।
-
 ---
+
 # 3. 8-Way Symmetry
 
-ধরি আমরা একটি point পেলাম:
+ধরি আমরা একটা point পেলাম:
 
 ```text
 (x, y)
 ```
 
-তাহলে একই circle-এর আরও point:
+তাহলে circle-এর অন্য points:
 
 ```text
 (x, y)
@@ -96,88 +90,37 @@ Circle-এর একটি point:
 (-y, -x)
 ```
 
-Center যদি `(xc, yc)` হয়, তাহলে center-এর সাথে যোগ হবে।
+Center `(xc,yc)` থাকলে:
+
+```text
+(xc+x, yc+y)
+(xc-x, yc+y)
+(xc+x, yc-y)
+(xc-x, yc-y)
+
+(xc+y, yc+x)
+(xc-y, yc+x)
+(xc+y, yc-x)
+(xc-y, yc-x)
+```
+
+এই 8টা point একসাথে plot করলেই circle তৈরি হয়।
 
 ---
 
-# 4. Example
+# 4. Starting Point
 
-ধরি:
-
-```text
-Center = (0,0)
-
-Radius = 5
-```
-
-একটি point যদি হয়:
-
-```text
-(3,4)
-```
-
-তাহলে circle-এর symmetric points:
-
-```text
-(3,4)
-(-3,4)
-(3,-4)
-(-3,-4)
-
-(4,3)
-(-4,3)
-(4,-3)
-(-4,-3)
-```
-
-এই 8টা point একই circle-এর উপর থাকবে।
-
----
-
-# 5. কেন শুধু 1/8 Circle calculate করি?
-
-Circle দেখতে:
-
-```text
-        ● ● ●
-     ●       ●
-   ●           ●
-  ●      +      ●
-   ●           ●
-     ●       ●
-        ● ● ●
-```
-
-Circle-এর একটা ছোট অংশ calculate করলেই symmetry দিয়ে পুরো circle পাওয়া যায়।
-
-তাই:
-
-```text
-1/8 অংশ calculate
-        ↓
-8টি symmetric point plot
-        ↓
-Full Circle
-```
-
----
-
-# 6. Starting Point
-
-Midpoint Circle Algorithm-এ আমরা শুরু করি:
+Bresenham Circle Algorithm-এর basic implementation-এ শুরু করি:
 
 ```text
 x = 0
 y = r
 ```
 
-অর্থাৎ circle-এর top point থেকে।
-
-যদি:
+যেমন:
 
 ```text
-center = (0,0)
-radius = 5
+r = 5
 ```
 
 তাহলে:
@@ -193,22 +136,19 @@ Starting point:
 (0,5)
 ```
 
----
-# 7. Initial Decision Parameter
+অর্থাৎ circle-এর top point।
 
-Basic Midpoint Circle Algorithm-এর জন্য:
+---
+
+# 5. Decision Parameter
+
+এই algorithm-এর initial decision parameter:
 
 ```text
-p = 1 - r
+p = 3 - 2r
 ```
 
-অর্থাৎ:
-
-```cpp
-p = 1 - r;
-```
-
-যদি:
+যেমন:
 
 ```text
 r = 5
@@ -217,52 +157,56 @@ r = 5
 তাহলে:
 
 ```text
-p = 1 - 5
-  = -4
+p = 3 - 2(5)
+
+p = 3 - 10
+
+p = -7
 ```
 
 ---
 
-# 8. Decision কী?
+# 6. Decision Parameter কেন?
 
-প্রতিবার আমাদের next point choose করতে হবে।
+প্রতিবার আমাদের decide করতে হবে next point কোনটা হবে।
 
-দুটি possible direction:
+বর্তমান point:
 
 ```text
-E  → East
-SE → South-East
+(x,y)
 ```
+
+থেকে পরের point হতে পারে:
+
+```text
+(x+1, y)
+```
+
+অথবা:
+
+```text
+(x+1, y-1)
+```
+
+তাই `p` দেখে সিদ্ধান্ত নিই।
 
 সহজভাবে:
 
 ```text
 p < 0
 ↓
-East point
+y same থাকবে
 
 p >= 0
 ↓
-South-East point
-```
-
-অর্থাৎ:
-
-```text
-p < 0
-→ x বাড়বে
-→ y একই থাকবে
-
-p >= 0
-→ x বাড়বে
-→ y কমবে
+y কমবে
 ```
 
 ---
 
-# 9. Main Logic
+# 7. Main Logic
 
-এটা খুব ভালোভাবে মনে রাখবে:
+সবচেয়ে important অংশ:
 
 ```text
 p < 0
@@ -270,7 +214,7 @@ p < 0
 x = x + 1
 y = y
 ↓
-p = p + 2x + 1
+p = p + 4x + 6
 ```
 
 আর:
@@ -281,25 +225,14 @@ p >= 0
 x = x + 1
 y = y - 1
 ↓
-p = p + 2x + 1 - 2y
+p = p + 4(x-y) + 10
 ```
 
-**Note:** এখানে update-এর আগে/পরে `x,y` কোন value ব্যবহার হচ্ছে সেটা code-এর order-এর উপর নির্ভর করে। নিচের code-এ আমরা আগে `x++/y--` করে তারপর formula update করব।
-
-তাই code অনুযায়ী formula হবে:
-
-```text
-p = p + 2x + 1
-```
-
-অথবা:
-
-```text
-p = p + 2x + 1 - 2y
-```
+**খেয়াল রাখবে:** এই formula-গুলো code-এর `x++` / `y--` update-এর আগে/পরে কোন value ব্যবহার হচ্ছে তার উপর depend করে। নিচের code-এ আমরা আগে decision নিয়ে তারপর update করব, তাই formula এইভাবেই থাকবে।
 
 ---
-# 10. Basic Code
+
+# 8. Basic Code
 
 ```cpp
 void DrawCircle(int xc, int yc, int r)
@@ -307,7 +240,7 @@ void DrawCircle(int xc, int yc, int r)
     int x = 0;                  // Starting X
     int y = r;                  // Starting Y = radius
 
-    int p = 1 - r;              // Initial decision parameter
+    int p = 3 - 2 * r;          // Initial decision parameter
 
     glBegin(GL_POINTS);         // Point drawing শুরু
 
@@ -324,20 +257,22 @@ void DrawCircle(int xc, int yc, int r)
         glVertex2i(xc + y, yc - x);
         glVertex2i(xc - y, yc - x);
 
-        // X এক ধাপ বাড়বে
-        x++;
-
+        // Decision parameter check
         if(p < 0)
         {
-            // East point নেওয়া হয়েছে
-            p = p + 2 * x + 1;
+            // Y same থাকবে
+            p = p + 4 * x + 6;
+
+            // X এক ধাপ বাড়বে
+            x++;
         }
         else
         {
-            // South-East point নেওয়া হয়েছে
-            y--;
+            // Y এক ধাপ কমবে
+            p = p + 4 * (x - y) + 10;
 
-            p = p + 2 * x + 1 - 2 * y;
+            x++;                // X এক ধাপ বাড়বে
+            y--;                // Y এক ধাপ কমবে
         }
     }
 
@@ -347,9 +282,7 @@ void DrawCircle(int xc, int yc, int r)
 
 ---
 
-# 11. Code Line by Line
-
-## Function
+# 9. Function
 
 ```cpp
 void DrawCircle(int xc, int yc, int r)
@@ -358,11 +291,9 @@ void DrawCircle(int xc, int yc, int r)
 তিনটা parameter:
 
 ```text
-xc → Center-এর X
-
-yc → Center-এর Y
-
-r → Radius
+xc → Center X
+yc → Center Y
+r  → Radius
 ```
 
 যেমন:
@@ -380,7 +311,7 @@ Radius = 100
 
 ---
 
-# 12. `x = 0`
+# 10. `x = 0`
 
 ```cpp
 int x = 0;
@@ -390,19 +321,19 @@ int x = 0;
 
 ---
 
-# 13. `y = r`
+# 11. `y = r`
 
 ```cpp
 int y = r;
 ```
 
-Radius যদি:
+যদি:
 
 ```text
 r = 100
 ```
 
-হয়:
+তাহলে:
 
 ```text
 y = 100
@@ -414,42 +345,42 @@ Starting point:
 (0,100)
 ```
 
-Center `(0,0)` হলে এটা circle-এর top point।
-
 ---
 
-# 14. `p = 1-r`
+# 12. Initial Decision Parameter
 
 ```cpp
-int p = 1 - r;
+int p = 3 - 2 * r;
 ```
-
-এটা হলো initial decision parameter।
 
 Formula:
 
 ```text
-p = 1 - r
+p = 3 - 2r
 ```
 
-যেমন:
+যদি:
 
 ```text
-r = 100
+r = 5
+```
 
-p = 1 - 100
-  = -99
+তাহলে:
+
+```text
+p = 3 - 10
+  = -7
 ```
 
 ---
 
-# 15. `glBegin(GL_POINTS)`
+# 13. `glBegin(GL_POINTS)`
 
 ```cpp
 glBegin(GL_POINTS);
 ```
 
-আমরা point plot করে circle তৈরি করছি।
+আমরা একেকটা point plot করে circle বানাচ্ছি।
 
 তাই:
 
@@ -461,13 +392,13 @@ GL_POINTS
 
 ---
 
-# 16. `while(x <= y)`
+# 14. `while(x <= y)`
 
 ```cpp
 while(x <= y)
 ```
 
-আমরা শুধু circle-এর **1/8 অংশ** calculate করছি।
+আমরা শুধু circle-এর 1/8 অংশ calculate করছি।
 
 যখন:
 
@@ -475,104 +406,19 @@ while(x <= y)
 x > y
 ```
 
-হয়ে যাবে, তখন ওই অংশ শেষ।
+হবে, তখন ওই অংশের calculation শেষ।
 
-তাই loop condition:
+তাই:
 
 ```text
 x <= y
 ```
 
----
-# 17. প্রথম Symmetric Point
-
-```cpp
-glVertex2i(xc + x, yc + y);
-```
-
-এটা প্রথম point।
-
-যদি:
-
-```text
-xc = 0
-yc = 0
-x = 0
-y = 5
-```
-
-তাহলে:
-
-```text
-(0+0, 0+5)
-= (0,5)
-```
+পর্যন্ত loop চলবে।
 
 ---
 
-# 18. দ্বিতীয় Point
-
-```cpp
-glVertex2i(xc - x, yc + y);
-```
-
-এখানে X-এর negative side।
-
-```text
-(-x,+y)
-```
-
----
-# 19. তৃতীয় Point
-
-```cpp
-glVertex2i(xc + x, yc - y);
-```
-
-এখানে:
-
-```text
-(+x,-y)
-```
-
----
-# 20. চতুর্থ Point
-
-```cpp
-glVertex2i(xc - x, yc - y);
-```
-
-এখানে:
-
-```text
-(-x,-y)
-```
-
----
-
-# 21. বাকি 4 Point
-
-এখন X এবং Y swap করি।
-
-```cpp
-glVertex2i(xc + y, yc + x);
-glVertex2i(xc - y, yc + x);
-glVertex2i(xc + y, yc - x);
-glVertex2i(xc - y, yc - x);
-```
-
-এগুলো:
-
-```text
-(+y,+x)
-(-y,+x)
-(+y,-x)
-(-y,-x)
-```
-
----
-
-# 22. সব 8 Point একসাথে
+# 15. 8 Symmetric Points
 
 ```cpp
 glVertex2i(xc + x, yc + y);
@@ -602,7 +448,47 @@ glVertex2i(xc - y, yc - x);
 
 ---
 
-# 23. `x++`
+# 16. `if(p < 0)`
+
+```cpp
+if(p < 0)
+```
+
+এখন decision নেওয়া হচ্ছে।
+
+যদি:
+
+```text
+p < 0
+```
+
+তাহলে:
+
+```text
+y same থাকবে
+```
+
+অর্থাৎ next point হবে:
+
+```text
+(x+1, y)
+```
+
+---
+
+# 17. `p < 0` হলে Formula
+
+```cpp
+p = p + 4 * x + 6;
+```
+
+অর্থাৎ:
+
+```text
+p = p + 4x + 6
+```
+
+তারপর:
 
 ```cpp
 x++;
@@ -614,49 +500,11 @@ x++;
 x = x + 1
 ```
 
-প্রতিবার আমরা X direction-এ এক ধাপ এগোচ্ছি।
-
----
-# 24. `if(p < 0)`
-
-```cpp
-if(p < 0)
-```
-
-Decision parameter check করছি।
-
-যদি:
-
-```text
-p < 0
-```
-
-তাহলে next point হবে **East direction**-এর।
-
-সহজভাবে:
-
-```text
-x → +1
-y → same
-```
+Y একই থাকবে।
 
 ---
 
-# 25. `p < 0` হলে
-
-```cpp
-p = p + 2 * x + 1;
-```
-
-অর্থাৎ:
-
-```text
-p = p + 2x + 1
-```
-
----
-
-# 26. `else`
+# 18. `else`
 
 ```cpp
 else
@@ -668,78 +516,80 @@ else
 p >= 0
 ```
 
-এবার South-East point নিতে হবে।
-
-অর্থাৎ:
+এবার:
 
 ```text
-x → +1
-y → -1
+y--
+```
+
+অর্থাৎ Y এক কমবে।
+
+Next point:
+
+```text
+(x+1, y-1)
 ```
 
 ---
 
-# 27. `y--`
+# 19. `p >= 0` Formula
 
 ```cpp
+p = p + 4 * (x - y) + 10;
+```
+
+অর্থাৎ:
+
+```text
+p = p + 4(x-y) + 10
+```
+
+তারপর:
+
+```cpp
+x++;
 y--;
 ```
 
-মানে:
-
-```text
-y = y - 1
-```
-
 ---
 
-# 28. Decision Parameter Update
+# 20. Main Logic
 
-```cpp
-p = p + 2 * x + 1 - 2 * y;
-```
-
-অর্থাৎ:
-
-```text
-p = p + 2x + 1 - 2y
-```
-
----
-
-# 29. Complete Logic
+পুরো algorithm-টা:
 
 ```text
 Start
  ↓
 x = 0
 y = r
-p = 1-r
  ↓
-8 points plot
+p = 3 - 2r
  ↓
-x++
+8 points draw
  ↓
-p check
+Check p
  ↓
-┌─────────────────┐
-│                 │
-p < 0            p >= 0
-│                 │
-↓                 ↓
-y same           y--
-│                 │
-↓                 ↓
-p=p+2x+1      p=p+2x+1-2y
-│                 │
-└────────┬────────┘
-         ↓
+┌──────────────────┐
+│                  │
+p < 0             p >= 0
+│                  │
+↓                  ↓
+y same             y--
+│                  │
+↓                  ↓
+p=p+4x+6       p=p+4(x-y)+10
+│                  │
+↓                  ↓
+x++                x++
+                    ↓
+                   y--
+        ↓
      Repeat
 ```
 
 ---
 
-# 30. Example
+# 21. Example
 
 ধরি:
 
@@ -753,69 +603,60 @@ Radius = 5
 ```text
 x = 0
 y = 5
-p = 1 - 5
-  = -4
 ```
 
-Starting point:
+Initial:
 
 ```text
-(0,5)
+p = 3 - 2r
+  = 3 - 10
+  = -7
 ```
 
 ---
 
-# 31. First Iteration
+# 22. First Step
 
 Current:
 
 ```text
 x = 0
 y = 5
-p = -4
+p = -7
 ```
 
-প্রথমে 8 symmetric point plot হবে।
+প্রথমে 8 symmetric points draw হবে।
 
 তারপর:
-
-```text
-x++
-```
-
-তাই:
-
-```text
-x = 1
-```
-
-এখন:
 
 ```text
 p < 0
 ```
 
-তাই Y same থাকবে:
+তাই Y same থাকবে।
+
+Formula:
 
 ```text
-y = 5
-```
+p = p + 4x + 6
 
-Update:
-
-```text
-p = p + 2x + 1
-
-p = -4 + 2(1) + 1
+p = -7 + 4(0) + 6
 
 p = -1
 ```
 
+তারপর:
+
+```text
+x = 1
+y = 5
+```
+
 ---
 
-# 32. Second Iteration
+# 23. Second Step
 
-এখন:
+Current:
 
 ```text
 x = 1
@@ -823,128 +664,128 @@ y = 5
 p = -1
 ```
 
-আবার 8 points plot হবে।
+আবার 8 points draw হবে।
+
+`p < 0`, তাই:
+
+```text
+p = p + 4x + 6
+
+p = -1 + 4(1) + 6
+
+p = 9
+```
 
 তারপর:
 
 ```text
-x++
-```
-
-তাই:
-
-```text
 x = 2
-```
-
-এখন:
-
-```text
-p < 0
-```
-
-তাই:
-
-```text
 y = 5
-```
-
-Update:
-
-```text
-p = -1 + 2(2) + 1
-
-p = 4
 ```
 
 ---
 
-# 33. Third Iteration
+# 24. Third Step
 
 এখন:
 
 ```text
 x = 2
 y = 5
-p = 4
+p = 9
 ```
 
-`p >= 0`, তাই:
+এবার:
 
 ```text
-y--
+p >= 0
 ```
 
-অর্থাৎ:
+তাই Y কমবে।
+
+Formula:
 
 ```text
+p = p + 4(x-y) + 10
+
+p = 9 + 4(2-5) + 10
+
+p = 9 - 12 + 10
+
+p = 7
+```
+
+তারপর:
+
+```text
+x = 3
 y = 4
 ```
 
-তারপর:
-
-```text
-p = p + 2x + 1 - 2y
-
-p = 4 + 2(2) + 1 - 2(4)
-
-p = 1
-```
-
 ---
 
-# 34. Example Table
+# 25. Example Table
 
-Radius `5` হলে approximate calculation:
+Radius `5` এর জন্য:
 
 | Step |  x |  y |  p | Decision |
 | ---: | -: | -: | -: | -------- |
-|    0 |  0 |  5 | -4 | `p < 0`  |
+|    0 |  0 |  5 | -7 | `p < 0`  |
 |    1 |  1 |  5 | -1 | `p < 0`  |
-|    2 |  2 |  5 |  4 | `p >= 0` |
-|    3 |  3 |  4 |  3 | `p >= 0` |
+|    2 |  2 |  5 |  9 | `p >= 0` |
+|    3 |  3 |  4 |  7 | `p >= 0` |
 |    4 |  4 |  3 |  — | Stop     |
 
-Loop তখন stop করবে যখন:
+যখন:
 
 ```text
 x > y
 ```
 
+হয়ে যাবে, তখন loop stop করবে।
+
 ---
 
-# 35. Circle দেখতে কেমন হবে?
+# 26. Visual Concept
 
-Conceptually:
+Circle-এর 1/8 অংশ calculate করি:
 
 ```text
-             ● ● ●
-          ●         ●
-        ●             ●
-       ●               ●
-      ●        +        ●
-       ●               ●
-        ●             ●
-          ●         ●
-             ● ● ●
+          ● ● ●
+        ●
+       ●
+      ●
+     ●
 ```
 
-`+` হলো center।
+তারপর symmetry দিয়ে:
+
+```text
+          ● ● ●
+       ●         ●
+     ●             ●
+    ●       +       ●
+     ●             ●
+       ●         ●
+          ● ● ●
+```
+
+পুরো circle পাওয়া যায়।
 
 ---
 
-# 36. Complete FreeGLUT Program
+# 27. Complete FreeGLUT Program
 
 ```cpp
 #include <GL/glut.h>
 
-// Midpoint Circle Algorithm
+// Bresenham Circle Drawing Algorithm
 void DrawCircle(int xc, int yc, int r)
 {
     int x = 0;                  // Starting X
     int y = r;                  // Starting Y
 
-    int p = 1 - r;              // Initial decision parameter
+    int p = 3 - 2 * r;          // Initial decision parameter
 
     glBegin(GL_POINTS);         // Point drawing শুরু
 
@@ -961,22 +802,25 @@ void DrawCircle(int xc, int yc, int r)
         glVertex2i(xc + y, yc - x);
         glVertex2i(xc - y, yc - x);
 
-        // X এক করে বাড়বে
-        x++;
-
         // Decision parameter check
         if(p < 0)
         {
             // Y same থাকবে
-            p = p + 2 * x + 1;
+            p = p + 4 * x + 6;
+
+            // X বাড়বে
+            x++;
         }
         else
         {
-            // Y এক করে কমবে
-            y--;
-
             // Decision parameter update
-            p = p + 2 * x + 1 - 2 * y;
+            p = p + 4 * (x - y) + 10;
+
+            // X বাড়বে
+            x++;
+
+            // Y কমবে
+            y--;
         }
     }
 
@@ -1006,13 +850,13 @@ void init()
     // Projection mode
     glMatrixMode(GL_PROJECTION);
 
-    // Reset
+    // Reset matrix
     glLoadIdentity();
 
     // Coordinate system
     gluOrtho2D(-400, 400, -300, 300);
 
-    // Background
+    // Background color
     glClearColor(1.0, 1.0, 1.0, 1.0);
 }
 
@@ -1025,7 +869,7 @@ int main(int argc, char** argv)
     glutInitWindowSize(800, 600);
 
     // Window create
-    glutCreateWindow("Midpoint Circle");
+    glutCreateWindow("Bresenham Circle");
 
     // Initialization
     init();
@@ -1042,39 +886,37 @@ int main(int argc, char** argv)
 
 ---
 
-# 37. সবচেয়ে Important Code
-
-Midpoint Circle-এর শুধু algorithm অংশ যদি মনে রাখতে চাও:
+# 28. শুধু Algorithm অংশ মুখস্থ করার জন্য
 
 ```cpp
 int x = 0;
 int y = r;
 
-int p = 1 - r;
+int p = 3 - 2 * r;
 
 while(x <= y)
 {
-    // 8 symmetric points draw
-
-    x++;
+    // 8 symmetric points
 
     if(p < 0)
     {
-        p = p + 2*x + 1;
+        p = p + 4 * x + 6;
+        x++;
     }
     else
     {
+        p = p + 4 * (x - y) + 10;
+        x++;
         y--;
-        p = p + 2*x + 1 - 2*y;
     }
 }
 ```
 
+এটাই Bresenham Circle-এর core।
+
 ---
 
-# 38. Important Formula
-
-Midterm-এর জন্য এগুলো **অবশ্যই মুখস্থ**:
+# 29. Important Formula
 
 ### Starting Point
 
@@ -1086,138 +928,119 @@ y = r
 ### Initial Decision Parameter
 
 ```text
-p = 1 - r
+p = 3 - 2r
 ```
 
 ### যদি `p < 0`
 
 ```text
-x = x + 1
-y = y
+y same
 
-p = p + 2x + 1
+p = p + 4x + 6
+x++
 ```
 
 ### যদি `p >= 0`
 
 ```text
-x = x + 1
-y = y - 1
+x++
+y--
 
-p = p + 2x + 1 - 2y
+p = p + 4(x-y) + 10
 ```
 
 ---
 
-# 39. 8 Symmetric Points
+# 30. Midpoint Circle vs Bresenham Circle
 
-এটাও খুব important:
+এখানে exam-এর জন্য সবচেয়ে important comparison:
+
+| বিষয়         | Midpoint Circle   | Bresenham Circle |
+| ------------ | ----------------- | ---------------- |
+| Starting `x` | `0`               | `0`              |
+| Starting `y` | `r`               | `r`              |
+| Initial `p`  | `1-r`             | `3-2r`           |
+| Main concept | Midpoint decision | Integer decision |
+| Symmetry     | 8-way             | 8-way            |
+| `p < 0`      | Y same            | Y same           |
+| `p >= 0`     | Y decreases       | Y decreases      |
+| `sin/cos`    | No                | No               |
+| `GL_POINTS`  | Yes               | Yes              |
+
+সবচেয়ে important difference:
 
 ```text
-(x,y)
-(-x,y)
-(x,-y)
-(-x,-y)
-
-(y,x)
-(-y,x)
-(y,-x)
-(-y,-x)
+Midpoint Circle
+p = 1 - r
 ```
 
-Center থাকলে:
+vs
 
 ```text
-(xc+x, yc+y)
-(xc-x, yc+y)
-(xc+x, yc-y)
-(xc-x, yc-y)
-
-(xc+y, yc+x)
-(xc-y, yc+x)
-(xc+y, yc-x)
-(xc-y, yc-x)
+Bresenham Circle
+p = 3 - 2r
 ```
 
 ---
 
-# 40. কেন 8 Point?
+# 31. Midpoint Circle-এর সাথে মিল
 
-কারণ circle-এর:
+দুইটার common বিষয়:
 
 ```text
-8-way symmetry
+8-Way Symmetry
+      +
+Decision Parameter
+      +
+GL_POINTS
+      +
+Integer-based Calculation
 ```
-
-আছে।
-
-একটি octant-এর একটি point জানলেই symmetry ব্যবহার করে একই সাথে 8টি point পাওয়া যায়।
-
-তাই পুরো circle আলাদাভাবে calculate করতে হয় না।
 
 ---
 
-# 41. Midpoint Circle বনাম Normal Circle
+# 32. কেন `sin()` / `cos()` ব্যবহার করি না?
 
-আগের circle code:
+কারণ algorithm-এর উদ্দেশ্য হলো:
+
+```text
+Integer calculation
++
+Efficient point selection
+```
+
+তাই:
 
 ```cpp
-float angle = i * 3.1416 / 180.0;
-
-float x = xc + r * cos(angle);
-float y = yc + r * sin(angle);
-```
-
-এখানে:
-
-```text
-sin()
 cos()
-angle
+sin()
 ```
 
-ব্যবহার হয়েছে।
-
-Midpoint Circle:
-
-```cpp
-int p = 1 - r;
-```
-
-এবং:
-
-```text
-p < 0
-p >= 0
-```
-
-দিয়ে next point select করে।
+এর পরিবর্তে decision parameter দিয়ে next point select করি।
 
 ---
 
-# 42. Midpoint Circle বনাম DDA
+# 33. Viva Questions
 
-| DDA Line           | Midpoint Circle              |
-| ------------------ | ---------------------------- |
-| Line draw করে      | Circle draw করে              |
-| `dx`, `dy` ব্যবহার | `r`, `p` ব্যবহার             |
-| Increment ব্যবহার  | Decision parameter           |
-| Floating point     | Integer-based                |
-| Line-এর points     | Circle-এর 8 symmetric points |
-
----
-
-# 43. Viva Questions
-
-### Q1. Midpoint Circle Algorithm কী?
+### Q1. Bresenham Circle Algorithm কী?
 
 **Answer:**
 
-> Midpoint Circle Algorithm is an efficient algorithm used to draw a circle using decision parameters and symmetry.
+> It is an efficient circle drawing algorithm that uses integer calculations and a decision parameter.
 
 ---
 
-### Q2. Starting point কী?
+### Q2. Initial decision parameter কী?
+
+**Answer:**
+
+```text
+p = 3 - 2r
+```
+
+---
+
+### Q3. Starting point কী?
 
 **Answer:**
 
@@ -1227,17 +1050,7 @@ p >= 0
 
 ---
 
-### Q3. Initial decision parameter কী?
-
-**Answer:**
-
-```text
-p = 1 - r
-```
-
----
-
-### Q4. Circle-এর কত-way symmetry ব্যবহার করি?
+### Q4. Circle-এ কত-way symmetry ব্যবহার করি?
 
 **Answer:**
 
@@ -1245,15 +1058,7 @@ p = 1 - r
 
 ---
 
-### Q5. কেন 8-way symmetry ব্যবহার করি?
-
-**Answer:**
-
-> একটি অংশ calculate করে symmetry ব্যবহার করে বাকি অংশের points পাওয়া যায়।
-
----
-
-### Q6. `p < 0` হলে কী হয়?
+### Q5. `p < 0` হলে কী হয়?
 
 **Answer:**
 
@@ -1266,12 +1071,12 @@ x++
 এবং:
 
 ```text
-p = p + 2x + 1
+p = p + 4x + 6
 ```
 
 ---
 
-### Q7. `p >= 0` হলে কী হয়?
+### Q6. `p >= 0` হলে কী হয়?
 
 **Answer:**
 
@@ -1285,12 +1090,12 @@ y--
 এবং:
 
 ```text
-p = p + 2x + 1 - 2y
+p = p + 4(x-y) + 10
 ```
 
 ---
 
-### Q8. Circle draw করতে কোন primitive ব্যবহার করেছি?
+### Q7. Circle draw করতে কোন primitive ব্যবহার করেছি?
 
 **Answer:**
 
@@ -1300,7 +1105,7 @@ GL_POINTS
 
 ---
 
-### Q9. Midpoint Circle-এ `sin()` এবং `cos()` ব্যবহার করেছি?
+### Q8. Bresenham Circle-এ `sin()` এবং `cos()` ব্যবহার হয়?
 
 **Answer:**
 
@@ -1308,62 +1113,70 @@ GL_POINTS
 
 ---
 
-### Q10. Circle-এর center কীভাবে pass করি?
+### Q9. কেন 8-way symmetry ব্যবহার করি?
 
 **Answer:**
 
-```cpp
-DrawCircle(xc, yc, r);
-```
+> একটি অংশের point calculate করে বাকি 7টি symmetric point পাওয়া যায়, তাই calculation কম লাগে।
 
-যেখানে:
+---
+
+### Q10. Midpoint Circle এবং Bresenham Circle-এর main difference কী?
+
+**Answer:**
+
+Initial decision parameter আলাদা:
 
 ```text
-xc → center X
-yc → center Y
-r  → radius
+Midpoint:
+p = 1-r
+
+Bresenham:
+p = 3-2r
 ```
 
 ---
 
-# 44. Mid Exam Quick Revision
+# 34. Mid Exam Quick Revision
 
 ```text
-        Midpoint Circle
-               ↓
-        x = 0, y = r
-               ↓
-          p = 1 - r
-               ↓
-       8 points plot
-               ↓
-             x++
-               ↓
-          Check p
-          /       \
-       p < 0     p >= 0
-        ↓           ↓
-      y same       y--
-        ↓           ↓
-    p=p+2x+1    p=p+2x+1-2y
-        ↓           ↓
-        └─────┬─────┘
-              ↓
+           Bresenham Circle
+                  ↓
+             x = 0, y = r
+                  ↓
+              p = 3-2r
+                  ↓
+            8 Points Draw
+                  ↓
+              Check p
+             /        \
+          p < 0       p >= 0
+            ↓             ↓
+          y same         y--
+            ↓             ↓
+       p=p+4x+6    p=p+4(x-y)+10
+            ↓             ↓
+           x++           x++
+                           ↓
+                          y--
+             ↓
            Repeat
 ```
 
 ---
 
-# 45. One-Line Memory Trick
+# 35. One-Line Memory Trick
 
-> **Midpoint Circle = ****x=0, y=r → p=1-r → 8 points → p check → x++ / y--**
+> **Bresenham Circle = ****x=0, y=r → p=3-2r → 8 points → p check → x++ / প্রয়োজনে y--**
 
-আর সবচেয়ে important:
+আর Midpoint-এর সাথে শুধু initial formula মনে রাখো:
 
 ```text
-8-Way Symmetry
-+
-Decision Parameter
-=
 Midpoint Circle
+→ p = 1-r
+
+Bresenham Circle
+→ p = 3-2r
 ```
+
+এই difference-টা **lab mid exam-এর আগে অবশ্যই clear রাখবে।**

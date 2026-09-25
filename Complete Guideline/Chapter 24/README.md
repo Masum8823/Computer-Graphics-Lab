@@ -1,424 +1,455 @@
-# Bresenham Line Drawing Algorithm
+# Midpoint Circle Drawing Algorithm
 
-> **Bresenham Line Algorithm** হলো computer graphics-এ দুটি point-এর মধ্যে line draw করার একটি efficient algorithm।
+> **Midpoint Circle Algorithm** হলো computer graphics-এ একটি circle draw করার algorithm।
 
-DDA-এর সাথে এর সবচেয়ে important difference:
+আমরা আগে সাধারণভাবে circle এভাবে এঁকেছিলাম:
 
-```text
-DDA        → Floating Point calculation
-Bresenham  → Integer calculation
+```cpp
+for(int i = 0; i < 360; i++)
+{
+    float angle = i * 3.1416 / 180.0;
+
+    float x = xc + r * cos(angle);
+    float y = yc + r * sin(angle);
+
+    glVertex2f(x, y);
+}
 ```
 
-তাই Bresenham সাধারণত DDA-এর চেয়ে **faster এবং efficient**।
+এখানে `sin()` এবং `cos()` ব্যবহার করেছি।
 
----
+কিন্তু **Midpoint Circle Algorithm**-এ আমরা এইভাবে circle draw করি না।
 
-# 1. Bresenham কী করে?
-
-ধরি আমাদের দুটি point:
+এখানে মূল idea:
 
 ```text
-Start Point → (x1, y1)
-
-End Point   → (x2, y2)
-```
-
-Bresenham এই দুই point-এর মধ্যে কোন কোন pixel/point plot করতে হবে সেটা calculate করে।
-
-সহজভাবে:
-
-```text
-Start
-  ↓
-Next pixel choose
-  ↓
-Next pixel choose
-  ↓
-Next pixel choose
-  ↓
-End
-```
-
----
-# 2. DDA-এর সাথে Main Difference
-
-### DDA:
-
-```text
-dx
-dy
-steps
-xIncrement
-yIncrement
-```
-
-এবং decimal value ব্যবহার করে।
-
-### Bresenham:
-
-```text
-dx
-dy
 Decision Parameter
+        ↓
+Next Point নির্বাচন
+        ↓
+Circle Draw
 ```
-
-এবং মূলত **integer calculation** ব্যবহার করে।
-
-মনে রাখবে:
-
-> **DDA → Floating Point**
-> **Bresenham → Integer**
 
 ---
 
+# 1. Circle-এর Basic Equation
 
-# 3. Bresenham-এর Basic Idea
-
-ধরি line-এর slope:
-
-```text
-0 < m < 1
-```
-
-অর্থাৎ line খুব বেশি steep না।
-
-তাহলে X direction-এ আমরা প্রতিবার:
+Mathematics-এ circle-এর equation:
 
 ```text
-x = x + 1
+(x - xc)² + (y - yc)² = r²
 ```
 
-করব।
-
-কিন্তু Y কখন বাড়বে?
-
-এই দুইটা option থাকবে:
+যেখানে:
 
 ```text
-(x+1, y)
+(xc, yc) → Circle Center
+
+r → Radius
 ```
 
-অথবা:
-
-```text
-(x+1, y+1)
-```
-
-Bresenham একটি **decision parameter `p`** ব্যবহার করে decide করে কোন point নিতে হবে।
+কিন্তু পুরো equation বারবার calculate না করে Midpoint Algorithm একটা **decision parameter ****`p`** ব্যবহার করে।
 
 ---
+# 2. Main Idea
 
+Circle-এর পুরো অংশ একসাথে calculate করার দরকার নেই।
+
+একটা অংশ calculate করলেই symmetry-এর কারণে বাকি অংশগুলো পাওয়া যায়।
+
+Circle-এর একটি point:
+
+```text
+(x, y)
+```
+
+থাকলে একই ধরনের আরও 7টি point পাওয়া যায়।
+
+অর্থাৎ:
+
+```text
+8 Symmetric Points
+```
+
+এই কারণে Midpoint Circle Algorithm খুব efficient।
+
+---
+# 3. 8-Way Symmetry
+
+ধরি আমরা একটি point পেলাম:
+
+```text
+(x, y)
+```
+
+তাহলে একই circle-এর আরও point:
+
+```text
+(x, y)
+(-x, y)
+(x, -y)
+(-x, -y)
+
+(y, x)
+(-y, x)
+(y, -x)
+(-y, -x)
+```
+
+Center যদি `(xc, yc)` হয়, তাহলে center-এর সাথে যোগ হবে।
+
+---
 
 # 4. Example
 
 ধরি:
 
 ```text
-Start = (2,2)
+Center = (0,0)
 
-End = (8,5)
+Radius = 5
+```
+
+একটি point যদি হয়:
+
+```text
+(3,4)
+```
+
+তাহলে circle-এর symmetric points:
+
+```text
+(3,4)
+(-3,4)
+(3,-4)
+(-3,-4)
+
+(4,3)
+(-4,3)
+(4,-3)
+(-4,-3)
+```
+
+এই 8টা point একই circle-এর উপর থাকবে।
+
+---
+
+# 5. কেন শুধু 1/8 Circle calculate করি?
+
+Circle দেখতে:
+
+```text
+        ● ● ●
+     ●       ●
+   ●           ●
+  ●      +      ●
+   ●           ●
+     ●       ●
+        ● ● ●
+```
+
+Circle-এর একটা ছোট অংশ calculate করলেই symmetry দিয়ে পুরো circle পাওয়া যায়।
+
+তাই:
+
+```text
+1/8 অংশ calculate
+        ↓
+8টি symmetric point plot
+        ↓
+Full Circle
+```
+
+---
+
+# 6. Starting Point
+
+Midpoint Circle Algorithm-এ আমরা শুরু করি:
+
+```text
+x = 0
+y = r
+```
+
+অর্থাৎ circle-এর top point থেকে।
+
+যদি:
+
+```text
+center = (0,0)
+radius = 5
 ```
 
 তাহলে:
 
 ```text
-dx = 8 - 2 = 6
-
-dy = 5 - 2 = 3
+x = 0
+y = 5
 ```
 
-এখন প্রতিটি X step-এ Y হয়:
+Starting point:
 
 ```text
-same y
+(0,5)
+```
+
+---
+# 7. Initial Decision Parameter
+
+Basic Midpoint Circle Algorithm-এর জন্য:
+
+```text
+p = 1 - r
+```
+
+অর্থাৎ:
+
+```cpp
+p = 1 - r;
+```
+
+যদি:
+
+```text
+r = 5
+```
+
+তাহলে:
+
+```text
+p = 1 - 5
+  = -4
+```
+
+---
+
+# 8. Decision কী?
+
+প্রতিবার আমাদের next point choose করতে হবে।
+
+দুটি possible direction:
+
+```text
+E  → East
+SE → South-East
+```
+
+সহজভাবে:
+
+```text
+p < 0
+↓
+East point
+
+p >= 0
+↓
+South-East point
+```
+
+অর্থাৎ:
+
+```text
+p < 0
+→ x বাড়বে
+→ y একই থাকবে
+
+p >= 0
+→ x বাড়বে
+→ y কমবে
+```
+
+---
+
+# 9. Main Logic
+
+এটা খুব ভালোভাবে মনে রাখবে:
+
+```text
+p < 0
+↓
+x = x + 1
+y = y
+↓
+p = p + 2x + 1
+```
+
+আর:
+
+```text
+p >= 0
+↓
+x = x + 1
+y = y - 1
+↓
+p = p + 2x + 1 - 2y
+```
+
+**Note:** এখানে update-এর আগে/পরে `x,y` কোন value ব্যবহার হচ্ছে সেটা code-এর order-এর উপর নির্ভর করে। নিচের code-এ আমরা আগে `x++/y--` করে তারপর formula update করব।
+
+তাই code অনুযায়ী formula হবে:
+
+```text
+p = p + 2x + 1
 ```
 
 অথবা:
 
 ```text
-y + 1
-```
-
-Bresenham `p` দেখে সিদ্ধান্ত নেয়।
-
----
-
-# 5. Formula
-
-যদি:
-
-```text
-dx > dy
-```
-
-তাহলে:
-
-```text
-p = 2dy - dx
-```
-
-এটাই initial decision parameter।
-
----
-# 6. যদি `p < 0`
-
-যদি:
-
-```text
-p < 0
-```
-
-তাহলে আমরা:
-
-```text
-(x+1, y)
-```
-
-point নেব।
-
-অর্থাৎ:
-
-```text
-x বাড়বে
-y একই থাকবে
-```
-
-তারপর:
-
-```text
-p = p + 2dy
+p = p + 2x + 1 - 2y
 ```
 
 ---
-
-# 7. যদি `p >= 0`
-
-যদি:
-
-```text
-p >= 0
-```
-
-তাহলে:
-
-```text
-(x+1, y+1)
-```
-
-point নেব।
-
-অর্থাৎ:
-
-```text
-x বাড়বে
-y-ও বাড়বে
-```
-
-তারপর:
-
-```text
-p = p + 2dy - 2dx
-```
-
----
-# 8. Main Logic
-
-এটা খুব ভালো করে বুঝবে:
-
-```text
-p < 0
- ↓
-(x+1, y)
- ↓
-p = p + 2dy
-
-
-p >= 0
- ↓
-(x+1, y+1)
- ↓
-p = p + 2dy - 2dx
-```
-
-এটাই Bresenham-এর main logic।
-
----
-# 9. Basic Code
-
-এখন basic Bresenham code:
+# 10. Basic Code
 
 ```cpp
-void DrawLine(int x1, int y1, int x2, int y2)
+void DrawCircle(int xc, int yc, int r)
 {
-    int dx = x2 - x1;              // X direction-এর distance
-    int dy = y2 - y1;              // Y direction-এর distance
+    int x = 0;                  // Starting X
+    int y = r;                  // Starting Y = radius
 
-    int p = 2 * dy - dx;            // Initial decision parameter
+    int p = 1 - r;              // Initial decision parameter
 
-    int x = x1;                    // Starting X
-    int y = y1;                    // Starting Y
+    glBegin(GL_POINTS);         // Point drawing শুরু
 
-    glBegin(GL_POINTS);            // Point drawing শুরু
-
-    while(x <= x2)
+    while(x <= y)
     {
-        glVertex2i(x, y);          // Current point draw
+        // 8টি symmetric point draw
+        glVertex2i(xc + x, yc + y);
+        glVertex2i(xc - x, yc + y);
+        glVertex2i(xc + x, yc - y);
+        glVertex2i(xc - x, yc - y);
 
-        x++;                       // X সবসময় 1 করে বাড়বে
+        glVertex2i(xc + y, yc + x);
+        glVertex2i(xc - y, yc + x);
+        glVertex2i(xc + y, yc - x);
+        glVertex2i(xc - y, yc - x);
+
+        // X এক ধাপ বাড়বে
+        x++;
 
         if(p < 0)
         {
-            // p negative হলে Y change হবে না
-            p = p + 2 * dy;
+            // East point নেওয়া হয়েছে
+            p = p + 2 * x + 1;
         }
         else
         {
-            // p positive হলে Y 1 করে বাড়বে
-            y++;
-            p = p + 2 * dy - 2 * dx;
+            // South-East point নেওয়া হয়েছে
+            y--;
+
+            p = p + 2 * x + 1 - 2 * y;
         }
     }
 
-    glEnd();                       // Point drawing শেষ
+    glEnd();                    // Point drawing শেষ
 }
 ```
 
 ---
 
-# 10. এখন Line by Line
+# 11. Code Line by Line
 
-## Header
-
-```cpp
-#include <GL/glut.h>
-```
-
-OpenGL/FreeGLUT-এর functions ব্যবহার করার জন্য।
-
----
-
-# 11. Function
+## Function
 
 ```cpp
-void DrawLine(int x1, int y1, int x2, int y2)
+void DrawCircle(int xc, int yc, int r)
 ```
 
-চারটি coordinate নিচ্ছে:
+তিনটা parameter:
 
 ```text
-(x1,y1) → Starting Point
+xc → Center-এর X
 
-(x2,y2) → Ending Point
+yc → Center-এর Y
+
+r → Radius
 ```
 
----
-
-# 12. `dx`
+যেমন:
 
 ```cpp
-int dx = x2 - x1;
+DrawCircle(0, 0, 100);
 ```
 
-X-axis বরাবর distance।
-
-Example:
+মানে:
 
 ```text
-x1 = 2
-x2 = 8
-
-dx = 8 - 2
-   = 6
+Center = (0,0)
+Radius = 100
 ```
 
 ---
 
-# 13. `dy`
+# 12. `x = 0`
 
 ```cpp
-int dy = y2 - y1;
+int x = 0;
 ```
 
-Y-axis বরাবর distance।
+আমরা circle-এর top point থেকে শুরু করছি।
 
-Example:
+---
+
+# 13. `y = r`
+
+```cpp
+int y = r;
+```
+
+Radius যদি:
 
 ```text
-y1 = 2
-y2 = 5
-
-dy = 5 - 2
-   = 3
+r = 100
 ```
+
+হয়:
+
+```text
+y = 100
+```
+
+Starting point:
+
+```text
+(0,100)
+```
+
+Center `(0,0)` হলে এটা circle-এর top point।
 
 ---
 
-# 14. Initial `p`
+# 14. `p = 1-r`
 
 ```cpp
-int p = 2 * dy - dx;
+int p = 1 - r;
 ```
 
-এটা Bresenham-এর **decision parameter**।
+এটা হলো initial decision parameter।
 
 Formula:
 
 ```text
-p = 2dy - dx
+p = 1 - r
 ```
 
-Example:
+যেমন:
 
 ```text
-dx = 6
-dy = 3
+r = 100
 
-p = 2(3) - 6
-  = 6 - 6
-  = 0
-```
-
----
-# 15. Starting X
-
-```cpp
-int x = x1;
-```
-
-মানে:
-
-```text
-x = starting X
+p = 1 - 100
+  = -99
 ```
 
 ---
 
-# 16. Starting Y
-
-```cpp
-int y = y1;
-```
-
-মানে:
-
-```text
-y = starting Y
-```
-
-অর্থাৎ শুরু করছি:
-
-```text
-(x,y) = (x1,y1)
-```
-
----
-# 17. `glBegin(GL_POINTS)`
+# 15. `glBegin(GL_POINTS)`
 
 ```cpp
 glBegin(GL_POINTS);
 ```
 
-Bresenham algorithm আমরা একেকটা pixel/point plot করে line বানাচ্ছি।
+আমরা point plot করে circle তৈরি করছি।
 
 তাই:
 
@@ -429,56 +460,170 @@ GL_POINTS
 ব্যবহার করছি।
 
 ---
-# 18. `while`
+
+# 16. `while(x <= y)`
 
 ```cpp
-while(x <= x2)
+while(x <= y)
 ```
 
-যতক্ষণ X শেষ point পর্যন্ত যায়, loop চলবে।
+আমরা শুধু circle-এর **1/8 অংশ** calculate করছি।
+
+যখন:
+
+```text
+x > y
+```
+
+হয়ে যাবে, তখন ওই অংশ শেষ।
+
+তাই loop condition:
+
+```text
+x <= y
+```
+
+---
+# 17. প্রথম Symmetric Point
+
+```cpp
+glVertex2i(xc + x, yc + y);
+```
+
+এটা প্রথম point।
+
+যদি:
+
+```text
+xc = 0
+yc = 0
+x = 0
+y = 5
+```
+
+তাহলে:
+
+```text
+(0+0, 0+5)
+= (0,5)
+```
 
 ---
 
-# 19. Current Point Draw
+# 18. দ্বিতীয় Point
 
 ```cpp
-glVertex2i(x, y);
+glVertex2i(xc - x, yc + y);
 ```
 
-Current `(x,y)` point draw করবে।
+এখানে X-এর negative side।
+
+```text
+(-x,+y)
+```
+
+---
+# 19. তৃতীয় Point
+
+```cpp
+glVertex2i(xc + x, yc - y);
+```
 
 এখানে:
 
 ```text
-2i → 2D Integer coordinate
+(+x,-y)
 ```
 
-কারণ Bresenham integer coordinate ব্যবহার করে।
+---
+# 20. চতুর্থ Point
+
+```cpp
+glVertex2i(xc - x, yc - y);
+```
+
+এখানে:
+
+```text
+(-x,-y)
+```
 
 ---
 
-# 20. X Increase
+# 21. বাকি 4 Point
+
+এখন X এবং Y swap করি।
+
+```cpp
+glVertex2i(xc + y, yc + x);
+glVertex2i(xc - y, yc + x);
+glVertex2i(xc + y, yc - x);
+glVertex2i(xc - y, yc - x);
+```
+
+এগুলো:
+
+```text
+(+y,+x)
+(-y,+x)
+(+y,-x)
+(-y,-x)
+```
+
+---
+
+# 22. সব 8 Point একসাথে
+
+```cpp
+glVertex2i(xc + x, yc + y);
+glVertex2i(xc - x, yc + y);
+glVertex2i(xc + x, yc - y);
+glVertex2i(xc - x, yc - y);
+
+glVertex2i(xc + y, yc + x);
+glVertex2i(xc - y, yc + x);
+glVertex2i(xc + y, yc - x);
+glVertex2i(xc - y, yc - x);
+```
+
+এগুলোকে শুধু এভাবে মনে রাখো:
+
+```text
+(x,y)
+(-x,y)
+(x,-y)
+(-x,-y)
+
+(y,x)
+(-y,x)
+(y,-x)
+(-y,-x)
+```
+
+---
+
+# 23. `x++`
 
 ```cpp
 x++;
 ```
 
-এর মানে:
+মানে:
 
 ```text
 x = x + 1
 ```
 
-Bresenham-এর এই case-এ প্রতিবার X এক করে বাড়ছে।
+প্রতিবার আমরা X direction-এ এক ধাপ এগোচ্ছি।
 
 ---
-# 21. `if(p < 0)`
+# 24. `if(p < 0)`
 
 ```cpp
 if(p < 0)
 ```
 
-এখন algorithm decision নিচ্ছে।
+Decision parameter check করছি।
 
 যদি:
 
@@ -486,37 +631,32 @@ if(p < 0)
 p < 0
 ```
 
-তাহলে:
+তাহলে next point হবে **East direction**-এর।
+
+সহজভাবে:
 
 ```text
-(x+1, y)
-```
-
-নেব।
-
-অর্থাৎ:
-
-```text
-X → বাড়বে
-Y → একই থাকবে
+x → +1
+y → same
 ```
 
 ---
 
-# 22. `p` Update যখন Negative
+# 25. `p < 0` হলে
 
 ```cpp
-p = p + 2 * dy;
+p = p + 2 * x + 1;
 ```
 
 অর্থাৎ:
 
 ```text
-p = p + 2dy
+p = p + 2x + 1
 ```
 
 ---
-# 23. `else`
+
+# 26. `else`
 
 ```cpp
 else
@@ -528,493 +668,319 @@ else
 p >= 0
 ```
 
-তখন:
-
-```text
-(x+1, y+1)
-```
-
-নেব।
+এবার South-East point নিতে হবে।
 
 অর্থাৎ:
-
-```text
-X → +1
-Y → +1
-```
-
----
-
-# 24. Y Increase
-
-```cpp
-y++;
-```
-
-মানে:
-
-```text
-y = y + 1
-```
-
----
-
-# 25. `p` Update যখন Positive
-
-```cpp
-p = p + 2 * dy - 2 * dx;
-```
-
-Formula:
-
-```text
-p = p + 2dy - 2dx
-```
-
----
-
-# 26. Full Logic এক নজরে
-
-```text
-Current Point
-     ↓
-Check p
-     ↓
-┌───────────────┐
-│               │
-p < 0          p >= 0
-│               │
-↓               ↓
-(x+1,y)      (x+1,y+1)
-│               │
-↓               ↓
-p=p+2dy     p=p+2dy-2dx
-```
-
----
-
-# 27. Example হাতে করি
-
-ধরি:
-
-```text
-Start = (2,2)
-
-End = (8,5)
-```
-
-তাহলে:
-
-```text
-dx = 8 - 2 = 6
-
-dy = 5 - 2 = 3
-```
-
-Initial:
-
-```text
-p = 2dy - dx
-
-p = 2(3) - 6
-
-p = 0
-```
-
-Starting:
-
-```text
-x = 2
-y = 2
-```
-
----
-
-# 28. প্রথম Point
-
-Plot:
-
-```text
-(2,2)
-```
-
-এখন:
-
-```text
-p = 0
-```
-
-যেহেতু:
-
-```text
-p >= 0
-```
-
-তাই:
-
-```text
-x = 3
-y = 3
-```
-
-এবং:
-
-```text
-p = p + 2dy - 2dx
-
-p = 0 + 6 - 12
-
-p = -6
-```
-
-Next:
-
-```text
-(3,3)
-```
-
----
-
-# 29. দ্বিতীয় Decision
-
-এখন:
-
-```text
-p = -6
-```
-
-তাই:
-
-```text
-p < 0
-```
-
-সুতরাং:
-
-```text
-x = 4
-y = 3
-```
-
-Y change হলো না।
-
-p:
-
-```text
-p = p + 2dy
-
-p = -6 + 6
-
-p = 0
-```
-
-Next:
-
-```text
-(4,3)
-```
-
----
-
-# 30. Table
-
-এই example-এর pointগুলো:
-
-| Step | Point |  p | Decision |
-| ---: | ----- | -: | -------- |
-|    0 | (2,2) |  0 | Y বাড়ে   |
-|    1 | (3,3) | -6 | Y same   |
-|    2 | (4,3) |  0 | Y বাড়ে   |
-|    3 | (5,4) | -6 | Y same   |
-|    4 | (6,4) |  0 | Y বাড়ে   |
-|    5 | (7,5) | -6 | Y same   |
-|    6 | (8,5) |  0 | End      |
-
-তাই line-এর points:
-
-```text
-(2,2)
-(3,3)
-(4,3)
-(5,4)
-(6,4)
-(7,5)
-(8,5)
-```
-
----
-# 31. Visual
-
-```text
-Y
-↑
-5 |                    ● ●
-4 |              ● ●
-3 |        ● ●
-2 |    ●
-1 |
-  +--------------------------→ X
-     2  3  4  5  6  7  8
-```
-
-এই points-গুলো খুব কাছাকাছি থাকায় চোখে line-এর মতো দেখা যায়।
-
----
-# 32. কেন `p` দরকার?
-
-এটাই সবচেয়ে important concept।
-
-প্রতিবার আমাদের সামনে দুইটা possible point:
-
-```text
-(x+1, y)
-```
-
-অথবা:
-
-```text
-(x+1, y+1)
-```
-
-Bresenham `p` দেখে decide করে কোনটা line-এর কাছাকাছি।
-
-তাই:
-
-> **`p` = Decision Parameter**
-
----
-
-# 33. `p < 0` হলে কী হয়?
-
-```text
-p < 0
-```
-
-তাহলে:
-
-```text
-(x+1, y)
-```
-
-নেব।
-
-মানে:
 
 ```text
 x → +1
-
-y → same
-```
-
-Code:
-
-```cpp
-p = p + 2 * dy;
+y → -1
 ```
 
 ---
 
-# 34. `p >= 0` হলে কী হয়?
-
-```text
-p >= 0
-```
-
-তাহলে:
-
-```text
-(x+1, y+1)
-```
-
-নেব।
-
-মানে:
-
-```text
-x → +1
-
-y → +1
-```
-
-Code:
-
-```cpp
-y++;
-
-p = p + 2 * dy - 2 * dx;
-```
-
----
-
-# 35. কেন `while(x <= x2)`?
-
-এই basic version-এ আমরা ধরে নিচ্ছি:
-
-```text
-x2 > x1
-```
-
-এবং:
-
-```text
-0 < slope < 1
-```
-
-অর্থাৎ:
-
-```text
-dx > dy
-```
-
-তাই X direction-এ এগোতে থাকি:
-
-```text
-x1 → x1+1 → x1+2 → ... → x2
-```
-
----
-
-# 36. Important Condition
-
-এই basic Bresenham code-এর জন্য সাধারণত:
-
-```text
-0 < m < 1
-```
-
-অর্থাৎ:
-
-```text
-0 < dy/dx < 1
-```
-
-এবং:
-
-```text
-dx > dy
-```
-
-ধরা হয়।
-
----
-
-# 37. Negative Slope হলে?
-
-যদি:
-
-```text
-dy < 0
-```
-
-তাহলে Y কমবে।
-
-তখন:
+# 27. `y--`
 
 ```cpp
 y--;
 ```
 
-ব্যবহার করতে হবে।
+মানে:
 
-কিন্তু **lab exam-এর basic implementation**-এ অনেক সময় প্রথমে `0 < m < 1` case-টাই শেখানো হয়।
+```text
+y = y - 1
+```
 
 ---
 
-# 38. Vertical Line?
+# 28. Decision Parameter Update
 
-যদি:
+```cpp
+p = p + 2 * x + 1 - 2 * y;
+```
+
+অর্থাৎ:
 
 ```text
-x1 = x2
+p = p + 2x + 1 - 2y
+```
+
+---
+
+# 29. Complete Logic
+
+```text
+Start
+ ↓
+x = 0
+y = r
+p = 1-r
+ ↓
+8 points plot
+ ↓
+x++
+ ↓
+p check
+ ↓
+┌─────────────────┐
+│                 │
+p < 0            p >= 0
+│                 │
+↓                 ↓
+y same           y--
+│                 │
+↓                 ↓
+p=p+2x+1      p=p+2x+1-2y
+│                 │
+└────────┬────────┘
+         ↓
+     Repeat
+```
+
+---
+
+# 30. Example
+
+ধরি:
+
+```text
+Center = (0,0)
+Radius = 5
 ```
 
 তাহলে:
 
 ```text
-dx = 0
+x = 0
+y = 5
+p = 1 - 5
+  = -4
 ```
 
-এই basic code দিয়ে সেটা handle করা যাবে না।
-
-কারণ এই version:
+Starting point:
 
 ```text
-dx > dy
+(0,5)
 ```
-
-case ধরে লেখা।
-
----
-# 39. General Bresenham Algorithm
-
-যদি সব ধরনের line handle করতে চাই, তাহলে একটু advanced code লাগবে।
-
-সেখানে handle করতে হবে:
-
-```text
-Positive slope
-Negative slope
-Steep slope
-Shallow slope
-Horizontal line
-Vertical line
-```
-
-কিন্তু তোমার **basic lab exam-এর জন্য** আগে এই version ভালোভাবে বুঝে রাখো।
 
 ---
 
-# 40. Complete FreeGLUT Program
+# 31. First Iteration
+
+Current:
+
+```text
+x = 0
+y = 5
+p = -4
+```
+
+প্রথমে 8 symmetric point plot হবে।
+
+তারপর:
+
+```text
+x++
+```
+
+তাই:
+
+```text
+x = 1
+```
+
+এখন:
+
+```text
+p < 0
+```
+
+তাই Y same থাকবে:
+
+```text
+y = 5
+```
+
+Update:
+
+```text
+p = p + 2x + 1
+
+p = -4 + 2(1) + 1
+
+p = -1
+```
+
+---
+
+# 32. Second Iteration
+
+এখন:
+
+```text
+x = 1
+y = 5
+p = -1
+```
+
+আবার 8 points plot হবে।
+
+তারপর:
+
+```text
+x++
+```
+
+তাই:
+
+```text
+x = 2
+```
+
+এখন:
+
+```text
+p < 0
+```
+
+তাই:
+
+```text
+y = 5
+```
+
+Update:
+
+```text
+p = -1 + 2(2) + 1
+
+p = 4
+```
+
+---
+
+# 33. Third Iteration
+
+এখন:
+
+```text
+x = 2
+y = 5
+p = 4
+```
+
+`p >= 0`, তাই:
+
+```text
+y--
+```
+
+অর্থাৎ:
+
+```text
+y = 4
+```
+
+তারপর:
+
+```text
+p = p + 2x + 1 - 2y
+
+p = 4 + 2(2) + 1 - 2(4)
+
+p = 1
+```
+
+---
+
+# 34. Example Table
+
+Radius `5` হলে approximate calculation:
+
+| Step |  x |  y |  p | Decision |
+| ---: | -: | -: | -: | -------- |
+|    0 |  0 |  5 | -4 | `p < 0`  |
+|    1 |  1 |  5 | -1 | `p < 0`  |
+|    2 |  2 |  5 |  4 | `p >= 0` |
+|    3 |  3 |  4 |  3 | `p >= 0` |
+|    4 |  4 |  3 |  — | Stop     |
+
+Loop তখন stop করবে যখন:
+
+```text
+x > y
+```
+
+---
+
+# 35. Circle দেখতে কেমন হবে?
+
+Conceptually:
+
+```text
+             ● ● ●
+          ●         ●
+        ●             ●
+       ●               ●
+      ●        +        ●
+       ●               ●
+        ●             ●
+          ●         ●
+             ● ● ●
+```
+
+`+` হলো center।
+
+---
+
+# 36. Complete FreeGLUT Program
 
 ```cpp
 #include <GL/glut.h>
 
-// Bresenham Line Drawing
-void DrawLine(int x1, int y1, int x2, int y2)
+// Midpoint Circle Algorithm
+void DrawCircle(int xc, int yc, int r)
 {
-    // X distance
-    int dx = x2 - x1;
+    int x = 0;                  // Starting X
+    int y = r;                  // Starting Y
 
-    // Y distance
-    int dy = y2 - y1;
+    int p = 1 - r;              // Initial decision parameter
 
-    // Initial decision parameter
-    int p = 2 * dy - dx;
+    glBegin(GL_POINTS);         // Point drawing শুরু
 
-    // Starting point
-    int x = x1;
-    int y = y1;
-
-    // Point drawing শুরু
-    glBegin(GL_POINTS);
-
-    // X শেষ point পর্যন্ত যাবে
-    while(x <= x2)
+    while(x <= y)
     {
-        // Current point draw
-        glVertex2i(x, y);
+        // 8 symmetric points
+        glVertex2i(xc + x, yc + y);
+        glVertex2i(xc - x, yc + y);
+        glVertex2i(xc + x, yc - y);
+        glVertex2i(xc - x, yc - y);
 
-        // X সবসময় 1 করে বাড়বে
+        glVertex2i(xc + y, yc + x);
+        glVertex2i(xc - y, yc + x);
+        glVertex2i(xc + y, yc - x);
+        glVertex2i(xc - y, yc - x);
+
+        // X এক করে বাড়বে
         x++;
 
-        // Decision
+        // Decision parameter check
         if(p < 0)
         {
-            // Y একই থাকবে
-            p = p + 2 * dy;
+            // Y same থাকবে
+            p = p + 2 * x + 1;
         }
         else
         {
-            // Y 1 করে বাড়বে
-            y++;
+            // Y এক করে কমবে
+            y--;
 
             // Decision parameter update
-            p = p + 2 * dy - 2 * dx;
+            p = p + 2 * x + 1 - 2 * y;
         }
     }
 
-    // Point drawing শেষ
-    glEnd();
+    glEnd();                    // Point drawing শেষ
 }
 
 void display()
@@ -1022,14 +988,14 @@ void display()
     // Screen clear
     glClear(GL_COLOR_BUFFER_BIT);
 
-    // Line color
+    // Circle color
     glColor3f(1.0, 0.0, 0.0);
 
     // Point size
-    glPointSize(3.0);
+    glPointSize(2.0);
 
-    // Bresenham line
-    DrawLine(-200, -100, 200, 150);
+    // Circle draw
+    DrawCircle(0, 0, 150);
 
     // Display
     glFlush();
@@ -1040,13 +1006,13 @@ void init()
     // Projection mode
     glMatrixMode(GL_PROJECTION);
 
-    // Reset matrix
+    // Reset
     glLoadIdentity();
 
     // Coordinate system
     gluOrtho2D(-400, 400, -300, 300);
 
-    // Background color
+    // Background
     glClearColor(1.0, 1.0, 1.0, 1.0);
 }
 
@@ -1059,9 +1025,9 @@ int main(int argc, char** argv)
     glutInitWindowSize(800, 600);
 
     // Window create
-    glutCreateWindow("Bresenham Line");
+    glutCreateWindow("Midpoint Circle");
 
-    // Initialize
+    // Initialization
     init();
 
     // Display function
@@ -1076,220 +1042,255 @@ int main(int argc, char** argv)
 
 ---
 
-# 41. DDA vs Bresenham
+# 37. সবচেয়ে Important Code
 
-এটা exam-এ খুব important।
-
-| বিষয়          | DDA                           | Bresenham                |
-| ------------- | ----------------------------- | ------------------------ |
-| Full Form     | Digital Differential Analyzer | Bresenham Line Algorithm |
-| Calculation   | Floating Point                | Integer                  |
-| Main idea     | Increment                     | Decision Parameter       |
-| Main variable | xIncrement, yIncrement        | `p`                      |
-| Speed         | তুলনামূলক slow                | তুলনামূলক fast           |
-| Accuracy      | ভালো                          | ভালো                     |
-| Point drawing | `GL_POINTS`                   | `GL_POINTS`              |
-
-সবচেয়ে important:
-
-```text
-DDA
-↓
-Floating Point
-↓
-Increment
-
-
-Bresenham
-↓
-Integer
-↓
-Decision Parameter
-```
-
----
-# 42. DDA-এর Code বনাম Bresenham Code
-
-### DDA
+Midpoint Circle-এর শুধু algorithm অংশ যদি মনে রাখতে চাও:
 
 ```cpp
-float xIncrement = dx / (float)steps;
-float yIncrement = dy / (float)steps;
+int x = 0;
+int y = r;
 
-x = x + xIncrement;
-y = y + yIncrement;
-```
+int p = 1 - r;
 
-### Bresenham
-
-```cpp
-int p = 2 * dy - dx;
-
-if(p < 0)
+while(x <= y)
 {
-    p = p + 2 * dy;
-}
-else
-{
-    y++;
-    p = p + 2 * dy - 2 * dx;
+    // 8 symmetric points draw
+
+    x++;
+
+    if(p < 0)
+    {
+        p = p + 2*x + 1;
+    }
+    else
+    {
+        y--;
+        p = p + 2*x + 1 - 2*y;
+    }
 }
 ```
 
-তাই সহজে মনে রাখবে:
-
-> **DDA → Increment দিয়ে line**
-> **Bresenham → Decision Parameter দিয়ে line**
-
 ---
 
-# 43. Bresenham Algorithm Steps
+# 38. Important Formula
+
+Midterm-এর জন্য এগুলো **অবশ্যই মুখস্থ**:
+
+### Starting Point
 
 ```text
-Step 1:
-dx = x2 - x1
-dy = y2 - y1
-
-Step 2:
-p = 2dy - dx
-
-Step 3:
-x = x1
-y = y1
-
-Step 4:
-Plot(x,y)
-
-Step 5:
-x = x + 1
-
-Step 6:
-If p < 0:
-    p = p + 2dy
-
-Otherwise:
-    y = y + 1
-    p = p + 2dy - 2dx
-
-Step 7:
-Repeat until x = x2
-```
-
----
-
-# 44. সবচেয়ে Important Formula
-
-### `dx`
-
-```text
-dx = x2 - x1
-```
-
-### `dy`
-
-```text
-dy = y2 - y1
+x = 0
+y = r
 ```
 
 ### Initial Decision Parameter
 
 ```text
-p = 2dy - dx
+p = 1 - r
 ```
 
 ### যদি `p < 0`
 
 ```text
-p = p + 2dy
+x = x + 1
+y = y
+
+p = p + 2x + 1
 ```
 
 ### যদি `p >= 0`
 
 ```text
-p = p + 2dy - 2dx
+x = x + 1
+y = y - 1
+
+p = p + 2x + 1 - 2y
 ```
 
-এগুলো **অবশ্যই মুখস্থ** রাখবে।
+---
+
+# 39. 8 Symmetric Points
+
+এটাও খুব important:
+
+```text
+(x,y)
+(-x,y)
+(x,-y)
+(-x,-y)
+
+(y,x)
+(-y,x)
+(y,-x)
+(-y,-x)
+```
+
+Center থাকলে:
+
+```text
+(xc+x, yc+y)
+(xc-x, yc+y)
+(xc+x, yc-y)
+(xc-x, yc-y)
+
+(xc+y, yc+x)
+(xc-y, yc+x)
+(xc+y, yc-x)
+(xc-y, yc-x)
+```
 
 ---
 
-# 45. Viva Questions
+# 40. কেন 8 Point?
 
-### Q1. Bresenham কী?
+কারণ circle-এর:
+
+```text
+8-way symmetry
+```
+
+আছে।
+
+একটি octant-এর একটি point জানলেই symmetry ব্যবহার করে একই সাথে 8টি point পাওয়া যায়।
+
+তাই পুরো circle আলাদাভাবে calculate করতে হয় না।
+
+---
+
+# 41. Midpoint Circle বনাম Normal Circle
+
+আগের circle code:
+
+```cpp
+float angle = i * 3.1416 / 180.0;
+
+float x = xc + r * cos(angle);
+float y = yc + r * sin(angle);
+```
+
+এখানে:
+
+```text
+sin()
+cos()
+angle
+```
+
+ব্যবহার হয়েছে।
+
+Midpoint Circle:
+
+```cpp
+int p = 1 - r;
+```
+
+এবং:
+
+```text
+p < 0
+p >= 0
+```
+
+দিয়ে next point select করে।
+
+---
+
+# 42. Midpoint Circle বনাম DDA
+
+| DDA Line           | Midpoint Circle              |
+| ------------------ | ---------------------------- |
+| Line draw করে      | Circle draw করে              |
+| `dx`, `dy` ব্যবহার | `r`, `p` ব্যবহার             |
+| Increment ব্যবহার  | Decision parameter           |
+| Floating point     | Integer-based                |
+| Line-এর points     | Circle-এর 8 symmetric points |
+
+---
+
+# 43. Viva Questions
+
+### Q1. Midpoint Circle Algorithm কী?
 
 **Answer:**
 
-> Bresenham is a line drawing algorithm used to draw a line between two points using mainly integer calculations.
+> Midpoint Circle Algorithm is an efficient algorithm used to draw a circle using decision parameters and symmetry.
 
 ---
 
-### Q2. Bresenham-এর main advantage কী?
-
-**Answer:**
-
-> It uses integer arithmetic, so it is faster and more efficient than DDA.
-
----
-
-### Q3. Bresenham-এর decision parameter কী?
+### Q2. Starting point কী?
 
 **Answer:**
 
 ```text
-p = 2dy - dx
+(x,y) = (0,r)
 ```
 
 ---
 
-### Q4. `p < 0` হলে কী করি?
+### Q3. Initial decision parameter কী?
 
 **Answer:**
 
 ```text
-(x+1, y)
-```
-
-নিই এবং:
-
-```text
-p = p + 2dy
+p = 1 - r
 ```
 
 ---
 
-### Q5. `p >= 0` হলে কী করি?
+### Q4. Circle-এর কত-way symmetry ব্যবহার করি?
 
 **Answer:**
 
-```text
-(x+1, y+1)
-```
-
-নিই এবং:
-
-```text
-p = p + 2dy - 2dx
-```
+> 8-way symmetry.
 
 ---
 
-### Q6. Bresenham-এ floating point লাগে?
+### Q5. কেন 8-way symmetry ব্যবহার করি?
 
 **Answer:**
 
-> No. Basic Bresenham uses integer calculations.
+> একটি অংশ calculate করে symmetry ব্যবহার করে বাকি অংশের points পাওয়া যায়।
 
 ---
 
-### Q7. `p` কী?
+### Q6. `p < 0` হলে কী হয়?
 
 **Answer:**
 
-> `p` is the decision parameter used to select the next pixel.
+> X বাড়ে, Y same থাকে।
+
+```text
+x++
+```
+
+এবং:
+
+```text
+p = p + 2x + 1
+```
 
 ---
 
-### Q8. Bresenham-এ কোন OpenGL primitive ব্যবহার করা হয়েছে?
+### Q7. `p >= 0` হলে কী হয়?
+
+**Answer:**
+
+> X বাড়ে এবং Y কমে।
+
+```text
+x++
+y--
+```
+
+এবং:
+
+```text
+p = p + 2x + 1 - 2y
+```
+
+---
+
+### Q8. Circle draw করতে কোন primitive ব্যবহার করেছি?
 
 **Answer:**
 
@@ -1299,61 +1300,70 @@ GL_POINTS
 
 ---
 
-### Q9. `glVertex2i()` কেন ব্যবহার করেছি?
+### Q9. Midpoint Circle-এ `sin()` এবং `cos()` ব্যবহার করেছি?
 
 **Answer:**
 
-> Bresenham integer coordinates নিয়ে কাজ করে, তাই `glVertex2i()` ব্যবহার করা হয়েছে।
+> No.
 
 ---
 
-### Q10. DDA এবং Bresenham-এর main difference?
+### Q10. Circle-এর center কীভাবে pass করি?
 
 **Answer:**
 
-```text
-DDA → Floating Point
+```cpp
+DrawCircle(xc, yc, r);
+```
 
-Bresenham → Integer
+যেখানে:
+
+```text
+xc → center X
+yc → center Y
+r  → radius
 ```
 
 ---
 
-# 46. Mid Exam Quick Revision
-
-শুধু এগুলো দেখলেই Bresenham-এর পুরো concept মনে পড়ে যাবে:
+# 44. Mid Exam Quick Revision
 
 ```text
-Bresenham
-    ↓
-Two Points
-    ↓
-dx = x2 - x1
-dy = y2 - y1
-    ↓
-p = 2dy - dx
-    ↓
-p < 0 ?
- ┌──────────────┐
- Yes            No
- ↓               ↓
-(x+1,y)       (x+1,y+1)
- ↓               ↓
-p=p+2dy       y++
+        Midpoint Circle
                ↓
-          p=p+2dy-2dx
+        x = 0, y = r
+               ↓
+          p = 1 - r
+               ↓
+       8 points plot
+               ↓
+             x++
+               ↓
+          Check p
+          /       \
+       p < 0     p >= 0
+        ↓           ↓
+      y same       y--
+        ↓           ↓
+    p=p+2x+1    p=p+2x+1-2y
+        ↓           ↓
+        └─────┬─────┘
+              ↓
+           Repeat
 ```
 
 ---
-# 47. এক লাইনে মনে রাখো
 
-> **Bresenham = `dx, dy → p → p check → next pixel select → line draw`**
+# 45. One-Line Memory Trick
 
-আর DDA-এর সাথে:
+> **Midpoint Circle = ****x=0, y=r → p=1-r → 8 points → p check → x++ / y--**
+
+আর সবচেয়ে important:
 
 ```text
-DDA        → Increment
-Bresenham  → Decision Parameter
+8-Way Symmetry
++
+Decision Parameter
+=
+Midpoint Circle
 ```
-
-এই দুইটা difference মাথায় থাকলে lab viva-তে অনেক সহজে answer দিতে পারবে।

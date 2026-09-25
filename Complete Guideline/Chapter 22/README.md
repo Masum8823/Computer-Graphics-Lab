@@ -1,1169 +1,1480 @@
-# Homogeneous Transformation
+# DDA Line Drawing Algorithm
 
-> Homogeneous Transformation হলো **2D/3D transformation-কে matrix-এর মাধ্যমে represent করার একটি পদ্ধতি**।
+> **DDA = Digital Differential Analyzer**
 
----
-
-# 1. Homogeneous Transformation কী?
-
-আমরা আগের ৩টা Transformation দেখেছি:
-
-```text
-Translation → Move
-Rotation    → Rotate
-Scaling     → Size Change
-```
-
-কিন্তু একটা সমস্যা আছে।
-
-Translation-এর formula:
-
-```text
-x' = x + Tx
-y' = y + Ty
-```
-
-এখানে `+` আছে।
-
-অন্যদিকে Scaling:
-
-```text
-x' = x × Sx
-y' = y × Sy
-```
-
-এখানে `×` আছে।
-
-Rotation-এর formula-তেও `sin` এবং `cos` আছে।
-
-এগুলোকে **একটা common matrix format**-এ আনার জন্য আমরা **Homogeneous Coordinates** ব্যবহার করি।
+DDA হলো computer graphics-এ **দুটি point-এর মধ্যে একটি straight line draw করার algorithm**।
 
 ---
 
+# 1. DDA কী করে?
 
-# 2. Normal Coordinate
-
-আমরা সাধারণত একটি 2D point লিখি:
-
-```text
-(x, y)
-```
-
-যেমন:
+ধরি আমাদের দুইটা point আছে:
 
 ```text
-(2, 3)
+Start Point → (x1, y1)
+
+End Point   → (x2, y2)
 ```
 
-কিন্তু Homogeneous Coordinate-এ লিখি:
+DDA algorithm এই দুই point-এর মাঝখানে ছোট ছোট step নিয়ে:
 
 ```text
-(x, y, 1)
+Point → Point → Point → Point → Point
 ```
 
-তাই:
+draw করে।
 
-```text
-Normal:
-
-(x, y)
-
-
-Homogeneous:
-
-(x, y, 1)
-```
+এই অনেকগুলো ছোট ছোট point একসাথে দেখলে আমাদের কাছে একটা **straight line** মনে হয়।
 
 ---
-# 3. কেন extra `1`?
-
-এই `1`-এর কারণে Translation-ও matrix multiplication দিয়ে করা সম্ভব হয়।
-
-অর্থাৎ:
-
-```text
-(x, y)
-```
-
-থেকে:
-
-```text
-(x, y, 1)
-```
-
-করলে Translation, Rotation এবং Scaling—সবগুলোকে matrix দিয়ে represent করা যায়।
-
-Exam-এর জন্য এই lineটা খুব important:
-
-> **2D homogeneous coordinate-এ একটি point-কে `(x, y, 1)` হিসেবে represent করা হয়।**
-
----
-# 4. Homogeneous Coordinate
-
-ধরি একটি point:
-
-```text
-P = (x, y)
-```
-
-Homogeneous form:
-
-```text
-P = (x, y, 1)
-```
-
-Matrix form:
-
-```text
-      ┌   ┐
-      │ x │
-P  =  │ y │
-      │ 1 │
-      └   ┘
-```
-
----
-
-# 5. Transformation Matrix
-
-Homogeneous coordinate ব্যবহার করে transformation:
-
-```text
-P' = T × P
-```
-
-এখানে:
-
-```text
-P  → Original Point
-T  → Transformation Matrix
-P' → New Point
-```
-
-সহজভাবে:
-
-```text
-Original Point
-      ↓
-Transformation Matrix
-      ↓
-New Point
-```
-
----
-
-
-# 6. Translation Matrix
-
-Translation-এর জন্য matrix:
-
-```text
-      ┌             ┐
-      │ 1   0   Tx  │
-T  =  │ 0   1   Ty  │
-      │ 0   0   1   │
-      └             ┘
-```
-
-আর point:
-
-```text
-      ┌   ┐
-      │ x │
-P  =  │ y │
-      │ 1 │
-      └   ┘
-```
-
-তাহলে:
-
-```text
-P' = T × P
-```
-
----
-
-
-# 7. Translation Matrix সহজভাবে
-
-মনে রাখবে:
-
-```text
-┌ 1  0  Tx ┐
-│ 0  1  Ty │
-└ 0  0  1  ┘
-```
-
-এখানে:
-
-```text
-Tx → X direction movement
-
-Ty → Y direction movement
-```
-
----
-
-# 8. Translation Matrix থেকে Formula
-
-Multiplication করলে:
-
-```text
-x' = x + Tx
-
-y' = y + Ty
-```
-
-অর্থাৎ আমরা আগে যে formula শিখেছি সেটাই পাওয়া যায়।
-
----
-
-# 9. Example
+# 2. Example
 
 ধরি:
 
 ```text
-Point = (2, 3)
+Start = (2,2)
+
+End = (8,5)
 ```
 
-এবং:
+DDA:
 
 ```text
-Tx = 4
-Ty = 2
-```
-
-তাহলে:
-
-```text
-x' = 2 + 4
-   = 6
-
-y' = 3 + 2
-   = 5
-```
-
-New Point:
-
-```text
-(6, 5)
-```
-
----
-# 10. Scaling Matrix
-
-Scaling-এর matrix:
-
-```text
-      ┌             ┐
-S  =  │ Sx  0   0   │
-      │ 0   Sy  0   │
-      │ 0   0   1   │
-      └             ┘
-```
-
-এখানে:
-
-```text
-Sx → X-axis scaling
-
-Sy → Y-axis scaling
-```
-
----
-
-# 11. Scaling Formula
-
-Matrix multiplication করলে:
-
-```text
-x' = x × Sx
-
-y' = y × Sy
-```
-
-এটাই আমাদের আগের Scaling-এর formula।
-
----
-# 12. Example
-
-ধরি:
-
-```text
-Point = (2, 3)
-```
-
-Scaling:
-
-```text
-Sx = 2
-Sy = 3
-```
-
-তাহলে:
-
-```text
-x' = 2 × 2
-   = 4
-
-y' = 3 × 3
-   = 9
-```
-
-New Point:
-
-```text
-(4, 9)
-```
-
----
-
-
-# 13. Rotation Matrix
-
-2D Rotation-এর matrix:
-
-```text
-      ┌                    ┐
-R  =  │ cosθ   -sinθ   0  │
-      │ sinθ    cosθ   0  │
-      │  0        0    1  │
-      └                    ┘
-```
-
-এখানে:
-
-```text
-θ = Rotation Angle
-```
-
----
-# 14. Rotation Formula
-
-Matrix multiplication-এর পরে:
-
-```text
-x' = x cosθ - y sinθ
-
-y' = x sinθ + y cosθ
-```
-
-এই formula আমরা Rotation-এর notes-এও দেখেছি।
-
----
-# 15. Example: 90° Rotation
-
-ধরি:
-
-```text
-Point = (1, 0)
-```
-
-এবং:
-
-```text
-θ = 90°
-```
-
-আমরা জানি:
-
-```text
-cos90° = 0
-
-sin90° = 1
-```
-
-তাই:
-
-```text
-x' = (1 × 0) - (0 × 1)
-   = 0
-
-y' = (1 × 1) + (0 × 0)
-   = 1
-```
-
-New Point:
-
-```text
-(0, 1)
-```
-
----
-# 16. তিনটি Transformation-এর Matrix
-
-এটা **খুব important**।
-
-### Translation
-
-```text
-┌ 1  0  Tx ┐
-│ 0  1  Ty │
-└ 0  0  1  ┘
-```
-
-### Scaling
-
-```text
-┌ Sx  0  0 ┐
-│ 0  Sy  0 │
-└ 0   0  1 │
-```
-
-### Rotation
-
-```text
-┌ cosθ  -sinθ  0 ┐
-│ sinθ   cosθ  0 │
-└  0       0   1 │
-```
-
----
-# 17. কেন Homogeneous Transformation দরকার?
-
-সব Transformation-কে একই matrix format-এ আনার জন্য।
-
-```text
-Translation
-     ↓
-Matrix
-
-Rotation
-     ↓
-Matrix
-
-Scaling
-     ↓
-Matrix
-```
-
-তাই একাধিক transformation একসাথে করা সহজ হয়।
-
----
-# 18. Composite Transformation
-
-একাধিক transformation একসাথে করলে তাকে:
-
-> **Composite Transformation**
-
-বলে।
-
-যেমন:
-
-```text
-Translation
-     +
-Rotation
-     +
-Scaling
-```
-
-একসাথে apply করা।
-
----
-
-# 19. Composite Transformation Example
-
-ধরি একটি object:
-
-```text
-1. প্রথমে বড় হবে
-2. তারপর rotate হবে
-3. তারপর move হবে
-```
-
-তাহলে:
-
-```text
-Scaling
+(2,2)
    ↓
-Rotation
+(3,2.5)
    ↓
-Translation
+(4,3)
+   ↓
+(5,3.5)
+   ↓
+...
+   ↓
+(8,5)
 ```
 
-এগুলো matrix দিয়ে একসাথে represent করা যায়।
+এই pointগুলোকে plot করলে line তৈরি হবে।
 
 ---
 
-# 20. Composite Matrix
-
-ধরি:
-
-```text
-T = Translation Matrix
-R = Rotation Matrix
-S = Scaling Matrix
-```
-
-তাহলে Composite Transformation:
-
-```text
-M = T × R × S
-```
-
-এবং:
-
-```text
-P' = M × P
-```
-
-অর্থাৎ:
-
-```text
-P' = T × R × S × P
-```
-
----
-
-# 21. Transformation Order খুব Important
-
-এটা মনে রাখবে:
-
-> **Transformation-এর order change করলে result-ও change হতে পারে।**
-
-যেমন:
-
-```text
-Translate → Rotate
-```
-
-এবং:
-
-```text
-Rotate → Translate
-```
-
-একই result নাও হতে পারে।
-
----
-# 22. সহজ Example
-
-ধরি:
-
-```text
-Point → (1,0)
-```
-
-প্রথমে Rotate:
-
-```text
-90°
-```
-
-তাহলে:
-
-```text
-(1,0) → (0,1)
-```
-
-তারপর Translate:
-
-```text
-Tx = 2
-```
-
-তাহলে:
-
-```text
-(0,1) → (2,1)
-```
-
-কিন্তু যদি আগে Translate করি:
-
-```text
-(1,0) → (3,0)
-```
-
-তারপর Rotate করি:
-
-```text
-(3,0) → (0,3)
-```
-
-দেখতেই পাচ্ছো:
-
-```text
-(2,1) ≠ (0,3)
-```
-
-তাই:
-
-> **Order matters.**
-
----
-# 23. Homogeneous Coordinate-এর Main Idea
-
-Normal point:
-
-```text
-(x, y)
-```
-
-কে:
-
-```text
-(x, y, 1)
-```
-
-করি।
-
-তারপর:
-
-```text
-Transformation Matrix
-        ×
-Homogeneous Point
-        ↓
-New Point
-```
-
----
-# 24. OpenGL-এর সাথে Relation
-
-আমরা আগের notes-এ ব্যবহার করেছি:
-
-```cpp
-glTranslatef();
-glRotatef();
-glScalef();
-```
-
-এই function-গুলো internally transformation matrix-এর concept ব্যবহার করে।
-
-যেমন:
-
-```cpp
-glTranslatef(0.5, 0.2, 0.0);
-```
-
-Translation transformation apply করে।
-
-```cpp
-glRotatef(45, 0.0, 0.0, 1.0);
-```
-
-Rotation transformation apply করে।
-
-```cpp
-glScalef(2.0, 2.0, 1.0);
-```
-
-Scaling transformation apply করে।
-
----
-# 25. `glTranslatef()` বনাম Translation Matrix
-
-OpenGL:
-
-```cpp
-glTranslatef(Tx, Ty, 0);
-```
-
-Mathematics:
-
-```text
-┌ 1  0  Tx ┐
-│ 0  1  Ty │
-└ 0  0  1  ┘
-```
-
-অর্থাৎ একই transformation-এর দুইটা representation।
-
----
-
-# 26. `glRotatef()` বনাম Rotation Matrix
-
-OpenGL:
-
-```cpp
-glRotatef(angle, 0, 0, 1);
-```
-
-Mathematics:
-
-```text
-┌ cosθ  -sinθ  0 ┐
-│ sinθ   cosθ  0 │
-└  0       0   1 │
-```
-
----
-
-# 27. `glScalef()` বনাম Scaling Matrix
-
-OpenGL:
-
-```cpp
-glScalef(Sx, Sy, 1);
-```
-
-Mathematics:
-
-```text
-┌ Sx  0   0 ┐
-│ 0   Sy  0 │
-└ 0   0   1 │
-```
-
----
-# 28. একটা খুব সহজ Real-Life Example
-
-ধরি একটা **car** আছে।
+# 3. DDA-এর Main Formula
 
 প্রথমে:
 
 ```text
-Scaling
-```
+dx = x2 - x1
 
-→ Car বড় হলো।
+dy = y2 - y1
+```
 
 তারপর:
 
 ```text
-Rotation
+steps = max(|dx|, |dy|)
 ```
-
-→ Car ঘুরলো।
 
 তারপর:
 
 ```text
-Translation
+xIncrement = dx / steps
+
+yIncrement = dy / steps
 ```
 
-→ Car অন্য জায়গায় চলে গেল।
+তারপর:
 
-এই তিনটাকে matrix-এর মাধ্যমে একসাথে represent করা যায়।
+```text
+x = x1
+y = y1
+```
 
-এটাই Composite/Homogeneous Transformation-এর বড় সুবিধা।
+প্রতিবার:
+
+```text
+x = x + xIncrement
+
+y = y + yIncrement
+```
+
+এবং point plot করি।
 
 ---
 
-# 29. কেন 3×3 Matrix?
+# 4. Full DDA Code
 
-2D-এর জন্য homogeneous coordinate:
+```cpp
+#include <GL/glut.h>
+#include <math.h>
 
-```text
-(x, y, 1)
+// DDA Line Drawing Function
+void DrawLine(int x1, int y1, int x2, int y2)
+{
+    // X direction-এ কত দূরত্ব
+    int dx = x2 - x1;
+
+    // Y direction-এ কত দূরত্ব
+    int dy = y2 - y1;
+
+    // dx এবং dy-এর মধ্যে বড় মানটি steps হবে
+    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+
+    // প্রতি step-এ X কত করে বাড়বে
+    float xIncrement = dx / (float)steps;
+
+    // প্রতি step-এ Y কত করে বাড়বে
+    float yIncrement = dy / (float)steps;
+
+    // Starting point
+    float x = x1;
+    float y = y1;
+
+    // Point drawing শুরু
+    glBegin(GL_POINTS);
+
+    // মোট steps বার loop চলবে
+    for(int i = 0; i <= steps; i++)
+    {
+        // Current point draw করবে
+        glVertex2f(x, y);
+
+        // পরবর্তী point-এর জন্য X update
+        x = x + xIncrement;
+
+        // পরবর্তী point-এর জন্য Y update
+        y = y + yIncrement;
+    }
+
+    // Point drawing শেষ
+    glEnd();
+}
 ```
 
-এখানে মোট 3টি value।
+---
+# 5. Code Line by Line
 
-তাই transformation matrix হয়:
+এখন একদম line by line বুঝি।
+
+---
+
+## Step 1: Header File
+
+```cpp
+#include <GL/glut.h>
+```
+
+এটা FreeGLUT/OpenGL-এর function ব্যবহার করার জন্য।
+
+যেমন:
+
+```cpp
+glBegin()
+glEnd()
+glVertex2f()
+```
+
+ইত্যাদি।
+
+---
+
+## Step 2: Math Header
+
+```cpp
+#include <math.h>
+```
+
+এটা mathematical function-এর জন্য।
+
+DDA-তে আমরা:
+
+```cpp
+abs()
+```
+
+ব্যবহার করছি।
+
+তাই `math.h` লাগছে।
+
+---
+# 6. Function তৈরি
+
+```cpp
+void DrawLine(int x1, int y1, int x2, int y2)
+```
+
+এটা আমাদের নিজের তৈরি function।
+
+চারটা parameter:
 
 ```text
-3 × 3
+x1 → Starting X
+
+y1 → Starting Y
+
+x2 → Ending X
+
+y2 → Ending Y
 ```
 
 অর্থাৎ:
 
 ```text
-┌       ┐
-│       │
-│ 3×3   │
-│       │
-└       ┘
+(x1,y1) → Start
+
+(x2,y2) → End
 ```
 
 ---
-# 30. 2D বনাম 3D
+# 7. `dx`
 
-### 2D
-
-Point:
-
-```text
-(x, y, 1)
+```cpp
+int dx = x2 - x1;
 ```
 
-Matrix:
+এটা X-axis বরাবর distance বের করে।
+
+Formula:
 
 ```text
-3 × 3
+dx = x2 - x1
 ```
 
-### 3D
-
-Point:
+যেমন:
 
 ```text
-(x, y, z, 1)
+x1 = 2
+x2 = 8
+
+dx = 8 - 2
+   = 6
 ```
 
-Matrix:
+অর্থাৎ X direction-এ distance = `6`।
 
-```text
-4 × 4
+---
+
+# 8. `dy`
+
+```cpp
+int dy = y2 - y1;
 ```
 
-Exam-এ মনে রাখো:
+এটা Y-axis বরাবর distance বের করে।
+
+Formula:
 
 ```text
-2D → 3×3
+dy = y2 - y1
+```
 
-3D → 4×4
+যেমন:
+
+```text
+y1 = 2
+y2 = 5
+
+dy = 5 - 2
+   = 3
+```
+
+অর্থাৎ Y direction-এ distance = `3`।
+
+---
+# 9. `steps`
+
+সবচেয়ে important line:
+
+```cpp
+int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+```
+
+এর মানে:
+
+```text
+steps = max(|dx|, |dy|)
+```
+
+অর্থাৎ `dx` এবং `dy`-এর মধ্যে যেটা বড়, সেটাই `steps`।
+
+---
+
+# 10. কেন বড় value নিতে হবে?
+
+ধরি:
+
+```text
+dx = 6
+dy = 3
+```
+
+এখানে:
+
+```text
+X distance = 6
+Y distance = 3
+```
+
+তাহলে:
+
+```text
+steps = 6
+```
+
+কারণ X direction-এ বেশি distance cover করতে হবে।
+
+এতে line-এর points যথেষ্ট smooth হবে।
+
+---
+
+# 11. `abs()` কী?
+
+```cpp
+abs(dx)
+```
+
+মানে:
+
+> `dx`-এর absolute value।
+
+যেমন:
+
+```text
+abs(5)  = 5
+
+abs(-5) = 5
+```
+
+তাই negative distance হলেও আমরা positive step count পাই।
+
+---
+
+
+# 12. `?:` এইটা কী?
+
+এই line:
+
+```cpp
+int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+```
+
+একটু confusing হতে পারে।
+
+এটা সহজভাবে:
+
+```cpp
+if(abs(dx) > abs(dy))
+    steps = abs(dx);
+else
+    steps = abs(dy);
+```
+
+এর মতো।
+
+অর্থাৎ:
+
+```text
+dx বড় → dx নাও
+
+dy বড় → dy নাও
 ```
 
 ---
 
-# 31. Homogeneous Coordinate-এর সবচেয়ে Important Point
+# 13. X Increment
 
-Normal:
-
-```text
-(x,y)
+```cpp
+float xIncrement = dx / (float)steps;
 ```
 
-Homogeneous:
+এর মানে:
+
+> প্রতিটি step-এ X কত করে change করবে।
+
+Formula:
 
 ```text
-(x,y,1)
-```
-
-এই extra `1` থাকার কারণে Translation matrix দিয়ে করা সম্ভব।
-
----
-# 32. Translation Matrix মনে রাখার Trick
-
-```text
-┌ 1  0  Tx ┐
-│ 0  1  Ty │
-└ 0  0  1  ┘
-```
-
-`Tx` এবং `Ty` **শেষ column-এ** থাকে।
-
----
-
-
-# 33. Scaling Matrix মনে রাখার Trick
-
-```text
-┌ Sx  0  0 ┐
-│ 0   Sy  0 │
-└ 0    0  1 │
-```
-
-`Sx` এবং `Sy` diagonal-এ থাকে।
-
----
-
-# 34. Rotation Matrix মনে রাখার Trick
-
-```text
-┌ cosθ  -sinθ  0 ┐
-│ sinθ   cosθ  0 │
-└  0       0   1 │
-```
-
-মনে রাখবে:
-
-```text
-cos  -sin
-
-sin   cos
+xIncrement = dx / steps
 ```
 
 ---
-# 35. তিন Matrix একসাথে
+# 14. Example
+
+ধরি:
 
 ```text
-Translation:
-
-┌ 1  0  Tx ┐
-│ 0  1  Ty │
-└ 0  0  1  ┘
-
-
-Scaling:
-
-┌ Sx  0   0 ┐
-│ 0   Sy  0 │
-└ 0   0   1 │
-
-
-Rotation:
-
-┌ cosθ  -sinθ  0 ┐
-│ sinθ   cosθ  0 │
-└  0       0   1 │
+dx = 6
+steps = 6
 ```
 
-এই তিনটা **mid exam-এর জন্য অবশ্যই মুখস্থ/বোঝা ভালো**।
+তাহলে:
+
+```text
+xIncrement = 6 / 6
+           = 1
+```
+
+অর্থাৎ প্রতিবার X:
+
+```text
++1
+```
+
+করে বাড়বে।
+
+---
+# 15. কেন `(float)`?
+
+```cpp
+dx / (float)steps
+```
+
+এখানে `(float)` দেওয়ার কারণ হলো আমরা **decimal value** পেতে চাই।
+
+যেমন:
+
+```text
+dx = 5
+steps = 8
+```
+
+তাহলে:
+
+```text
+5 / 8 = 0.625
+```
+
+এই decimal value দরকার।
 
 ---
 
-# 36. Exam-এ যদি আসে: "Define Homogeneous Coordinates"
+# 16. Y Increment
 
-সহজ Answer:
+```cpp
+float yIncrement = dy / (float)steps;
+```
 
-> Homogeneous coordinate is a representation of a 2D point `(x,y)` as `(x,y,1)` so that translation, rotation and scaling can be represented using matrix multiplication.
+এর মানে:
+
+> প্রতিটি step-এ Y কত করে change করবে।
+
+Formula:
+
+```text
+yIncrement = dy / steps
+```
+
+---
+# 17. Example
+
+ধরি:
+
+```text
+dy = 3
+steps = 6
+```
+
+তাহলে:
+
+```text
+yIncrement = 3 / 6
+           = 0.5
+```
+
+অর্থাৎ প্রতিবার Y:
+
+```text
++0.5
+```
+
+করে বাড়বে।
 
 ---
 
-# 37. Exam-এ যদি আসে: "Why Homogeneous Coordinates are Used?"
+# 18. Starting Point
 
-Answer:
+```cpp
+float x = x1;
+float y = y1;
+```
 
-> Homogeneous coordinates are used to represent different 2D transformations in a common matrix form.
+এখানে আমরা শুরু করছি:
 
-আরও সহজ:
+```text
+x = x1
 
-> **সব transformation-কে matrix-এর মাধ্যমে করার জন্য।**
+y = y1
+```
+
+অর্থাৎ:
+
+```text
+(x,y) = Starting Point
+```
 
 ---
 
-# 38. Exam-এ যদি আসে: "What is Homogeneous Transformation?"
+# 19. `glBegin(GL_POINTS)`
 
-Answer:
+```cpp
+glBegin(GL_POINTS);
+```
 
-> Homogeneous Transformation is a method of representing 2D or 3D transformations using matrices and homogeneous coordinates.
+আমরা DDA-তে অনেকগুলো point plot করব।
+
+তাই:
+
+```text
+GL_POINTS
+```
+
+ব্যবহার করছি।
+
+---
+# 20. Loop
+
+```cpp
+for(int i = 0; i <= steps; i++)
+```
+
+এই loop:
+
+```text
+0 → 1 → 2 → 3 → ... → steps
+```
+
+পর্যন্ত চলবে।
+
+প্রতিটি iteration-এ একটি point draw হবে।
 
 ---
 
-# 39. Exam-এ যদি আসে: "What is Composite Transformation?"
+# 21. Point Draw
 
-Answer:
+```cpp
+glVertex2f(x, y);
+```
 
-> Applying two or more transformations together is called Composite Transformation.
+এটা current `(x,y)` point screen-এ draw করবে।
+
+যেমন:
+
+```text
+(2,2)
+```
+
+তারপর:
+
+```text
+(3,2.5)
+```
+
+তারপর:
+
+```text
+(4,3)
+```
+
+ইত্যাদি।
+
+---
+
+# 22. X Update
+
+```cpp
+x = x + xIncrement;
+```
+
+মানে:
+
+```text
+নতুন X = পুরোনো X + X Increment
+```
+
+যেমন:
+
+```text
+x = 2
+xIncrement = 1
+
+new x = 2 + 1
+      = 3
+```
+
+---
+
+# 23. Y Update
+
+```cpp
+y = y + yIncrement;
+```
+
+মানে:
+
+```text
+নতুন Y = পুরোনো Y + Y Increment
+```
+
+যেমন:
+
+```text
+y = 2
+yIncrement = 0.5
+
+new y = 2 + 0.5
+      = 2.5
+```
+
+---
+
+# 24. `glEnd()`
+
+```cpp
+glEnd();
+```
+
+Point drawing শেষ।
+
+---
+# 25. পুরো Process একসাথে
+
+ধরি:
+
+```text
+Start = (2,2)
+
+End = (8,5)
+```
+
+তাহলে:
+
+```text
+dx = 8 - 2 = 6
+
+dy = 5 - 2 = 3
+
+steps = max(6,3)
+      = 6
+```
+
+তারপর:
+
+```text
+xIncrement = 6/6
+           = 1
+
+yIncrement = 3/6
+           = 0.5
+```
+
+Start:
+
+```text
+x = 2
+y = 2
+```
+
+---
+
+# 26. Iteration Table
+
+এখন প্রতি step-এ কী হচ্ছে দেখি:
+
+| Step |   X |   Y |
+| ---: | --: | --: |
+|    0 | 2.0 | 2.0 |
+|    1 | 3.0 | 2.5 |
+|    2 | 4.0 | 3.0 |
+|    3 | 5.0 | 3.5 |
+|    4 | 6.0 | 4.0 |
+|    5 | 7.0 | 4.5 |
+|    6 | 8.0 | 5.0 |
+
+এই pointগুলো plot করলে line তৈরি হবে।
+
+---
+# 27. Visual Idea
+
+```text
+Y
+↑
+5 |                 ●
+4 |             ●
+3 |         ●
+2 |     ●
+1 |
+  +------------------------→ X
+      2   3   4   5   6   7   8
+```
+
+অনেকগুলো point:
+
+```text
+●
+  ●
+    ●
+      ●
+        ●
+```
+
+একসাথে দেখলে straight line।
+
+---
+
+# 28. Full OpenGL Program
+
+এখন DDA-কে complete FreeGLUT program-এর মধ্যে বসাই।
+
+```cpp
+#include <GL/glut.h>
+#include <math.h>
+
+// DDA Algorithm
+void DrawLine(int x1, int y1, int x2, int y2)
+{
+    // X এবং Y distance
+    int dx = x2 - x1;
+    int dy = y2 - y1;
+
+    // বড় distance-টাই steps
+    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+
+    // প্রতি step-এ X কত change করবে
+    float xIncrement = dx / (float)steps;
+
+    // প্রতি step-এ Y কত change করবে
+    float yIncrement = dy / (float)steps;
+
+    // Starting point
+    float x = x1;
+    float y = y1;
+
+    // Point drawing শুরু
+    glBegin(GL_POINTS);
+
+    // প্রতিটি point draw
+    for(int i = 0; i <= steps; i++)
+    {
+        glVertex2f(x, y);
+
+        // পরের point
+        x = x + xIncrement;
+        y = y + yIncrement;
+    }
+
+    // Point drawing শেষ
+    glEnd();
+}
+
+void display()
+{
+    // Screen clear
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Line draw
+    DrawLine(-200, -100, 200, 150);
+
+    // Drawing শেষ
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    // GLUT initialize
+    glutInit(&argc, argv);
+
+    // Window size
+    glutInitWindowSize(800, 600);
+
+    // Window create
+    glutCreateWindow("DDA Line");
+
+    // Background color
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+
+    // Display function
+    glutDisplayFunc(display);
+
+    // Main loop
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
+
+# 29. একটা Important Problem
+
+উপরের code-এ:
+
+```cpp
+DrawLine(-200, -100, 200, 150);
+```
+
+আমরা coordinate হিসেবে:
+
+```text
+-200
++200
+```
+
+ব্যবহার করেছি।
+
+কিন্তু OpenGL-এর default coordinate সাধারণত:
+
+```text
+-1 থেকে +1
+```
+
+এর মধ্যে।
+
+তাই এই code **সরাসরি সুন্দরভাবে দেখানোর জন্য coordinate system set করা ভালো**।
+
+---
+# 30. Coordinate System Set করা
+
+`main()`-এ অথবা initialization-এর মাধ্যমে:
+
+```cpp
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+
+gluOrtho2D(-400, 400, -300, 300);
+```
+
+দিলে আমরা coordinate range করতে পারি:
+
+```text
+X → -400 থেকে +400
+
+Y → -300 থেকে +300
+```
+
+তখন:
+
+```cpp
+DrawLine(-200, -100, 200, 150);
+```
+
+সহজে দেখা যাবে।
+
+---
+
+
+# 31. Better Complete Code
+
+```cpp
+#include <GL/glut.h>
+#include <math.h>
+
+// DDA Line Drawing Function
+void DrawLine(int x1, int y1, int x2, int y2)
+{
+    // X direction-এর distance
+    int dx = x2 - x1;
+
+    // Y direction-এর distance
+    int dy = y2 - y1;
+
+    // বড় distance = steps
+    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+
+    // প্রতি step-এ X change
+    float xIncrement = dx / (float)steps;
+
+    // প্রতি step-এ Y change
+    float yIncrement = dy / (float)steps;
+
+    // Starting point
+    float x = x1;
+    float y = y1;
+
+    // Point drawing
+    glBegin(GL_POINTS);
+
+    for(int i = 0; i <= steps; i++)
+    {
+        // Current point draw
+        glVertex2f(x, y);
+
+        // X এবং Y update
+        x += xIncrement;
+        y += yIncrement;
+    }
+
+    glEnd();
+}
+
+void display()
+{
+    // Screen clear
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Line color
+    glColor3f(1.0, 0.0, 0.0);
+
+    // Point size
+    glPointSize(3.0);
+
+    // DDA line
+    DrawLine(-200, -100, 200, 150);
+
+    // Display
+    glFlush();
+}
+
+void init()
+{
+    // Projection mode
+    glMatrixMode(GL_PROJECTION);
+
+    // Reset matrix
+    glLoadIdentity();
+
+    // Coordinate range
+    gluOrtho2D(-400, 400, -300, 300);
+
+    // Background color
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+}
+
+int main(int argc, char** argv)
+{
+    // GLUT initialize
+    glutInit(&argc, argv);
+
+    // Window size
+    glutInitWindowSize(800, 600);
+
+    // Window create
+    glutCreateWindow("DDA Line");
+
+    // Initialization
+    init();
+
+    // Display function
+    glutDisplayFunc(display);
+
+    // Main loop
+    glutMainLoop();
+
+    return 0;
+}
+```
+
+---
+
+# 32. `gluOrtho2D()` কী?
+
+```cpp
+gluOrtho2D(-400, 400, -300, 300);
+```
+
+এটা আমাদের coordinate system define করে।
+
+মানে:
+
+```text
+X → -400 to +400
+
+Y → -300 to +300
+```
+
+তাই আমরা pixel-like coordinate ব্যবহার করতে পারি।
+
+---
+
+# 33. DDA Algorithm-এর Short Formula
+
+Exam-এর জন্য এই অংশটা মুখস্থ রাখো:
+
+```text
+dx = x2 - x1
+
+dy = y2 - y1
+
+steps = max(|dx|, |dy|)
+
+xIncrement = dx / steps
+
+yIncrement = dy / steps
+
+x = x1
+
+y = y1
+```
+
+তারপর loop:
+
+```text
+Plot(x,y)
+
+x = x + xIncrement
+
+y = y + yIncrement
+```
+
+---
+
+# 34. Algorithm Steps
+
+DDA-এর algorithm:
+
+```text
+Step 1:
+dx = x2 - x1
+dy = y2 - y1
+
+Step 2:
+steps = max(|dx|, |dy|)
+
+Step 3:
+xIncrement = dx / steps
+yIncrement = dy / steps
+
+Step 4:
+x = x1
+y = y1
+
+Step 5:
+Plot(x,y)
+
+Step 6:
+x = x + xIncrement
+y = y + yIncrement
+
+Step 7:
+Repeat until steps complete
+```
+
+---
+# 35. DDA-এর মূল Idea
+
+সবচেয়ে সহজভাবে:
+
+```text
+Start Point
+     ↓
+dx, dy বের করি
+     ↓
+steps বের করি
+     ↓
+প্রতি step-এ x এবং y update করি
+     ↓
+Point plot করি
+     ↓
+Line তৈরি
+```
+
+---
+
+# 36. Positive Slope
+
+যদি:
+
+```text
+dy > 0
+```
+
+তাহলে Y বাড়বে।
 
 Example:
 
 ```text
-Translation + Rotation + Scaling
+(2,2) → (8,5)
+```
+
+এখানে:
+
+```text
+dy = +3
+```
+
+তাই line উপরের দিকে যাবে।
+
+```text
+      ●
+    ●
+  ●
+●
 ```
 
 ---
-# 40. Viva Questions
 
-### Q1. Homogeneous coordinate কী?
+# 37. Negative Slope
 
-**Answer:** 2D point `(x,y)`-কে `(x,y,1)` হিসেবে represent করাকে homogeneous coordinate বলা হয়।
+যদি:
+
+```text
+dy < 0
+```
+
+তাহলে Y কমবে।
+
+Example:
+
+```text
+(2,5) → (8,2)
+```
+
+এখানে:
+
+```text
+dy = 2 - 5
+   = -3
+```
+
+তাই:
+
+```text
+●
+  ●
+    ●
+      ●
+```
+
+নিচের দিকে নামবে।
 
 ---
 
-### Q2. 2D homogeneous coordinate কী?
+# 38. Horizontal Line
+
+যদি:
+
+```text
+y1 = y2
+```
+
+তাহলে:
+
+```text
+dy = 0
+```
+
+তাই:
+
+```text
+yIncrement = 0
+```
+
+Y change করবে না।
+
+শুধু X change হবে।
+
+```text
+● ● ● ● ● ●
+```
+
+---
+
+# 39. Vertical Line
+
+যদি:
+
+```text
+x1 = x2
+```
+
+তাহলে:
+
+```text
+dx = 0
+```
+
+তাই:
+
+```text
+xIncrement = 0
+```
+
+X change করবে না।
+
+শুধু Y change হবে।
+
+```text
+●
+●
+●
+●
+●
+```
+
+---
+# 40. DDA-এর সুবিধা
+
+### 1. সহজ Algorithm
+
+বোঝা এবং implement করা সহজ।
+
+### 2. Simple Calculation
+
+মূলত:
+
+```text
+Addition
+Division
+```
+
+ব্যবহার করে।
+
+### 3. Different Slope Handle করতে পারে
+
+Positive/negative/horizontal/vertical line draw করতে পারে।
+
+---
+
+# 41. DDA-এর অসুবিধা
+
+DDA-তে:
+
+```text
+Floating Point
+```
+
+calculation ব্যবহার হয়।
+
+যেমন:
+
+```text
+0.5
+0.25
+0.625
+```
+
+ইত্যাদি।
+
+তাই এটি সবসময় integer-based algorithm-এর মতো efficient নয়।
+
+---
+
+# 42. DDA বনাম Normal OpenGL Line
+
+Normal OpenGL:
+
+```cpp
+glBegin(GL_LINES);
+
+glVertex2f(x1, y1);
+glVertex2f(x2, y2);
+
+glEnd();
+```
+
+এখানে OpenGL নিজেই line draw করে।
+
+কিন্তু DDA-তে আমরা manually:
+
+```text
+dx
+dy
+steps
+increment
+points
+```
+
+calculate করে line তৈরি করি।
+
+---
+
+# 43. DDA বনাম Bresenham
+
+পরের দিকে আমরা Bresenham Line Algorithm পড়ব।
+
+Basic difference:
+
+| DDA                          | Bresenham           |
+| ---------------------------- | ------------------- |
+| Floating-point calculation   | Integer calculation |
+| তুলনামূলক সহজ                | একটু বেশি logical   |
+| Fractional value ব্যবহার করে | Integer-based       |
+| তুলনামূলক slower             | Faster              |
+
+মনে রাখবে:
+
+```text
+DDA → Floating Point
+
+Bresenham → Integer
+```
+
+---
+
+# 44. Viva Questions
+
+### Q1. DDA-এর full form কী?
+
+**Answer:**
+
+> Digital Differential Analyzer.
+
+---
+
+### Q2. DDA কী?
+
+**Answer:**
+
+> DDA is a line drawing algorithm used to draw a line between two points.
+
+---
+
+### Q3. DDA-এর প্রথম calculation কী?
 
 **Answer:**
 
 ```text
-(x, y, 1)
+dx = x2 - x1
+
+dy = y2 - y1
 ```
 
 ---
 
-### Q3. 2D transformation matrix কত × কত?
+### Q4. Steps কীভাবে বের করি?
 
 **Answer:**
 
 ```text
-3 × 3
+steps = max(|dx|, |dy|)
 ```
 
 ---
 
-### Q4. 3D transformation matrix কত × কত?
+### Q5. X increment-এর formula?
 
 **Answer:**
 
 ```text
-4 × 4
+xIncrement = dx / steps
 ```
 
 ---
 
-### Q5. কেন homogeneous coordinate ব্যবহার করি?
-
-**Answer:** Translation, Rotation, Scaling ইত্যাদি transformation-কে একই matrix format-এ represent করার জন্য।
-
----
-
-### Q6. Translation matrix কী?
+### Q6. Y increment-এর formula?
 
 **Answer:**
 
 ```text
-┌ 1  0  Tx ┐
-│ 0  1  Ty │
-└ 0  0  1  ┘
+yIncrement = dy / steps
 ```
 
 ---
 
-### Q7. Scaling matrix কী?
+### Q7. কেন `abs()` ব্যবহার করি?
+
+**Answer:** Negative value বাদ দিয়ে absolute distance পাওয়ার জন্য।
+
+---
+
+### Q8. DDA-তে কেন `float` ব্যবহার করি?
+
+**Answer:** Increment-এ fractional/decimal value আসতে পারে।
+
+---
+
+### Q9. DDA-তে কোন primitive ব্যবহার করেছি?
+
+**Answer:**
+
+```cpp
+GL_POINTS
+```
+
+কারণ DDA অনেকগুলো point plot করে line তৈরি করে।
+
+---
+
+### Q10. DDA-এর disadvantage কী?
+
+**Answer:** Floating-point calculation ব্যবহার করার কারণে তুলনামূলকভাবে slow হতে পারে।
+
+---
+
+### Q11. DDA এবং Bresenham-এর main difference কী?
 
 **Answer:**
 
 ```text
-┌ Sx  0   0 ┐
-│ 0   Sy  0 │
-└ 0   0   1 │
+DDA → Floating Point
+
+Bresenham → Integer
 ```
 
 ---
 
-### Q8. Rotation matrix কী?
+# 45. Mid Exam-এর জন্য সবচেয়ে Important অংশ
 
-**Answer:**
+এই ৫টা জিনিস **অবশ্যই বুঝে রাখবে**:
+
+### 1. `dx`
 
 ```text
-┌ cosθ  -sinθ  0 ┐
-│ sinθ   cosθ  0 │
-└ 0       0    1 │
+dx = x2 - x1
+```
+
+### 2. `dy`
+
+```text
+dy = y2 - y1
+```
+
+### 3. `steps`
+
+```text
+steps = max(|dx|, |dy|)
+```
+
+### 4. Increment
+
+```text
+xIncrement = dx / steps
+
+yIncrement = dy / steps
+```
+
+### 5. Update
+
+```text
+x = x + xIncrement
+
+y = y + yIncrement
 ```
 
 ---
+# 46. একদম Short Version
 
-### Q9. Composite Transformation কী?
+```cpp
+dx = x2 - x1;
+dy = y2 - y1;
 
-**Answer:** একাধিক transformation একসাথে apply করাকে Composite Transformation বলে।
+steps = max(abs(dx), abs(dy));
+
+xIncrement = dx / steps;
+yIncrement = dy / steps;
+
+x = x1;
+y = y1;
+
+for(i = 0; i <= steps; i++)
+{
+    plot(x,y);
+
+    x = x + xIncrement;
+    y = y + yIncrement;
+}
+```
+
+এটাই পুরো DDA-এর heart।
 
 ---
+# 47. One-Line Memory Trick
 
-### Q10. Transformation-এর order important কেন?
+> **DDA = ****dx, dy → steps → increment → point plot → x,y update****।**
 
-**Answer:** কারণ transformation-এর order পরিবর্তন করলে final result পরিবর্তন হতে পারে।
-
----
-# 41. Common Mistakes
-
-### Mistake 1: `(x,y,0)` লেখা
-
-Homogeneous 2D point:
+আর সবচেয়ে important formula:
 
 ```text
-(x,y,1)
+dx = x2 - x1
+dy = y2 - y1
+steps = max(|dx|,|dy|)
+xInc = dx/steps
+yInc = dy/steps
 ```
-
-এখানে শেষ value:
-
-```text
-1
-```
-
----
-
-### Mistake 2: Translation matrix ভুল লেখা
-
-সঠিক:
-
-```text
-┌ 1  0  Tx ┐
-│ 0  1  Ty │
-└ 0  0  1  ┘
-```
-
----
-
-### Mistake 3: Rotation matrix-এ `-sin` ভুলে যাওয়া
-
-সঠিক:
-
-```text
-cosθ  -sinθ
-sinθ   cosθ
-```
-
----
-
-### Mistake 4: Transformation order ভুলে যাওয়া
-
-```text
-T × R
-```
-
-এবং:
-
-```text
-R × T
-```
-
-একই result নাও দিতে পারে।
-
-কারণ:
-
-> **Matrix multiplication is not commutative.**
-
-অর্থাৎ:
-
-```text
-A × B ≠ B × A
-```
-
----
-# 42. Quick Revision
-
-### Homogeneous Point
-
-```text
-(x,y)
-  ↓
-(x,y,1)
-```
-
-### 2D Matrix
-
-```text
-3 × 3
-```
-
-### Translation
-
-```text
-┌ 1  0  Tx ┐
-│ 0  1  Ty │
-└ 0  0  1  ┘
-```
-
-### Scaling
-
-```text
-┌ Sx  0   0 ┐
-│ 0   Sy  0 │
-└ 0   0   1 │
-```
-
-### Rotation
-
-```text
-┌ cosθ  -sinθ  0 ┐
-│ sinθ   cosθ  0 │
-└ 0       0   1 │
-```
-
-### Composite Transformation
-
-```text
-Multiple Transformations
-          ↓
-Composite Transformation
-```
-
----
-# 43. Final Memory Trick
-
-```text
-2D Point
-   ↓
-(x,y,1)
-   ↓
-3×3 Matrix
-   ↓
-Transformation
-```
-
-আর তিনটা main matrix:
-
-```text
-T → Translation → Move
-
-R → Rotation → Turn
-
-S → Scaling → Size
-```
-
-সবচেয়ে important:
-
-> **Homogeneous Transformation-এর main idea হলো 2D point-কে `(x,y,1)` করে 3×3 matrix ব্যবহার করে Translation, Rotation ও Scaling করা।**

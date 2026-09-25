@@ -1,14 +1,21 @@
-# DDA Line Drawing Algorithm
+# Bresenham Line Drawing Algorithm
 
-> **DDA = Digital Differential Analyzer**
+> **Bresenham Line Algorithm** হলো computer graphics-এ দুটি point-এর মধ্যে line draw করার একটি efficient algorithm।
 
-DDA হলো computer graphics-এ **দুটি point-এর মধ্যে একটি straight line draw করার algorithm**।
+DDA-এর সাথে এর সবচেয়ে important difference:
+
+```text
+DDA        → Floating Point calculation
+Bresenham  → Integer calculation
+```
+
+তাই Bresenham সাধারণত DDA-এর চেয়ে **faster এবং efficient**।
 
 ---
 
-# 1. DDA কী করে?
+# 1. Bresenham কী করে?
 
-ধরি আমাদের দুইটা point আছে:
+ধরি আমাদের দুটি point:
 
 ```text
 Start Point → (x1, y1)
@@ -16,625 +23,93 @@ Start Point → (x1, y1)
 End Point   → (x2, y2)
 ```
 
-DDA algorithm এই দুই point-এর মাঝখানে ছোট ছোট step নিয়ে:
+Bresenham এই দুই point-এর মধ্যে কোন কোন pixel/point plot করতে হবে সেটা calculate করে।
+
+সহজভাবে:
 
 ```text
-Point → Point → Point → Point → Point
-```
-
-draw করে।
-
-এই অনেকগুলো ছোট ছোট point একসাথে দেখলে আমাদের কাছে একটা **straight line** মনে হয়।
-
----
-# 2. Example
-
-ধরি:
-
-```text
-Start = (2,2)
-
-End = (8,5)
-```
-
-DDA:
-
-```text
-(2,2)
-   ↓
-(3,2.5)
-   ↓
-(4,3)
-   ↓
-(5,3.5)
-   ↓
-...
-   ↓
-(8,5)
-```
-
-এই pointগুলোকে plot করলে line তৈরি হবে।
-
----
-
-# 3. DDA-এর Main Formula
-
-প্রথমে:
-
-```text
-dx = x2 - x1
-
-dy = y2 - y1
-```
-
-তারপর:
-
-```text
-steps = max(|dx|, |dy|)
-```
-
-তারপর:
-
-```text
-xIncrement = dx / steps
-
-yIncrement = dy / steps
-```
-
-তারপর:
-
-```text
-x = x1
-y = y1
-```
-
-প্রতিবার:
-
-```text
-x = x + xIncrement
-
-y = y + yIncrement
-```
-
-এবং point plot করি।
-
----
-
-# 4. Full DDA Code
-
-```cpp
-#include <GL/glut.h>
-#include <math.h>
-
-// DDA Line Drawing Function
-void DrawLine(int x1, int y1, int x2, int y2)
-{
-    // X direction-এ কত দূরত্ব
-    int dx = x2 - x1;
-
-    // Y direction-এ কত দূরত্ব
-    int dy = y2 - y1;
-
-    // dx এবং dy-এর মধ্যে বড় মানটি steps হবে
-    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
-
-    // প্রতি step-এ X কত করে বাড়বে
-    float xIncrement = dx / (float)steps;
-
-    // প্রতি step-এ Y কত করে বাড়বে
-    float yIncrement = dy / (float)steps;
-
-    // Starting point
-    float x = x1;
-    float y = y1;
-
-    // Point drawing শুরু
-    glBegin(GL_POINTS);
-
-    // মোট steps বার loop চলবে
-    for(int i = 0; i <= steps; i++)
-    {
-        // Current point draw করবে
-        glVertex2f(x, y);
-
-        // পরবর্তী point-এর জন্য X update
-        x = x + xIncrement;
-
-        // পরবর্তী point-এর জন্য Y update
-        y = y + yIncrement;
-    }
-
-    // Point drawing শেষ
-    glEnd();
-}
+Start
+  ↓
+Next pixel choose
+  ↓
+Next pixel choose
+  ↓
+Next pixel choose
+  ↓
+End
 ```
 
 ---
-# 5. Code Line by Line
+# 2. DDA-এর সাথে Main Difference
 
-এখন একদম line by line বুঝি।
-
----
-
-## Step 1: Header File
-
-```cpp
-#include <GL/glut.h>
-```
-
-এটা FreeGLUT/OpenGL-এর function ব্যবহার করার জন্য।
-
-যেমন:
-
-```cpp
-glBegin()
-glEnd()
-glVertex2f()
-```
-
-ইত্যাদি।
-
----
-
-## Step 2: Math Header
-
-```cpp
-#include <math.h>
-```
-
-এটা mathematical function-এর জন্য।
-
-DDA-তে আমরা:
-
-```cpp
-abs()
-```
-
-ব্যবহার করছি।
-
-তাই `math.h` লাগছে।
-
----
-# 6. Function তৈরি
-
-```cpp
-void DrawLine(int x1, int y1, int x2, int y2)
-```
-
-এটা আমাদের নিজের তৈরি function।
-
-চারটা parameter:
+### DDA:
 
 ```text
-x1 → Starting X
-
-y1 → Starting Y
-
-x2 → Ending X
-
-y2 → Ending Y
+dx
+dy
+steps
+xIncrement
+yIncrement
 ```
 
-অর্থাৎ:
+এবং decimal value ব্যবহার করে।
+
+### Bresenham:
 
 ```text
-(x1,y1) → Start
-
-(x2,y2) → End
+dx
+dy
+Decision Parameter
 ```
 
----
-# 7. `dx`
+এবং মূলত **integer calculation** ব্যবহার করে।
 
-```cpp
-int dx = x2 - x1;
-```
+মনে রাখবে:
 
-এটা X-axis বরাবর distance বের করে।
-
-Formula:
-
-```text
-dx = x2 - x1
-```
-
-যেমন:
-
-```text
-x1 = 2
-x2 = 8
-
-dx = 8 - 2
-   = 6
-```
-
-অর্থাৎ X direction-এ distance = `6`।
-
----
-
-# 8. `dy`
-
-```cpp
-int dy = y2 - y1;
-```
-
-এটা Y-axis বরাবর distance বের করে।
-
-Formula:
-
-```text
-dy = y2 - y1
-```
-
-যেমন:
-
-```text
-y1 = 2
-y2 = 5
-
-dy = 5 - 2
-   = 3
-```
-
-অর্থাৎ Y direction-এ distance = `3`।
-
----
-# 9. `steps`
-
-সবচেয়ে important line:
-
-```cpp
-int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
-```
-
-এর মানে:
-
-```text
-steps = max(|dx|, |dy|)
-```
-
-অর্থাৎ `dx` এবং `dy`-এর মধ্যে যেটা বড়, সেটাই `steps`।
-
----
-
-# 10. কেন বড় value নিতে হবে?
-
-ধরি:
-
-```text
-dx = 6
-dy = 3
-```
-
-এখানে:
-
-```text
-X distance = 6
-Y distance = 3
-```
-
-তাহলে:
-
-```text
-steps = 6
-```
-
-কারণ X direction-এ বেশি distance cover করতে হবে।
-
-এতে line-এর points যথেষ্ট smooth হবে।
-
----
-
-# 11. `abs()` কী?
-
-```cpp
-abs(dx)
-```
-
-মানে:
-
-> `dx`-এর absolute value।
-
-যেমন:
-
-```text
-abs(5)  = 5
-
-abs(-5) = 5
-```
-
-তাই negative distance হলেও আমরা positive step count পাই।
+> **DDA → Floating Point**
+> **Bresenham → Integer**
 
 ---
 
 
-# 12. `?:` এইটা কী?
+# 3. Bresenham-এর Basic Idea
 
-এই line:
-
-```cpp
-int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
-```
-
-একটু confusing হতে পারে।
-
-এটা সহজভাবে:
-
-```cpp
-if(abs(dx) > abs(dy))
-    steps = abs(dx);
-else
-    steps = abs(dy);
-```
-
-এর মতো।
-
-অর্থাৎ:
+ধরি line-এর slope:
 
 ```text
-dx বড় → dx নাও
-
-dy বড় → dy নাও
+0 < m < 1
 ```
+
+অর্থাৎ line খুব বেশি steep না।
+
+তাহলে X direction-এ আমরা প্রতিবার:
+
+```text
+x = x + 1
+```
+
+করব।
+
+কিন্তু Y কখন বাড়বে?
+
+এই দুইটা option থাকবে:
+
+```text
+(x+1, y)
+```
+
+অথবা:
+
+```text
+(x+1, y+1)
+```
+
+Bresenham একটি **decision parameter `p`** ব্যবহার করে decide করে কোন point নিতে হবে।
 
 ---
 
-# 13. X Increment
 
-```cpp
-float xIncrement = dx / (float)steps;
-```
-
-এর মানে:
-
-> প্রতিটি step-এ X কত করে change করবে।
-
-Formula:
-
-```text
-xIncrement = dx / steps
-```
-
----
-# 14. Example
-
-ধরি:
-
-```text
-dx = 6
-steps = 6
-```
-
-তাহলে:
-
-```text
-xIncrement = 6 / 6
-           = 1
-```
-
-অর্থাৎ প্রতিবার X:
-
-```text
-+1
-```
-
-করে বাড়বে।
-
----
-# 15. কেন `(float)`?
-
-```cpp
-dx / (float)steps
-```
-
-এখানে `(float)` দেওয়ার কারণ হলো আমরা **decimal value** পেতে চাই।
-
-যেমন:
-
-```text
-dx = 5
-steps = 8
-```
-
-তাহলে:
-
-```text
-5 / 8 = 0.625
-```
-
-এই decimal value দরকার।
-
----
-
-# 16. Y Increment
-
-```cpp
-float yIncrement = dy / (float)steps;
-```
-
-এর মানে:
-
-> প্রতিটি step-এ Y কত করে change করবে।
-
-Formula:
-
-```text
-yIncrement = dy / steps
-```
-
----
-# 17. Example
-
-ধরি:
-
-```text
-dy = 3
-steps = 6
-```
-
-তাহলে:
-
-```text
-yIncrement = 3 / 6
-           = 0.5
-```
-
-অর্থাৎ প্রতিবার Y:
-
-```text
-+0.5
-```
-
-করে বাড়বে।
-
----
-
-# 18. Starting Point
-
-```cpp
-float x = x1;
-float y = y1;
-```
-
-এখানে আমরা শুরু করছি:
-
-```text
-x = x1
-
-y = y1
-```
-
-অর্থাৎ:
-
-```text
-(x,y) = Starting Point
-```
-
----
-
-# 19. `glBegin(GL_POINTS)`
-
-```cpp
-glBegin(GL_POINTS);
-```
-
-আমরা DDA-তে অনেকগুলো point plot করব।
-
-তাই:
-
-```text
-GL_POINTS
-```
-
-ব্যবহার করছি।
-
----
-# 20. Loop
-
-```cpp
-for(int i = 0; i <= steps; i++)
-```
-
-এই loop:
-
-```text
-0 → 1 → 2 → 3 → ... → steps
-```
-
-পর্যন্ত চলবে।
-
-প্রতিটি iteration-এ একটি point draw হবে।
-
----
-
-# 21. Point Draw
-
-```cpp
-glVertex2f(x, y);
-```
-
-এটা current `(x,y)` point screen-এ draw করবে।
-
-যেমন:
-
-```text
-(2,2)
-```
-
-তারপর:
-
-```text
-(3,2.5)
-```
-
-তারপর:
-
-```text
-(4,3)
-```
-
-ইত্যাদি।
-
----
-
-# 22. X Update
-
-```cpp
-x = x + xIncrement;
-```
-
-মানে:
-
-```text
-নতুন X = পুরোনো X + X Increment
-```
-
-যেমন:
-
-```text
-x = 2
-xIncrement = 1
-
-new x = 2 + 1
-      = 3
-```
-
----
-
-# 23. Y Update
-
-```cpp
-y = y + yIncrement;
-```
-
-মানে:
-
-```text
-নতুন Y = পুরোনো Y + Y Increment
-```
-
-যেমন:
-
-```text
-y = 2
-yIncrement = 0.5
-
-new y = 2 + 0.5
-      = 2.5
-```
-
----
-
-# 24. `glEnd()`
-
-```cpp
-glEnd();
-```
-
-Point drawing শেষ।
-
----
-# 25. পুরো Process একসাথে
+# 4. Example
 
 ধরি:
 
@@ -650,22 +125,503 @@ End = (8,5)
 dx = 8 - 2 = 6
 
 dy = 5 - 2 = 3
+```
 
-steps = max(6,3)
-      = 6
+এখন প্রতিটি X step-এ Y হয়:
+
+```text
+same y
+```
+
+অথবা:
+
+```text
+y + 1
+```
+
+Bresenham `p` দেখে সিদ্ধান্ত নেয়।
+
+---
+
+# 5. Formula
+
+যদি:
+
+```text
+dx > dy
+```
+
+তাহলে:
+
+```text
+p = 2dy - dx
+```
+
+এটাই initial decision parameter।
+
+---
+# 6. যদি `p < 0`
+
+যদি:
+
+```text
+p < 0
+```
+
+তাহলে আমরা:
+
+```text
+(x+1, y)
+```
+
+point নেব।
+
+অর্থাৎ:
+
+```text
+x বাড়বে
+y একই থাকবে
 ```
 
 তারপর:
 
 ```text
-xIncrement = 6/6
-           = 1
-
-yIncrement = 3/6
-           = 0.5
+p = p + 2dy
 ```
 
-Start:
+---
+
+# 7. যদি `p >= 0`
+
+যদি:
+
+```text
+p >= 0
+```
+
+তাহলে:
+
+```text
+(x+1, y+1)
+```
+
+point নেব।
+
+অর্থাৎ:
+
+```text
+x বাড়বে
+y-ও বাড়বে
+```
+
+তারপর:
+
+```text
+p = p + 2dy - 2dx
+```
+
+---
+# 8. Main Logic
+
+এটা খুব ভালো করে বুঝবে:
+
+```text
+p < 0
+ ↓
+(x+1, y)
+ ↓
+p = p + 2dy
+
+
+p >= 0
+ ↓
+(x+1, y+1)
+ ↓
+p = p + 2dy - 2dx
+```
+
+এটাই Bresenham-এর main logic।
+
+---
+# 9. Basic Code
+
+এখন basic Bresenham code:
+
+```cpp
+void DrawLine(int x1, int y1, int x2, int y2)
+{
+    int dx = x2 - x1;              // X direction-এর distance
+    int dy = y2 - y1;              // Y direction-এর distance
+
+    int p = 2 * dy - dx;            // Initial decision parameter
+
+    int x = x1;                    // Starting X
+    int y = y1;                    // Starting Y
+
+    glBegin(GL_POINTS);            // Point drawing শুরু
+
+    while(x <= x2)
+    {
+        glVertex2i(x, y);          // Current point draw
+
+        x++;                       // X সবসময় 1 করে বাড়বে
+
+        if(p < 0)
+        {
+            // p negative হলে Y change হবে না
+            p = p + 2 * dy;
+        }
+        else
+        {
+            // p positive হলে Y 1 করে বাড়বে
+            y++;
+            p = p + 2 * dy - 2 * dx;
+        }
+    }
+
+    glEnd();                       // Point drawing শেষ
+}
+```
+
+---
+
+# 10. এখন Line by Line
+
+## Header
+
+```cpp
+#include <GL/glut.h>
+```
+
+OpenGL/FreeGLUT-এর functions ব্যবহার করার জন্য।
+
+---
+
+# 11. Function
+
+```cpp
+void DrawLine(int x1, int y1, int x2, int y2)
+```
+
+চারটি coordinate নিচ্ছে:
+
+```text
+(x1,y1) → Starting Point
+
+(x2,y2) → Ending Point
+```
+
+---
+
+# 12. `dx`
+
+```cpp
+int dx = x2 - x1;
+```
+
+X-axis বরাবর distance।
+
+Example:
+
+```text
+x1 = 2
+x2 = 8
+
+dx = 8 - 2
+   = 6
+```
+
+---
+
+# 13. `dy`
+
+```cpp
+int dy = y2 - y1;
+```
+
+Y-axis বরাবর distance।
+
+Example:
+
+```text
+y1 = 2
+y2 = 5
+
+dy = 5 - 2
+   = 3
+```
+
+---
+
+# 14. Initial `p`
+
+```cpp
+int p = 2 * dy - dx;
+```
+
+এটা Bresenham-এর **decision parameter**।
+
+Formula:
+
+```text
+p = 2dy - dx
+```
+
+Example:
+
+```text
+dx = 6
+dy = 3
+
+p = 2(3) - 6
+  = 6 - 6
+  = 0
+```
+
+---
+# 15. Starting X
+
+```cpp
+int x = x1;
+```
+
+মানে:
+
+```text
+x = starting X
+```
+
+---
+
+# 16. Starting Y
+
+```cpp
+int y = y1;
+```
+
+মানে:
+
+```text
+y = starting Y
+```
+
+অর্থাৎ শুরু করছি:
+
+```text
+(x,y) = (x1,y1)
+```
+
+---
+# 17. `glBegin(GL_POINTS)`
+
+```cpp
+glBegin(GL_POINTS);
+```
+
+Bresenham algorithm আমরা একেকটা pixel/point plot করে line বানাচ্ছি।
+
+তাই:
+
+```text
+GL_POINTS
+```
+
+ব্যবহার করছি।
+
+---
+# 18. `while`
+
+```cpp
+while(x <= x2)
+```
+
+যতক্ষণ X শেষ point পর্যন্ত যায়, loop চলবে।
+
+---
+
+# 19. Current Point Draw
+
+```cpp
+glVertex2i(x, y);
+```
+
+Current `(x,y)` point draw করবে।
+
+এখানে:
+
+```text
+2i → 2D Integer coordinate
+```
+
+কারণ Bresenham integer coordinate ব্যবহার করে।
+
+---
+
+# 20. X Increase
+
+```cpp
+x++;
+```
+
+এর মানে:
+
+```text
+x = x + 1
+```
+
+Bresenham-এর এই case-এ প্রতিবার X এক করে বাড়ছে।
+
+---
+# 21. `if(p < 0)`
+
+```cpp
+if(p < 0)
+```
+
+এখন algorithm decision নিচ্ছে।
+
+যদি:
+
+```text
+p < 0
+```
+
+তাহলে:
+
+```text
+(x+1, y)
+```
+
+নেব।
+
+অর্থাৎ:
+
+```text
+X → বাড়বে
+Y → একই থাকবে
+```
+
+---
+
+# 22. `p` Update যখন Negative
+
+```cpp
+p = p + 2 * dy;
+```
+
+অর্থাৎ:
+
+```text
+p = p + 2dy
+```
+
+---
+# 23. `else`
+
+```cpp
+else
+```
+
+মানে:
+
+```text
+p >= 0
+```
+
+তখন:
+
+```text
+(x+1, y+1)
+```
+
+নেব।
+
+অর্থাৎ:
+
+```text
+X → +1
+Y → +1
+```
+
+---
+
+# 24. Y Increase
+
+```cpp
+y++;
+```
+
+মানে:
+
+```text
+y = y + 1
+```
+
+---
+
+# 25. `p` Update যখন Positive
+
+```cpp
+p = p + 2 * dy - 2 * dx;
+```
+
+Formula:
+
+```text
+p = p + 2dy - 2dx
+```
+
+---
+
+# 26. Full Logic এক নজরে
+
+```text
+Current Point
+     ↓
+Check p
+     ↓
+┌───────────────┐
+│               │
+p < 0          p >= 0
+│               │
+↓               ↓
+(x+1,y)      (x+1,y+1)
+│               │
+↓               ↓
+p=p+2dy     p=p+2dy-2dx
+```
+
+---
+
+# 27. Example হাতে করি
+
+ধরি:
+
+```text
+Start = (2,2)
+
+End = (8,5)
+```
+
+তাহলে:
+
+```text
+dx = 8 - 2 = 6
+
+dy = 5 - 2 = 3
+```
+
+Initial:
+
+```text
+p = 2dy - dx
+
+p = 2(3) - 6
+
+p = 0
+```
+
+Starting:
 
 ```text
 x = 2
@@ -674,233 +630,390 @@ y = 2
 
 ---
 
-# 26. Iteration Table
+# 28. প্রথম Point
 
-এখন প্রতি step-এ কী হচ্ছে দেখি:
+Plot:
 
-| Step |   X |   Y |
-| ---: | --: | --: |
-|    0 | 2.0 | 2.0 |
-|    1 | 3.0 | 2.5 |
-|    2 | 4.0 | 3.0 |
-|    3 | 5.0 | 3.5 |
-|    4 | 6.0 | 4.0 |
-|    5 | 7.0 | 4.5 |
-|    6 | 8.0 | 5.0 |
+```text
+(2,2)
+```
 
-এই pointগুলো plot করলে line তৈরি হবে।
+এখন:
+
+```text
+p = 0
+```
+
+যেহেতু:
+
+```text
+p >= 0
+```
+
+তাই:
+
+```text
+x = 3
+y = 3
+```
+
+এবং:
+
+```text
+p = p + 2dy - 2dx
+
+p = 0 + 6 - 12
+
+p = -6
+```
+
+Next:
+
+```text
+(3,3)
+```
 
 ---
-# 27. Visual Idea
+
+# 29. দ্বিতীয় Decision
+
+এখন:
+
+```text
+p = -6
+```
+
+তাই:
+
+```text
+p < 0
+```
+
+সুতরাং:
+
+```text
+x = 4
+y = 3
+```
+
+Y change হলো না।
+
+p:
+
+```text
+p = p + 2dy
+
+p = -6 + 6
+
+p = 0
+```
+
+Next:
+
+```text
+(4,3)
+```
+
+---
+
+# 30. Table
+
+এই example-এর pointগুলো:
+
+| Step | Point |  p | Decision |
+| ---: | ----- | -: | -------- |
+|    0 | (2,2) |  0 | Y বাড়ে   |
+|    1 | (3,3) | -6 | Y same   |
+|    2 | (4,3) |  0 | Y বাড়ে   |
+|    3 | (5,4) | -6 | Y same   |
+|    4 | (6,4) |  0 | Y বাড়ে   |
+|    5 | (7,5) | -6 | Y same   |
+|    6 | (8,5) |  0 | End      |
+
+তাই line-এর points:
+
+```text
+(2,2)
+(3,3)
+(4,3)
+(5,4)
+(6,4)
+(7,5)
+(8,5)
+```
+
+---
+# 31. Visual
 
 ```text
 Y
 ↑
-5 |                 ●
-4 |             ●
-3 |         ●
-2 |     ●
+5 |                    ● ●
+4 |              ● ●
+3 |        ● ●
+2 |    ●
 1 |
-  +------------------------→ X
-      2   3   4   5   6   7   8
+  +--------------------------→ X
+     2  3  4  5  6  7  8
 ```
 
-অনেকগুলো point:
+এই points-গুলো খুব কাছাকাছি থাকায় চোখে line-এর মতো দেখা যায়।
+
+---
+# 32. কেন `p` দরকার?
+
+এটাই সবচেয়ে important concept।
+
+প্রতিবার আমাদের সামনে দুইটা possible point:
 
 ```text
-●
-  ●
-    ●
-      ●
-        ●
+(x+1, y)
 ```
 
-একসাথে দেখলে straight line।
+অথবা:
+
+```text
+(x+1, y+1)
+```
+
+Bresenham `p` দেখে decide করে কোনটা line-এর কাছাকাছি।
+
+তাই:
+
+> **`p` = Decision Parameter**
 
 ---
 
-# 28. Full OpenGL Program
+# 33. `p < 0` হলে কী হয়?
 
-এখন DDA-কে complete FreeGLUT program-এর মধ্যে বসাই।
+```text
+p < 0
+```
+
+তাহলে:
+
+```text
+(x+1, y)
+```
+
+নেব।
+
+মানে:
+
+```text
+x → +1
+
+y → same
+```
+
+Code:
 
 ```cpp
-#include <GL/glut.h>
-#include <math.h>
-
-// DDA Algorithm
-void DrawLine(int x1, int y1, int x2, int y2)
-{
-    // X এবং Y distance
-    int dx = x2 - x1;
-    int dy = y2 - y1;
-
-    // বড় distance-টাই steps
-    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
-
-    // প্রতি step-এ X কত change করবে
-    float xIncrement = dx / (float)steps;
-
-    // প্রতি step-এ Y কত change করবে
-    float yIncrement = dy / (float)steps;
-
-    // Starting point
-    float x = x1;
-    float y = y1;
-
-    // Point drawing শুরু
-    glBegin(GL_POINTS);
-
-    // প্রতিটি point draw
-    for(int i = 0; i <= steps; i++)
-    {
-        glVertex2f(x, y);
-
-        // পরের point
-        x = x + xIncrement;
-        y = y + yIncrement;
-    }
-
-    // Point drawing শেষ
-    glEnd();
-}
-
-void display()
-{
-    // Screen clear
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    // Line draw
-    DrawLine(-200, -100, 200, 150);
-
-    // Drawing শেষ
-    glFlush();
-}
-
-int main(int argc, char** argv)
-{
-    // GLUT initialize
-    glutInit(&argc, argv);
-
-    // Window size
-    glutInitWindowSize(800, 600);
-
-    // Window create
-    glutCreateWindow("DDA Line");
-
-    // Background color
-    glClearColor(1.0, 1.0, 1.0, 1.0);
-
-    // Display function
-    glutDisplayFunc(display);
-
-    // Main loop
-    glutMainLoop();
-
-    return 0;
-}
+p = p + 2 * dy;
 ```
 
 ---
 
-# 29. একটা Important Problem
+# 34. `p >= 0` হলে কী হয়?
 
-উপরের code-এ:
+```text
+p >= 0
+```
+
+তাহলে:
+
+```text
+(x+1, y+1)
+```
+
+নেব।
+
+মানে:
+
+```text
+x → +1
+
+y → +1
+```
+
+Code:
 
 ```cpp
-DrawLine(-200, -100, 200, 150);
+y++;
+
+p = p + 2 * dy - 2 * dx;
 ```
-
-আমরা coordinate হিসেবে:
-
-```text
--200
-+200
-```
-
-ব্যবহার করেছি।
-
-কিন্তু OpenGL-এর default coordinate সাধারণত:
-
-```text
--1 থেকে +1
-```
-
-এর মধ্যে।
-
-তাই এই code **সরাসরি সুন্দরভাবে দেখানোর জন্য coordinate system set করা ভালো**।
 
 ---
-# 30. Coordinate System Set করা
 
-`main()`-এ অথবা initialization-এর মাধ্যমে:
+# 35. কেন `while(x <= x2)`?
 
-```cpp
-glMatrixMode(GL_PROJECTION);
-glLoadIdentity();
-
-gluOrtho2D(-400, 400, -300, 300);
-```
-
-দিলে আমরা coordinate range করতে পারি:
+এই basic version-এ আমরা ধরে নিচ্ছি:
 
 ```text
-X → -400 থেকে +400
-
-Y → -300 থেকে +300
+x2 > x1
 ```
+
+এবং:
+
+```text
+0 < slope < 1
+```
+
+অর্থাৎ:
+
+```text
+dx > dy
+```
+
+তাই X direction-এ এগোতে থাকি:
+
+```text
+x1 → x1+1 → x1+2 → ... → x2
+```
+
+---
+
+# 36. Important Condition
+
+এই basic Bresenham code-এর জন্য সাধারণত:
+
+```text
+0 < m < 1
+```
+
+অর্থাৎ:
+
+```text
+0 < dy/dx < 1
+```
+
+এবং:
+
+```text
+dx > dy
+```
+
+ধরা হয়।
+
+---
+
+# 37. Negative Slope হলে?
+
+যদি:
+
+```text
+dy < 0
+```
+
+তাহলে Y কমবে।
 
 তখন:
 
 ```cpp
-DrawLine(-200, -100, 200, 150);
+y--;
 ```
 
-সহজে দেখা যাবে।
+ব্যবহার করতে হবে।
+
+কিন্তু **lab exam-এর basic implementation**-এ অনেক সময় প্রথমে `0 < m < 1` case-টাই শেখানো হয়।
 
 ---
 
+# 38. Vertical Line?
 
-# 31. Better Complete Code
+যদি:
+
+```text
+x1 = x2
+```
+
+তাহলে:
+
+```text
+dx = 0
+```
+
+এই basic code দিয়ে সেটা handle করা যাবে না।
+
+কারণ এই version:
+
+```text
+dx > dy
+```
+
+case ধরে লেখা।
+
+---
+# 39. General Bresenham Algorithm
+
+যদি সব ধরনের line handle করতে চাই, তাহলে একটু advanced code লাগবে।
+
+সেখানে handle করতে হবে:
+
+```text
+Positive slope
+Negative slope
+Steep slope
+Shallow slope
+Horizontal line
+Vertical line
+```
+
+কিন্তু তোমার **basic lab exam-এর জন্য** আগে এই version ভালোভাবে বুঝে রাখো।
+
+---
+
+# 40. Complete FreeGLUT Program
 
 ```cpp
 #include <GL/glut.h>
-#include <math.h>
 
-// DDA Line Drawing Function
+// Bresenham Line Drawing
 void DrawLine(int x1, int y1, int x2, int y2)
 {
-    // X direction-এর distance
+    // X distance
     int dx = x2 - x1;
 
-    // Y direction-এর distance
+    // Y distance
     int dy = y2 - y1;
 
-    // বড় distance = steps
-    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
-
-    // প্রতি step-এ X change
-    float xIncrement = dx / (float)steps;
-
-    // প্রতি step-এ Y change
-    float yIncrement = dy / (float)steps;
+    // Initial decision parameter
+    int p = 2 * dy - dx;
 
     // Starting point
-    float x = x1;
-    float y = y1;
+    int x = x1;
+    int y = y1;
 
-    // Point drawing
+    // Point drawing শুরু
     glBegin(GL_POINTS);
 
-    for(int i = 0; i <= steps; i++)
+    // X শেষ point পর্যন্ত যাবে
+    while(x <= x2)
     {
         // Current point draw
-        glVertex2f(x, y);
+        glVertex2i(x, y);
 
-        // X এবং Y update
-        x += xIncrement;
-        y += yIncrement;
+        // X সবসময় 1 করে বাড়বে
+        x++;
+
+        // Decision
+        if(p < 0)
+        {
+            // Y একই থাকবে
+            p = p + 2 * dy;
+        }
+        else
+        {
+            // Y 1 করে বাড়বে
+            y++;
+
+            // Decision parameter update
+            p = p + 2 * dy - 2 * dx;
+        }
     }
 
+    // Point drawing শেষ
     glEnd();
 }
 
@@ -915,7 +1028,7 @@ void display()
     // Point size
     glPointSize(3.0);
 
-    // DDA line
+    // Bresenham line
     DrawLine(-200, -100, 200, 150);
 
     // Display
@@ -930,7 +1043,7 @@ void init()
     // Reset matrix
     glLoadIdentity();
 
-    // Coordinate range
+    // Coordinate system
     gluOrtho2D(-400, 400, -300, 300);
 
     // Background color
@@ -946,9 +1059,9 @@ int main(int argc, char** argv)
     glutInitWindowSize(800, 600);
 
     // Window create
-    glutCreateWindow("DDA Line");
+    glutCreateWindow("Bresenham Line");
 
-    // Initialization
+    // Initialize
     init();
 
     // Display function
@@ -963,61 +1076,74 @@ int main(int argc, char** argv)
 
 ---
 
-# 32. `gluOrtho2D()` কী?
+# 41. DDA vs Bresenham
+
+এটা exam-এ খুব important।
+
+| বিষয়          | DDA                           | Bresenham                |
+| ------------- | ----------------------------- | ------------------------ |
+| Full Form     | Digital Differential Analyzer | Bresenham Line Algorithm |
+| Calculation   | Floating Point                | Integer                  |
+| Main idea     | Increment                     | Decision Parameter       |
+| Main variable | xIncrement, yIncrement        | `p`                      |
+| Speed         | তুলনামূলক slow                | তুলনামূলক fast           |
+| Accuracy      | ভালো                          | ভালো                     |
+| Point drawing | `GL_POINTS`                   | `GL_POINTS`              |
+
+সবচেয়ে important:
+
+```text
+DDA
+↓
+Floating Point
+↓
+Increment
+
+
+Bresenham
+↓
+Integer
+↓
+Decision Parameter
+```
+
+---
+# 42. DDA-এর Code বনাম Bresenham Code
+
+### DDA
 
 ```cpp
-gluOrtho2D(-400, 400, -300, 300);
+float xIncrement = dx / (float)steps;
+float yIncrement = dy / (float)steps;
+
+x = x + xIncrement;
+y = y + yIncrement;
 ```
 
-এটা আমাদের coordinate system define করে।
+### Bresenham
 
-মানে:
+```cpp
+int p = 2 * dy - dx;
 
-```text
-X → -400 to +400
-
-Y → -300 to +300
+if(p < 0)
+{
+    p = p + 2 * dy;
+}
+else
+{
+    y++;
+    p = p + 2 * dy - 2 * dx;
+}
 ```
 
-তাই আমরা pixel-like coordinate ব্যবহার করতে পারি।
+তাই সহজে মনে রাখবে:
+
+> **DDA → Increment দিয়ে line**
+> **Bresenham → Decision Parameter দিয়ে line**
 
 ---
 
-# 33. DDA Algorithm-এর Short Formula
-
-Exam-এর জন্য এই অংশটা মুখস্থ রাখো:
-
-```text
-dx = x2 - x1
-
-dy = y2 - y1
-
-steps = max(|dx|, |dy|)
-
-xIncrement = dx / steps
-
-yIncrement = dy / steps
-
-x = x1
-
-y = y1
-```
-
-তারপর loop:
-
-```text
-Plot(x,y)
-
-x = x + xIncrement
-
-y = y + yIncrement
-```
-
----
-
-# 34. Algorithm Steps
-
-DDA-এর algorithm:
+# 43. Bresenham Algorithm Steps
 
 ```text
 Step 1:
@@ -1025,370 +1151,163 @@ dx = x2 - x1
 dy = y2 - y1
 
 Step 2:
-steps = max(|dx|, |dy|)
+p = 2dy - dx
 
 Step 3:
-xIncrement = dx / steps
-yIncrement = dy / steps
-
-Step 4:
 x = x1
 y = y1
 
-Step 5:
+Step 4:
 Plot(x,y)
 
+Step 5:
+x = x + 1
+
 Step 6:
-x = x + xIncrement
-y = y + yIncrement
+If p < 0:
+    p = p + 2dy
+
+Otherwise:
+    y = y + 1
+    p = p + 2dy - 2dx
 
 Step 7:
-Repeat until steps complete
-```
-
----
-# 35. DDA-এর মূল Idea
-
-সবচেয়ে সহজভাবে:
-
-```text
-Start Point
-     ↓
-dx, dy বের করি
-     ↓
-steps বের করি
-     ↓
-প্রতি step-এ x এবং y update করি
-     ↓
-Point plot করি
-     ↓
-Line তৈরি
+Repeat until x = x2
 ```
 
 ---
 
-# 36. Positive Slope
+# 44. সবচেয়ে Important Formula
 
-যদি:
-
-```text
-dy > 0
-```
-
-তাহলে Y বাড়বে।
-
-Example:
-
-```text
-(2,2) → (8,5)
-```
-
-এখানে:
-
-```text
-dy = +3
-```
-
-তাই line উপরের দিকে যাবে।
-
-```text
-      ●
-    ●
-  ●
-●
-```
-
----
-
-# 37. Negative Slope
-
-যদি:
-
-```text
-dy < 0
-```
-
-তাহলে Y কমবে।
-
-Example:
-
-```text
-(2,5) → (8,2)
-```
-
-এখানে:
-
-```text
-dy = 2 - 5
-   = -3
-```
-
-তাই:
-
-```text
-●
-  ●
-    ●
-      ●
-```
-
-নিচের দিকে নামবে।
-
----
-
-# 38. Horizontal Line
-
-যদি:
-
-```text
-y1 = y2
-```
-
-তাহলে:
-
-```text
-dy = 0
-```
-
-তাই:
-
-```text
-yIncrement = 0
-```
-
-Y change করবে না।
-
-শুধু X change হবে।
-
-```text
-● ● ● ● ● ●
-```
-
----
-
-# 39. Vertical Line
-
-যদি:
-
-```text
-x1 = x2
-```
-
-তাহলে:
-
-```text
-dx = 0
-```
-
-তাই:
-
-```text
-xIncrement = 0
-```
-
-X change করবে না।
-
-শুধু Y change হবে।
-
-```text
-●
-●
-●
-●
-●
-```
-
----
-# 40. DDA-এর সুবিধা
-
-### 1. সহজ Algorithm
-
-বোঝা এবং implement করা সহজ।
-
-### 2. Simple Calculation
-
-মূলত:
-
-```text
-Addition
-Division
-```
-
-ব্যবহার করে।
-
-### 3. Different Slope Handle করতে পারে
-
-Positive/negative/horizontal/vertical line draw করতে পারে।
-
----
-
-# 41. DDA-এর অসুবিধা
-
-DDA-তে:
-
-```text
-Floating Point
-```
-
-calculation ব্যবহার হয়।
-
-যেমন:
-
-```text
-0.5
-0.25
-0.625
-```
-
-ইত্যাদি।
-
-তাই এটি সবসময় integer-based algorithm-এর মতো efficient নয়।
-
----
-
-# 42. DDA বনাম Normal OpenGL Line
-
-Normal OpenGL:
-
-```cpp
-glBegin(GL_LINES);
-
-glVertex2f(x1, y1);
-glVertex2f(x2, y2);
-
-glEnd();
-```
-
-এখানে OpenGL নিজেই line draw করে।
-
-কিন্তু DDA-তে আমরা manually:
-
-```text
-dx
-dy
-steps
-increment
-points
-```
-
-calculate করে line তৈরি করি।
-
----
-
-# 43. DDA বনাম Bresenham
-
-পরের দিকে আমরা Bresenham Line Algorithm পড়ব।
-
-Basic difference:
-
-| DDA                          | Bresenham           |
-| ---------------------------- | ------------------- |
-| Floating-point calculation   | Integer calculation |
-| তুলনামূলক সহজ                | একটু বেশি logical   |
-| Fractional value ব্যবহার করে | Integer-based       |
-| তুলনামূলক slower             | Faster              |
-
-মনে রাখবে:
-
-```text
-DDA → Floating Point
-
-Bresenham → Integer
-```
-
----
-
-# 44. Viva Questions
-
-### Q1. DDA-এর full form কী?
-
-**Answer:**
-
-> Digital Differential Analyzer.
-
----
-
-### Q2. DDA কী?
-
-**Answer:**
-
-> DDA is a line drawing algorithm used to draw a line between two points.
-
----
-
-### Q3. DDA-এর প্রথম calculation কী?
-
-**Answer:**
+### `dx`
 
 ```text
 dx = x2 - x1
+```
 
+### `dy`
+
+```text
 dy = y2 - y1
 ```
 
+### Initial Decision Parameter
+
+```text
+p = 2dy - dx
+```
+
+### যদি `p < 0`
+
+```text
+p = p + 2dy
+```
+
+### যদি `p >= 0`
+
+```text
+p = p + 2dy - 2dx
+```
+
+এগুলো **অবশ্যই মুখস্থ** রাখবে।
+
 ---
 
-### Q4. Steps কীভাবে বের করি?
+# 45. Viva Questions
+
+### Q1. Bresenham কী?
+
+**Answer:**
+
+> Bresenham is a line drawing algorithm used to draw a line between two points using mainly integer calculations.
+
+---
+
+### Q2. Bresenham-এর main advantage কী?
+
+**Answer:**
+
+> It uses integer arithmetic, so it is faster and more efficient than DDA.
+
+---
+
+### Q3. Bresenham-এর decision parameter কী?
 
 **Answer:**
 
 ```text
-steps = max(|dx|, |dy|)
+p = 2dy - dx
 ```
 
 ---
 
-### Q5. X increment-এর formula?
+### Q4. `p < 0` হলে কী করি?
 
 **Answer:**
 
 ```text
-xIncrement = dx / steps
+(x+1, y)
+```
+
+নিই এবং:
+
+```text
+p = p + 2dy
 ```
 
 ---
 
-### Q6. Y increment-এর formula?
+### Q5. `p >= 0` হলে কী করি?
 
 **Answer:**
 
 ```text
-yIncrement = dy / steps
+(x+1, y+1)
+```
+
+নিই এবং:
+
+```text
+p = p + 2dy - 2dx
 ```
 
 ---
 
-### Q7. কেন `abs()` ব্যবহার করি?
-
-**Answer:** Negative value বাদ দিয়ে absolute distance পাওয়ার জন্য।
-
----
-
-### Q8. DDA-তে কেন `float` ব্যবহার করি?
-
-**Answer:** Increment-এ fractional/decimal value আসতে পারে।
-
----
-
-### Q9. DDA-তে কোন primitive ব্যবহার করেছি?
+### Q6. Bresenham-এ floating point লাগে?
 
 **Answer:**
 
-```cpp
+> No. Basic Bresenham uses integer calculations.
+
+---
+
+### Q7. `p` কী?
+
+**Answer:**
+
+> `p` is the decision parameter used to select the next pixel.
+
+---
+
+### Q8. Bresenham-এ কোন OpenGL primitive ব্যবহার করা হয়েছে?
+
+**Answer:**
+
+```text
 GL_POINTS
 ```
 
-কারণ DDA অনেকগুলো point plot করে line তৈরি করে।
+---
+
+### Q9. `glVertex2i()` কেন ব্যবহার করেছি?
+
+**Answer:**
+
+> Bresenham integer coordinates নিয়ে কাজ করে, তাই `glVertex2i()` ব্যবহার করা হয়েছে।
 
 ---
 
-### Q10. DDA-এর disadvantage কী?
-
-**Answer:** Floating-point calculation ব্যবহার করার কারণে তুলনামূলকভাবে slow হতে পারে।
-
----
-
-### Q11. DDA এবং Bresenham-এর main difference কী?
+### Q10. DDA এবং Bresenham-এর main difference?
 
 **Answer:**
 
@@ -1400,81 +1319,41 @@ Bresenham → Integer
 
 ---
 
-# 45. Mid Exam-এর জন্য সবচেয়ে Important অংশ
+# 46. Mid Exam Quick Revision
 
-এই ৫টা জিনিস **অবশ্যই বুঝে রাখবে**:
-
-### 1. `dx`
+শুধু এগুলো দেখলেই Bresenham-এর পুরো concept মনে পড়ে যাবে:
 
 ```text
+Bresenham
+    ↓
+Two Points
+    ↓
 dx = x2 - x1
-```
-
-### 2. `dy`
-
-```text
 dy = y2 - y1
-```
-
-### 3. `steps`
-
-```text
-steps = max(|dx|, |dy|)
-```
-
-### 4. Increment
-
-```text
-xIncrement = dx / steps
-
-yIncrement = dy / steps
-```
-
-### 5. Update
-
-```text
-x = x + xIncrement
-
-y = y + yIncrement
+    ↓
+p = 2dy - dx
+    ↓
+p < 0 ?
+ ┌──────────────┐
+ Yes            No
+ ↓               ↓
+(x+1,y)       (x+1,y+1)
+ ↓               ↓
+p=p+2dy       y++
+               ↓
+          p=p+2dy-2dx
 ```
 
 ---
-# 46. একদম Short Version
+# 47. এক লাইনে মনে রাখো
 
-```cpp
-dx = x2 - x1;
-dy = y2 - y1;
+> **Bresenham = `dx, dy → p → p check → next pixel select → line draw`**
 
-steps = max(abs(dx), abs(dy));
-
-xIncrement = dx / steps;
-yIncrement = dy / steps;
-
-x = x1;
-y = y1;
-
-for(i = 0; i <= steps; i++)
-{
-    plot(x,y);
-
-    x = x + xIncrement;
-    y = y + yIncrement;
-}
-```
-
-এটাই পুরো DDA-এর heart।
-
----
-# 47. One-Line Memory Trick
-
-> **DDA = ****dx, dy → steps → increment → point plot → x,y update****।**
-
-আর সবচেয়ে important formula:
+আর DDA-এর সাথে:
 
 ```text
-dx = x2 - x1
-dy = y2 - y1
-steps = max(|dx|,|dy|)
-xInc = dx/steps
-yInc = dy/steps
+DDA        → Increment
+Bresenham  → Decision Parameter
 ```
+
+এই দুইটা difference মাথায় থাকলে lab viva-তে অনেক সহজে answer দিতে পারবে।
