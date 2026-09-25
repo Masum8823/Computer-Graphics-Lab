@@ -571,3 +571,33 @@ glVertex2i(xc - y, yc - x);
 ```
 
 ---
+
+# 22. সব 8 Point একসাথে
+
+```cpp
+glVertex2i(xc + x, yc + y);
+glVertex2i(xc - x, yc + y);
+glVertex2i(xc + x, yc - y);
+glVertex2i(xc - x, yc - y);
+
+glVertex2i(xc + y, yc + x);
+glVertex2i(xc - y, yc + x);
+glVertex2i(xc + y, yc - x);
+glVertex2i(xc - y, yc - x);
+```
+
+এগুলোকে শুধু এভাবে মনে রাখো:
+
+```text
+(x,y)
+(-x,y)
+(x,-y)
+(-x,-y)
+
+(y,x)
+(-y,x)
+(y,-x)
+(-y,-x)
+```
+
+---
